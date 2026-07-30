@@ -7,10 +7,20 @@ function showPage(pageId) {
     // Show selected page
     document.getElementById(pageId).classList.add('active');
 
-    // Update nav menu
+    // Update nav menu - find and highlight the corresponding link
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => link.classList.remove('active'));
-    event.target?.classList.add('active');
+
+    // If event was triggered, use event.target; otherwise find link by href
+    if (event && event.target) {
+        event.target.classList.add('active');
+    } else {
+        // Find the link that corresponds to this page
+        const targetLink = document.querySelector(`a[href="#${pageId}"]`);
+        if (targetLink) {
+            targetLink.classList.add('active');
+        }
+    }
 
     // Scroll to top
     window.scrollTo(0, 0);
