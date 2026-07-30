@@ -845,63 +845,60 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="14" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">🪑 Furniture Factory Optimization</text>
+            <text x="190" y="12" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">🪑 Linear Programming</text>
 
-            <!-- Problem -->
-            <text x="190" y="26" text-anchor="middle" font-size="8" fill="#A9AFC4">Profit: Z=20(chairs)+30(tables) | Constraint: 2x+3y≤12 hours</text>
+            <!-- Simple problem -->
+            <text x="190" y="23" text-anchor="middle" font-size="7" fill="#A9AFC4">Maximize: Profit = 20x + 30y</text>
+            <text x="190" y="30" text-anchor="middle" font-size="7" fill="#A9AFC4">Constraint: 2x + 3y ≤ 12 hours</text>
 
             <!-- Axes -->
-            <line x1="45" y1="195" x2="345" y2="195" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="45" y1="195" x2="45" y2="50" stroke="#A9AFC4" stroke-width="2"/>
-            <text x="15" y="110" font-size="8" fill="#A9AFC4" font-weight="bold">Tables (y)</text>
-            <text x="190" y="212" text-anchor="middle" font-size="8" fill="#A9AFC4" font-weight="bold">Chairs (x)</text>
+            <line x1="50" y1="185" x2="330" y2="185" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="185" x2="50" y2="60" stroke="#A9AFC4" stroke-width="2"/>
+            <text x="20" y="100" font-size="7" fill="#A9AFC4" font-weight="bold">y (Tables)</text>
+            <text x="170" y="200" text-anchor="middle" font-size="7" fill="#A9AFC4" font-weight="bold">x (Chairs)</text>
 
-            <!-- Constraint line: 2x + 3y = 12 -->
-            <line x1="50" y1="115" x2="195" y2="50" stroke="#3A8F84" stroke-width="2.5" stroke-dasharray="2,2"/>
-            <text x="80" y="75" font-size="8" fill="#3A8F84" font-weight="bold">2x+3y=12</text>
+            <!-- Constraint line -->
+            <line x1="55" y1="105" x2="180" y2="55" stroke="#3A8F84" stroke-width="2" stroke-dasharray="2,2"/>
+            <text x="90" y="70" font-size="7" fill="#3A8F84" font-weight="bold">2x+3y=12</text>
 
-            <!-- Feasible region (bright green) -->
-            <polygon points="50,195 50,115 195,50 195,195" fill="#51CF66" opacity="0.25" stroke="#51CF66" stroke-width="2"/>
-            <text x="120" y="135" font-size="10" fill="#51CF66" font-weight="bold">FEASIBLE</text>
+            <!-- Feasible region -->
+            <polygon points="55,185 55,105 180,55 180,185" fill="#51CF66" opacity="0.2"/>
+            <text x="115" y="125" font-size="9" fill="#51CF66" font-weight="bold">✓ Feasible</text>
 
-            <!-- Corner points (large, visible) -->
-            <circle cx="50" cy="195" r="4" fill="none" stroke="#E2A23B" stroke-width="2"/>
-            <circle cx="50" cy="195" r="2" fill="#E2A23B"/>
-            <text x="40" y="212" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(0,0)</text>
-            <text x="40" y="225" text-anchor="middle" font-size="7" fill="#A9AFC4">Z=0</text>
+            <!-- Corner points -->
+            <!-- Point 1: (0,0) -->
+            <circle cx="55" cy="185" r="3" fill="none" stroke="#999" stroke-width="1.5"/>
+            <circle cx="55" cy="185" r="1.5" fill="#999"/>
+            <text x="48" y="197" text-anchor="middle" font-size="6" fill="#F1ECDD">(0,0)</text>
+            <text x="48" y="205" text-anchor="middle" font-size="6" fill="#A9AFC4">Z=0</text>
 
-            <circle cx="50" cy="115" r="4" fill="none" stroke="#F39C12" stroke-width="2.5"/>
-            <circle cx="50" cy="115" r="2" fill="#F39C12"/>
-            <text x="30" y="105" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(0,4)</text>
-            <text x="30" y="95" text-anchor="middle" font-size="8" fill="#F39C12" font-weight="bold">Z=120✓</text>
+            <!-- Point 2: (0,4) - OPTIMAL -->
+            <circle cx="55" cy="105" r="3.5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
+            <circle cx="55" cy="105" r="1.5" fill="#F39C12"/>
+            <text x="32" y="98" text-anchor="middle" font-size="6" fill="#F1ECDD">(0,4)</text>
+            <text x="32" y="106" text-anchor="middle" font-size="6" fill="#F39C12" font-weight="bold">Z=120★</text>
 
-            <circle cx="195" cy="50" r="4" fill="none" stroke="#F39C12" stroke-width="2.5"/>
-            <circle cx="195" cy="50" r="2" fill="#F39C12"/>
-            <text x="195" y="40" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(6,0)</text>
-            <text x="195" y="30" text-anchor="middle" font-size="8" fill="#F39C12" font-weight="bold">Z=120✓</text>
+            <!-- Point 3: (6,0) - OPTIMAL -->
+            <circle cx="180" cy="55" r="3.5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
+            <circle cx="180" cy="55" r="1.5" fill="#F39C12"/>
+            <text x="180" y="42" text-anchor="middle" font-size="6" fill="#F1ECDD">(6,0)</text>
+            <text x="180" y="50" text-anchor="middle" font-size="6" fill="#F39C12" font-weight="bold">Z=120★</text>
 
-            <!-- Objective vector -->
-            <path d="M 70 175 L 130 125" stroke="#FF6B6B" stroke-width="2.5" marker-end="url(#arrowopt)"/>
-            <text x="105" y="160" font-size="8" fill="#FF6B6B" font-weight="bold">Maximize</text>
+            <!-- Objective direction -->
+            <path d="M 70 160 L 120 110" stroke="#FF6B6B" stroke-width="2" marker-end="url(#arrow)"/>
+            <text x="80" y="147" font-size="7" fill="#FF6B6B" font-weight="bold">Direction</text>
 
             <defs>
-                <marker id="arrowopt" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-                    <path d="M 0 0 L 10 3 L 0 6 Z" fill="#FF6B6B"/>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="2" orient="auto">
+                    <path d="M 0 0 L 8 2 L 0 4 Z" fill="#FF6B6B"/>
                 </marker>
             </defs>
 
-            <!-- Result Box -->
-            <rect x="10" y="235" width="360" height="22" fill="#1F2740" stroke="#F39C12" stroke-width="2" rx="3"/>
-
-            <!-- Information Box -->
-            <rect x="15" y="240" width="350" height="18" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
-            <text x="25" y="253" font-size="9" fill="#A9AFC4">Optimal: Make 0 chairs + 4 tables = ₹120 profit OR 6 chairs + 0 tables = ₹120 profit (both corner points optimal)</text>
-
-            <defs>
-                <marker id="arrowdanger" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-                    <path d="M 0 0 L 10 3 L 0 6 Z" fill="#danger"/>
-                </marker>
-            </defs>
+            <!-- Result -->
+            <rect x="15" y="220" width="350" height="37" fill="#1F2740" stroke="#F39C12" stroke-width="1.5" rx="2"/>
+            <text x="25" y="232" font-size="7" fill="#F1ECDD" font-weight="bold">✓ OPTIMAL SOLUTIONS:</text>
+            <text x="25" y="241" font-size="6" fill="#A9AFC4">Option 1: 4 tables, 0 chairs = ₹120 profit</text>
+            <text x="25" y="249" font-size="6" fill="#A9AFC4">Option 2: 6 chairs, 0 tables = ₹120 profit</text>
         </svg>`
     },
     {
