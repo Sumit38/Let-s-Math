@@ -531,8 +531,7 @@ const chapters = [
             { q: "Playing Cards: What's P(drawing an Ace from a 52-card deck)?", a: "Total Aces = 4 (one per suit). P(Ace) = 4/52 = 1/13 ≈ 0.077 or 7.7%" },
             { q: "Two dice rolled. Find P(sum = 7)", a: "Favorable outcomes: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 outcomes. Total = 36. P = 6/36 = 1/6" },
             { q: "Bag has 3 red, 4 blue, 2 green balls. P(drawing red or blue)?", a: "P(red or blue) = P(red) + P(blue) = 3/9 + 4/9 = 7/9" },
-            { q: "Coin tossed 4 times. P(exactly 2 heads)?", a: "C(4,2) × (1/2)² × (1/2)² = 6 × 1/16 = 6/16 = 3/8" }
-        ],
+            { q: "Coin tossed 4 times. P(exactly 2 heads)?", a: "C(4,2) × (1/2)² × (1/2)² = 6 × 1/16 = 6/16 = 3/8" },
             { q: "Playing Cards: P(drawing a King OR a Queen)?", a: "Kings = 4, Queens = 4, Total favorable = 8. P(King or Queen) = 8/52 = 2/13 ≈ 15.4%" },
             { q: "Two dice: Find P(sum=7 | at least one 4)", a: "Outcomes with at least one 4: 11 total. Of these, (3,4) and (4,3) sum to 7: 2 outcomes. P = 2/11" },
             { q: "Coin tossed 5 times. Find P(exactly 3 heads)", a: "C(5,3) × (0.5)⁵ = 10/32 = 5/16" }
@@ -998,8 +997,7 @@ const chapters = [
             { q: "Monthly Salary Data: ₹25k, ₹28k, ₹32k, ₹35k, ₹250k (CEO). Which average best represents?", a: "Median = ₹32k (fair representation). Mean ≈ ₹74k (skewed by CEO salary, not representative of typical employee)" },
             { q: "Dataset: 2, 4, 4, 4, 5, 5, 7, 9. Find mean, median, mode", a: "Mean = 40/8 = 5. Median = (4+5)/2 = 4.5. Mode = 4 (appears 3 times)" },
             { q: "Variance of 1, 2, 3, 4, 5. Find standard deviation", a: "Mean = 3. Deviations squared: 4, 1, 0, 1, 4. Variance = 10/5 = 2. SD = √2 ≈ 1.41" },
-            { q: "IQ scores normally distributed: mean=100, SD=15. What % score between 85 and 115?", a: "85 = 100−1(15) and 115 = 100+1(15). Within 1 SD of mean = 68% of data" }
-        ],
+            { q: "IQ scores normally distributed: mean=100, SD=15. What % score between 85 and 115?", a: "85 = 100−1(15) and 115 = 100+1(15). Within 1 SD of mean = 68% of data" },
             { q: "School Marks: 60, 65, 70, 75, 80. Calculate Variance and Standard Deviation", a: "Mean = 70. Variance = [(60-70)² + (65-70)² + (70-70)² + (75-70)² + (80-70)²]/5 = 250/5 = 50. SD = √50 ≈ 7.07" },
             { q: "Cricket: Batsman scores in last 10 matches: 45, 67, 52, 89, 34, 78, 92, 56, 71, 88. Find Average (Mean)", a: "Sum = 672. Average = 672/10 = 67.2 runs per match" }
         ],
