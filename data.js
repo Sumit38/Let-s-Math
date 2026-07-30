@@ -221,9 +221,11 @@ const chapters = [
             <text x="20" y="82" font-size="7" fill="#A9AFC4">Multiply main diagonal, subtract other diagonal</text>
 
             <!-- Example Part 1 -->
-            <rect x="10" y="90" width="360" height="28" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="20" y="102" font-size="8" fill="#E2A23B" font-weight="bold">Example: | 2  3 |  →  (2×1) − (3×4) = 2 − 12 = −10</text>
-            <text x="20" y="115" font-size="8" fill="#F1ECDD">| 4  1 |</text>
+            <rect x="10" y="90" width="360" height="42" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="20" y="102" font-size="8" fill="#E2A23B" font-weight="bold">Example: | 2  3 |</text>
+            <text x="95" y="102" font-size="8" fill="#F1ECDD">| 4  1 |</text>
+            <text x="20" y="115" font-size="7" fill="#F1ECDD">Step 1: 2 × 1 = 2  |  Step 2: 3 × 4 = 12</text>
+            <text x="20" y="127" font-size="8" fill="#E2A23B" font-weight="bold">Result: 2 − 12 = −10  ✓ (Unique solution)</text>
 
             <!-- Key Meaning -->
             <rect x="10" y="122" width="360" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
