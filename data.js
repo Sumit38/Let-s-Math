@@ -843,62 +843,68 @@ const chapters = [
             { q: "Set up: chairs earn ₹20, tables ₹30. Chair=2hrs, table=3hrs, 12hrs available", a: "Maximise Z=20x+30y subject to 2x+3y≤12, x,y≥0" },
             { q: "Why does optimum always occur at corner?", a: "Linear objective has no interior max/min. Moving in improving direction pushes to boundary, ultimately a corner." }
         ],
-        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <!-- Title -->
-            <text x="190" y="12" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">🪑 Linear Programming</text>
+        diagram: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Title Section -->
+            <text x="210" y="16" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🪑 Furniture Factory</text>
 
-            <!-- Simple problem -->
-            <text x="190" y="23" text-anchor="middle" font-size="7" fill="#A9AFC4">Maximize: Profit = 20x + 30y</text>
-            <text x="190" y="30" text-anchor="middle" font-size="7" fill="#A9AFC4">Constraint: 2x + 3y ≤ 12 hours</text>
+            <!-- Problem Statement -->
+            <rect x="10" y="18" width="400" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="2"/>
+            <text x="20" y="32" font-size="7" fill="#A9AFC4"><tspan x="20">Maximize Profit = 20x + 30y</tspan></text>
+            <text x="20" y="41" font-size="7" fill="#A9AFC4"><tspan x="20">Constraint: 2x + 3y ≤ 12 hours | x = chairs, y = tables</tspan></text>
 
-            <!-- Axes -->
-            <line x1="50" y1="185" x2="330" y2="185" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="50" y1="185" x2="50" y2="60" stroke="#A9AFC4" stroke-width="2"/>
-            <text x="20" y="100" font-size="7" fill="#A9AFC4" font-weight="bold">y (Tables)</text>
-            <text x="170" y="200" text-anchor="middle" font-size="7" fill="#A9AFC4" font-weight="bold">x (Chairs)</text>
+            <!-- Main Graph Area -->
+            <!-- Y-axis -->
+            <line x1="70" y1="90" x2="70" y2="230" stroke="#A9AFC4" stroke-width="2.5"/>
+            <text x="45" y="150" font-size="8" fill="#A9AFC4" font-weight="bold">Tables (y)</text>
 
-            <!-- Constraint line -->
-            <line x1="55" y1="105" x2="180" y2="55" stroke="#3A8F84" stroke-width="2" stroke-dasharray="2,2"/>
-            <text x="90" y="70" font-size="7" fill="#3A8F84" font-weight="bold">2x+3y=12</text>
+            <!-- X-axis -->
+            <line x1="70" y1="230" x2="350" y2="230" stroke="#A9AFC4" stroke-width="2.5"/>
+            <text x="200" y="250" text-anchor="middle" font-size="8" fill="#A9AFC4" font-weight="bold">Chairs (x)</text>
 
-            <!-- Feasible region -->
-            <polygon points="55,185 55,105 180,55 180,185" fill="#51CF66" opacity="0.2"/>
-            <text x="115" y="125" font-size="9" fill="#51CF66" font-weight="bold">✓ Feasible</text>
+            <!-- Axis markings for reference -->
+            <text x="65" y="235" text-anchor="end" font-size="6" fill="#A9AFC4">0</text>
+            <text x="65" y="170" text-anchor="end" font-size="6" fill="#A9AFC4">4</text>
+            <text x="280" y="245" text-anchor="middle" font-size="6" fill="#A9AFC4">6</text>
 
-            <!-- Corner points -->
-            <!-- Point 1: (0,0) -->
-            <circle cx="55" cy="185" r="3" fill="none" stroke="#999" stroke-width="1.5"/>
-            <circle cx="55" cy="185" r="1.5" fill="#999"/>
-            <text x="48" y="197" text-anchor="middle" font-size="6" fill="#F1ECDD">(0,0)</text>
-            <text x="48" y="205" text-anchor="middle" font-size="6" fill="#A9AFC4">Z=0</text>
+            <!-- Constraint line: 2x + 3y = 12 -->
+            <line x1="70" y1="150" x2="280" y2="90" stroke="#3A8F84" stroke-width="2.5" stroke-dasharray="3,3"/>
+            <text x="140" y="105" font-size="8" fill="#3A8F84" font-weight="bold">2x+3y=12</text>
 
-            <!-- Point 2: (0,4) - OPTIMAL -->
-            <circle cx="55" cy="105" r="3.5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
-            <circle cx="55" cy="105" r="1.5" fill="#F39C12"/>
-            <text x="32" y="98" text-anchor="middle" font-size="6" fill="#F1ECDD">(0,4)</text>
-            <text x="32" y="106" text-anchor="middle" font-size="6" fill="#F39C12" font-weight="bold">Z=120★</text>
+            <!-- Feasible Region (shaded area) -->
+            <polygon points="70,230 70,150 280,90 280,230" fill="#51CF66" opacity="0.15"/>
+            <text x="160" y="170" font-size="10" fill="#51CF66" font-weight="bold">Feasible Region ✓</text>
 
-            <!-- Point 3: (6,0) - OPTIMAL -->
-            <circle cx="180" cy="55" r="3.5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
-            <circle cx="180" cy="55" r="1.5" fill="#F39C12"/>
-            <text x="180" y="42" text-anchor="middle" font-size="6" fill="#F1ECDD">(6,0)</text>
-            <text x="180" y="50" text-anchor="middle" font-size="6" fill="#F39C12" font-weight="bold">Z=120★</text>
+            <!-- Corner Point 1: (0,0) -->
+            <circle cx="70" cy="230" r="4" fill="none" stroke="#B0B0B0" stroke-width="2"/>
+            <circle cx="70" cy="230" r="2" fill="#B0B0B0"/>
+            <text x="50" y="245" text-anchor="middle" font-size="7" fill="#F1ECDD" font-weight="bold">(0,0)</text>
+            <text x="50" y="255" text-anchor="middle" font-size="7" fill="#A9AFC4">Z=0</text>
 
-            <!-- Objective direction -->
-            <path d="M 70 160 L 120 110" stroke="#FF6B6B" stroke-width="2" marker-end="url(#arrow)"/>
-            <text x="80" y="147" font-size="7" fill="#FF6B6B" font-weight="bold">Direction</text>
+            <!-- Corner Point 2: (0,4) - OPTIMAL -->
+            <circle cx="70" cy="150" r="5" fill="none" stroke="#F39C12" stroke-width="3"/>
+            <circle cx="70" cy="150" r="2.5" fill="#F39C12"/>
+            <text x="25" y="145" text-anchor="middle" font-size="7" fill="#F1ECDD" font-weight="bold">(0,4)</text>
+            <text x="25" y="156" text-anchor="middle" font-size="8" fill="#F39C12" font-weight="bold">★ Z=120</text>
 
+            <!-- Corner Point 3: (6,0) - OPTIMAL -->
+            <circle cx="280" cy="90" r="5" fill="none" stroke="#F39C12" stroke-width="3"/>
+            <circle cx="280" cy="90" r="2.5" fill="#F39C12"/>
+            <text x="280" y="70" text-anchor="middle" font-size="7" fill="#F1ECDD" font-weight="bold">(6,0)</text>
+            <text x="280" y="80" text-anchor="middle" font-size="8" fill="#F39C12" font-weight="bold">★ Z=120</text>
+
+            <!-- Objective function direction arrow -->
             <defs>
-                <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="2" orient="auto">
-                    <path d="M 0 0 L 8 2 L 0 4 Z" fill="#FF6B6B"/>
+                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#FF6B6B"/>
                 </marker>
             </defs>
+            <path d="M 120 190 L 200 120" stroke="#FF6B6B" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+            <text x="145" y="175" font-size="7" fill="#FF6B6B" font-weight="bold">Maximize</text>
 
-            <!-- Result -->
-            <rect x="15" y="220" width="350" height="37" fill="#1F2740" stroke="#F39C12" stroke-width="1.5" rx="2"/>
-            <text x="25" y="232" font-size="7" fill="#F1ECDD" font-weight="bold">✓ OPTIMAL SOLUTIONS:</text>
-            <text x="25" y="241" font-size="6" fill="#A9AFC4">Option 1: 4 tables, 0 chairs = ₹120 profit</text>
-            <text x="25" y="249" font-size="6" fill="#A9AFC4">Option 2: 6 chairs, 0 tables = ₹120 profit</text>
+            <!-- Answer Box -->
+            <rect x="10" y="265" width="400" height="28" fill="#1F2740" stroke="#F39C12" stroke-width="2" rx="2"/>
+            <text x="20" y="278" font-size="8" fill="#F39C12" font-weight="bold">✓ ANSWER: Both points (0,4) and (6,0) give maximum profit of ₹120</text>
+            <text x="20" y="289" font-size="7" fill="#A9AFC4">Make either 4 tables OR 6 chairs to maximize profit at ₹120</text>
         </svg>`
     },
     {
