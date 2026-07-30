@@ -15,30 +15,41 @@ const chapters = [
             { q: "Show f(x) = (x+1)/(x−2) is one-one and find its inverse", a: "Assume f(x₁)=f(x₂): (x₁+1)/(x₁−2) = (x₂+1)/(x₂−2) ⟹ x₁=x₂ (one-one). Inverse: y=(x+1)/(x−2), swap: x=(y+1)/(y−2), solve: f⁻¹(x) = (2x+1)/(x−1)" },
             { q: "If f(x) = 2x+3 and g(x) = x−1, find (f∘g)(x)", a: "(f∘g)(x) = f(g(x)) = f(x−1) = 2(x−1)+3 = 2x+1" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="50" width="80" height="120" fill="none" stroke="#3A8F84" stroke-width="2" rx="5"/>
-            <text x="60" y="100" text-anchor="middle" font-size="12" fill="#F1ECDD">A</text>
-            <text x="60" y="70" text-anchor="middle" font-size="10" fill="#A9AFC4">Domain</text>
+        diagram: `<svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Domain Box -->
+            <rect x="30" y="60" width="140" height="160" fill="none" stroke="#3A8F84" stroke-width="3" rx="8"/>
+            <text x="100" y="35" text-anchor="middle" font-size="13" fill="#A9AFC4" font-weight="bold">Domain</text>
+            <text x="100" y="85" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">A</text>
 
-            <circle cx="45" cy="100" r="5" fill="#E2A23B"/>
-            <circle cx="45" cy="130" r="5" fill="#E2A23B"/>
-            <circle cx="45" cy="160" r="5" fill="#E2A23B"/>
+            <!-- Domain Elements -->
+            <circle cx="80" cy="110" r="6" fill="#E2A23B"/>
+            <circle cx="80" cy="160" r="6" fill="#E2A23B"/>
+            <circle cx="80" cy="210" r="6" fill="#E2A23B"/>
 
-            <rect x="300" y="50" width="80" height="120" fill="none" stroke="#3A8F84" stroke-width="2" rx="5"/>
-            <text x="340" y="100" text-anchor="middle" font-size="12" fill="#F1ECDD">B</text>
-            <text x="340" y="70" text-anchor="middle" font-size="10" fill="#A9AFC4">Codomain</text>
+            <!-- Mapping Arrows -->
+            <line x1="86" y1="110" x2="514" y2="110" stroke="#E2A23B" stroke-width="2.5"/>
+            <line x1="86" y1="160" x2="514" y2="160" stroke="#E2A23B" stroke-width="2.5"/>
+            <line x1="86" y1="210" x2="514" y2="210" stroke="#E2A23B" stroke-width="2.5"/>
 
-            <circle cx="325" cy="100" r="5" fill="#3A8F84"/>
-            <circle cx="325" cy="130" r="5" fill="#3A8F84"/>
-            <circle cx="325" cy="160" r="5" fill="#3A8F84"/>
+            <!-- Arrow tips -->
+            <polygon points="514,110 508,106 508,114" fill="#E2A23B"/>
+            <polygon points="514,160 508,156 508,164" fill="#E2A23B"/>
+            <polygon points="514,210 508,206 508,214" fill="#E2A23B"/>
 
-            <line x1="50" y1="100" x2="320" y2="100" stroke="#E2A23B" stroke-width="2"/>
-            <line x1="50" y1="130" x2="320" y2="130" stroke="#E2A23B" stroke-width="2"/>
-            <line x1="50" y1="160" x2="320" y2="160" stroke="#E2A23B" stroke-width="2"/>
+            <!-- Codomain Box -->
+            <rect x="430" y="60" width="140" height="160" fill="none" stroke="#3A8F84" stroke-width="3" rx="8"/>
+            <text x="500" y="35" text-anchor="middle" font-size="13" fill="#A9AFC4" font-weight="bold">Codomain</text>
+            <text x="500" y="85" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">B</text>
 
-            <text x="200" y="210" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">Function: f(x) = x</text>
-            <text x="200" y="235" text-anchor="middle" font-size="11" fill="#A9AFC4">Each element in A maps to exactly one element in B</text>
-            <text x="200" y="255" text-anchor="middle" font-size="11" fill="#A9AFC4">This is ONE-ONE and ONTO (bijective)</text>
+            <!-- Codomain Elements -->
+            <circle cx="520" cy="110" r="6" fill="#3A8F84"/>
+            <circle cx="520" cy="160" r="6" fill="#3A8F84"/>
+            <circle cx="520" cy="210" r="6" fill="#3A8F84"/>
+
+            <!-- Description -->
+            <text x="300" y="270" text-anchor="middle" font-size="15" fill="#F1ECDD" font-weight="bold">Function: f(x) = x</text>
+            <text x="300" y="295" text-anchor="middle" font-size="11" fill="#A9AFC4">✓ Each element in A maps to exactly ONE element in B</text>
+            <text x="300" y="315" text-anchor="middle" font-size="11" fill="#A9AFC4">✓ This is ONE-ONE and ONTO (Bijective Function)</text>
         </svg>`
     },
     {
