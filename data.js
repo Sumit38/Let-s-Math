@@ -348,25 +348,66 @@ const chapters = [
             { q: "Two dice: Find P(sum=7 | at least one 4)", a: "Outcomes with at least one 4: 11 total. Of these, (3,4) and (4,3) sum to 7: 2 outcomes. P = 2/11" },
             { q: "Coin tossed 5 times. Find P(exactly 3 heads)", a: "C(5,3) × (0.5)⁵ = 10/32 = 5/16" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <text x="200" y="30" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">Binomial Probability: n=5, p=0.5</text>
+        diagram: `<svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+            <!-- Title -->
+            <text x="250" y="25" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">Binomial Probability Distribution</text>
+            <text x="250" y="45" text-anchor="middle" font-size="12" fill="#E2A23B">Coin tossed 5 times (n=5, p=0.5)</text>
 
-            <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="50" y1="50" x2="50" y2="250" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Formula Box -->
+            <rect x="10" y="55" width="480" height="50" fill="#1F2740" stroke="#3A8F84" stroke-width="2" rx="5"/>
+            <text x="250" y="75" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">Formula: P(X=k) = C(n,k) × p^k × (1-p)^(n-k)</text>
+            <text x="250" y="95" text-anchor="middle" font-size="10" fill="#A9AFC4">Where: n=5 (trials), p=0.5 (prob. of success), k=number of heads</text>
 
-            <rect x="75" y="200" width="30" height="50" fill="#3A8F84" opacity="0.7"/>
-            <rect x="120" y="140" width="30" height="110" fill="#3A8F84" opacity="0.7"/>
-            <rect x="165" y="100" width="30" height="150" fill="#3A8F84" opacity="0.7"/>
-            <rect x="210" y="140" width="30" height="110" fill="#3A8F84" opacity="0.7"/>
-            <rect x="255" y="200" width="30" height="50" fill="#3A8F84" opacity="0.7"/>
-            <rect x="300" y="225" width="30" height="25" fill="#3A8F84" opacity="0.7"/>
+            <!-- Axes -->
+            <line x1="60" y1="310" x2="480" y2="310" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="60" y1="130" x2="60" y2="310" stroke="#A9AFC4" stroke-width="2"/>
 
-            <text x="90" y="270" text-anchor="middle" font-size="11" fill="#F1ECDD">0</text>
-            <text x="135" y="270" text-anchor="middle" font-size="11" fill="#F1ECDD">1</text>
-            <text x="180" y="270" text-anchor="middle" font-size="11" fill="#F1ECDD">2</text>
-            <text x="225" y="270" text-anchor="middle" font-size="11" fill="#F1ECDD">3</text>
-            <text x="270" y="270" text-anchor="middle" font-size="11" fill="#F1ECDD">4</text>
-            <text x="315" y="270" text-anchor="middle" font-size="11" fill="#F1ECDD">5</text>
+            <!-- Axis Labels -->
+            <text x="470" y="330" font-size="11" fill="#A9AFC4" font-weight="bold">Number of Heads (X)</text>
+            <text x="25" y="200" font-size="11" fill="#A9AFC4" font-weight="bold">Probability</text>
+
+            <!-- Y-axis scale -->
+            <text x="50" y="315" text-anchor="end" font-size="9" fill="#A9AFC4">0</text>
+            <text x="50" y="250" text-anchor="end" font-size="9" fill="#A9AFC4">0.25</text>
+            <text x="50" y="185" text-anchor="end" font-size="9" fill="#A9AFC4">0.50</text>
+
+            <!-- Bars with labels showing probabilities -->
+            <!-- P(X=0) = 1/32 ≈ 0.03125 -->
+            <rect x="85" y="290" width="35" height="20" fill="#3A8F84" opacity="0.8"/>
+            <text x="102" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">0</text>
+            <text x="102" y="345" text-anchor="middle" font-size="9" fill="#E2A23B">1/32</text>
+
+            <!-- P(X=1) = 5/32 ≈ 0.156 -->
+            <rect x="135" y="225" width="35" height="85" fill="#3A8F84" opacity="0.8"/>
+            <text x="152" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">1</text>
+            <text x="152" y="345" text-anchor="middle" font-size="9" fill="#E2A23B">5/32</text>
+
+            <!-- P(X=2) = 10/32 ≈ 0.3125 (MAX) -->
+            <rect x="185" y="135" width="35" height="175" fill="#E2A23B" opacity="0.9"/>
+            <text x="202" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">2</text>
+            <text x="202" y="345" text-anchor="middle" font-size="9" fill="#3A8F84" font-weight="bold">10/32 ⭐</text>
+
+            <!-- P(X=3) = 10/32 ≈ 0.3125 (MAX) -->
+            <rect x="235" y="135" width="35" height="175" fill="#E2A23B" opacity="0.9"/>
+            <text x="252" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">3</text>
+            <text x="252" y="345" text-anchor="middle" font-size="9" fill="#3A8F84" font-weight="bold">10/32 ⭐</text>
+
+            <!-- P(X=4) = 5/32 ≈ 0.156 -->
+            <rect x="285" y="225" width="35" height="85" fill="#3A8F84" opacity="0.8"/>
+            <text x="302" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">4</text>
+            <text x="302" y="345" text-anchor="middle" font-size="9" fill="#E2A23B">5/32</text>
+
+            <!-- P(X=5) = 1/32 ≈ 0.03125 -->
+            <rect x="335" y="290" width="35" height="20" fill="#3A8F84" opacity="0.8"/>
+            <text x="352" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">5</text>
+            <text x="352" y="345" text-anchor="middle" font-size="9" fill="#E2A23B">1/32</text>
+
+            <!-- Key Information Box -->
+            <rect x="10" y="370" width="480" height="70" fill="#1F2740" stroke="#E2A23B" stroke-width="2" rx="5"/>
+            <text x="20" y="390" font-size="11" fill="#E2A23B" font-weight="bold">📊 Key Insights:</text>
+            <text x="20" y="410" font-size="10" fill="#F1ECDD">• Most likely outcomes: X=2 or X=3 heads (both 31.25%)</text>
+            <text x="20" y="425" font-size="10" fill="#F1ECDD">• Symmetrical distribution: P(X=k) = P(X=5-k)</text>
+            <text x="20" y="440" font-size="10" fill="#F1ECDD">• Total probability sums to 1: (1+5+10+10+5+1)/32 = 32/32 = 1 ✓</text>
         </svg>`
     },
     {
