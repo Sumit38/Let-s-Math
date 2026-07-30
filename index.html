@@ -192,6 +192,28 @@
 
     </div>
 
+    <!-- Hints Modal -->
+    <div id="hintsModal" class="hints-modal">
+        <div class="hints-content">
+            <button class="hints-close" onclick="closeHints()">✕</button>
+            <h2 id="hintsTitle">💡 Get a Hint</h2>
+            <p id="hintsMessage" class="hints-message"></p>
+
+            <div class="hints-buttons">
+                <button class="hint-btn" id="hint1Btn" onclick="displayHint(1)">Hint 1</button>
+                <button class="hint-btn" id="hint2Btn" onclick="displayHint(2)">Hint 2</button>
+                <button class="hint-btn" id="hint3Btn" onclick="displayHint(3)">Hint 3</button>
+            </div>
+
+            <div class="hints-info">
+                <p>🎯 <strong>Remember:</strong> Hints are designed to guide your thinking, not solve the problem for you!</p>
+                <p>Work through the hint, apply it to your problem, and try solving it yourself. That's how you truly learn! 📚</p>
+            </div>
+
+            <button class="close-btn" onclick="closeHints()">Close</button>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; <span id="year"></span> Let's Math. Free mathematics learning platform for students worldwide.</p>
@@ -199,6 +221,7 @@
     </footer>
 
     <script src="data.js"></script>
+    <script src="hints.js"></script>
     <script src="script.js"></script>
     <script>
         // Auto-update copyright year

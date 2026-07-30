@@ -59,9 +59,10 @@ function showChapterDetail(chapterId) {
 
         <div class="practice-section">
             <h2>📝 Practice Questions</h2>
-            ${chapter.practice.map(item => `
+            ${chapter.practice.map((item, index) => `
                 <div class="practice-item">
                     <div class="practice-question">Q: ${item.q}</div>
+                    <button class="hint-btn-small" onclick="openHints(${chapterId}, ${index + 1})">🔦 Get Hint</button>
                     <div class="practice-answer">A: ${item.a}</div>
                 </div>
             `).join('')}
@@ -69,6 +70,69 @@ function showChapterDetail(chapterId) {
     `;
 
     showPage('chapter-detail');
+}
+
+// Hint System Functions
+let currentHintChapter = null;
+let currentHintQuestion = null;
+let currentHintLevel = 0;
+
+function openHints(chapterId, questionNumber) {
+    currentHintChapter = chapterId;
+    currentHintQuestion = questionNumber;
+    currentHintLevel = 0;
+
+    const modal = document.getElementById('hintsModal');
+    const hints = getHints(chapterId, questionNumber);
+
+    if (hints) {
+        document.getElementById('hintsTitle').textContent = `💡 ${hints.title}`;
+        document.getElementById('hintsMessage').textContent = "Click 'Hint 1' to get started. Use hints to guide your thinking!";
+    } else {
+        document.getElementById('hintsMessage').textContent = "No hints available for this question yet. Keep trying!";
+    }
+
+    modal.style.display = 'block';
+    resetHintButtons();
+}
+
+function displayHint(level) {
+    if (!currentHintChapter || !currentHintQuestion) return;
+
+    const hints = getHints(currentHintChapter, currentHintQuestion);
+    if (!hints || level > hints.hints.length) {
+        document.getElementById('hintsMessage').textContent = "No more hints! Try solving it yourself now. You can do it! 💪";
+        return;
+    }
+
+    document.getElementById('hintsMessage').textContent = hints.hints[level - 1];
+    currentHintLevel = level;
+
+    // Disable buttons for already shown hints
+    for (let i = 1; i <= level; i++) {
+        document.getElementById(`hint${i}Btn`).disabled = true;
+    }
+}
+
+function resetHintButtons() {
+    for (let i = 1; i <= 3; i++) {
+        document.getElementById(`hint${i}Btn`).disabled = false;
+    }
+}
+
+function closeHints() {
+    document.getElementById('hintsModal').style.display = 'none';
+    currentHintChapter = null;
+    currentHintQuestion = null;
+    currentHintLevel = 0;
+}
+
+// Close hints when clicking outside modal
+window.onclick = function(event) {
+    const modal = document.getElementById('hintsModal');
+    if (event.target === modal) {
+        closeHints();
+    }
 }
 
 // Initialize tricks page
