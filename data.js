@@ -15,41 +15,41 @@ const chapters = [
             { q: "Show f(x) = (x+1)/(x−2) is one-one and find its inverse", a: "Assume f(x₁)=f(x₂): (x₁+1)/(x₁−2) = (x₂+1)/(x₂−2) ⟹ x₁=x₂ (one-one). Inverse: y=(x+1)/(x−2), swap: x=(y+1)/(y−2), solve: f⁻¹(x) = (2x+1)/(x−1)" },
             { q: "If f(x) = 2x+3 and g(x) = x−1, find (f∘g)(x)", a: "(f∘g)(x) = f(g(x)) = f(x−1) = 2(x−1)+3 = 2x+1" }
         ],
-        diagram: `<svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Domain Box -->
-            <rect x="30" y="60" width="140" height="160" fill="none" stroke="#3A8F84" stroke-width="3" rx="8"/>
-            <text x="100" y="35" text-anchor="middle" font-size="13" fill="#A9AFC4" font-weight="bold">Domain</text>
-            <text x="100" y="85" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">A</text>
+            <rect x="24" y="48" width="112" height="130" fill="none" stroke="#3A8F84" stroke-width="3" rx="8"/>
+            <text x="80" y="28" text-anchor="middle" font-size="13" fill="#A9AFC4" font-weight="bold">Domain</text>
+            <text x="80" y="68" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">A</text>
 
             <!-- Domain Elements -->
-            <circle cx="80" cy="110" r="6" fill="#E2A23B"/>
-            <circle cx="80" cy="160" r="6" fill="#E2A23B"/>
-            <circle cx="80" cy="210" r="6" fill="#E2A23B"/>
+            <circle cx="64" cy="88" r="6" fill="#E2A23B"/>
+            <circle cx="64" cy="128" r="6" fill="#E2A23B"/>
+            <circle cx="64" cy="168" r="6" fill="#E2A23B"/>
 
             <!-- Mapping Arrows -->
-            <line x1="86" y1="110" x2="514" y2="110" stroke="#E2A23B" stroke-width="2.5"/>
-            <line x1="86" y1="160" x2="514" y2="160" stroke="#E2A23B" stroke-width="2.5"/>
-            <line x1="86" y1="210" x2="514" y2="210" stroke="#E2A23B" stroke-width="2.5"/>
+            <line x1="69" y1="88" x2="391" y2="88" stroke="#E2A23B" stroke-width="2.5"/>
+            <line x1="69" y1="128" x2="391" y2="128" stroke="#E2A23B" stroke-width="2.5"/>
+            <line x1="69" y1="168" x2="391" y2="168" stroke="#E2A23B" stroke-width="2.5"/>
 
             <!-- Arrow tips -->
-            <polygon points="514,110 508,106 508,114" fill="#E2A23B"/>
-            <polygon points="514,160 508,156 508,164" fill="#E2A23B"/>
-            <polygon points="514,210 508,206 508,214" fill="#E2A23B"/>
+            <polygon points="391,88 386,85 386,91" fill="#E2A23B"/>
+            <polygon points="391,128 386,125 386,131" fill="#E2A23B"/>
+            <polygon points="391,168 386,165 386,171" fill="#E2A23B"/>
 
             <!-- Codomain Box -->
-            <rect x="430" y="60" width="140" height="160" fill="none" stroke="#3A8F84" stroke-width="3" rx="8"/>
-            <text x="500" y="35" text-anchor="middle" font-size="13" fill="#A9AFC4" font-weight="bold">Codomain</text>
-            <text x="500" y="85" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">B</text>
+            <rect x="344" y="48" width="112" height="130" fill="none" stroke="#3A8F84" stroke-width="3" rx="8"/>
+            <text x="400" y="28" text-anchor="middle" font-size="13" fill="#A9AFC4" font-weight="bold">Codomain</text>
+            <text x="400" y="68" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">B</text>
 
             <!-- Codomain Elements -->
-            <circle cx="520" cy="110" r="6" fill="#3A8F84"/>
-            <circle cx="520" cy="160" r="6" fill="#3A8F84"/>
-            <circle cx="520" cy="210" r="6" fill="#3A8F84"/>
+            <circle cx="416" cy="88" r="6" fill="#3A8F84"/>
+            <circle cx="416" cy="128" r="6" fill="#3A8F84"/>
+            <circle cx="416" cy="168" r="6" fill="#3A8F84"/>
 
             <!-- Description -->
-            <text x="300" y="270" text-anchor="middle" font-size="15" fill="#F1ECDD" font-weight="bold">Function: f(x) = x</text>
-            <text x="300" y="295" text-anchor="middle" font-size="11" fill="#A9AFC4">✓ Each element in A maps to exactly ONE element in B</text>
-            <text x="300" y="315" text-anchor="middle" font-size="11" fill="#A9AFC4">✓ This is ONE-ONE and ONTO (Bijective Function)</text>
+            <text x="240" y="220" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">Function: f(x) = x</text>
+            <text x="240" y="238" text-anchor="middle" font-size="9" fill="#A9AFC4">✓ Each element in A → ONE in B</text>
+            <text x="240" y="254" text-anchor="middle" font-size="9" fill="#A9AFC4">✓ One-One and Onto (Bijective)</text>
         </svg>`
     },
     {
@@ -68,7 +68,7 @@ const chapters = [
             { q: "Solve: cos(2 sin⁻¹x) = 1/2", a: "Let θ=sin⁻¹x, so cos(2θ) = 1−2sin²θ = 1−2x². Set 1−2x² = 1/2 ⟹ x² = 1/4 ⟹ x = ±1/2" },
             { q: "Evaluate: sin⁻¹(1/2) + cos⁻¹(1/2)", a: "Using sin⁻¹x + cos⁻¹x = π/2 for x=1/2: Answer = π/2" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="50" y1="250" x2="50" y2="50" stroke="#A9AFC4" stroke-width="2"/>
 
@@ -97,7 +97,7 @@ const chapters = [
             { q: "Find inverse of A = [[2,1],[1,1]]", a: "det(A) = 2−1 = 1. A⁻¹ = (1/1)[[1,−1],[−1,2]] = [[1,−1],[−1,2]]" },
             { q: "Show (A + Aᵀ) is symmetric for A = [[1,2],[3,4]]", a: "A = [[1,2],[3,4]], Aᵀ = [[1,3],[2,4]]. A+Aᵀ = [[2,5],[5,8]]. (A+Aᵀ)ᵀ = [[2,5],[5,8]] ✓ Symmetric" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(50, 50)">
                 <rect x="0" y="0" width="120" height="80" fill="none" stroke="#3A8F84" stroke-width="2"/>
                 <text x="20" y="30" font-size="16" fill="#E2A23B" font-weight="bold">2</text>
@@ -144,7 +144,7 @@ const chapters = [
             { q: "Evaluate |2 3; 4 1|", a: "det = (2)(1) − (3)(4) = 2 − 12 = −10" },
             { q: "Explain why det with two identical rows equals zero", a: "Swapping identical rows flips the sign: det = −det, so 2·det = 0, thus det = 0" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <text x="200" y="30" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">For a 2×2 Matrix:</text>
 
             <g transform="translate(80, 50)">
@@ -184,7 +184,7 @@ const chapters = [
             { q: "Differentiate y = sin(x²) using chain rule", a: "dy/dx = cos(x²) · d(x²)/dx = cos(x²) · 2x = 2x·cos(x²)" },
             { q: "Is f(x) = |x| differentiable at x = 0?", a: "LHD = −1, RHD = +1. Since LHD ≠ RHD, not differentiable at 0 (but continuous)" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="1"/>
             <line x1="50" y1="50" x2="50" y2="250" stroke="#A9AFC4" stroke-width="1"/>
 
@@ -217,7 +217,7 @@ const chapters = [
             { q: "Find where f(x) = 2x³ − 15x² + 36x + 1 increases", a: "f'(x) = 6x² − 30x + 36 = 6(x²−5x+6) = 6(x−2)(x−3). f'(x)>0 when x<2 or x>3. Increases on (−∞,2)∪(3,∞)" },
             { q: "Box with volume 4096 cm³, minimize surface area", a: "V=x²h=4096⟹h=4096/x². S=2x²+4xh=2x²+16384/x. dS/dx=4x−16384/x²=0⟹x=16. Cube 16×16×16" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="30" y1="250" x2="370" y2="250" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="30" y1="250" x2="30" y2="30" stroke="#A9AFC4" stroke-width="2"/>
 
@@ -250,7 +250,7 @@ const chapters = [
             { q: "Evaluate: ∫x·e^(x²) dx", a: "Let t=x², dt=2x dx. ∫e^(x²)·x dx = (1/2)∫e^t dt = (1/2)e^(x²) + C" },
             { q: "Evaluate: ∫sec²x/(1+tan²x) dx", a: "Since 1+tan²x = sec²x, integrand = 1. ∫1 dx = x + C" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <text x="50" y="40" font-size="14" fill="#F1ECDD" font-weight="bold">Differentiation ⟺ Integration</text>
 
             <g transform="translate(50, 80)">
@@ -293,7 +293,7 @@ const chapters = [
             { q: "Evaluate: ∫₀¹ x(1−x)⁴ dx", a: "Using Beta function shortcut m!n!/(m+n+1)! with m=1,n=4: = 1!·4!/6! = 24/720 = 1/30" },
             { q: "Evaluate: ∫₀^(π/2) sin²x dx", a: "Using sin²x = (1−cos2x)/2: ∫₀^(π/2) (1−cos2x)/2 dx = [x/2 − sin2x/4]₀^(π/2) = π/4" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="50" y1="50" x2="50" y2="250" stroke="#A9AFC4" stroke-width="2"/>
 
@@ -332,7 +332,7 @@ const chapters = [
             { q: "Solve: dy/dx = y/x", a: "Separable: dy/y = dx/x. Integrate: ln|y| = ln|x| + C₁. Thus y = kx (family of lines through origin)" },
             { q: "Order and degree of (d²y/dx²)³ + dy/dx = x", a: "Order = 2 (highest derivative is d²y/dx²). Degree = 3 (power of d²y/dx²)" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="50" y1="50" x2="50" y2="250" stroke="#A9AFC4" stroke-width="2"/>
 
@@ -364,53 +364,53 @@ const chapters = [
             { q: "Two dice: Find P(sum=7 | at least one 4)", a: "Outcomes with at least one 4: 11 total. Of these, (3,4) and (4,3) sum to 7: 2 outcomes. P = 2/11" },
             { q: "Coin tossed 5 times. Find P(exactly 3 heads)", a: "C(5,3) × (0.5)⁵ = 10/32 = 5/16" }
         ],
-        diagram: `<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg">
             <!-- Axes -->
-            <line x1="80" y1="280" x2="580" y2="280" stroke="#A9AFC4" stroke-width="3"/>
-            <line x1="80" y1="40" x2="80" y2="280" stroke="#A9AFC4" stroke-width="3"/>
+            <line x1="64" y1="280" x2="464" y2="280" stroke="#A9AFC4" stroke-width="3"/>
+            <line x1="64" y1="40" x2="64" y2="280" stroke="#A9AFC4" stroke-width="3"/>
 
             <!-- Y-axis labels -->
-            <text x="70" y="285" text-anchor="end" font-size="11" fill="#A9AFC4">0</text>
-            <text x="70" y="215" text-anchor="end" font-size="11" fill="#A9AFC4">0.25</text>
-            <text x="70" y="145" text-anchor="end" font-size="11" fill="#A9AFC4">0.50</text>
+            <text x="56" y="285" text-anchor="end" font-size="11" fill="#A9AFC4">0</text>
+            <text x="56" y="215" text-anchor="end" font-size="11" fill="#A9AFC4">0.25</text>
+            <text x="56" y="145" text-anchor="end" font-size="11" fill="#A9AFC4">0.50</text>
 
             <!-- Grid lines (light) -->
-            <line x1="80" y1="215" x2="580" y2="215" stroke="#A9AFC4" stroke-width="0.5" opacity="0.3"/>
-            <line x1="80" y1="145" x2="580" y2="145" stroke="#A9AFC4" stroke-width="0.5" opacity="0.3"/>
+            <line x1="64" y1="215" x2="464" y2="215" stroke="#A9AFC4" stroke-width="0.5" opacity="0.3"/>
+            <line x1="64" y1="145" x2="464" y2="145" stroke="#A9AFC4" stroke-width="0.5" opacity="0.3"/>
 
             <!-- Bars -->
-            <rect x="100" y="258" width="45" height="22" fill="#3A8F84" rx="3"/>
-            <rect x="165" y="195" width="45" height="85" fill="#3A8F84" rx="3"/>
-            <rect x="230" y="90" width="45" height="190" fill="#E2A23B" rx="3"/>
-            <rect x="295" y="90" width="45" height="190" fill="#E2A23B" rx="3"/>
-            <rect x="360" y="195" width="45" height="85" fill="#3A8F84" rx="3"/>
-            <rect x="425" y="258" width="45" height="22" fill="#3A8F84" rx="3"/>
+            <rect x="80" y="258" width="36" height="22" fill="#3A8F84" rx="3"/>
+            <rect x="132" y="195" width="36" height="85" fill="#3A8F84" rx="3"/>
+            <rect x="184" y="90" width="36" height="190" fill="#E2A23B" rx="3"/>
+            <rect x="236" y="90" width="36" height="190" fill="#E2A23B" rx="3"/>
+            <rect x="288" y="195" width="36" height="85" fill="#3A8F84" rx="3"/>
+            <rect x="340" y="258" width="36" height="22" fill="#3A8F84" rx="3"/>
 
             <!-- X-axis labels (Number of Heads) -->
-            <text x="122" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">0</text>
-            <text x="187" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">1</text>
-            <text x="252" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">2</text>
-            <text x="317" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">3</text>
-            <text x="382" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">4</text>
-            <text x="447" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">5</text>
+            <text x="98" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">0</text>
+            <text x="150" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">1</text>
+            <text x="202" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">2</text>
+            <text x="254" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">3</text>
+            <text x="306" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">4</text>
+            <text x="358" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">5</text>
 
             <!-- Probability labels on bars -->
-            <text x="122" y="295" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">1/32</text>
-            <text x="187" y="260" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">5/32</text>
-            <text x="252" y="75" text-anchor="middle" font-size="10" fill="#ink" font-weight="bold">10/32 ⭐</text>
-            <text x="317" y="75" text-anchor="middle" font-size="10" fill="#ink" font-weight="bold">10/32 ⭐</text>
-            <text x="382" y="260" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">5/32</text>
-            <text x="447" y="295" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">1/32</text>
+            <text x="98" y="295" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">1/32</text>
+            <text x="150" y="260" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">5/32</text>
+            <text x="202" y="75" text-anchor="middle" font-size="9" fill="#161B2E" font-weight="bold">10/32 ⭐</text>
+            <text x="254" y="75" text-anchor="middle" font-size="9" fill="#161B2E" font-weight="bold">10/32 ⭐</text>
+            <text x="306" y="260" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">5/32</text>
+            <text x="358" y="295" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">1/32</text>
 
             <!-- Axis titles -->
-            <text x="560" y="305" font-size="12" fill="#A9AFC4" font-weight="bold">Num</text>
-            <text x="25" y="160" font-size="12" fill="#A9AFC4" font-weight="bold">Probability</text>
+            <text x="450" y="305" font-size="11" fill="#A9AFC4" font-weight="bold">Num</text>
+            <text x="30" y="160" font-size="11" fill="#A9AFC4" font-weight="bold">Prob</text>
 
             <!-- Title and subtitle -->
-            <text x="300" y="25" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">Binomial Probability: n=5, p=0.5</text>
+            <text x="270" y="25" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">Binomial: n=5, p=0.5</text>
 
             <!-- Footer info -->
-            <text x="300" y="365" text-anchor="middle" font-size="10" fill="#A9AFC4">Peak at X=2 and X=3 (31.25% each) • Symmetrical distribution</text>
+            <text x="270" y="318" text-anchor="middle" font-size="9" fill="#A9AFC4">Peak at X=2,3 (31.25% each) • Symmetric</text>
         </svg>`
     },
     {
@@ -429,7 +429,7 @@ const chapters = [
             { q: "Unit vector in direction of a⃗ = (4,−3,0)", a: "|a⃗| = √(16+9) = 5. Unit vector = (4/5, −3/5, 0)" },
             { q: "Find a⃗×b⃗ for a⃗=(1,0,0), b⃗=(0,1,0)", a: "a⃗×b⃗ = (0·0−0·1, 0·0−1·0, 1·1−0·0) = (0, 0, 1) = k̂ direction" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="1"/>
             <line x1="50" y1="250" x2="50" y2="50" stroke="#A9AFC4" stroke-width="1"/>
 
@@ -470,7 +470,7 @@ const chapters = [
             { q: "Direction cosines of line joining (1,2,3) and (4,6,3)", a: "Direction ratios: (3,4,0), magnitude 5. Direction cosines: (3/5, 4/5, 0)" },
             { q: "Distance of (2,3,−5) from plane x+2y−2z−9=0", a: "|2+6+10−9|/√(1+4+4) = 9/3 = 3" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <text x="200" y="30" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">3D Coordinate System</text>
 
             <line x1="100" y1="200" x2="100" y2="80" stroke="#3A8F84" stroke-width="2"/>
@@ -509,7 +509,7 @@ const chapters = [
             { q: "Area bounded by y=x² and y=x", a: "Intersections: x²=x ⟹ x=0 or 1. Between 0 and 1, y=x is above y=x². Area = ∫₀¹(x−x²)dx = [x²/2−x³/3]₀¹ = 1/2−1/3 = 1/6" },
             { q: "Set up integral for area under y=sinx from 0 to π", a: "∫₀^π sinx dx (evaluates to 2)" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="40" y1="250" x2="360" y2="250" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="40" y1="250" x2="40" y2="50" stroke="#A9AFC4" stroke-width="2"/>
 
@@ -539,7 +539,7 @@ const chapters = [
             { q: "C(x)=x³/3−45x²+900x+36. Find MC when x=10", a: "MC = dC/dx = x²−90x+900. At x=10: MC = 100−900+900 = 100" },
             { q: "If AC=2x+5+18/x, find MC", a: "C = x·AC = 2x²+5x+18. MC = dC/dx = 4x+5" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="40" y1="250" x2="360" y2="250" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="40" y1="250" x2="40" y2="30" stroke="#A9AFC4" stroke-width="2"/>
 
@@ -576,7 +576,7 @@ const chapters = [
             { q: "If b_yx=1.2 and b_xy=0.8, find r", a: "r = ±√(1.2×0.8) = ±√0.96 ≈ ±0.98. Positive slopes ⟹ r ≈ 0.98" },
             { q: "What does r=0 tell about regression lines?", a: "Lines are perpendicular — one horizontal, one vertical (no linear relationship)" }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="40" y1="250" x2="360" y2="250" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="40" y1="250" x2="40" y2="50" stroke="#A9AFC4" stroke-width="2"/>
 
@@ -613,7 +613,7 @@ const chapters = [
             { q: "Set up: chairs earn ₹20, tables ₹30. Chair=2hrs, table=3hrs, 12hrs available", a: "Maximise Z=20x+30y subject to 2x+3y≤12, x,y≥0" },
             { q: "Why does optimum always occur at corner?", a: "Linear objective has no interior max/min. Moving in improving direction pushes to boundary, ultimately a corner." }
         ],
-        diagram: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <line x1="40" y1="250" x2="360" y2="250" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="40" y1="250" x2="40" y2="50" stroke="#A9AFC4" stroke-width="2"/>
 
@@ -647,49 +647,47 @@ const chapters = [
             { q: "School Marks: 60, 65, 70, 75, 80. Calculate Variance and Standard Deviation", a: "Mean = 70. Variance = [(60-70)² + (65-70)² + (70-70)² + (75-70)² + (80-70)²]/5 = 250/5 = 50. SD = √50 ≈ 7.07" },
             { q: "Cricket: Batsman scores in last 10 matches: 45, 67, 52, 89, 34, 78, 92, 56, 71, 88. Find Average (Mean)", a: "Sum = 672. Average = 672/10 = 67.2 runs per match" }
         ],
-        diagram: `<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="250" y="25" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">Real-World Statistics Example</text>
-            <text x="250" y="45" text-anchor="middle" font-size="12" fill="#E2A23B">Student Test Scores (Out of 100)</text>
+            <text x="210" y="20" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">Test Score Distribution</text>
+            <text x="210" y="35" text-anchor="middle" font-size="11" fill="#E2A23B">Student Scores</text>
 
             <!-- Axes -->
-            <line x1="60" y1="280" x2="480" y2="280" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="60" y1="80" x2="60" y2="280" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="230" x2="410" y2="230" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="70" x2="50" y2="230" stroke="#A9AFC4" stroke-width="2"/>
 
             <!-- Axis Labels -->
-            <text x="490" y="300" font-size="11" fill="#A9AFC4" font-weight="bold">Score Ranges</text>
-            <text x="30" y="180" font-size="11" fill="#A9AFC4" font-weight="bold">Count</text>
+            <text x="400" y="250" font-size="10" fill="#A9AFC4" font-weight="bold">Scores</text>
+            <text x="25" y="150" font-size="10" fill="#A9AFC4" font-weight="bold">Count</text>
 
             <!-- Bars for score distribution -->
             <!-- 50-60: 2 students -->
-            <rect x="75" y="250" width="40" height="30" fill="#3A8F84" opacity="0.8"/>
-            <text x="95" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">50-60</text>
-            <text x="95" y="330" text-anchor="middle" font-size="10" fill="#E2A23B">2 students</text>
+            <rect x="63" y="205" width="34" height="25" fill="#3A8F84" opacity="0.8"/>
+            <text x="80" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">50-60</text>
+            <text x="80" y="277" text-anchor="middle" font-size="8" fill="#E2A23B">2</text>
 
             <!-- 60-70: 4 students -->
-            <rect x="130" y="210" width="40" height="70" fill="#3A8F84" opacity="0.8"/>
-            <text x="150" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">60-70</text>
-            <text x="150" y="330" text-anchor="middle" font-size="10" fill="#E2A23B">4 students</text>
+            <rect x="111" y="175" width="34" height="55" fill="#3A8F84" opacity="0.8"/>
+            <text x="128" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">60-70</text>
+            <text x="128" y="277" text-anchor="middle" font-size="8" fill="#E2A23B">4</text>
 
             <!-- 70-80: 8 students (MODE) -->
-            <rect x="185" y="110" width="40" height="170" fill="#E2A23B" opacity="0.9"/>
-            <text x="205" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">70-80</text>
-            <text x="205" y="330" text-anchor="middle" font-size="10" fill="#3A8F84" font-weight="bold">8 students ⭐</text>
+            <rect x="159" y="90" width="34" height="140" fill="#E2A23B" opacity="0.9"/>
+            <text x="176" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">70-80</text>
+            <text x="176" y="277" text-anchor="middle" font-size="8" fill="#3A8F84" font-weight="bold">8 ⭐</text>
 
             <!-- 80-90: 5 students -->
-            <rect x="240" y="175" width="40" height="105" fill="#3A8F84" opacity="0.8"/>
-            <text x="260" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">80-90</text>
-            <text x="260" y="330" text-anchor="middle" font-size="10" fill="#E2A23B">5 students</text>
+            <rect x="207" y="144" width="34" height="86" fill="#3A8F84" opacity="0.8"/>
+            <text x="224" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">80-90</text>
+            <text x="224" y="277" text-anchor="middle" font-size="8" fill="#E2A23B">5</text>
 
             <!-- 90-100: 1 student -->
-            <rect x="295" y="265" width="40" height="15" fill="#3A8F84" opacity="0.8"/>
-            <text x="315" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">90-100</text>
-            <text x="315" y="330" text-anchor="middle" font-size="10" fill="#E2A23B">1 student</text>
+            <rect x="255" y="221" width="34" height="9" fill="#3A8F84" opacity="0.8"/>
+            <text x="272" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">90-100</text>
+            <text x="272" y="277" text-anchor="middle" font-size="8" fill="#E2A23B">1</text>
 
-            <!-- Statistics Box -->
-            <rect x="10" y="350" width="480" height="40" fill="#1F2740" stroke="#E2A23B" stroke-width="2" rx="5"/>
-            <text x="20" y="370" font-size="10" fill="#F1ECDD">📊 Statistics: Mean ≈ 73.5 | Median = 75 | Mode = 70-80 range | Most students score between 70-80</text>
-            <text x="20" y="385" font-size="9" fill="#A9AFC4">✓ This data shows the class performs fairly well with concentration around 73-75 marks</text>
+            <!-- Stats summary -->
+            <text x="210" y="55" text-anchor="middle" font-size="10" fill="#A9AFC4">Mean≈73.5 | Median=75 | Mode=70-80 ⭐</text>
         </svg>`
     }
 ];
