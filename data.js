@@ -677,39 +677,42 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🚜 Farm Land Area Between River & Fence</text>
+            <text x="190" y="15" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">🚜 Farm Land Between River & Fence</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">River curve: y=x² | Fence line: y=2x | Find farmable area</text>
+            <text x="190" y="28" text-anchor="middle" font-size="8" fill="#A9AFC4">y=x² (river curve) | y=2x (fence) | Area = ?</text>
 
             <!-- Axes -->
-            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="50" y1="50" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="45" y1="195" x2="355" y2="195" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="45" y1="45" x2="45" y2="195" stroke="#A9AFC4" stroke-width="2"/>
+            <text x="20" y="110" font-size="8" fill="#A9AFC4" font-weight="bold">y</text>
+            <text x="190" y="212" text-anchor="middle" font-size="8" fill="#A9AFC4" font-weight="bold">x</text>
 
-            <!-- Labels -->
-            <text x="20" y="120" font-size="9" fill="#A9AFC4">y</text>
-            <text x="190" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">x</text>
+            <!-- River curve y=x² (curved, smooth) -->
+            <path d="M 50 190 Q 80 160 120 105 Q 150 65 200 35" fill="none" stroke="#3A8F84" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="100" cy="140" r="2" fill="#3A8F84"/>
+            <text x="105" y="135" font-size="9" fill="#3A8F84" font-weight="bold">RIVER: y=x²</text>
 
-            <!-- River curve y=x² -->
-            <path d="M 60 195 Q 90 160 130 110 Q 160 70 200 30" fill="none" stroke="#3A8F84" stroke-width="2.5"/>
-            <text x="120" y="80" font-size="10" fill="#3A8F84" font-weight="bold">y=x²</text>
+            <!-- Fence line y=2x (straight) -->
+            <path d="M 50 190 L 200 35" stroke="#E2A23B" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="140" cy="110" r="2" fill="#E2A23B"/>
+            <text x="150" y="110" font-size="9" fill="#E2A23B" font-weight="bold">FENCE: y=2x</text>
 
-            <!-- Fence line y=2x -->
-            <path d="M 60 195 L 200 30" stroke="#E2A23B" stroke-width="2.5"/>
-            <text x="140" y="150" font-size="10" fill="#E2A23B" font-weight="bold">y=2x</text>
+            <!-- Shaded farmable area (bright green) -->
+            <path d="M 50 190 Q 80 160 120 105 Q 150 65 200 35 L 200 35 L 50 190 Z" fill="#51CF66" opacity="0.3" stroke="#51CF66" stroke-width="1.5"/>
+            <text x="120" y="130" font-size="10" fill="#51CF66" font-weight="bold">FARM AREA</text>
 
-            <!-- Shaded area -->
-            <path d="M 60 195 Q 90 160 130 110 Q 160 70 200 30 L 200 30 L 60 195 Z" fill="#3A8F84" opacity="0.2"/>
+            <!-- Corner points (large, visible) -->
+            <circle cx="50" cy="190" r="4" fill="none" stroke="#E2A23B" stroke-width="2"/>
+            <circle cx="50" cy="190" r="2" fill="#E2A23B"/>
+            <text x="35" y="207" font-size="8" fill="#F1ECDD" font-weight="bold">(0,0)</text>
 
-            <!-- Intersection points -->
-            <circle cx="60" cy="195" r="3" fill="#E2A23B"/>
-            <text x="45" y="208" font-size="9" fill="#F1ECDD">(0,0)</text>
+            <circle cx="200" cy="35" r="4" fill="none" stroke="#E2A23B" stroke-width="2"/>
+            <circle cx="200" cy="35" r="2" fill="#E2A23B"/>
+            <text x="200" y="25" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(2,4)</text>
 
-            <circle cx="200" cy="30" r="3" fill="#E2A23B"/>
-            <text x="205" y="25" font-size="9" fill="#F1ECDD">(2,4)</text>
-
-            <!-- Information Box -->
-            <rect x="15" y="220" width="350" height="37" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <!-- Solution Box -->
+            <rect x="10" y="225" width="360" height="32" fill="#1F2740" stroke="#51CF66" stroke-width="2" rx="3"/>
             <text x="25" y="235" font-size="9" fill="#E2A23B" font-weight="bold">Solution:</text>
             <text x="25" y="250" font-size="9" fill="#A9AFC4">Area = ∫₀²(2x−x²)dx = [x²−x³/3]₀² = 4−8/3 = 4/3 sq units (farmable land)</text>
         </svg>`
@@ -842,43 +845,53 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🪑 Furniture Factory Optimization</text>
+            <text x="190" y="14" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">🪑 Furniture Factory Optimization</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Chairs: ₹20 profit, 2hrs | Tables: ₹30 profit, 3hrs | Budget: 12 hours</text>
+            <text x="190" y="26" text-anchor="middle" font-size="8" fill="#A9AFC4">Profit: Z=20(chairs)+30(tables) | Constraint: 2x+3y≤12 hours</text>
 
             <!-- Axes -->
-            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="50" y1="200" x2="50" y2="50" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="45" y1="195" x2="345" y2="195" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="45" y1="195" x2="45" y2="50" stroke="#A9AFC4" stroke-width="2"/>
+            <text x="15" y="110" font-size="8" fill="#A9AFC4" font-weight="bold">Tables (y)</text>
+            <text x="190" y="212" text-anchor="middle" font-size="8" fill="#A9AFC4" font-weight="bold">Chairs (x)</text>
 
-            <!-- Labels -->
-            <text x="20" y="120" font-size="10" fill="#A9AFC4">Tables</text>
-            <text x="200" y="220" text-anchor="middle" font-size="10" fill="#A9AFC4">Chairs</text>
+            <!-- Constraint line: 2x + 3y = 12 -->
+            <line x1="50" y1="115" x2="195" y2="50" stroke="#3A8F84" stroke-width="2.5" stroke-dasharray="2,2"/>
+            <text x="80" y="75" font-size="8" fill="#3A8F84" font-weight="bold">2x+3y=12</text>
 
-            <!-- Constraints as lines -->
-            <!-- 2x + 3y ≤ 12 (time constraint) -->
-            <line x1="50" y1="120" x2="200" y2="50" stroke="#3A8F84" stroke-width="2" stroke-dasharray="3,3"/>
-            <text x="100" y="65" font-size="9" fill="#3A8F84">2x+3y≤12</text>
+            <!-- Feasible region (bright green) -->
+            <polygon points="50,195 50,115 195,50 195,195" fill="#51CF66" opacity="0.25" stroke="#51CF66" stroke-width="2"/>
+            <text x="120" y="135" font-size="10" fill="#51CF66" font-weight="bold">FEASIBLE</text>
 
-            <!-- Feasible region (shaded) -->
-            <polygon points="50,200 50,120 200,50 200,50" fill="#3A8F84" opacity="0.2"/>
+            <!-- Corner points (large, visible) -->
+            <circle cx="50" cy="195" r="4" fill="none" stroke="#E2A23B" stroke-width="2"/>
+            <circle cx="50" cy="195" r="2" fill="#E2A23B"/>
+            <text x="40" y="212" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(0,0)</text>
+            <text x="40" y="225" text-anchor="middle" font-size="7" fill="#A9AFC4">Z=0</text>
 
-            <!-- Corner points -->
-            <circle cx="50" cy="200" r="5" fill="#E2A23B"/>
-            <text x="35" y="215" font-size="9" fill="#F1ECDD">(0,0)</text>
-            <text x="25" y="228" font-size="9" fill="#A9AFC4">Z=0</text>
+            <circle cx="50" cy="115" r="4" fill="none" stroke="#F39C12" stroke-width="2.5"/>
+            <circle cx="50" cy="115" r="2" fill="#F39C12"/>
+            <text x="30" y="105" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(0,4)</text>
+            <text x="30" y="95" text-anchor="middle" font-size="8" fill="#F39C12" font-weight="bold">Z=120✓</text>
 
-            <circle cx="50" cy="120" r="5" fill="#E2A23B"/>
-            <text x="30" y="110" font-size="9" fill="#F1ECDD">(0,4)</text>
-            <text x="18" y="98" font-size="9" fill="#A9AFC4">Z=120 ⭐</text>
+            <circle cx="195" cy="50" r="4" fill="none" stroke="#F39C12" stroke-width="2.5"/>
+            <circle cx="195" cy="50" r="2" fill="#F39C12"/>
+            <text x="195" y="40" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(6,0)</text>
+            <text x="195" y="30" text-anchor="middle" font-size="8" fill="#F39C12" font-weight="bold">Z=120✓</text>
 
-            <circle cx="200" cy="50" r="5" fill="#E2A23B"/>
-            <text x="205" y="40" font-size="9" fill="#F1ECDD">(6,0)</text>
-            <text x="200" y="25" font-size="9" fill="#A9AFC4">Z=120 ⭐</text>
+            <!-- Objective vector -->
+            <path d="M 70 175 L 130 125" stroke="#FF6B6B" stroke-width="2.5" marker-end="url(#arrowopt)"/>
+            <text x="105" y="160" font-size="8" fill="#FF6B6B" font-weight="bold">Maximize</text>
 
-            <!-- Objective function direction arrow -->
-            <path d="M 80 180 L 150 120" stroke="#danger" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrowdanger)"/>
-            <text x="110" y="170" font-size="9" fill="#danger">Maximize Z=20x+30y</text>
+            <defs>
+                <marker id="arrowopt" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <path d="M 0 0 L 10 3 L 0 6 Z" fill="#FF6B6B"/>
+                </marker>
+            </defs>
+
+            <!-- Result Box -->
+            <rect x="10" y="235" width="360" height="22" fill="#1F2740" stroke="#F39C12" stroke-width="2" rx="3"/>
 
             <!-- Information Box -->
             <rect x="15" y="240" width="350" height="18" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
