@@ -69,15 +69,59 @@ const chapters = [
             { q: "Evaluate: sin⁻¹(1/2) + cos⁻¹(1/2)", a: "Using sin⁻¹x + cos⁻¹x = π/2 for x=1/2: Answer = π/2" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="50" y1="250" x2="50" y2="50" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Title -->
+            <text x="190" y="20" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">y = sin⁻¹(x)</text>
 
-            <path d="M 50 250 Q 150 100 250 50 Q 300 30 350 50" fill="none" stroke="#3A8F84" stroke-width="3"/>
-            <path d="M 50 250 Q 150 100 250 50 Q 300 30 350 50" fill="none" stroke="#E2A23B" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+            <!-- Grid lines -->
+            <line x1="50" y1="120" x2="350" y2="120" stroke="#A9AFC4" stroke-width="0.5" opacity="0.2"/>
+            <line x1="200" y1="50" x2="200" y2="200" stroke="#A9AFC4" stroke-width="0.5" opacity="0.2"/>
 
-            <text x="50" y="270" font-size="12" fill="#F1ECDD">y = sin⁻¹(x)</text>
-            <text x="200" y="30" font-size="12" fill="#3A8F84">Principal Range: [-π/2, π/2]</text>
-            <text x="200" y="280" font-size="10" fill="#A9AFC4">Domain: [-1, 1]</text>
+            <!-- Axes -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="200" y1="50" x2="200" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+
+            <!-- Axis arrows -->
+            <polygon points="350,200 345,197 345,203" fill="#A9AFC4"/>
+            <polygon points="200,50 197,55 203,55" fill="#A9AFC4"/>
+
+            <!-- Axis labels -->
+            <text x="360" y="205" font-size="12" fill="#A9AFC4" font-weight="bold">x</text>
+            <text x="205" y="40" font-size="12" fill="#A9AFC4" font-weight="bold">y</text>
+
+            <!-- X-axis tick marks and labels -->
+            <text x="90" y="220" text-anchor="middle" font-size="10" fill="#A9AFC4">-1</text>
+            <line x1="90" y1="195" x2="90" y2="205" stroke="#A9AFC4" stroke-width="1"/>
+
+            <text x="200" y="220" text-anchor="middle" font-size="10" fill="#A9AFC4">0</text>
+            <line x1="200" y1="195" x2="200" y2="205" stroke="#A9AFC4" stroke-width="1"/>
+
+            <text x="310" y="220" text-anchor="middle" font-size="10" fill="#A9AFC4">1</text>
+            <line x1="310" y1="195" x2="310" y2="205" stroke="#A9AFC4" stroke-width="1"/>
+
+            <!-- Y-axis tick marks and labels -->
+            <text x="180" y="125" text-anchor="end" font-size="10" fill="#A9AFC4">π/2</text>
+            <line x1="195" y1="120" x2="205" y2="120" stroke="#A9AFC4" stroke-width="1"/>
+
+            <text x="180" y="210" text-anchor="end" font-size="10" fill="#A9AFC4">-π/2</text>
+            <line x1="195" y1="200" x2="205" y2="200" stroke="#A9AFC4" stroke-width="1"/>
+
+            <!-- The curve: sin⁻¹(x) -->
+            <path d="M 90 190 Q 110 175 130 160 Q 150 145 170 130 Q 190 115 200 105 Q 210 95 230 80 Q 250 65 270 55 Q 290 50 310 52"
+                  fill="none" stroke="#3A8F84" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- Key points on curve -->
+            <circle cx="90" cy="190" r="4" fill="#E2A23B"/>
+            <circle cx="200" cy="100" r="4" fill="#E2A23B"/>
+            <circle cx="310" cy="52" r="4" fill="#E2A23B"/>
+
+            <!-- Point labels -->
+            <text x="75" y="200" font-size="9" fill="#E2A23B" font-weight="bold">(-1, -π/2)</text>
+            <text x="200" y="35" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">(1, π/2)</text>
+            <text x="215" y="115" font-size="9" fill="#E2A23B" font-weight="bold">(0, 0)</text>
+
+            <!-- Information boxes -->
+            <rect x="10" y="230" width="360" height="28" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="20" y="245" font-size="10" fill="#F1ECDD" font-weight="bold">Domain: [-1, 1]  |  Range: [-π/2, π/2]  |  Strictly Increasing  |  Odd Function</text>
         </svg>`
     },
     {
