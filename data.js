@@ -616,26 +616,40 @@ const chapters = [
             { q: "Distance of (2,3,−5) from plane x+2y−2z−9=0", a: "|2+6+10−9|/√(1+4+4) = 9/3 = 3" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <text x="200" y="30" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">3D Coordinate System</text>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">✈️ Airplane Safety: 3D Geometry</text>
 
-            <line x1="100" y1="200" x2="100" y2="80" stroke="#3A8F84" stroke-width="2"/>
-            <line x1="100" y1="200" x2="200" y2="200" stroke="#3A8F84" stroke-width="2"/>
-            <line x1="100" y1="200" x2="50" y2="240" stroke="#3A8F84" stroke-width="2"/>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Two aircraft at different altitudes: ensure safe separation</text>
 
-            <text x="105" y="75" font-size="12" fill="#3A8F84" font-weight="bold">z</text>
-            <text x="205" y="205" font-size="12" fill="#3A8F84" font-weight="bold">x</text>
-            <text x="35" y="250" font-size="12" fill="#3A8F84" font-weight="bold">y</text>
+            <!-- 3D axes -->
+            <line x1="80" y1="160" x2="80" y2="60" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="80" y1="160" x2="180" y2="160" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="80" y1="160" x2="40" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
-            <circle cx="130" cy="160" r="5" fill="#E2A23B"/>
-            <text x="140" y="165" font-size="12" fill="#F1ECDD">Point P(x,y,z)</text>
+            <!-- Axis labels -->
+            <text x="85" y="55" font-size="11" fill="#A9AFC4" font-weight="bold">Altitude (z)</text>
+            <text x="185" y="165" font-size="11" fill="#A9AFC4" font-weight="bold">East (x)</text>
+            <text x="20" y="210" font-size="11" fill="#A9AFC4" font-weight="bold">North (y)</text>
 
-            <line x1="100" y1="200" x2="130" y2="160" stroke="#E2A23B" stroke-width="2" marker-end="url(#arrowyel)"/>
+            <!-- Airplane A at higher altitude -->
+            <circle cx="120" cy="100" r="6" fill="#E2A23B"/>
+            <text x="130" y="95" font-size="10" fill="#E2A23B" font-weight="bold">✈ A: (3,2,10km)</text>
+            <line x1="80" y1="160" x2="120" y2="100" stroke="#E2A23B" stroke-width="2" stroke-dasharray="2,2"/>
 
-            <defs>
-                <marker id="arrowyel" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-                    <path d="M 0 0 L 10 3 L 0 6 Z" fill="#E2A23B"/>
-                </marker>
-            </defs>
+            <!-- Airplane B at lower altitude -->
+            <circle cx="140" cy="130" r="6" fill="#3A8F84"/>
+            <text x="150" y="125" font-size="10" fill="#3A8F84" font-weight="bold">✈ B: (3,2,8km)</text>
+            <line x1="80" y1="160" x2="140" y2="130" stroke="#3A8F84" stroke-width="2" stroke-dasharray="2,2"/>
+
+            <!-- Vertical separation indicator -->
+            <line x1="145" y1="100" x2="145" y2="130" stroke="#danger" stroke-width="2"/>
+            <text x="165" y="118" font-size="9" fill="#danger" font-weight="bold">Δz=2km (Safe!)</text>
+
+            <!-- Information Box -->
+            <rect x="15" y="215" width="350" height="42" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="25" y="232" font-size="9" fill="#E2A23B" font-weight="bold">Distance Between Aircraft:</text>
+            <text x="25" y="248" font-size="9" fill="#A9AFC4">d = √[(3-3)² + (2-2)² + (10-8)²] = √4 = 2km ✓ Safe separation maintained</text>
         </svg>`
     },
     {
@@ -655,17 +669,42 @@ const chapters = [
             { q: "Set up integral for area under y=sinx from 0 to π", a: "∫₀^π sinx dx (evaluates to 2)" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="40" y1="250" x2="360" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="40" y1="250" x2="40" y2="50" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🚜 Farm Land Area Between River & Fence</text>
 
-            <path d="M 80 220 Q 120 140 160 100 Q 200 80 240 100 Q 280 140 320 220" fill="none" stroke="#3A8F84" stroke-width="2"/>
-            <path d="M 80 220 L 320 80" stroke="#E2A23B" stroke-width="2"/>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">River curve: y=x² | Fence line: y=2x | Find farmable area</text>
 
-            <path d="M 80 220 L 160 100 L 320 80 Z" fill="#3A8F84" opacity="0.3"/>
+            <!-- Axes -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="50" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
-            <text x="200" y="35" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">Area between curves</text>
-            <text x="150" y="270" font-size="11" fill="#F1ECDD">Upper curve</text>
-            <text x="300" y="270" font-size="11" fill="#E2A23B">Lower curve</text>
+            <!-- Labels -->
+            <text x="20" y="120" font-size="9" fill="#A9AFC4">y</text>
+            <text x="190" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">x</text>
+
+            <!-- River curve y=x² -->
+            <path d="M 60 195 Q 90 160 130 110 Q 160 70 200 30" fill="none" stroke="#3A8F84" stroke-width="2.5"/>
+            <text x="120" y="80" font-size="10" fill="#3A8F84" font-weight="bold">y=x²</text>
+
+            <!-- Fence line y=2x -->
+            <path d="M 60 195 L 200 30" stroke="#E2A23B" stroke-width="2.5"/>
+            <text x="140" y="150" font-size="10" fill="#E2A23B" font-weight="bold">y=2x</text>
+
+            <!-- Shaded area -->
+            <path d="M 60 195 Q 90 160 130 110 Q 160 70 200 30 L 200 30 L 60 195 Z" fill="#3A8F84" opacity="0.2"/>
+
+            <!-- Intersection points -->
+            <circle cx="60" cy="195" r="3" fill="#E2A23B"/>
+            <text x="45" y="208" font-size="9" fill="#F1ECDD">(0,0)</text>
+
+            <circle cx="200" cy="30" r="3" fill="#E2A23B"/>
+            <text x="205" y="25" font-size="9" fill="#F1ECDD">(2,4)</text>
+
+            <!-- Information Box -->
+            <rect x="15" y="220" width="350" height="37" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="25" y="235" font-size="9" fill="#E2A23B" font-weight="bold">Solution:</text>
+            <text x="25" y="250" font-size="9" fill="#A9AFC4">Area = ∫₀²(2x−x²)dx = [x²−x³/3]₀² = 4−8/3 = 4/3 sq units (farmable land)</text>
         </svg>`
     },
     {
@@ -685,24 +724,44 @@ const chapters = [
             { q: "If AC=2x+5+18/x, find MC", a: "C = x·AC = 2x²+5x+18. MC = dC/dx = 4x+5" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="40" y1="250" x2="360" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="40" y1="250" x2="40" y2="30" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">💼 Factory Break-Even & Profit Analysis</text>
 
-            <line x1="80" y1="220" x2="320" y2="80" stroke="#3A8F84" stroke-width="2.5" marker-end="url(#arrowrev)"/>
-            <path d="M 100 210 Q 160 120 240 100 Q 300 110 340 140" fill="none" stroke="#E2A23B" stroke-width="2.5"/>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Cost = 500 + 20x | Revenue = 50x | When is profit maximum?</text>
 
-            <circle cx="200" cy="130" r="5" fill="#danger" fill-opacity="0.7"/>
+            <!-- Axes -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="50" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
-            <text x="65" y="270" font-size="11" fill="#F1ECDD">Quantity</text>
-            <text x="15" y="40" font-size="11" fill="#F1ECDD">₹ Value</text>
-            <text x="200" y="20" text-anchor="middle" font-size="12" fill="#F1ECDD">Cost vs Revenue</text>
-            <text x="220" y="135" font-size="11" fill="#danger" font-weight="bold">Break-even</text>
+            <!-- Labels -->
+            <text x="15" y="120" font-size="9" fill="#A9AFC4">₹</text>
+            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">Units (x)</text>
 
-            <defs>
-                <marker id="arrowrev" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-                    <path d="M 0 0 L 10 3 L 0 6 Z" fill="#3A8F84"/>
-                </marker>
-            </defs>
+            <!-- Cost line: C = 500 + 20x (linear, starts high) -->
+            <line x1="60" y1="120" x2="340" y2="80" stroke="#3A8F84" stroke-width="2.5"/>
+            <text x="100" y="105" font-size="9" fill="#3A8F84" font-weight="bold">Cost: C = 500 + 20x</text>
+
+            <!-- Revenue line: R = 50x (linear, steeper) -->
+            <line x1="50" y1="200" x2="340" y2="50" stroke="#E2A23B" stroke-width="2.5"/>
+            <text x="250" y="100" font-size="9" fill="#E2A23B" font-weight="bold">Revenue: R = 50x</text>
+
+            <!-- Break-even point -->
+            <circle cx="200" cy="133" r="5" fill="#danger"/>
+            <line x1="200" y1="133" x2="200" y2="200" stroke="#danger" stroke-width="1" stroke-dasharray="2,2"/>
+            <text x="200" y="220" text-anchor="middle" font-size="10" fill="#danger" font-weight="bold">Break-even: x≈16.7 units</text>
+
+            <!-- Profit region (shaded) -->
+            <path d="M 200 133 L 340 50 L 340 80 L 200 120 Z" fill="#3A8F84" opacity="0.15"/>
+            <text x="280" y="85" font-size="9" fill="#3A8F84" font-weight="bold">Profit</text>
+
+            <!-- Loss region (shaded) -->
+            <path d="M 50 200 L 200 133 L 200 120 L 60 120 Z" fill="#danger" opacity="0.1"/>
+            <text x="100" y="155" font-size="9" fill="#danger" font-weight="bold">Loss</text>
+
+            <!-- Key info -->
+            <rect x="15" y="240" width="350" height="18" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
+            <text x="25" y="253" font-size="9" fill="#A9AFC4">Profit = Revenue − Cost = (50−20)x − 500 = 30x − 500 | Max when x is highest (produce more!)</text>
         </svg>`
     },
     {
@@ -722,24 +781,38 @@ const chapters = [
             { q: "What does r=0 tell about regression lines?", a: "Lines are perpendicular — one horizontal, one vertical (no linear relationship)" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="40" y1="250" x2="360" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="40" y1="250" x2="40" y2="50" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">📚 Study Hours vs Exam Marks</text>
 
-            <g opacity="0.5">
-                <circle cx="80" cy="220" r="4" fill="#E2A23B"/>
-                <circle cx="120" cy="180" r="4" fill="#E2A23B"/>
-                <circle cx="160" cy="160" r="4" fill="#E2A23B"/>
-                <circle cx="200" cy="130" r="4" fill="#E2A23B"/>
-                <circle cx="240" cy="100" r="4" fill="#E2A23B"/>
-                <circle cx="280" cy="80" r="4" fill="#E2A23B"/>
-                <circle cx="320" cy="50" r="4" fill="#E2A23B"/>
-            </g>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Can we predict exam marks from study hours? (r=0.85 strong correlation)</text>
 
-            <line x1="60" y1="240" x2="340" y2="60" stroke="#3A8F84" stroke-width="2.5"/>
+            <!-- Axes -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="50" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
-            <text x="200" y="35" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">Best-fit regression line</text>
-            <text x="50" y="270" font-size="11" fill="#F1ECDD">x (Independent)</text>
-            <text x="20" y="50" font-size="11" fill="#F1ECDD">y (Dependent)</text>
+            <!-- Labels -->
+            <text x="15" y="120" font-size="9" fill="#A9AFC4">Marks</text>
+            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">Study Hours</text>
+
+            <!-- Data points (actual student data) -->
+            <circle cx="75" cy="185" r="3" fill="#E2A23B" opacity="0.7"/>
+            <circle cx="105" cy="160" r="3" fill="#E2A23B" opacity="0.7"/>
+            <circle cx="135" cy="150" r="3" fill="#E2A23B" opacity="0.7"/>
+            <circle cx="165" cy="125" r="3" fill="#E2A23B" opacity="0.7"/>
+            <circle cx="195" cy="110" r="3" fill="#E2A23B" opacity="0.7"/>
+            <circle cx="225" cy="95" r="3" fill="#E2A23B" opacity="0.7"/>
+            <circle cx="255" cy="75" r="3" fill="#E2A23B" opacity="0.7"/>
+            <circle cx="285" cy="60" r="3" fill="#E2A23B" opacity="0.7"/>
+            <circle cx="315" cy="50" r="3" fill="#E2A23B" opacity="0.7"/>
+
+            <!-- Best-fit regression line -->
+            <line x1="60" y1="190" x2="330" y2="45" stroke="#3A8F84" stroke-width="3"/>
+            <text x="270" y="80" font-size="10" fill="#3A8F84" font-weight="bold">y = 5 + 8.5x</text>
+
+            <!-- Information Box -->
+            <rect x="15" y="230" width="350" height="27" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="25" y="245" font-size="9" fill="#E2A23B" font-weight="bold">Correlation r = 0.85 (Strong!)  |  r² = 0.72  →  72% of mark variation explained by study time</text>
         </svg>`
     },
     {
@@ -759,19 +832,54 @@ const chapters = [
             { q: "Why does optimum always occur at corner?", a: "Linear objective has no interior max/min. Moving in improving direction pushes to boundary, ultimately a corner." }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="40" y1="250" x2="360" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="40" y1="250" x2="40" y2="50" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🪑 Furniture Factory Optimization</text>
 
-            <polygon points="50,250 50,120 200,50 320,180 320,250" fill="#3A8F84" opacity="0.3" stroke="#3A8F84" stroke-width="2"/>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Chairs: ₹20 profit, 2hrs | Tables: ₹30 profit, 3hrs | Budget: 12 hours</text>
 
-            <circle cx="50" cy="250" r="6" fill="#E2A23B"/>
-            <circle cx="50" cy="120" r="6" fill="#E2A23B"/>
-            <circle cx="200" cy="50" r="6" fill="#E2A23B"/>
-            <circle cx="320" cy="180" r="6" fill="#E2A23B"/>
-            <circle cx="320" cy="250" r="6" fill="#E2A23B"/>
+            <!-- Axes -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="200" x2="50" y2="50" stroke="#A9AFC4" stroke-width="2"/>
 
-            <text x="200" y="35" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">Feasible Region</text>
-            <text x="200" y="280" text-anchor="middle" font-size="11" fill="#A9AFC4">Optimal solution at corner point</text>
+            <!-- Labels -->
+            <text x="20" y="120" font-size="10" fill="#A9AFC4">Tables</text>
+            <text x="200" y="220" text-anchor="middle" font-size="10" fill="#A9AFC4">Chairs</text>
+
+            <!-- Constraints as lines -->
+            <!-- 2x + 3y ≤ 12 (time constraint) -->
+            <line x1="50" y1="120" x2="200" y2="50" stroke="#3A8F84" stroke-width="2" stroke-dasharray="3,3"/>
+            <text x="100" y="65" font-size="9" fill="#3A8F84">2x+3y≤12</text>
+
+            <!-- Feasible region (shaded) -->
+            <polygon points="50,200 50,120 200,50 200,50" fill="#3A8F84" opacity="0.2"/>
+
+            <!-- Corner points -->
+            <circle cx="50" cy="200" r="5" fill="#E2A23B"/>
+            <text x="35" y="215" font-size="9" fill="#F1ECDD">(0,0)</text>
+            <text x="25" y="228" font-size="9" fill="#A9AFC4">Z=0</text>
+
+            <circle cx="50" cy="120" r="5" fill="#E2A23B"/>
+            <text x="30" y="110" font-size="9" fill="#F1ECDD">(0,4)</text>
+            <text x="18" y="98" font-size="9" fill="#A9AFC4">Z=120 ⭐</text>
+
+            <circle cx="200" cy="50" r="5" fill="#E2A23B"/>
+            <text x="205" y="40" font-size="9" fill="#F1ECDD">(6,0)</text>
+            <text x="200" y="25" font-size="9" fill="#A9AFC4">Z=120 ⭐</text>
+
+            <!-- Objective function direction arrow -->
+            <path d="M 80 180 L 150 120" stroke="#danger" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrowdanger)"/>
+            <text x="110" y="170" font-size="9" fill="#danger">Maximize Z=20x+30y</text>
+
+            <!-- Information Box -->
+            <rect x="15" y="240" width="350" height="18" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
+            <text x="25" y="253" font-size="9" fill="#A9AFC4">Optimal: Make 0 chairs + 4 tables = ₹120 profit OR 6 chairs + 0 tables = ₹120 profit (both corner points optimal)</text>
+
+            <defs>
+                <marker id="arrowdanger" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <path d="M 0 0 L 10 3 L 0 6 Z" fill="#danger"/>
+                </marker>
+            </defs>
         </svg>`
     },
     {
