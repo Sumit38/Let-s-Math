@@ -206,27 +206,31 @@ const chapters = [
             { q: "Explain why det with two identical rows equals zero", a: "Swapping identical rows flips the sign: det = −det, so 2·det = 0, thus det = 0" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <text x="200" y="30" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">For a 2×2 Matrix:</text>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">📐 Determinant = Area (Surveyor's Tool)</text>
 
-            <g transform="translate(80, 50)">
-                <text x="0" y="0" font-size="12" fill="#F1ECDD">|</text>
-                <text x="10" y="0" font-size="12" fill="#E2A23B">a  b</text>
-                <text x="10" y="25" font-size="12" fill="#E2A23B">c  d</text>
-                <text x="50" y="12" font-size="12" fill="#F1ECDD">|</text>
-            </g>
+            <!-- What is Determinant -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">A single number that tells if matrix can be inverted & area it creates</text>
 
-            <text x="130" y="100" font-size="14" fill="#F1ECDD" font-weight="bold">=</text>
+            <!-- Formula Box -->
+            <rect x="15" y="45" width="350" height="55" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="30" y="62" font-size="10" fill="#E2A23B" font-weight="bold">For 2×2 Matrix:</text>
+            <text x="40" y="82" font-size="12" fill="#F1ECDD">det = ad − bc  (multiply diagonals, subtract)</text>
+            <text x="40" y="95" font-size="9" fill="#A9AFC4">This formula ALWAYS works for 2×2 matrices</text>
 
-            <text x="160" y="100" font-size="16" fill="#3A8F84" font-weight="bold">ad − bc</text>
+            <!-- Real Example with calculation -->
+            <rect x="15" y="110" width="350" height="95" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
+            <text x="30" y="128" font-size="10" fill="#3A8F84" font-weight="bold">🏞️ Real-World: Triangle Area Calculation</text>
 
-            <path d="M 100 60 L 140 85" stroke="#3A8F84" stroke-width="2" stroke-dasharray="3,3"/>
-            <path d="M 140 60 L 100 85" stroke="#E2A23B" stroke-width="2" stroke-dasharray="3,3"/>
+            <text x="30" y="145" font-size="9" fill="#F1ECDD">Problem: Surveyor finds area of land with corners at (0,0), (2,1), (4,3)</text>
+            <text x="30" y="160" font-size="9" fill="#F1ECDD">Matrix from coordinates:</text>
+            <text x="50" y="175" font-size="11" fill="#E2A23B" font-weight="bold">| 2  1 |     det = (2×3) − (1×4) = 6 − 4 = 2</text>
+            <text x="50" y="190" font-size="11" fill="#E2A23B" font-weight="bold">| 4  3 |     Area = |2|/2 = 1 square unit ✓</text>
 
-            <text x="200" y="200" text-anchor="middle" font-size="12" fill="#F1ECDD">Example: |2 3; 4 1|</text>
-            <text x="200" y="225" text-anchor="middle" font-size="12" fill="#A9AFC4">= (2×1) − (3×4) = 2 − 12 = −10</text>
-
-            <path d="M 180 160 L 200 180" stroke="#3A8F84" stroke-width="2" stroke-dasharray="3,3"/>
-            <path d="M 220 160 L 200 180" stroke="#E2A23B" stroke-width="2" stroke-dasharray="3,3"/>
+            <!-- Key Points -->
+            <rect x="15" y="215" width="350" height="42" fill="#1F2740" stroke="#danger" stroke-width="1" rx="3"/>
+            <text x="30" y="230" font-size="10" fill="#danger" font-weight="bold">⚠️ Critical: If det = 0, matrix cannot be inverted!</text>
+            <text x="30" y="245" font-size="9" fill="#A9AFC4">Means: determinant = 0 → points are collinear → no unique solution exists</text>
         </svg>`
     },
     {
@@ -246,20 +250,39 @@ const chapters = [
             { q: "Is f(x) = |x| differentiable at x = 0?", a: "LHD = −1, RHD = +1. Since LHD ≠ RHD, not differentiable at 0 (but continuous)" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="1"/>
-            <line x1="50" y1="50" x2="50" y2="250" stroke="#A9AFC4" stroke-width="1"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🛣️ Road Design: Continuity vs Differentiability</text>
 
-            <path d="M 50 200 Q 120 80 200 150 Q 280 200 350 100" fill="none" stroke="#3A8F84" stroke-width="3"/>
+            <!-- Explanation -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Continuous = no jumps/breaks | Differentiable = no sharp corners</text>
 
-            <circle cx="200" cy="150" r="4" fill="#E2A23B"/>
-            <text x="200" y="170" text-anchor="middle" font-size="11" fill="#F1ECDD">Differentiable</text>
-            <text x="200" y="185" text-anchor="middle" font-size="10" fill="#A9AFC4">(smooth curve)</text>
+            <!-- Axis labels -->
+            <text x="25" y="120" font-size="10" fill="#A9AFC4">Height</text>
+            <text x="190" y="250" text-anchor="middle" font-size="10" fill="#A9AFC4">Distance →</text>
 
-            <line x1="100" y1="250" x2="100" y2="100" stroke="#3A8F84" stroke-width="2"/>
-            <line x1="100" y1="100" x2="100" y2="50" stroke="#3A8F84" stroke-width="2"/>
-            <circle cx="100" cy="100" r="4" fill="#E2A23B"/>
-            <text x="100" y="20" text-anchor="middle" font-size="11" fill="#F1ECDD">Continuous</text>
-            <text x="100" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">(corner)</text>
+            <!-- Grid -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="50" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+
+            <!-- Left: Differentiable (smooth) -->
+            <text x="110" y="55" font-size="11" fill="#3A8F84" font-weight="bold">✓ Differentiable</text>
+            <path d="M 60 195 Q 100 100 140 195" fill="none" stroke="#3A8F84" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="100" cy="140" r="3" fill="#E2A23B"/>
+            <text x="100" y="165" text-anchor="middle" font-size="9" fill="#F1ECDD">Smooth curve</text>
+            <text x="100" y="178" text-anchor="middle" font-size="8" fill="#A9AFC4">Safe road: no jerks</text>
+
+            <!-- Right: Continuous but not differentiable (corner) -->
+            <text x="260" y="55" font-size="11" fill="#danger" font-weight="bold">⚠️ Continuous only</text>
+            <line x1="220" y1="195" x2="260" y2="100" stroke="#danger" stroke-width="3"/>
+            <line x1="260" y1="100" x2="300" y2="195" stroke="#danger" stroke-width="3"/>
+            <circle cx="260" cy="100" r="3" fill="#E2A23B"/>
+            <text x="260" y="125" text-anchor="middle" font-size="9" fill="#F1ECDD">Sharp corner</text>
+            <text x="260" y="138" text-anchor="middle" font-size="8" fill="#A9AFC4">Dangerous: abrupt turn</text>
+
+            <!-- Key Concept Box -->
+            <rect x="15" y="215" width="350" height="42" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="30" y="232" font-size="10" fill="#E2A23B" font-weight="bold">Key Rule: Differentiable ⟹ Continuous</text>
+            <text x="30" y="248" font-size="9" fill="#A9AFC4">But Continuous ⇏ Differentiable (corners exist at continuous points!)</text>
         </svg>`
     },
     {
@@ -279,20 +302,34 @@ const chapters = [
             { q: "Box with volume 4096 cm³, minimize surface area", a: "V=x²h=4096⟹h=4096/x². S=2x²+4xh=2x²+16384/x. dS/dx=4x−16384/x²=0⟹x=16. Cube 16×16×16" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="30" y1="250" x2="370" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="30" y1="250" x2="30" y2="30" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">💰 Factory Profit Optimization</text>
 
-            <path d="M 50 200 Q 100 100 150 80 Q 200 100 250 200 Q 300 150 350 100" fill="none" stroke="#3A8F84" stroke-width="3"/>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Profit = 100x − x²  (where x = units produced)</text>
 
-            <line x1="150" y1="80" x2="150" y2="250" stroke="#E2A23B" stroke-width="1" stroke-dasharray="3,3"/>
-            <circle cx="150" cy="80" r="5" fill="#E2A23B"/>
-            <text x="150" y="270" text-anchor="middle" font-size="11" fill="#F1ECDD">f'(x)=0</text>
-            <text x="150" y="285" text-anchor="middle" font-size="10" fill="#A9AFC4">Maximum</text>
+            <!-- Axes -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="50" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
-            <line x1="250" y1="200" x2="250" y2="250" stroke="#3A8F84" stroke-width="1" stroke-dasharray="3,3"/>
-            <circle cx="250" cy="200" r="5" fill="#3A8F84"/>
-            <text x="250" y="270" text-anchor="middle" font-size="11" fill="#F1ECDD">f'(x)=0</text>
-            <text x="250" y="285" text-anchor="middle" font-size="10" fill="#A9AFC4">Minimum</text>
+            <!-- Labels -->
+            <text x="20" y="100" font-size="9" fill="#A9AFC4">Profit</text>
+            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">Units (x)</text>
+
+            <!-- Profit curve: parabola opening down -->
+            <path d="M 70 195 Q 120 120 160 90 Q 200 80 240 90 Q 280 120 330 195" fill="none" stroke="#3A8F84" stroke-width="3"/>
+
+            <!-- Maximum point -->
+            <circle cx="200" cy="80" r="5" fill="#E2A23B"/>
+            <line x1="200" y1="80" x2="200" y2="200" stroke="#E2A23B" stroke-width="2" stroke-dasharray="3,3"/>
+
+            <!-- Labels for max -->
+            <text x="200" y="65" text-anchor="middle" font-size="10" fill="#E2A23B" font-weight="bold">Maximum Profit</text>
+            <text x="200" y="225" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">x = 50 units</text>
+
+            <!-- Information box -->
+            <rect x="15" y="240" width="350" height="18" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
+            <text x="25" y="253" font-size="9" fill="#F1ECDD">📊 Set f'(x) = 0 to find maximum: 100 − 2x = 0 → x = 50 units → Profit = ₹2500 max</text>
         </svg>`
     },
     {
@@ -312,30 +349,30 @@ const chapters = [
             { q: "Evaluate: ∫sec²x/(1+tan²x) dx", a: "Since 1+tan²x = sec²x, integrand = 1. ∫1 dx = x + C" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <text x="50" y="40" font-size="14" fill="#F1ECDD" font-weight="bold">Differentiation ⟺ Integration</text>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🚗 Velocity → Distance (Real-World)</text>
 
-            <g transform="translate(50, 80)">
-                <text x="0" y="0" font-size="12" fill="#E2A23B" font-weight="bold">f(x)</text>
-                <text x="0" y="40" font-size="12" fill="#3A8F84" font-weight="bold">F(x) + C</text>
-                <path d="M 30 10 L 60 10" stroke="#E2A23B" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <path d="M 60 30 L 30 30" stroke="#3A8F84" stroke-width="2" marker-end="url(#arrowhead2)"/>
-                <text x="70" y="15" font-size="11" fill="#E2A23B">Differentiate</text>
-                <text x="70" y="35" font-size="11" fill="#3A8F84">Integrate</text>
-            </g>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Car velocity: v(t) = 2t + 3 m/s | Find: distance traveled (antiderivative)</text>
 
-            <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10 Z" fill="#E2A23B"/>
-                </marker>
-                <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10 Z" fill="#3A8F84"/>
-                </marker>
-            </defs>
+            <!-- The relationship -->
+            <rect x="15" y="45" width="350" height="50" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="30" y="62" font-size="10" fill="#E2A23B" font-weight="bold">Why Integration?</text>
+            <text x="30" y="78" font-size="9" fill="#F1ECDD">d(distance)/dt = velocity  →  distance = ∫velocity dt</text>
+            <text x="30" y="92" font-size="9" fill="#A9AFC4">Integration UNDOES differentiation (finds antiderivative)</text>
 
-            <text x="200" y="120" font-size="13" fill="#F1ECDD">∫sin(x) dx = −cos(x) + C</text>
-            <text x="200" y="150" font-size="13" fill="#F1ECDD">∫cos(x) dx = sin(x) + C</text>
-            <text x="200" y="180" font-size="13" fill="#F1ECDD">∫eˣ dx = eˣ + C</text>
-            <text x="200" y="210" font-size="13" fill="#F1ECDD">∫1/x dx = ln|x| + C</text>
+            <!-- Solution -->
+            <rect x="15" y="105" width="350" height="110" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
+            <text x="30" y="122" font-size="10" fill="#3A8F84" font-weight="bold">Solution:</text>
+
+            <text x="30" y="140" font-size="10" fill="#F1ECDD">Given: v(t) = 2t + 3</text>
+            <text x="30" y="158" font-size="10" fill="#F1ECDD">Distance = ∫(2t + 3) dt = t² + 3t + C</text>
+            <text x="30" y="176" font-size="10" fill="#F1ECDD">The '+C' = initial distance (constant of integration)</text>
+            <text x="30" y="194" font-size="10" fill="#E2A23B" font-weight="bold">If started at position 0: C=0 → distance = t² + 3t meters</text>
+            <text x="30" y="209" font-size="9" fill="#A9AFC4">Example: At t=5 seconds → distance = 25 + 15 = 40 meters</text>
+
+            <!-- Key formulas -->
+            <text x="190" y="240" text-anchor="middle" font-size="9" fill="#A9AFC4">Key: ∫sin(x)dx = −cos(x)+C | ∫cos(x)dx = sin(x)+C | ∫eˣdx = eˣ+C</text>
         </svg>`
     },
     {
@@ -355,26 +392,32 @@ const chapters = [
             { q: "Evaluate: ∫₀^(π/2) sin²x dx", a: "Using sin²x = (1−cos2x)/2: ∫₀^(π/2) (1−cos2x)/2 dx = [x/2 − sin2x/4]₀^(π/2) = π/4" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="50" y1="50" x2="50" y2="250" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">📏 Definite Integrals = Area Under Curve</text>
 
-            <path d="M 80 200 Q 140 100 200 80 Q 260 100 320 200" fill="url(#grad)" opacity="0.6"/>
-            <path d="M 80 200 Q 140 100 200 80 Q 260 100 320 200" fill="none" stroke="#3A8F84" stroke-width="3"/>
+            <!-- Explanation -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Key Difference: Definite has LIMITS (a to b) → gives ONE number (area)</text>
 
-            <line x1="80" y1="250" x2="80" y2="200" stroke="#E2A23B" stroke-width="2" stroke-dasharray="3,3"/>
-            <line x1="320" y1="250" x2="320" y2="200" stroke="#E2A23B" stroke-width="2" stroke-dasharray="3,3"/>
+            <!-- Graph showing area -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="60" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
-            <text x="80" y="270" text-anchor="middle" font-size="12" fill="#F1ECDD">a</text>
-            <text x="320" y="270" text-anchor="middle" font-size="12" fill="#F1ECDD">b</text>
+            <!-- Curve with shaded area -->
+            <path d="M 80 185 Q 120 120 160 100 Q 200 90 240 100 Q 280 120 320 185" fill="#3A8F84" opacity="0.25"/>
+            <path d="M 80 185 Q 120 120 160 100 Q 200 90 240 100 Q 280 120 320 185" fill="none" stroke="#3A8F84" stroke-width="3"/>
 
-            <text x="200" y="40" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">∫ₐᵇ f(x) dx = Area</text>
+            <!-- Vertical limits -->
+            <line x1="80" y1="200" x2="80" y2="185" stroke="#E2A23B" stroke-width="2"/>
+            <line x1="320" y1="200" x2="320" y2="185" stroke="#E2A23B" stroke-width="2"/>
 
-            <defs>
-                <linearGradient id="grad">
-                    <stop offset="0%" style="stop-color:#3A8F84;stop-opacity:0.3" />
-                    <stop offset="100%" style="stop-color:#E2A23B;stop-opacity:0.3" />
-                </linearGradient>
-            </defs>
+            <!-- Labels -->
+            <text x="80" y="220" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">x=a</text>
+            <text x="320" y="220" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">x=b</text>
+            <text x="190" y="50" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">∫ₐᵇ f(x) dx</text>
+
+            <!-- Information Box -->
+            <rect x="15" y="235" width="350" height="22" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
+            <text x="25" y="250" font-size="9" fill="#F1ECDD">Example: ∫₀⁵(2t+3)dt = [t²+3t]₀⁵ = (25+15) − 0 = 40 meters traveled ✓</text>
         </svg>`
     },
     {
@@ -394,15 +437,37 @@ const chapters = [
             { q: "Order and degree of (d²y/dx²)³ + dy/dx = x", a: "Order = 2 (highest derivative is d²y/dx²). Degree = 3 (power of d²y/dx²)" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="50" y1="50" x2="50" y2="250" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">☕ Cooling Coffee (Newton's Law)</text>
 
-            <path d="M 60 240 Q 100 150 150 100 Q 180 80 200 80" fill="none" stroke="#E2A23B" stroke-width="2"/>
-            <path d="M 60 230 Q 110 140 160 90 Q 190 70 210 70" fill="none" stroke="#3A8F84" stroke-width="2"/>
-            <path d="M 60 220 Q 120 130 170 80 Q 200 60 220 60" fill="none" stroke="#teal" stroke-width="2" opacity="0.7"/>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Room temp: 25°C | Coffee initial: 95°C | Cooling rate: dT/dt = -k(T-25)</text>
 
-            <text x="200" y="30" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">General Solution: y = f(x, C)</text>
-            <text x="200" y="280" text-anchor="middle" font-size="11" fill="#A9AFC4">Family of curves with different constants C</text>
+            <!-- Axes -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="60" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+
+            <!-- Labels -->
+            <text x="20" y="120" font-size="9" fill="#A9AFC4">Temp (°C)</text>
+            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">Time →</text>
+
+            <!-- Solution curves for different k values -->
+            <path d="M 60 80 Q 120 100 180 150 Q 220 180 350 198" fill="none" stroke="#E2A23B" stroke-width="2.5"/>
+            <path d="M 60 100 Q 110 130 170 170 Q 210 190 350 199" fill="none" stroke="#3A8F84" stroke-width="2.5"/>
+            <path d="M 60 130 Q 100 155 160 185 Q 200 198 350 199.5" fill="none" stroke="#teal" stroke-width="2.5"/>
+
+            <!-- Horizontal asymptote (room temp) -->
+            <line x1="50" y1="200" x2="350" y2="200" stroke="#danger" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="40" y="215" font-size="9" fill="#danger">Room: 25°C</text>
+
+            <!-- Legend -->
+            <text x="180" y="90" font-size="9" fill="#E2A23B" font-weight="bold">k=0.1</text>
+            <text x="180" y="135" font-size="9" fill="#3A8F84" font-weight="bold">k=0.2</text>
+            <text x="180" y="180" font-size="9" fill="#teal" font-weight="bold">k=0.4</text>
+
+            <!-- Key info -->
+            <rect x="15" y="235" width="350" height="22" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
+            <text x="25" y="250" font-size="9" fill="#F1ECDD">Solution: T(t) = 25 + 70e^(-kt) | Larger k = faster cooling | Approaches room temp</text>
         </svg>`
     },
     {
@@ -491,25 +556,44 @@ const chapters = [
             { q: "Find a⃗×b⃗ for a⃗=(1,0,0), b⃗=(0,1,0)", a: "a⃗×b⃗ = (0·0−0·1, 0·0−1·0, 1·1−0·0) = (0, 0, 1) = k̂ direction" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <line x1="50" y1="250" x2="350" y2="250" stroke="#A9AFC4" stroke-width="1"/>
-            <line x1="50" y1="250" x2="50" y2="50" stroke="#A9AFC4" stroke-width="1"/>
+            <!-- Title -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🧭 GPS Navigation with Vectors</text>
 
-            <line x1="50" y1="250" x2="220" y2="120" stroke="#3A8F84" stroke-width="3" marker-end="url(#arrowblue)"/>
-            <line x1="50" y1="250" x2="280" y2="160" stroke="#E2A23B" stroke-width="3" marker-end="url(#arrowyellow)"/>
+            <!-- Problem -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Displacement vectors show movement in 2D space</text>
 
-            <text x="135" y="200" font-size="12" fill="#3A8F84" font-weight="bold">a⃗</text>
-            <text x="180" y="290" font-size="12" fill="#E2A23B" font-weight="bold">b⃗</text>
+            <!-- Coordinate axes -->
+            <line x1="60" y1="200" x2="340" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="60" y1="200" x2="60" y2="60" stroke="#A9AFC4" stroke-width="2"/>
 
-            <path d="M 100 220 A 60 60 0 0 0 140 180" fill="none" stroke="#text-muted" stroke-width="1" stroke-dasharray="3,3"/>
-            <text x="105" y="210" font-size="11" fill="#A9AFC4">θ</text>
+            <!-- Labels -->
+            <text x="350" y="205" font-size="10" fill="#A9AFC4">East</text>
+            <text x="50" y="50" font-size="10" fill="#A9AFC4">North</text>
 
-            <text x="200" y="40" text-anchor="middle" font-size="12" fill="#F1ECDD">cos(θ) = (a⃗·b⃗)/(|a⃗||b⃗|)</text>
+            <!-- Vector A: 3 units East, 4 units North -->
+            <line x1="60" y1="200" x2="150" y2="120" stroke="#3A8F84" stroke-width="3" marker-end="url(#arrowA)"/>
+            <text x="130" y="145" font-size="11" fill="#3A8F84" font-weight="bold">a⃗ = (3,4)</text>
+            <text x="120" y="165" font-size="9" fill="#A9AFC4">|a⃗| = 5 km</text>
+
+            <!-- Vector B: 4 units East, 2 units North -->
+            <line x1="60" y1="200" x2="200" y2="150" stroke="#E2A23B" stroke-width="3" marker-end="url(#arrowB)"/>
+            <text x="180" y="140" font-size="11" fill="#E2A23B" font-weight="bold">b⃗ = (4,2)</text>
+            <text x="170" y="170" font-size="9" fill="#A9AFC4">|b⃗| = √20 ≈ 4.47 km</text>
+
+            <!-- Angle between vectors -->
+            <path d="M 100 180 A 40 40 0 0 0 120 160" fill="none" stroke="#text-muted" stroke-width="1" stroke-dasharray="2,2"/>
+            <text x="95" y="180" font-size="10" fill="#A9AFC4">θ</text>
+
+            <!-- Information Box -->
+            <rect x="15" y="215" width="350" height="42" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="25" y="230" font-size="9" fill="#E2A23B" font-weight="bold">Dot Product: a⃗·b⃗ = 3(4) + 4(2) = 20</text>
+            <text x="25" y="245" font-size="9" fill="#A9AFC4">cos(θ) = 20/(5×√20) ≈ 0.894  →  θ ≈ 26.6° between routes</text>
 
             <defs>
-                <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <marker id="arrowA" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
                     <path d="M 0 0 L 10 3 L 0 6 Z" fill="#3A8F84"/>
                 </marker>
-                <marker id="arrowyellow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <marker id="arrowB" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
                     <path d="M 0 0 L 10 3 L 0 6 Z" fill="#E2A23B"/>
                 </marker>
             </defs>
