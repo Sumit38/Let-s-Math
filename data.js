@@ -142,34 +142,51 @@ const chapters = [
             { q: "Show (A + Aᵀ) is symmetric for A = [[1,2],[3,4]]", a: "A = [[1,2],[3,4]], Aᵀ = [[1,3],[2,4]]. A+Aᵀ = [[2,5],[5,8]]. (A+Aᵀ)ᵀ = [[2,5],[5,8]] ✓ Symmetric" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(50, 50)">
-                <rect x="0" y="0" width="120" height="80" fill="none" stroke="#3A8F84" stroke-width="2"/>
-                <text x="20" y="30" font-size="16" fill="#E2A23B" font-weight="bold">2</text>
-                <text x="20" y="60" font-size="16" fill="#E2A23B" font-weight="bold">1</text>
-                <text x="70" y="30" font-size="16" fill="#E2A23B" font-weight="bold">1</text>
-                <text x="70" y="60" font-size="16" fill="#E2A23B" font-weight="bold">1</text>
-                <text x="60" y="100" text-anchor="middle" font-size="12" fill="#F1ECDD">A = [[2,1],[1,1]]</text>
-            </g>
+            <!-- Title: Real-World Example -->
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🍞 Bakery Pricing Problem</text>
 
-            <text x="200" y="30" font-size="14" fill="#F1ECDD" font-weight="bold">×</text>
+            <!-- Problem Statement -->
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">2 Bread + 1 Cake = ₹100  |  1 Bread + 2 Cake = ₹110</text>
+            <text x="190" y="48" text-anchor="middle" font-size="10" fill="#A9AFC4">Find: Price of Bread (x) and Cake (y)</text>
 
-            <g transform="translate(230, 50)">
-                <rect x="0" y="0" width="120" height="80" fill="none" stroke="#3A8F84" stroke-width="2"/>
-                <text x="20" y="30" font-size="16" fill="#E2A23B" font-weight="bold">x</text>
-                <text x="20" y="60" font-size="16" fill="#E2A23B" font-weight="bold">y</text>
-                <text x="60" y="100" text-anchor="middle" font-size="12" fill="#F1ECDD">X = [[x],[y]]</text>
-            </g>
+            <!-- Matrix A (Coefficients) -->
+            <text x="50" y="75" font-size="11" fill="#E2A23B" font-weight="bold">Coefficients:</text>
+            <rect x="30" y="80" width="70" height="50" fill="none" stroke="#3A8F84" stroke-width="2" rx="3"/>
+            <text x="40" y="100" font-size="14" fill="#F1ECDD" font-weight="bold">2  1</text>
+            <text x="40" y="120" font-size="14" fill="#F1ECDD" font-weight="bold">1  2</text>
+            <text x="65" y="140" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix A</text>
 
-            <text x="200" y="160" font-size="14" fill="#F1ECDD" font-weight="bold">=</text>
+            <!-- Multiply sign -->
+            <text x="115" y="105" font-size="16" fill="#F1ECDD" font-weight="bold">×</text>
 
-            <g transform="translate(230, 140)">
-                <rect x="0" y="0" width="120" height="80" fill="none" stroke="#3A8F84" stroke-width="2"/>
-                <text x="20" y="30" font-size="16" fill="#E2A23B" font-weight="bold">b₁</text>
-                <text x="20" y="60" font-size="16" fill="#E2A23B" font-weight="bold">b₂</text>
-                <text x="60" y="100" text-anchor="middle" font-size="12" fill="#F1ECDD">B = [[b₁],[b₂]]</text>
-            </g>
+            <!-- Matrix X (Unknowns) -->
+            <text x="135" y="75" font-size="11" fill="#E2A23B" font-weight="bold">Unknowns:</text>
+            <rect x="130" y="80" width="50" height="50" fill="none" stroke="#3A8F84" stroke-width="2" rx="3"/>
+            <text x="140" y="100" font-size="14" fill="#F1ECDD" font-weight="bold">x</text>
+            <text x="140" y="120" font-size="14" fill="#F1ECDD" font-weight="bold">y</text>
+            <text x="155" y="140" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix X</text>
 
-            <text x="200" y="280" text-anchor="middle" font-size="11" fill="#A9AFC4">Solve: X = A⁻¹B</text>
+            <!-- Equals sign -->
+            <text x="200" y="105" font-size="16" fill="#F1ECDD" font-weight="bold">=</text>
+
+            <!-- Matrix B (Results) -->
+            <text x="225" y="75" font-size="11" fill="#E2A23B" font-weight="bold">Results:</text>
+            <rect x="220" y="80" width="50" height="50" fill="none" stroke="#E2A23B" stroke-width="2" rx="3"/>
+            <text x="230" y="100" font-size="14" fill="#F1ECDD" font-weight="bold">100</text>
+            <text x="230" y="120" font-size="14" fill="#F1ECDD" font-weight="bold">110</text>
+            <text x="245" y="140" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix B</text>
+
+            <!-- Solution Method -->
+            <rect x="20" y="155" width="340" height="80" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="4"/>
+            <text x="190" y="175" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">📋 How to Solve</text>
+
+            <text x="30" y="195" font-size="10" fill="#F1ECDD">Step 1: Write equations as AX = B</text>
+            <text x="30" y="210" font-size="10" fill="#F1ECDD">Step 2: Find inverse of A (if det(A) ≠ 0)</text>
+            <text x="30" y="225" font-size="10" fill="#F1ECDD">Step 3: Multiply both sides by A⁻¹: X = A⁻¹B</text>
+
+            <text x="220" y="195" font-size="10" fill="#3A8F84" font-weight="bold">✓ x = 30 (Bread price)</text>
+            <text x="220" y="210" font-size="10" fill="#3A8F84" font-weight="bold">✓ y = 40 (Cake price)</text>
+            <text x="220" y="225" font-size="9" fill="#A9AFC4">(Verify: 2(30)+40=100 ✓)</text>
         </svg>`
     },
     {
