@@ -207,31 +207,35 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="16" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">📐 What is a Determinant? (Easy Explanation)</text>
+            <text x="190" y="14" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">📐 Determinant = "Magic Number"</text>
 
-            <!-- Simple Explanation -->
-            <rect x="15" y="25" width="350" height="60" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="30" y="42" font-size="10" fill="#E2A23B" font-weight="bold">Think of it like: A "magic number" that tells you two things:</text>
-            <text x="35" y="58" font-size="9" fill="#F1ECDD">1️⃣ Can we solve the problem? (Is solution unique?)</text>
-            <text x="35" y="73" font-size="9" fill="#F1ECDD">2️⃣ How much area/volume does the transformation create?</text>
+            <!-- What it does -->
+            <rect x="10" y="22" width="360" height="32" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="20" y="35" font-size="8" fill="#E2A23B" font-weight="bold">✓ Tells if problem has unique solution</text>
+            <text x="20" y="48" font-size="8" fill="#E2A23B" font-weight="bold">✓ Measures area/volume of transformation</text>
 
-            <!-- The Formula Explained -->
-            <rect x="15" y="90" width="350" height="55" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
-            <text x="30" y="107" font-size="10" fill="#3A8F84" font-weight="bold">📋 For a 2×2 Matrix (Step-by-Step):</text>
+            <!-- Formula -->
+            <rect x="10" y="58" width="360" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
+            <text x="20" y="70" font-size="8" fill="#3A8F84" font-weight="bold">For Matrix | a  b | → det = (a × d) − (b × c)</text>
+            <text x="190" y="70" font-size="8" fill="#3A8F84" font-weight="bold">| c  d |</text>
+            <text x="20" y="82" font-size="7" fill="#A9AFC4">Multiply main diagonal, subtract other diagonal</text>
 
-            <!-- Visual representation -->
-            <text x="40" y="125" font-size="11" fill="#F1ECDD" font-weight="bold">Matrix:  | a  b |     Step 1: Multiply the diagonal (↘): a × d</text>
-            <text x="86" y="140" font-size="11" fill="#F1ECDD" font-weight="bold">| c  d |     Step 2: Multiply the other diagonal (↙): b × c</text>
-            <text x="40" y="155" font-size="11" fill="#F1ECDD" font-weight="bold">Determinant = (a×d) − (b×c)</text>
+            <!-- Example Part 1 -->
+            <rect x="10" y="90" width="360" height="28" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="20" y="102" font-size="8" fill="#E2A23B" font-weight="bold">Example: | 2  3 |  →  (2×1) − (3×4) = 2 − 12 = −10</text>
+            <text x="20" y="115" font-size="8" fill="#F1ECDD">| 4  1 |</text>
 
-            <!-- Real Example with Clear Steps -->
-            <rect x="15" y="170" width="350" height="75" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="30" y="187" font-size="10" fill="#E2A23B" font-weight="bold">✅ Example: Calculate determinant of | 2  3 |</text>
-            <text x="86" y="202" font-size="10" fill="#E2A23B" font-weight="bold">| 4  1 |</text>
+            <!-- Key Meaning -->
+            <rect x="10" y="122" width="360" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
+            <text x="20" y="134" font-size="8" fill="#3A8F84" font-weight="bold">If det ≠ 0 → Solution is unique ✓</text>
+            <text x="20" y="147" font-size="8" fill="#3A8F84" font-weight="bold">If det = 0 → No unique solution ✗</text>
 
-            <text x="40" y="219" font-size="10" fill="#F1ECDD">Step 1: Main diagonal (↘) = 2 × 1 = 2</text>
-            <text x="40" y="233" font-size="10" fill="#F1ECDD">Step 2: Other diagonal (↙) = 3 × 4 = 12</text>
-            <text x="40" y="247" font-size="11" fill="#E2A23B" font-weight="bold">Determinant = 2 − 12 = −10  ✓ (Solution is unique!)</text>
+            <!-- Visual Hint -->
+            <text x="190" y="170" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">Main Diagonal (↘) minus Other Diagonal (↙)</text>
+            <path d="M 120 180 L 160 220" stroke="#E2A23B" stroke-width="2" opacity="0.6"/>
+            <path d="M 160 180 L 120 220" stroke="#3A8F84" stroke-width="2" opacity="0.6"/>
+            <text x="90" y="245" font-size="7" fill="#E2A23B">Main (↘)</text>
+            <text x="260" y="245" font-size="7" fill="#3A8F84">Other (↙)</text>
         </svg>`
     },
     {
