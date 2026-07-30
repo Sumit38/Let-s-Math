@@ -13,7 +13,10 @@ const chapters = [
         ],
         practice: [
             { q: "Show f(x) = (x+1)/(x−2) is one-one and find its inverse", a: "Assume f(x₁)=f(x₂): (x₁+1)/(x₁−2) = (x₂+1)/(x₂−2) ⟹ x₁=x₂ (one-one). Inverse: y=(x+1)/(x−2), swap: x=(y+1)/(y−2), solve: f⁻¹(x) = (2x+1)/(x−1)" },
-            { q: "If f(x) = 2x+3 and g(x) = x−1, find (f∘g)(x)", a: "(f∘g)(x) = f(g(x)) = f(x−1) = 2(x−1)+3 = 2x+1" }
+            { q: "If f(x) = 2x+3 and g(x) = x−1, find (f∘g)(x)", a: "(f∘g)(x) = f(g(x)) = f(x−1) = 2(x−1)+3 = 2x+1" },
+            { q: "If f(x) = x² and g(x) = √x, find (g∘f)(x) and (f∘g)(x)", a: "(g∘f)(x) = g(x²) = √(x²) = |x|. (f∘g)(x) = f(√x) = (√x)² = x. Note: g∘f ≠ f∘g (unless x≥0)" },
+            { q: "Check if f(x) = 3x−5 is onto from ℝ→ℝ. Find inverse.", a: "Solve y = 3x−5 for x: x = (y+5)/3 (valid for every y). Onto ✓. Inverse: f⁻¹(x) = (x+5)/3" },
+            { q: "Find domain of f(x) = 1/√(x²−9)", a: "Need x²−9 > 0 (not just ≥). x² > 9 ⟹ |x| > 3. Domain: (−∞,−3) ∪ (3,∞)" }
         ],
         diagram: `<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Domain Box -->
@@ -66,7 +69,10 @@ const chapters = [
         ],
         practice: [
             { q: "Solve: cos(2 sin⁻¹x) = 1/2", a: "Let θ=sin⁻¹x, so cos(2θ) = 1−2sin²θ = 1−2x². Set 1−2x² = 1/2 ⟹ x² = 1/4 ⟹ x = ±1/2" },
-            { q: "Evaluate: sin⁻¹(1/2) + cos⁻¹(1/2)", a: "Using sin⁻¹x + cos⁻¹x = π/2 for x=1/2: Answer = π/2" }
+            { q: "Evaluate: sin⁻¹(1/2) + cos⁻¹(1/2)", a: "Using sin⁻¹x + cos⁻¹x = π/2 for x=1/2: Answer = π/2" },
+            { q: "Find tan⁻¹(1) + tan⁻¹(2) + tan⁻¹(3)", a: "Using tan⁻¹a + tan⁻¹b = tan⁻¹[(a+b)/(1−ab)] for ab<1, and properties: Result = π" },
+            { q: "Solve: tan⁻¹x = sin⁻¹(3/5)", a: "Let sin⁻¹(3/5) = α, then sin α = 3/5, so cos α = 4/5, tan α = 3/4. Therefore x = 3/4" },
+            { q: "Principal value of sin⁻¹(−√3/2)", a: "sin⁻¹ range is [−π/2, π/2]. sin⁻¹(−√3/2) = −π/3" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -139,7 +145,10 @@ const chapters = [
         ],
         practice: [
             { q: "Find inverse of A = [[2,1],[1,1]]", a: "det(A) = 2−1 = 1. A⁻¹ = (1/1)[[1,−1],[−1,2]] = [[1,−1],[−1,2]]" },
-            { q: "Show (A + Aᵀ) is symmetric for A = [[1,2],[3,4]]", a: "A = [[1,2],[3,4]], Aᵀ = [[1,3],[2,4]]. A+Aᵀ = [[2,5],[5,8]]. (A+Aᵀ)ᵀ = [[2,5],[5,8]] ✓ Symmetric" }
+            { q: "Show (A + Aᵀ) is symmetric for A = [[1,2],[3,4]]", a: "A = [[1,2],[3,4]], Aᵀ = [[1,3],[2,4]]. A+Aᵀ = [[2,5],[5,8]]. (A+Aᵀ)ᵀ = [[2,5],[5,8]] ✓ Symmetric" },
+            { q: "Solve the system: 2x+y=5, 3x+2y=8 using matrix form", a: "[[2,1],[3,2]][[x],[y]] = [[5],[8]]. A⁻¹ = [[2,−1],[−3,2]]. Solution: x=2, y=1" },
+            { q: "If A = [[1,2],[0,1]] and B = [[3,4],[1,2]], find AB and BA", a: "AB = [[5,8],[1,2]], BA = [[3,8],[1,4]]. Note: AB ≠ BA (matrices don't commute)" },
+            { q: "Find trace and determinant of A = [[4,2],[1,3]]", a: "Trace = 4+3 = 7. Determinant = 12−2 = 10" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title: Real-World Example -->
@@ -203,7 +212,10 @@ const chapters = [
         ],
         practice: [
             { q: "Evaluate |2 3; 4 1|", a: "det = (2)(1) − (3)(4) = 2 − 12 = −10" },
-            { q: "Explain why det with two identical rows equals zero", a: "Swapping identical rows flips the sign: det = −det, so 2·det = 0, thus det = 0" }
+            { q: "Explain why det with two identical rows equals zero", a: "Swapping identical rows flips the sign: det = −det, so 2·det = 0, thus det = 0" },
+            { q: "Find |1 2 3; 0 4 5; 1 2 2|", a: "Expand along row 1: 1(8−10) − 2(0−5) + 3(0−4) = −2+10−12 = −4" },
+            { q: "Find area of triangle with vertices (0,0), (3,0), (0,4)", a: "Area = (1/2)|det[[0,0,1],[3,0,1],[0,4,1]]| = (1/2)|−12| = 6 sq units" },
+            { q: "For what value of k is |1 2; 3 k| = 0?", a: "k−6 = 0 ⟹ k = 6" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -254,7 +266,10 @@ const chapters = [
         ],
         practice: [
             { q: "Differentiate y = sin(x²) using chain rule", a: "dy/dx = cos(x²) · d(x²)/dx = cos(x²) · 2x = 2x·cos(x²)" },
-            { q: "Is f(x) = |x| differentiable at x = 0?", a: "LHD = −1, RHD = +1. Since LHD ≠ RHD, not differentiable at 0 (but continuous)" }
+            { q: "Is f(x) = |x| differentiable at x = 0?", a: "LHD = −1, RHD = +1. Since LHD ≠ RHD, not differentiable at 0 (but continuous)" },
+            { q: "Check continuity of f(x) = {x², x≤1; 2x−1, x>1} at x=1", a: "lim(x→1⁻) f(x) = 1, lim(x→1⁺) f(x) = 1, f(1) = 1. Continuous ✓" },
+            { q: "Find derivative of f(x) = |x−2| at x=2", a: "f(x) = {2−x, x<2; x−2, x≥2}. LHD = −1, RHD = +1. Not differentiable at x=2" },
+            { q: "Is f(x) = sin(1/x) continuous at x=0?", a: "f(0) undefined, and lim(x→0) sin(1/x) oscillates wildly. Not continuous at x=0" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -306,7 +321,10 @@ const chapters = [
         ],
         practice: [
             { q: "Find where f(x) = 2x³ − 15x² + 36x + 1 increases", a: "f'(x) = 6x² − 30x + 36 = 6(x²−5x+6) = 6(x−2)(x−3). f'(x)>0 when x<2 or x>3. Increases on (−∞,2)∪(3,∞)" },
-            { q: "Box with volume 4096 cm³, minimize surface area", a: "V=x²h=4096⟹h=4096/x². S=2x²+4xh=2x²+16384/x. dS/dx=4x−16384/x²=0⟹x=16. Cube 16×16×16" }
+            { q: "Box with volume 4096 cm³, minimize surface area", a: "V=x²h=4096⟹h=4096/x². S=2x²+4xh=2x²+16384/x. dS/dx=4x−16384/x²=0⟹x=16. Cube 16×16×16" },
+            { q: "Find local maxima/minima of f(x) = x³−3x", a: "f'(x) = 3x²−3 = 0 ⟹ x = ±1. f''(x) = 6x. f''(−1) = −6 < 0 (max), f''(1) = 6 > 0 (min). Max at x=−1, min at x=1" },
+            { q: "A ladder 10m long leans against a wall. If top slides down at 1 m/s, how fast does bottom move when top is 6m high?", a: "x²+y²=100. 2x(dx/dt)+2y(dy/dt)=0. When y=6: x=8. 2(8)(dx/dt)+2(6)(−1)=0 ⟹ dx/dt = 3/4 m/s" },
+            { q: "Find critical points and nature of f(x) = x⁴−4x³+6x²", a: "f'(x) = 4x³−12x²+12x = 4x(x²−3x+3). Only critical point: x=0. f''(0)=0 (needs 3rd derivative test). Inflection point at x=0" }
         ],
         diagram: `<svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -362,7 +380,10 @@ const chapters = [
         ],
         practice: [
             { q: "Evaluate: ∫x·e^(x²) dx", a: "Let t=x², dt=2x dx. ∫e^(x²)·x dx = (1/2)∫e^t dt = (1/2)e^(x²) + C" },
-            { q: "Evaluate: ∫sec²x/(1+tan²x) dx", a: "Since 1+tan²x = sec²x, integrand = 1. ∫1 dx = x + C" }
+            { q: "Evaluate: ∫sec²x/(1+tan²x) dx", a: "Since 1+tan²x = sec²x, integrand = 1. ∫1 dx = x + C" },
+            { q: "Find ∫x·sin(x) dx using integration by parts", a: "u=x, dv=sin(x)dx. du=dx, v=−cos(x). ∫x·sin(x)dx = −x·cos(x) + ∫cos(x)dx = −x·cos(x) + sin(x) + C" },
+            { q: "Evaluate ∫(2x+3)/(x²+3x+2) dx", a: "Note: d/dx(x²+3x+2) = 2x+3. So ∫(2x+3)/(x²+3x+2)dx = ln|x²+3x+2| + C" },
+            { q: "Find ∫√(1−x²) dx", a: "Let x = sin(θ), dx = cos(θ)dθ. ∫cos²(θ)dθ = (θ + sin(θ)cos(θ))/2 + C = (sin⁻¹x + x√(1−x²))/2 + C" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -405,7 +426,10 @@ const chapters = [
         ],
         practice: [
             { q: "Evaluate: ∫₀¹ x(1−x)⁴ dx", a: "Using Beta function shortcut m!n!/(m+n+1)! with m=1,n=4: = 1!·4!/6! = 24/720 = 1/30" },
-            { q: "Evaluate: ∫₀^(π/2) sin²x dx", a: "Using sin²x = (1−cos2x)/2: ∫₀^(π/2) (1−cos2x)/2 dx = [x/2 − sin2x/4]₀^(π/2) = π/4" }
+            { q: "Evaluate: ∫₀^(π/2) sin²x dx", a: "Using sin²x = (1−cos2x)/2: ∫₀^(π/2) (1−cos2x)/2 dx = [x/2 − sin2x/4]₀^(π/2) = π/4" },
+            { q: "Evaluate: ∫₁² (1/x) dx", a: "[ln|x|]₁² = ln 2 − ln 1 = ln 2" },
+            { q: "Find ∫₀^(π/4) sec²x dx", a: "[tan x]₀^(π/4) = 1 − 0 = 1" },
+            { q: "Evaluate ∫₀¹ 2xe^x dx using integration by parts", a: "u=2x, dv=e^x dx. [2xe^x − 2e^x]₀¹ = 2e − 2e + 2 = 2" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -450,7 +474,10 @@ const chapters = [
         ],
         practice: [
             { q: "Solve: dy/dx = y/x", a: "Separable: dy/y = dx/x. Integrate: ln|y| = ln|x| + C₁. Thus y = kx (family of lines through origin)" },
-            { q: "Order and degree of (d²y/dx²)³ + dy/dx = x", a: "Order = 2 (highest derivative is d²y/dx²). Degree = 3 (power of d²y/dx²)" }
+            { q: "Order and degree of (d²y/dx²)³ + dy/dx = x", a: "Order = 2 (highest derivative is d²y/dx²). Degree = 3 (power of d²y/dx²)" },
+            { q: "Solve: dy/dx = 2x, y(0)=3", a: "y = ∫2x dx = x² + C. Using y(0)=3: 3 = 0 + C, so C=3. Solution: y = x² + 3" },
+            { q: "Solve the separable equation: dy/dx = y²", a: "dy/y² = dx. ∫y⁻² dy = ∫dx. −1/y = x + C. Solution: y = −1/(x+C)" },
+            { q: "Solve dy/dx + y = e^x (linear DE)", a: "Integrating factor: e^(∫1 dx) = e^x. Multiply: e^x(dy/dx) + e^x·y = e^(2x). d/dx(e^x·y) = e^(2x). e^x·y = e^(2x)/2 + C. y = e^x/2 + Ce^(−x)" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -502,6 +529,10 @@ const chapters = [
         practice: [
             { q: "Playing Cards: From a standard 52-card deck, what's P(drawing a red card)?", a: "Red cards = Hearts + Diamonds = 13 + 13 = 26 cards. P(red) = 26/52 = 1/2 = 0.5 (50%)" },
             { q: "Playing Cards: What's P(drawing an Ace from a 52-card deck)?", a: "Total Aces = 4 (one per suit). P(Ace) = 4/52 = 1/13 ≈ 0.077 or 7.7%" },
+            { q: "Two dice rolled. Find P(sum = 7)", a: "Favorable outcomes: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 outcomes. Total = 36. P = 6/36 = 1/6" },
+            { q: "Bag has 3 red, 4 blue, 2 green balls. P(drawing red or blue)?", a: "P(red or blue) = P(red) + P(blue) = 3/9 + 4/9 = 7/9" },
+            { q: "Coin tossed 4 times. P(exactly 2 heads)?", a: "C(4,2) × (1/2)² × (1/2)² = 6 × 1/16 = 6/16 = 3/8" }
+        ],
             { q: "Playing Cards: P(drawing a King OR a Queen)?", a: "Kings = 4, Queens = 4, Total favorable = 8. P(King or Queen) = 8/52 = 2/13 ≈ 15.4%" },
             { q: "Two dice: Find P(sum=7 | at least one 4)", a: "Outcomes with at least one 4: 11 total. Of these, (3,4) and (4,3) sum to 7: 2 outcomes. P = 2/11" },
             { q: "Coin tossed 5 times. Find P(exactly 3 heads)", a: "C(5,3) × (0.5)⁵ = 10/32 = 5/16" }
@@ -569,7 +600,10 @@ const chapters = [
         ],
         practice: [
             { q: "Unit vector in direction of a⃗ = (4,−3,0)", a: "|a⃗| = √(16+9) = 5. Unit vector = (4/5, −3/5, 0)" },
-            { q: "Find a⃗×b⃗ for a⃗=(1,0,0), b⃗=(0,1,0)", a: "a⃗×b⃗ = (0·0−0·1, 0·0−1·0, 1·1−0·0) = (0, 0, 1) = k̂ direction" }
+            { q: "Find a⃗×b⃗ for a⃗=(1,0,0), b⃗=(0,1,0)", a: "a⃗×b⃗ = (0·0−0·1, 0·0−1·0, 1·1−0·0) = (0, 0, 1) = k̂ direction" },
+            { q: "Find a⃗·b⃗ for a⃗ = (2,3,−1) and b⃗ = (1,−1,2)", a: "a⃗·b⃗ = 2(1) + 3(−1) + (−1)(2) = 2 − 3 − 2 = −3" },
+            { q: "Find angle between a⃗ = (1,0,1) and b⃗ = (0,1,0)", a: "|a⃗| = √2, |b⃗| = 1, a⃗·b⃗ = 0. cos θ = 0 ⟹ θ = 90°" },
+            { q: "Check if a⃗ = (1,2,2) and b⃗ = (4,1,−3) are perpendicular", a: "a⃗·b⃗ = 1(4) + 2(1) + 2(−3) = 4 + 2 − 6 = 0. Yes, perpendicular ✓" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -629,7 +663,10 @@ const chapters = [
         ],
         practice: [
             { q: "Direction cosines of line joining (1,2,3) and (4,6,3)", a: "Direction ratios: (3,4,0), magnitude 5. Direction cosines: (3/5, 4/5, 0)" },
-            { q: "Distance of (2,3,−5) from plane x+2y−2z−9=0", a: "|2+6+10−9|/√(1+4+4) = 9/3 = 3" }
+            { q: "Distance of (2,3,−5) from plane x+2y−2z−9=0", a: "|2+6+10−9|/√(1+4+4) = 9/3 = 3" },
+            { q: "Find distance between parallel lines r⃗ = (î + 2ĵ) + t(2î + ĵ) and r⃗ = (2î + 3ĵ) + s(2î + ĵ)", a: "Distance = |[(−î−ĵ)×(2î+ĵ)]|/|(2î+ĵ)| = |−3k̂|/√5 = 3/√5 = 3√5/5" },
+            { q: "Find equation of plane through (1,2,3) perpendicular to (2,−1,1)", a: "2(x−1) − (y−2) + (z−3) = 0. Simplify: 2x − y + z − 3 = 0" },
+            { q: "Distance between point (1,1,1) and line r⃗ = (0,0,0) + t(1,1,1)", a: "Using formula: d = |[(point−origin)×direction]|/|direction| = 0 (point lies on line)" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -682,7 +719,10 @@ const chapters = [
         ],
         practice: [
             { q: "Area bounded by y=x² and y=x", a: "Intersections: x²=x ⟹ x=0 or 1. Between 0 and 1, y=x is above y=x². Area = ∫₀¹(x−x²)dx = [x²/2−x³/3]₀¹ = 1/2−1/3 = 1/6" },
-            { q: "Set up integral for area under y=sinx from 0 to π", a: "∫₀^π sinx dx (evaluates to 2)" }
+            { q: "Set up integral for area under y=sinx from 0 to π", a: "∫₀^π sinx dx (evaluates to 2)" },
+            { q: "Area enclosed by y=x and y=x³", a: "Intersections: x = x³ ⟹ x(1−x²)=0 ⟹ x=0,±1. Between −1 and 1, y=x above y=x³. Area = ∫₋₁¹(x−x³)dx = [x²/2−x⁴/4]₋₁¹ = 1/2 − 1/4 − (1/2 − 1/4) = 1/4 + 1/4 = 1/2" },
+            { q: "Volume under z = x² + y² over region 0≤x≤2, 0≤y≤2", a: "V = ∫₀²∫₀²(x²+y²)dy dx = ∫₀²[x²y+y³/3]₀² dx = ∫₀²(2x²+8/3)dx = [2x³/3+8x/3]₀² = 16/3 + 16/3 = 32/3" },
+            { q: "Area between y = 4−x² and y = 0", a: "Intersections: 4−x² = 0 ⟹ x = ±2. Area = ∫₋₂²(4−x²)dx = [4x−x³/3]₋₂² = (8−8/3) − (−8+8/3) = 16/3 + 16/3 = 32/3" }
         ],
         diagram: `<svg viewBox="0 0 450 310" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -756,7 +796,10 @@ const chapters = [
         ],
         practice: [
             { q: "C(x)=x³/3−45x²+900x+36. Find MC when x=10", a: "MC = dC/dx = x²−90x+900. At x=10: MC = 100−900+900 = 100" },
-            { q: "If AC=2x+5+18/x, find MC", a: "C = x·AC = 2x²+5x+18. MC = dC/dx = 4x+5" }
+            { q: "If AC=2x+5+18/x, find MC", a: "C = x·AC = 2x²+5x+18. MC = dC/dx = 4x+5" },
+            { q: "Break-even point: C(x) = 500+20x, R(x) = 50x. Find x", a: "50x = 500+20x ⟹ 30x = 500 ⟹ x = 50/3 ≈ 16.67 units" },
+            { q: "Profit = 100x−x², find maximum profit", a: "dP/dx = 100−2x = 0 ⟹ x=50. d²P/dx² = −2 < 0 (max). Max profit = 100(50)−50² = ₹2500" },
+            { q: "MR = 50−2x, find revenue function", a: "R = ∫MR dx = ∫(50−2x)dx = 50x−x² + C. If R(0)=0, then C=0. R(x) = 50x−x²" }
         ],
         diagram: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -815,7 +858,10 @@ const chapters = [
         ],
         practice: [
             { q: "If b_yx=1.2 and b_xy=0.8, find r", a: "r = ±√(1.2×0.8) = ±√0.96 ≈ ±0.98. Positive slopes ⟹ r ≈ 0.98" },
-            { q: "What does r=0 tell about regression lines?", a: "Lines are perpendicular — one horizontal, one vertical (no linear relationship)" }
+            { q: "What does r=0 tell about regression lines?", a: "Lines are perpendicular — one horizontal, one vertical (no linear relationship)" },
+            { q: "Study hours (x): 2, 3, 4, 5; Marks (y): 40, 50, 60, 70. Find regression line y on x", a: "x̄=3.5, ȳ=55. b_yx = Σ(x−x̄)(y−ȳ)/Σ(x−x̄)² = 30/5 = 6. Line: y−55 = 6(x−3.5) ⟹ y = 6x+34" },
+            { q: "If r=0.9, what % of variance is explained?", a: "r² = (0.9)² = 0.81 = 81%. 81% of variance in y is explained by x" },
+            { q: "Regression line: y = 2x+5. Predict y when x=10", a: "y = 2(10)+5 = 25" }
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
@@ -866,7 +912,10 @@ const chapters = [
         ],
         practice: [
             { q: "Set up: chairs earn ₹20, tables ₹30. Chair=2hrs, table=3hrs, 12hrs available", a: "Maximise Z=20x+30y subject to 2x+3y≤12, x,y≥0" },
-            { q: "Why does optimum always occur at corner?", a: "Linear objective has no interior max/min. Moving in improving direction pushes to boundary, ultimately a corner." }
+            { q: "Why does optimum always occur at corner?", a: "Linear objective has no interior max/min. Moving in improving direction pushes to boundary, ultimately a corner." },
+            { q: "Corner points of feasible region: (0,0), (4,0), (2,2), (0,5). Find max of Z=3x+2y", a: "At (0,0): Z=0. At (4,0): Z=12. At (2,2): Z=10. At (0,5): Z=10. Maximum = 12 at (4,0)" },
+            { q: "Minimize cost C=5x+4y subject to x+y≥6, x,y≥0", a: "Corner points: (0,6), (6,0). At (0,6): C=24. At (6,0): C=30. Minimum = 24 at (0,6)" },
+            { q: "A farmer has 10 acres. Wheat earns ₹50/acre, rice ₹60/acre. Wheat needs 5 hrs/acre, rice needs 8 hrs/acre. 70 hrs available. Maximize profit", a: "Maximize Z=50x+60y subject to x+y≤10, 5x+8y≤70, x,y≥0. Solve: Corner points (10,0), (0,10), (2,8). Max at (2,8): Z=100+480=580" }
         ],
         diagram: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
             <!-- Title Section -->
@@ -947,6 +996,10 @@ const chapters = [
         practice: [
             { q: "Class Test Scores: 45, 67, 72, 78, 82, 89, 95. Find Mean, Median, Mode, Range", a: "Mean = (45+67+72+78+82+89+95)/7 = 528/7 ≈ 75.4. Median = 78 (middle value). Mode = None (no repeats). Range = 95−45 = 50" },
             { q: "Monthly Salary Data: ₹25k, ₹28k, ₹32k, ₹35k, ₹250k (CEO). Which average best represents?", a: "Median = ₹32k (fair representation). Mean ≈ ₹74k (skewed by CEO salary, not representative of typical employee)" },
+            { q: "Dataset: 2, 4, 4, 4, 5, 5, 7, 9. Find mean, median, mode", a: "Mean = 40/8 = 5. Median = (4+5)/2 = 4.5. Mode = 4 (appears 3 times)" },
+            { q: "Variance of 1, 2, 3, 4, 5. Find standard deviation", a: "Mean = 3. Deviations squared: 4, 1, 0, 1, 4. Variance = 10/5 = 2. SD = √2 ≈ 1.41" },
+            { q: "IQ scores normally distributed: mean=100, SD=15. What % score between 85 and 115?", a: "85 = 100−1(15) and 115 = 100+1(15). Within 1 SD of mean = 68% of data" }
+        ],
             { q: "School Marks: 60, 65, 70, 75, 80. Calculate Variance and Standard Deviation", a: "Mean = 70. Variance = [(60-70)² + (65-70)² + (70-70)² + (75-70)² + (80-70)²]/5 = 250/5 = 50. SD = √50 ≈ 7.07" },
             { q: "Cricket: Batsman scores in last 10 matches: 45, 67, 52, 89, 34, 78, 92, 56, 71, 88. Find Average (Mean)", a: "Sum = 672. Average = 672/10 = 67.2 runs per match" }
         ],
