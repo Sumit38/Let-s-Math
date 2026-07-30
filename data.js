@@ -74,12 +74,13 @@ const chapters = [
         title: "Matrices",
         icon: "[M]",
         marks: "~6 marks",
-        concept: "Matrices organize numbers into rows and columns. Master matrix operations (addition, multiplication), determinants, and the matrix method: AX=B solves to X=A⁻¹B. Essential for solving systems of equations.",
+        concept: "Matrices organize numbers into rows and columns for real-world problems. Real-life example: A bakery sells 3 items (Bread, Cake, Cookies). Day 1 sales: B=50, C=30, K=40. Day 2 sales: B=60, C=25, K=45. Write as matrix to track inventory! Matrix method AX=B solves systems: If 2 Bread + 1 Cake = ₹100 and 1 Bread + 2 Cake = ₹110, find prices using matrix inversion. Essential for solving simultaneous equations efficiently.",
         tricks: [
             "For repeating patterns like 1/x, 1/y, 1/z — substitute u=1/x first to linearize",
             "2×2 inverse shortcut: swap diagonal entries, negate off-diagonal, divide by determinant",
             "Matrix invertible only if det(A)≠0 — always check before hunting for A⁻¹",
-            "(A+Aᵀ) is always symmetric, (A−Aᵀ) is always skew-symmetric"
+            "(A+Aᵀ) is always symmetric, (A−Aᵀ) is always skew-symmetric",
+            "Real-world: Use matrices for inventory tracking, supply chain, production planning"
         ],
         practice: [
             { q: "Find inverse of A = [[2,1],[1,1]]", a: "det(A) = 2−1 = 1. A⁻¹ = (1/1)[[1,−1],[−1,2]] = [[1,−1],[−1,2]]" },
@@ -194,11 +195,11 @@ const chapters = [
         title: "Applications of Derivatives",
         icon: "f′",
         marks: "~10 marks",
-        concept: "Derivatives measure rate of change. Apply to find tangent lines, identify where functions increase/decrease, locate maxima/minima, and solve related-rates problems like ladders falling against walls.",
+        concept: "Derivatives measure rate of change in real-world situations. Real-life examples: Speed = d(distance)/dt. When you press the accelerator, you're increasing the rate of change! Profit optimization: A factory earns Profit = 100x − x² where x = units produced. Find max profit by setting dP/dx=0. Temperature rate of change, water level rising, population growth — all use derivatives. Apply to find maxima/minima and solve optimization problems to maximize profit or minimize costs.",
         tricks: [
             "Increasing where f'(x)>0, decreasing where f'(x)<0 — factor f'(x) and solve inequality",
             "Critical points: f'(x)=0. Then f''(x)<0⟹max, f''(x)>0⟹min",
-            "Related-rates (ladder, cone): write connecting equation first, differentiate w.r.t. time",
+            "Real-world optimization: Maximize profit (revenue − cost) or minimize production cost",
             "Optimization: use constraint to reduce to ONE variable before differentiating"
         ],
         practice: [
@@ -270,11 +271,11 @@ const chapters = [
         title: "Definite Integrals & Applications",
         icon: "∫ₐᵇ",
         marks: "~6 marks",
-        concept: "Definite integrals give numeric values between limits. King's Rule ∫₀ᵃf(x)dx = ∫₀ᵃf(a−x)dx is the single most powerful trick. Use symmetry and properties to simplify intimidating integrals.",
+        concept: "Definite integrals calculate real-world quantities: Area under a curve (land area, work done). Real-life: If velocity = 2t+3 m/s, find distance traveled from t=0 to t=5 seconds using ∫₀⁵(2t+3)dt. Construction: Calculate material needed for curved roof. Electricity: Total charge transferred = ∫ current dt. King's Rule ∫₀ᵃf(x)dx = ∫₀ᵃf(a−x)dx simplifies complex problems.",
         tricks: [
             "King's Rule: ∫₀ᵃf(x)dx = ∫₀ᵃf(a−x)dx — most powerful trick for scary-looking integrals",
+            "Real-world application: Distance = ∫velocity dt, Work = ∫force·distance, Charge = ∫current dt",
             "Even function on [−a,a]: integral = 2∫₀ᵃ. Odd function: integral = 0",
-            "Expressions like sinx/(1+sinx) simplify beautifully after dividing by cosx",
             "No '+C' for definite integrals — just substitute limits at the end"
         ],
         practice: [
@@ -337,7 +338,7 @@ const chapters = [
         title: "Probability",
         icon: "P",
         marks: "~10 marks",
-        concept: "Probability measures how likely an event is to happen. It appears everywhere in our surroundings: playing cards (probability of drawing a specific card), dice games (winning chances), coin tosses (heads or tails), lotteries, and weather predictions. Master conditional probability, independence, Bayes' theorem, and binomial distributions. Real-world example: A standard deck has 52 cards (4 suits × 13 ranks). P(drawing a spade) = 13/52 = 1/4 = 0.25 or 25%.",
+        concept: "Probability measures how likely an event is in real-world scenarios. Playing cards: P(drawing a spade) = 13/52 = 25%. Weather: \"60% chance of rain tomorrow\". Medical tests: \"If you test positive, probability you actually have disease = ?\" (Bayes). Lotteries: \"1 in 10 million chance.\" Manufacturing: \"If 3% of parts are defective, in batch of 1000, expect 30 defective.\" Dice games: Fair die has P(rolling 6) = 1/6 for each face. Understand: independent events (coin flips), conditional probability (weather given pressure), and optimization (maximize winning chance).",
         tricks: [
             "'At least one' problems: compute 1 − P(none) instead of summing cases — almost always faster",
             "Bayes' box problems: build mini table of P(box)×P(event|box) for each box before dividing",
@@ -566,12 +567,12 @@ const chapters = [
         title: "Linear Regression",
         icon: "r",
         marks: "~6-10 marks",
-        concept: "Regression finds the best-fit line describing how one variable changes with another. Master the formulas for regression coefficients and their relationship with correlation coefficient r.",
+        concept: "Regression finds relationships in real data: How does height affect weight? Does study hours predict exam scores? Real-life example: Student study hours vs marks. If correlation r=0.8 (strong), then predicting marks from study hours is reliable. Used in business (sales vs advertising spend), medicine (drug dosage vs patient recovery), weather (temperature vs ice cream sales). Master regression to make data-driven predictions.",
         tricks: [
             "b_yx = r×(σᵧ/σₓ) and b_xy = r×(σₓ/σᵧ) — memorise which ratio pairs with which",
-            "Regression line of y on x passes through (x̄, ȳ) — use y−ȳ = b_yx(x−x̄) directly",
-            "r² = b_yx × b_xy — fast way to recover r if both regression coefficients given",
-            "r always ∈ [−1, 1] — if computed r falls outside, you've made arithmetic error"
+            "Real-world: r=0.9 (strong); r=0.5 (moderate); r=0.2 (weak); r≈0 (no relationship)",
+            "Regression line always passes through (x̄, ȳ) — use y−ȳ = b_yx(x−x̄) directly",
+            "r² shows % of variation explained: r²=0.64 means 64% of variance in y is due to x"
         ],
         practice: [
             { q: "If b_yx=1.2 and b_xy=0.8, find r", a: "r = ±√(1.2×0.8) = ±√0.96 ≈ ±0.98. Positive slopes ⟹ r ≈ 0.98" },
@@ -628,6 +629,69 @@ const chapters = [
 
             <text x="200" y="35" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">Feasible Region</text>
             <text x="200" y="280" text-anchor="middle" font-size="11" fill="#A9AFC4">Optimal solution at corner point</text>
+        </svg>`
+    },
+    {
+        id: 17,
+        title: "Statistics & Data Analysis",
+        icon: "📊",
+        marks: "~8-10 marks",
+        concept: "Statistics helps us understand real-world data by finding patterns and making sense of numbers. Real-life examples: Student test scores in a class (mean=75, most common=73), employee salaries (median salary tells fair wage), weather data (average temperature), sports statistics (batting average, win rate). Mean = average of all values. Median = middle value when sorted. Mode = most frequently occurring value. Range = highest − lowest. Standard Deviation = how spread out the data is.",
+        tricks: [
+            "Mean affected by outliers; use median for skewed data (like house prices with one mansion)",
+            "Mode useful for categorical data: favorite color, popular shoe size",
+            "For grouped data: use class midpoint × frequency, then divide by total frequency",
+            "Variance = (σ²); Standard Deviation = √variance — gives 'typical distance from mean'"
+        ],
+        practice: [
+            { q: "Class Test Scores: 45, 67, 72, 78, 82, 89, 95. Find Mean, Median, Mode, Range", a: "Mean = (45+67+72+78+82+89+95)/7 = 528/7 ≈ 75.4. Median = 78 (middle value). Mode = None (no repeats). Range = 95−45 = 50" },
+            { q: "Monthly Salary Data: ₹25k, ₹28k, ₹32k, ₹35k, ₹250k (CEO). Which average best represents?", a: "Median = ₹32k (fair representation). Mean ≈ ₹74k (skewed by CEO salary, not representative of typical employee)" },
+            { q: "School Marks: 60, 65, 70, 75, 80. Calculate Variance and Standard Deviation", a: "Mean = 70. Variance = [(60-70)² + (65-70)² + (70-70)² + (75-70)² + (80-70)²]/5 = 250/5 = 50. SD = √50 ≈ 7.07" },
+            { q: "Cricket: Batsman scores in last 10 matches: 45, 67, 52, 89, 34, 78, 92, 56, 71, 88. Find Average (Mean)", a: "Sum = 672. Average = 672/10 = 67.2 runs per match" }
+        ],
+        diagram: `<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Title -->
+            <text x="250" y="25" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">Real-World Statistics Example</text>
+            <text x="250" y="45" text-anchor="middle" font-size="12" fill="#E2A23B">Student Test Scores (Out of 100)</text>
+
+            <!-- Axes -->
+            <line x1="60" y1="280" x2="480" y2="280" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="60" y1="80" x2="60" y2="280" stroke="#A9AFC4" stroke-width="2"/>
+
+            <!-- Axis Labels -->
+            <text x="490" y="300" font-size="11" fill="#A9AFC4" font-weight="bold">Score Ranges</text>
+            <text x="30" y="180" font-size="11" fill="#A9AFC4" font-weight="bold">Count</text>
+
+            <!-- Bars for score distribution -->
+            <!-- 50-60: 2 students -->
+            <rect x="75" y="250" width="40" height="30" fill="#3A8F84" opacity="0.8"/>
+            <text x="95" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">50-60</text>
+            <text x="95" y="330" text-anchor="middle" font-size="10" fill="#E2A23B">2 students</text>
+
+            <!-- 60-70: 4 students -->
+            <rect x="130" y="210" width="40" height="70" fill="#3A8F84" opacity="0.8"/>
+            <text x="150" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">60-70</text>
+            <text x="150" y="330" text-anchor="middle" font-size="10" fill="#E2A23B">4 students</text>
+
+            <!-- 70-80: 8 students (MODE) -->
+            <rect x="185" y="110" width="40" height="170" fill="#E2A23B" opacity="0.9"/>
+            <text x="205" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">70-80</text>
+            <text x="205" y="330" text-anchor="middle" font-size="10" fill="#3A8F84" font-weight="bold">8 students ⭐</text>
+
+            <!-- 80-90: 5 students -->
+            <rect x="240" y="175" width="40" height="105" fill="#3A8F84" opacity="0.8"/>
+            <text x="260" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">80-90</text>
+            <text x="260" y="330" text-anchor="middle" font-size="10" fill="#E2A23B">5 students</text>
+
+            <!-- 90-100: 1 student -->
+            <rect x="295" y="265" width="40" height="15" fill="#3A8F84" opacity="0.8"/>
+            <text x="315" y="315" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">90-100</text>
+            <text x="315" y="330" text-anchor="middle" font-size="10" fill="#E2A23B">1 student</text>
+
+            <!-- Statistics Box -->
+            <rect x="10" y="350" width="480" height="40" fill="#1F2740" stroke="#E2A23B" stroke-width="2" rx="5"/>
+            <text x="20" y="370" font-size="10" fill="#F1ECDD">📊 Statistics: Mean ≈ 73.5 | Median = 75 | Mode = 70-80 range | Most students score between 70-80</text>
+            <text x="20" y="385" font-size="9" fill="#A9AFC4">✓ This data shows the class performs fairly well with concentration around 73-75 marks</text>
         </svg>`
     }
 ];
