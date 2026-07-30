@@ -168,24 +168,49 @@ function initializeQuestions() {
     const container = document.querySelector('.questions-container');
     if (!container || container.children.length > 0) return;
 
-    allQuestions.forEach(section => {
-        const sectionDiv = document.createElement('div');
-        sectionDiv.className = 'question-section';
-        sectionDiv.innerHTML = `<h3>${section.section}</h3>`;
+    // Create section from chapters practice questions
+    const sectionDiv = document.createElement('div');
+    sectionDiv.className = 'question-section';
+    sectionDiv.innerHTML = `<h3>📚 Chapter Practice Questions (5 per topic)</h3>`;
 
-        section.items.forEach(item => {
+    chapters.forEach(chapter => {
+        const chapterHeading = document.createElement('div');
+        chapterHeading.style.marginTop = '20px';
+        chapterHeading.style.marginBottom = '10px';
+        chapterHeading.innerHTML = `<h4 style="color: #3A8F84; margin: 10px 0;">📖 ${chapter.icon} ${chapter.title}</h4>`;
+        sectionDiv.appendChild(chapterHeading);
+
+        // Add practice questions for this chapter
+        chapter.practice.forEach((item, index) => {
             const itemDiv = document.createElement('div');
             itemDiv.className = 'question-item';
-            itemDiv.innerHTML = `
-                <div class="q-text">Q: ${item.q}</div>
-                <div class="q-marks">(${item.marks} marks)</div>
-                <div class="practice-answer">A: ${item.a}</div>
+            itemDiv.style.display = 'flex';
+            itemDiv.style.justifyContent = 'space-between';
+            itemDiv.style.alignItems = 'flex-start';
+            itemDiv.style.gap = '10px';
+
+            const questionContent = document.createElement('div');
+            questionContent.style.flex = '1';
+            questionContent.innerHTML = `
+                <div class="q-text"><strong>Q${index + 1}:</strong> ${item.q}</div>
+                <div class="practice-answer" style="margin-top: 8px;">✓ ${item.a}</div>
             `;
+
+            // Add hint button
+            const hintBtn = document.createElement('button');
+            hintBtn.className = 'hint-btn-small';
+            hintBtn.innerHTML = '🔦 Hint';
+            hintBtn.onclick = () => openHints(chapter.id, index + 1);
+            hintBtn.style.marginTop = '0';
+            hintBtn.style.whiteSpace = 'nowrap';
+
+            itemDiv.appendChild(questionContent);
+            itemDiv.appendChild(hintBtn);
             sectionDiv.appendChild(itemDiv);
         });
-
-        container.appendChild(sectionDiv);
     });
+
+    container.appendChild(sectionDiv);
 }
 
 // Navigation link click handlers
