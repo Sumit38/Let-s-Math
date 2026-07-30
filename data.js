@@ -733,47 +733,47 @@ const chapters = [
             { q: "C(x)=x³/3−45x²+900x+36. Find MC when x=10", a: "MC = dC/dx = x²−90x+900. At x=10: MC = 100−900+900 = 100" },
             { q: "If AC=2x+5+18/x, find MC", a: "C = x·AC = 2x²+5x+18. MC = dC/dx = 4x+5" }
         ],
-        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="15" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">💼 Break-Even Analysis</text>
+            <text x="210" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">💼 Break-Even Analysis</text>
 
-            <!-- Simple info -->
-            <text x="190" y="28" text-anchor="middle" font-size="8" fill="#A9AFC4">Cost: ₹500 + ₹20/unit | Revenue: ₹50/unit</text>
+            <!-- Y-Axis -->
+            <line x1="80" y1="220" x2="80" y2="40" stroke="#A9AFC4" stroke-width="2.5"/>
+            <text x="45" y="120" font-size="9" fill="#A9AFC4" font-weight="bold">Money (₹)</text>
 
-            <!-- Axes -->
-            <line x1="45" y1="190" x2="360" y2="190" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="45" y1="50" x2="45" y2="190" stroke="#A9AFC4" stroke-width="2"/>
-            <text x="25" y="100" font-size="8" fill="#A9AFC4" font-weight="bold">Money (₹)</text>
-            <text x="190" y="208" text-anchor="middle" font-size="8" fill="#A9AFC4" font-weight="bold">Units</text>
+            <!-- X-Axis -->
+            <line x1="80" y1="220" x2="400" y2="220" stroke="#A9AFC4" stroke-width="2.5"/>
+            <text x="240" y="238" text-anchor="middle" font-size="9" fill="#A9AFC4" font-weight="bold">Units Produced</text>
 
-            <!-- Cost line (teal, starts higher) -->
-            <line x1="50" y1="130" x2="355" y2="65" stroke="#3A8F84" stroke-width="3"/>
-            <circle cx="100" cy="110" r="2" fill="#3A8F84"/>
-            <text x="110" y="108" font-size="8" fill="#3A8F84" font-weight="bold">COST</text>
+            <!-- Cost line (teal) - starts at 500 (fixed cost) -->
+            <line x1="80" y1="150" x2="340" y2="70" stroke="#3A8F84" stroke-width="3.5"/>
+            <text x="145" y="95" font-size="9" fill="#3A8F84" font-weight="bold">COST</text>
 
-            <!-- Revenue line (yellow, steeper) -->
-            <line x1="45" y1="190" x2="355" y2="55" stroke="#E2A23B" stroke-width="3"/>
-            <circle cx="240" cy="110" r="2" fill="#E2A23B"/>
-            <text x="250" y="108" font-size="8" fill="#E2A23B" font-weight="bold">REVENUE</text>
+            <!-- Revenue line (yellow/orange) - starts at 0 -->
+            <line x1="80" y1="220" x2="340" y2="60" stroke="#E2A23B" stroke-width="3.5"/>
+            <text x="270" y="120" font-size="9" fill="#E2A23B" font-weight="bold">REVENUE</text>
 
-            <!-- Loss region (left of break-even) -->
-            <path d="M 45 190 L 190 120 L 190 130 L 50 130 Z" fill="#FF6B6B" opacity="0.2"/>
-            <text x="90" y="155" font-size="9" fill="#FF6B6B" font-weight="bold">LOSS</text>
+            <!-- Profit line (green) - appears above revenue -->
+            <line x1="80" y1="215" x2="340" y2="50" stroke="#51CF66" stroke-width="3.5"/>
+            <text x="310" y="90" font-size="9" fill="#51CF66" font-weight="bold">PROFIT</text>
 
-            <!-- Profit region (right of break-even) -->
-            <path d="M 190 120 L 355 55 L 355 65 L 190 130 Z" fill="#51CF66" opacity="0.2"/>
-            <text x="280" y="85" font-size="9" fill="#51CF66" font-weight="bold">PROFIT</text>
+            <!-- Loss region (dark red shading) -->
+            <polygon points="80,220 210,130 210,150 80,150" fill="#8B3A3A" opacity="0.35"/>
+            <text x="130" y="165" font-size="11" fill="#FF6B6B" font-weight="bold">LOSS</text>
 
-            <!-- Break-even point - large and visible -->
-            <circle cx="190" cy="125" r="6" fill="none" stroke="#F39C12" stroke-width="2.5"/>
-            <circle cx="190" cy="125" r="3" fill="#F39C12"/>
-            <line x1="190" y1="125" x2="190" y2="190" stroke="#F39C12" stroke-width="2" stroke-dasharray="3,3"/>
-            <text x="190" y="207" text-anchor="middle" font-size="9" fill="#F39C12" font-weight="bold">Break-even ≈ 17 units</text>
+            <!-- Break-even point -->
+            <circle cx="210" cy="140" r="7" fill="none" stroke="#F39C12" stroke-width="3"/>
+            <circle cx="210" cy="140" r="4" fill="#F39C12"/>
 
-            <!-- Key fact box -->
-            <rect x="10" y="225" width="360" height="32" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
-            <text x="20" y="238" font-size="8" fill="#F1ECDD" font-weight="bold">✓ Before 17 units: LOSE money (Cost > Revenue)</text>
-            <text x="20" y="252" font-size="8" fill="#F1ECDD" font-weight="bold">✓ After 17 units: MAKE profit (Revenue > Cost)</text>
+            <!-- Break-even dashed line to x-axis -->
+            <line x1="210" y1="140" x2="210" y2="220" stroke="#F39C12" stroke-width="2" stroke-dasharray="4,4"/>
+
+            <!-- Break-even label -->
+            <text x="210" y="260" text-anchor="middle" font-size="10" fill="#F39C12" font-weight="bold">Break-even: 17 units</text>
+
+            <!-- Key equations box -->
+            <rect x="15" y="275" width="390" height="22" fill="#1F2740" stroke="#F39C12" stroke-width="1.5" rx="2"/>
+            <text x="25" y="290" font-size="8" fill="#A9AFC4">Cost: ₹500 + ₹20/unit | Revenue: ₹50/unit | At 17 units: Both = ₹840</text>
         </svg>`
     },
     {
