@@ -210,28 +210,28 @@ const chapters = [
             <text x="190" y="16" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">📐 What is a Determinant? (Easy Explanation)</text>
 
             <!-- Simple Explanation -->
-            <rect x="15" y="25" width="350" height="45" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <rect x="15" y="25" width="350" height="60" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
             <text x="30" y="42" font-size="10" fill="#E2A23B" font-weight="bold">Think of it like: A "magic number" that tells you two things:</text>
             <text x="35" y="58" font-size="9" fill="#F1ECDD">1️⃣ Can we solve the problem? (Is solution unique?)</text>
-            <text x="35" y="71" font-size="9" fill="#F1ECDD">2️⃣ How much area/volume does the transformation create?</text>
+            <text x="35" y="73" font-size="9" fill="#F1ECDD">2️⃣ How much area/volume does the transformation create?</text>
 
             <!-- The Formula Explained -->
-            <rect x="15" y="75" width="350" height="55" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
-            <text x="30" y="92" font-size="10" fill="#3A8F84" font-weight="bold">📋 For a 2×2 Matrix (Step-by-Step):</text>
+            <rect x="15" y="90" width="350" height="55" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
+            <text x="30" y="107" font-size="10" fill="#3A8F84" font-weight="bold">📋 For a 2×2 Matrix (Step-by-Step):</text>
 
             <!-- Visual representation -->
-            <text x="40" y="110" font-size="11" fill="#F1ECDD" font-weight="bold">Matrix:  | a  b |     Step 1: Multiply the diagonal (↘): a × d</text>
-            <text x="86" y="125" font-size="11" fill="#F1ECDD" font-weight="bold">| c  d |     Step 2: Multiply the other diagonal (↙): b × c</text>
-            <text x="40" y="140" font-size="11" fill="#F1ECDD" font-weight="bold">Determinant = (a×d) − (b×c)</text>
+            <text x="40" y="125" font-size="11" fill="#F1ECDD" font-weight="bold">Matrix:  | a  b |     Step 1: Multiply the diagonal (↘): a × d</text>
+            <text x="86" y="140" font-size="11" fill="#F1ECDD" font-weight="bold">| c  d |     Step 2: Multiply the other diagonal (↙): b × c</text>
+            <text x="40" y="155" font-size="11" fill="#F1ECDD" font-weight="bold">Determinant = (a×d) − (b×c)</text>
 
             <!-- Real Example with Clear Steps -->
-            <rect x="15" y="155" width="350" height="75" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="30" y="172" font-size="10" fill="#E2A23B" font-weight="bold">✅ Example: Calculate determinant of | 2  3 |</text>
-            <text x="86" y="187" font-size="10" fill="#E2A23B" font-weight="bold">| 4  1 |</text>
+            <rect x="15" y="170" width="350" height="75" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="30" y="187" font-size="10" fill="#E2A23B" font-weight="bold">✅ Example: Calculate determinant of | 2  3 |</text>
+            <text x="86" y="202" font-size="10" fill="#E2A23B" font-weight="bold">| 4  1 |</text>
 
-            <text x="40" y="204" font-size="10" fill="#F1ECDD">Step 1: Main diagonal (↘) = 2 × 1 = 2</text>
-            <text x="40" y="218" font-size="10" fill="#F1ECDD">Step 2: Other diagonal (↙) = 3 × 4 = 12</text>
-            <text x="40" y="232" font-size="11" fill="#E2A23B" font-weight="bold">Determinant = 2 − 12 = −10  ✓ (Solution is unique!)</text>
+            <text x="40" y="219" font-size="10" fill="#F1ECDD">Step 1: Main diagonal (↘) = 2 × 1 = 2</text>
+            <text x="40" y="233" font-size="10" fill="#F1ECDD">Step 2: Other diagonal (↙) = 3 × 4 = 12</text>
+            <text x="40" y="247" font-size="11" fill="#E2A23B" font-weight="bold">Determinant = 2 − 12 = −10  ✓ (Solution is unique!)</text>
         </svg>`
     },
     {
