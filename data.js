@@ -308,35 +308,44 @@ const chapters = [
             { q: "Find where f(x) = 2x³ − 15x² + 36x + 1 increases", a: "f'(x) = 6x² − 30x + 36 = 6(x²−5x+6) = 6(x−2)(x−3). f'(x)>0 when x<2 or x>3. Increases on (−∞,2)∪(3,∞)" },
             { q: "Box with volume 4096 cm³, minimize surface area", a: "V=x²h=4096⟹h=4096/x². S=2x²+4xh=2x²+16384/x. dS/dx=4x−16384/x²=0⟹x=16. Cube 16×16×16" }
         ],
-        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">💰 Factory Profit Optimization</text>
+            <text x="210" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">💰 Factory Profit Optimization</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Profit = 100x − x²  (where x = units produced)</text>
+            <text x="210" y="33" text-anchor="middle" font-size="9" fill="#A9AFC4">Profit P(x) = 100x − x² | Find maximum profit</text>
 
-            <!-- Axes -->
-            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="50" y1="50" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <!-- Y-Axis -->
+            <line x1="70" y1="240" x2="70" y2="50" stroke="#A9AFC4" stroke-width="2.5"/>
+            <text x="35" y="130" font-size="10" fill="#A9AFC4" font-weight="bold">Profit (₹)</text>
 
-            <!-- Labels -->
-            <text x="20" y="100" font-size="9" fill="#A9AFC4">Profit</text>
-            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">Units (x)</text>
+            <!-- X-Axis -->
+            <line x1="70" y1="240" x2="380" y2="240" stroke="#A9AFC4" stroke-width="2.5"/>
+            <text x="225" y="265" text-anchor="middle" font-size="10" fill="#A9AFC4" font-weight="bold">Units Produced (x)</text>
 
             <!-- Profit curve: parabola opening down -->
-            <path d="M 70 195 Q 120 120 160 90 Q 200 80 240 90 Q 280 120 330 195" fill="none" stroke="#3A8F84" stroke-width="3"/>
+            <path d="M 80 235 Q 120 180 160 130 Q 190 85 210 60 Q 230 85 270 130 Q 310 180 360 235"
+                  fill="none" stroke="#3A8F84" stroke-width="4" stroke-linecap="round"/>
 
-            <!-- Maximum point -->
-            <circle cx="200" cy="80" r="5" fill="#E2A23B"/>
-            <line x1="200" y1="80" x2="200" y2="200" stroke="#E2A23B" stroke-width="2" stroke-dasharray="3,3"/>
+            <!-- Maximum point - large, visible -->
+            <circle cx="210" cy="60" r="7" fill="#E2A23B"/>
+            <circle cx="210" cy="60" r="4" fill="#F39C12"/>
 
-            <!-- Labels for max -->
-            <text x="200" y="65" text-anchor="middle" font-size="10" fill="#E2A23B" font-weight="bold">Maximum Profit</text>
-            <text x="200" y="225" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">x = 50 units</text>
+            <!-- Dashed line from max to x-axis -->
+            <line x1="210" y1="60" x2="210" y2="240" stroke="#E2A23B" stroke-width="2.5" stroke-dasharray="4,4"/>
 
-            <!-- Information box -->
-            <rect x="15" y="240" width="350" height="18" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
-            <text x="25" y="253" font-size="9" fill="#F1ECDD">📊 Set f'(x) = 0 to find maximum: 100 − 2x = 0 → x = 50 units → Profit = ₹2500 max</text>
+            <!-- Title above maximum -->
+            <text x="210" y="42" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">Maximum Profit</text>
+
+            <!-- X-axis label for maximum point -->
+            <text x="210" y="285" text-anchor="middle" font-size="10" fill="#F39C12" font-weight="bold">x = 50 units</text>
+
+            <!-- Profit value label -->
+            <text x="245" y="65" font-size="9" fill="#E2A23B" font-weight="bold">P(50) = ₹2500</text>
+
+            <!-- Solution Box -->
+            <rect x="15" y="295" width="390" height="22" fill="#1F2740" stroke="#E2A23B" stroke-width="1.5" rx="2"/>
+            <text x="25" y="310" font-size="8" fill="#F1ECDD">Solution: Find critical point → P'(x) = 100 − 2x = 0 → x = 50 → Maximum Profit = ₹2500</text>
         </svg>`
     },
     {
