@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Math - Master Mathematics with Confidence</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">Σ</span>
+                <span class="logo-text">Let's Math</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" onclick="showPage('home')">Home</a></li>
+                <li><a href="#chapters" class="nav-link" onclick="showPage('chapters')">Topics</a></li>
+                <li><a href="#tricks" class="nav-link" onclick="showPage('tricks')">Tricks</a></li>
+                <li><a href="#questions" class="nav-link" onclick="showPage('questions')">Questions</a></li>
+                <li><a href="#about" class="nav-link" onclick="showPage('about')">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Pages Container -->
+    <div class="pages-container">
+
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Let's Learn Mathematics</h1>
+                    <p class="hero-subtitle">Master math concepts with clear explanations, essential tricks, and practice questions</p>
+
+                    <div class="hero-features">
+                        <div class="feature">
+                            <div class="feature-icon">📚</div>
+                            <div class="feature-text">
+                                <h3>16 Topics</h3>
+                                <p>Complete curriculum coverage</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-text">
+                                <h3>Key Tricks</h3>
+                                <p>Shortcuts for every topic</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-text">
+                                <h3>Visual Learning</h3>
+                                <p>Graphs and diagrams included</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📝</div>
+                            <div class="feature-text">
+                                <h3>Practice</h3>
+                                <p>Questions with solutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showPage('chapters')">Start Learning →</button>
+                        <button class="btn btn-secondary" onclick="showPage('tricks')">View Tricks</button>
+                    </div>
+                </div>
+                <div class="hero-illustration">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="90" fill="none" stroke="#3A8F84" stroke-width="2" opacity="0.5"/>
+                        <path d="M 100 30 Q 140 70 100 110 Q 60 70 100 30" fill="none" stroke="#E2A23B" stroke-width="3"/>
+                        <circle cx="100" cy="100" r="15" fill="#3A8F84"/>
+                        <circle cx="70" cy="70" r="8" fill="#E2A23B" opacity="0.7"/>
+                        <circle cx="130" cy="70" r="8" fill="#E2A23B" opacity="0.7"/>
+                        <circle cx="100" cy="140" r="8" fill="#E2A23B" opacity="0.7"/>
+                        <text x="100" y="105" text-anchor="middle" font-size="20" fill="#F6F1E4" font-weight="bold">Σ</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="mindset-section">
+                <h2>💡 Remember...</h2>
+                <div class="mindset-cards">
+                    <div class="mindset-card">
+                        <p>"Every mathematician was once confused by these topics. Confusion is the first step to mastery."</p>
+                    </div>
+                    <div class="mindset-card">
+                        <p>"You don't need to love math to get good at it. You need practice. The passion comes after confidence."</p>
+                    </div>
+                    <div class="mindset-card">
+                        <p>"Exams reward pattern recognition, not genius. Learn 3-4 tricks per chapter and most 'hard' questions become familiar."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAPTERS PAGE -->
+        <div id="chapters" class="page">
+            <div class="container">
+                <h1>📚 All Topics</h1>
+                <p class="section-intro">Click on any topic to learn concepts, tricks, and see visual explanations</p>
+
+                <div class="chapters-grid">
+                    <!-- Chapters will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAPTER DETAIL PAGE -->
+        <div id="chapter-detail" class="page">
+            <div class="container">
+                <button class="back-btn" onclick="showPage('chapters')">← Back to Topics</button>
+                <div id="chapter-content">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TRICKS PAGE -->
+        <div id="tricks" class="page">
+            <div class="container">
+                <h1>⚡ Essential Tricks & Shortcuts</h1>
+                <p class="section-intro">Quick tips to solve problems faster during exams</p>
+
+                <div class="tricks-container">
+                    <!-- Tricks will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTIONS PAGE -->
+        <div id="questions" class="page">
+            <div class="container">
+                <h1>📝 Practice Questions & Solutions</h1>
+                <p class="section-intro">Predicted questions based on exam pattern analysis</p>
+
+                <div class="questions-container">
+                    <!-- Questions will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about" class="page">
+            <div class="container">
+                <h1>About Let's Math</h1>
+                <div class="about-content">
+                    <div class="about-section">
+                        <h2>🎯 Our Mission</h2>
+                        <p>To make mathematics accessible, understandable, and enjoyable for every student. We believe that with the right approach, anyone can master math and remove exam anxiety forever.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>✨ What We Offer</h2>
+                        <ul class="about-list">
+                            <li><strong>16 Complete Topics:</strong> Core sections A, B, and C with comprehensive coverage</li>
+                            <li><strong>Essential Tricks:</strong> 3-4 critical shortcuts per topic for faster problem-solving</li>
+                            <li><strong>Visual Learning:</strong> Graphs, diagrams, and illustrations for each concept</li>
+                            <li><strong>Practice Questions:</strong> With complete step-by-step solutions</li>
+                            <li><strong>Predicted Questions:</strong> Based on analysis of previous exam patterns</li>
+                            <li><strong>Free & Public:</strong> Accessible to all students, anytime, anywhere</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>🚀 How to Use</h2>
+                        <ol class="about-list">
+                            <li>Go to <strong>Topics</strong> and select a chapter you want to learn</li>
+                            <li>Read the <strong>concept explanation</strong> carefully</li>
+                            <li>Study the <strong>visual diagrams</strong> to understand better</li>
+                            <li>Learn the <strong>tricks & shortcuts</strong> for that topic</li>
+                            <li>Practice with <strong>worked examples</strong> and solutions</li>
+                            <li>Visit <strong>Tricks</strong> page for quick reference during revision</li>
+                            <li>Use <strong>Questions</strong> page to practice exam-style questions</li>
+                        </ol>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>💬 Words of Encouragement</h2>
+                        <p style="font-size: 1.1em; font-style: italic; color: #3A8F84;">
+                            "Mathematics is not about being born clever. It's about understanding patterns, practicing consistently, and believing in yourself. Every expert was once a beginner. Your success is not a question of IF, but WHEN you decide to commit."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Let's Math. Free mathematics learning platform for students worldwide.</p>
+        <p>Built with ❤️ to make math accessible to everyone.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
