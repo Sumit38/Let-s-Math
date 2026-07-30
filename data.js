@@ -684,46 +684,62 @@ const chapters = [
             { q: "Area bounded by y=x² and y=x", a: "Intersections: x²=x ⟹ x=0 or 1. Between 0 and 1, y=x is above y=x². Area = ∫₀¹(x−x²)dx = [x²/2−x³/3]₀¹ = 1/2−1/3 = 1/6" },
             { q: "Set up integral for area under y=sinx from 0 to π", a: "∫₀^π sinx dx (evaluates to 2)" }
         ],
-        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 450 310" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="15" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">🚜 Farm Land Between River & Fence</text>
+            <text x="225" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🚜 Farm Land Between River & Fence</text>
 
-            <!-- Problem -->
-            <text x="190" y="28" text-anchor="middle" font-size="8" fill="#A9AFC4">y=x² (river curve) | y=2x (fence) | Area = ?</text>
+            <!-- Problem statement -->
+            <rect x="15" y="20" width="420" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="2"/>
+            <text x="25" y="33" font-size="8" fill="#A9AFC4">Find area between river y=x² and fence y=2x | Limits: x=0 to x=2</text>
+            <text x="25" y="43" font-size="8" fill="#E2A23B">Answer: ∫₀²(2x−x²)dx = 4/3 square units</text>
 
-            <!-- Axes -->
-            <line x1="45" y1="195" x2="355" y2="195" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="45" y1="45" x2="45" y2="195" stroke="#A9AFC4" stroke-width="2"/>
-            <text x="20" y="110" font-size="8" fill="#A9AFC4" font-weight="bold">y</text>
-            <text x="190" y="212" text-anchor="middle" font-size="8" fill="#A9AFC4" font-weight="bold">x</text>
+            <!-- Y-Axis -->
+            <line x1="80" y1="250" x2="80" y2="60" stroke="#A9AFC4" stroke-width="2.5"/>
+            <text x="35" y="150" font-size="10" fill="#A9AFC4" font-weight="bold">y-axis</text>
 
-            <!-- River curve y=x² (curved, smooth) -->
-            <path d="M 50 190 Q 80 160 120 105 Q 150 65 200 35" fill="none" stroke="#3A8F84" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="100" cy="140" r="2" fill="#3A8F84"/>
-            <text x="105" y="135" font-size="9" fill="#3A8F84" font-weight="bold">RIVER: y=x²</text>
+            <!-- X-Axis -->
+            <line x1="80" y1="250" x2="400" y2="250" stroke="#A9AFC4" stroke-width="2.5"/>
+            <text x="240" y="272" text-anchor="middle" font-size="10" fill="#A9AFC4" font-weight="bold">x-axis</text>
 
-            <!-- Fence line y=2x (straight) -->
-            <path d="M 50 190 L 200 35" stroke="#E2A23B" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="140" cy="110" r="2" fill="#E2A23B"/>
-            <text x="150" y="110" font-size="9" fill="#E2A23B" font-weight="bold">FENCE: y=2x</text>
+            <!-- River curve y=x² (teal, curved) -->
+            <path d="M 85 245 Q 115 205 150 155 Q 180 105 215 60"
+                  fill="none" stroke="#3A8F84" stroke-width="3.5" stroke-linecap="round"/>
 
-            <!-- Shaded farmable area (bright green) -->
-            <path d="M 50 190 Q 80 160 120 105 Q 150 65 200 35 L 200 35 L 50 190 Z" fill="#51CF66" opacity="0.3" stroke="#51CF66" stroke-width="1.5"/>
-            <text x="120" y="130" font-size="10" fill="#51CF66" font-weight="bold">FARM AREA</text>
+            <!-- Fence line y=2x (yellow, straight) -->
+            <path d="M 85 245 L 215 60"
+                  stroke="#E2A23B" stroke-width="3.5" stroke-linecap="round"/>
 
-            <!-- Corner points (large, visible) -->
-            <circle cx="50" cy="190" r="4" fill="none" stroke="#E2A23B" stroke-width="2"/>
-            <circle cx="50" cy="190" r="2" fill="#E2A23B"/>
-            <text x="35" y="207" font-size="8" fill="#F1ECDD" font-weight="bold">(0,0)</text>
+            <!-- Shaded farmable area -->
+            <path d="M 85 245 Q 115 205 150 155 Q 180 105 215 60 L 215 60 L 85 245 Z"
+                  fill="#51CF66" opacity="0.25" stroke="none"/>
 
-            <circle cx="200" cy="35" r="4" fill="none" stroke="#E2A23B" stroke-width="2"/>
-            <circle cx="200" cy="35" r="2" fill="#E2A23B"/>
-            <text x="200" y="25" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(2,4)</text>
+            <!-- Corner points -->
+            <!-- (0,0) -->
+            <circle cx="85" cy="245" r="5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
+            <circle cx="85" cy="245" r="2.5" fill="#F39C12"/>
+            <text x="60" y="265" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(0,0)</text>
+
+            <!-- (2,4) -->
+            <circle cx="215" cy="60" r="5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
+            <circle cx="215" cy="60" r="2.5" fill="#F39C12"/>
+            <text x="240" y="48" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(2,4)</text>
+
+            <!-- Curve labels with clear positioning -->
+            <!-- River label on the left side -->
+            <text x="100" y="155" font-size="9" fill="#3A8F84" font-weight="bold">RIVER:</text>
+            <text x="100" y="167" font-size="9" fill="#3A8F84" font-weight="bold">y=x²</text>
+
+            <!-- Fence label on the right side -->
+            <text x="270" y="135" font-size="9" fill="#E2A23B" font-weight="bold">FENCE:</text>
+            <text x="270" y="147" font-size="9" fill="#E2A23B" font-weight="bold">y=2x</text>
+
+            <!-- Farm area label in center -->
+            <text x="150" y="165" font-size="11" fill="#51CF66" font-weight="bold">FARM AREA</text>
 
             <!-- Solution Box -->
-            <rect x="10" y="225" width="360" height="32" fill="#1F2740" stroke="#51CF66" stroke-width="2" rx="3"/>
-            <text x="25" y="235" font-size="9" fill="#E2A23B" font-weight="bold">Solution:</text>
-            <text x="25" y="250" font-size="9" fill="#A9AFC4">Area = ∫₀²(2x−x²)dx = [x²−x³/3]₀² = 4−8/3 = 4/3 sq units (farmable land)</text>
+            <rect x="15" y="275" width="420" height="32" fill="#1F2740" stroke="#51CF66" stroke-width="1.5" rx="2"/>
+            <text x="25" y="288" font-size="8" fill="#E2A23B" font-weight="bold">✓ Solution:</text>
+            <text x="25" y="301" font-size="8" fill="#A9AFC4">Area = ∫₀²(2x−x²)dx = [x²−x³/3]₀² = 4−8/3 = 4/3 acres (farmable land)</text>
         </svg>`
     },
     {
