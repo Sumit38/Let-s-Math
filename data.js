@@ -57,7 +57,7 @@ const chapters = [
         title: "Inverse Trigonometric Functions",
         icon: "θ",
         marks: "~4 marks",
-        concept: "Inverse trig functions undo the trig ratios, restricted to principal value ranges. Master sin⁻¹, cos⁻¹, tan⁻¹, and their key identities. Understanding principal values and domain restrictions is essential.",
+        concept: "Inverse trig functions solve real-world angle problems. Real-life: Surveyor measures: \"If building height = 50m and shadow length = 100m, what's the sun's angle?\" Answer: θ = tan⁻¹(50/100) ≈ 26.57°. Camera: \"Lens sees object at 30° elevation. What's the actual height?\" Navigation: \"Ship bearing is 45° from north.\" Aircraft: \"Climb angle for takeoff = sin⁻¹(rate/speed)\". Master sin⁻¹, cos⁻¹, tan⁻¹, and their principal value ranges (crucial for getting real-world angles right).",
         tricks: [
             "sin⁻¹x + cos⁻¹x = π/2 and tan⁻¹x + cot⁻¹x = π/2 — instant simplifiers",
             "tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)) only holds when xy<1",
@@ -133,7 +133,7 @@ const chapters = [
         title: "Determinants",
         icon: "|A|",
         marks: "~4 marks",
-        concept: "Determinants compute to a single number from a square matrix. Essential for checking invertibility, finding areas of triangles, and solving systems. Master row operations and expansion methods.",
+        concept: "Determinants solve geometric and system problems. Real-life: Surveyor finds **area of triangular land plot** with vertices at (0,0), (100,50), (80,120): Area = |det|/2 = 3400 m². Architect: Check if 3 walls are **collinear** (determinant = 0 means they're on same line, error!). Engineer: **Solve 2 force equations** F₁+F₂=100N and 2F₁−F₂=50N using Cramer's Rule with determinants. Programmer: Detect **singular matrices** (det=0 means matrix has no inverse, can't solve). Determinants = single number capturing system information.",
         tricks: [
             "Two identical rows or columns ⟹ determinant is 0 (spot this before expanding!)",
             "Row/column operations don't change value — create zeros first to simplify",
@@ -173,7 +173,7 @@ const chapters = [
         title: "Continuity and Differentiability",
         icon: "lim",
         marks: "~8 marks",
-        concept: "Continuity: function value matches the limit. Differentiability: well-defined slope (derivative) exists. Key insight: differentiability ⟹ continuity, but not reverse. Corners and cusps are continuous but not differentiable.",
+        concept: "Continuity = smooth without jumps. Differentiability = smooth slope. Real-life: **Road design**: highway curve must be continuous (no cracks) and differentiable (no sharp corners—passengers get hurt!). **Bridge**: continuous but might have corner → differentiable fails → dangerous. **Video frame rate**: jump in pixel value (discontinuous) = glitch. **Robot arm**: must be differentiable or jerks occur. **Stock price**: continuous (no teleporting), but corners at sudden news events. Calculus theorem: If differentiable ⟹ continuous; but continuous ≠> differentiable (corners exist!).",
         tricks: [
             "To check continuity at a point: compute LHL, RHL, and f(a) separately — never assume",
             "Differentiable always implies continuous, but reverse is FALSE",
@@ -239,7 +239,7 @@ const chapters = [
         title: "Indefinite Integrals",
         icon: "∫dx",
         marks: "~4-6 marks",
-        concept: "Indefinite integration reverses differentiation. Master substitution (spot function and its derivative together) and ILATE rule for integration by parts. Remember: ∫f(x)dx = F(x) + C",
+        concept: "Indefinite integrals are **antiderivatives** — they undo differentiation. Real-life: **Velocity → Distance**: If velocity v(t) = 2t+3 m/s, distance = ∫(2t+3)dt = t² + 3t + C. The '+C' captures \"how far you started.\" **Drug concentration**: If elimination rate is -0.5C, concentration C(t) = Ae^(-0.5t). **Profit from revenue**: If revenue rate dR/dx = 100-2x, total revenue = ∫(100-2x)dx = 100x − x² + C. **Spring potential energy**: ∫kx dx = kx²/2 + C. Integration by parts (ILATE) and substitution are power tools for complex functions.",
         tricks: [
             "Spot a function and its derivative in the integrand ⟹ that's your substitution cue",
             "ILATE priority for ∫u dv: Inverse, Log, Algebraic, Trig, Exponential — pick u in that order",
@@ -321,7 +321,7 @@ const chapters = [
         title: "Differential Equations",
         icon: "dy/dx",
         marks: "~4 marks",
-        concept: "Differential equations relate functions to their derivatives. Solving means finding families of functions satisfying the equation. Master separable variables and substitution methods like v=x+y.",
+        concept: "Differential equations model **how things change over time**. Real-life: **Population growth**: dp/dt = kp models bacteria doubling (k>0) or decay (k<0). **Radioactive decay**: dN/dt = -λN describes half-life. **Cooling coffee**: dT/dt = -k(T-T_room) Newton's Law. **Bank account with interest**: dA/dt = rA compounds continuously. **Disease spread**: dI/dt = βSI−γI (SEIR model for COVID). **Rocket motion**: m(dv/dt) = F−mg from Newton's 2nd law. Separable equations (get x's and y's on opposite sides) are the most practical tool for physicists and engineers.",
         tricks: [
             "If x and y appear only as (x+y), substitute v=x+y to make separable",
             "Variable separable: get all y-terms with dy on one side, all x-terms with dx on other, integrate both",
@@ -364,66 +364,53 @@ const chapters = [
             { q: "Two dice: Find P(sum=7 | at least one 4)", a: "Outcomes with at least one 4: 11 total. Of these, (3,4) and (4,3) sum to 7: 2 outcomes. P = 2/11" },
             { q: "Coin tossed 5 times. Find P(exactly 3 heads)", a: "C(5,3) × (0.5)⁵ = 10/32 = 5/16" }
         ],
-        diagram: `<svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
-            <!-- Title -->
-            <text x="250" y="25" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">Binomial Probability Distribution</text>
-            <text x="250" y="45" text-anchor="middle" font-size="12" fill="#E2A23B">Coin tossed 5 times (n=5, p=0.5)</text>
-
-            <!-- Formula Box -->
-            <rect x="10" y="55" width="480" height="50" fill="#1F2740" stroke="#3A8F84" stroke-width="2" rx="5"/>
-            <text x="250" y="75" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">Formula: P(X=k) = C(n,k) × p^k × (1-p)^(n-k)</text>
-            <text x="250" y="95" text-anchor="middle" font-size="10" fill="#A9AFC4">Where: n=5 (trials), p=0.5 (prob. of success), k=number of heads</text>
-
+        diagram: `<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
             <!-- Axes -->
-            <line x1="60" y1="310" x2="480" y2="310" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="60" y1="130" x2="60" y2="310" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="80" y1="280" x2="580" y2="280" stroke="#A9AFC4" stroke-width="3"/>
+            <line x1="80" y1="40" x2="80" y2="280" stroke="#A9AFC4" stroke-width="3"/>
 
-            <!-- Axis Labels -->
-            <text x="470" y="330" font-size="11" fill="#A9AFC4" font-weight="bold">Number of Heads (X)</text>
-            <text x="25" y="200" font-size="11" fill="#A9AFC4" font-weight="bold">Probability</text>
+            <!-- Y-axis labels -->
+            <text x="70" y="285" text-anchor="end" font-size="11" fill="#A9AFC4">0</text>
+            <text x="70" y="215" text-anchor="end" font-size="11" fill="#A9AFC4">0.25</text>
+            <text x="70" y="145" text-anchor="end" font-size="11" fill="#A9AFC4">0.50</text>
 
-            <!-- Y-axis scale -->
-            <text x="50" y="315" text-anchor="end" font-size="9" fill="#A9AFC4">0</text>
-            <text x="50" y="250" text-anchor="end" font-size="9" fill="#A9AFC4">0.25</text>
-            <text x="50" y="185" text-anchor="end" font-size="9" fill="#A9AFC4">0.50</text>
+            <!-- Grid lines (light) -->
+            <line x1="80" y1="215" x2="580" y2="215" stroke="#A9AFC4" stroke-width="0.5" opacity="0.3"/>
+            <line x1="80" y1="145" x2="580" y2="145" stroke="#A9AFC4" stroke-width="0.5" opacity="0.3"/>
 
-            <!-- Bars with labels showing probabilities -->
-            <!-- P(X=0) = 1/32 ≈ 0.03125 -->
-            <rect x="85" y="290" width="35" height="20" fill="#3A8F84" opacity="0.8"/>
-            <text x="102" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">0</text>
-            <text x="102" y="345" text-anchor="middle" font-size="9" fill="#E2A23B">1/32</text>
+            <!-- Bars -->
+            <rect x="100" y="258" width="45" height="22" fill="#3A8F84" rx="3"/>
+            <rect x="165" y="195" width="45" height="85" fill="#3A8F84" rx="3"/>
+            <rect x="230" y="90" width="45" height="190" fill="#E2A23B" rx="3"/>
+            <rect x="295" y="90" width="45" height="190" fill="#E2A23B" rx="3"/>
+            <rect x="360" y="195" width="45" height="85" fill="#3A8F84" rx="3"/>
+            <rect x="425" y="258" width="45" height="22" fill="#3A8F84" rx="3"/>
 
-            <!-- P(X=1) = 5/32 ≈ 0.156 -->
-            <rect x="135" y="225" width="35" height="85" fill="#3A8F84" opacity="0.8"/>
-            <text x="152" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">1</text>
-            <text x="152" y="345" text-anchor="middle" font-size="9" fill="#E2A23B">5/32</text>
+            <!-- X-axis labels (Number of Heads) -->
+            <text x="122" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">0</text>
+            <text x="187" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">1</text>
+            <text x="252" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">2</text>
+            <text x="317" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">3</text>
+            <text x="382" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">4</text>
+            <text x="447" y="320" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">5</text>
 
-            <!-- P(X=2) = 10/32 ≈ 0.3125 (MAX) -->
-            <rect x="185" y="135" width="35" height="175" fill="#E2A23B" opacity="0.9"/>
-            <text x="202" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">2</text>
-            <text x="202" y="345" text-anchor="middle" font-size="9" fill="#3A8F84" font-weight="bold">10/32 ⭐</text>
+            <!-- Probability labels on bars -->
+            <text x="122" y="295" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">1/32</text>
+            <text x="187" y="260" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">5/32</text>
+            <text x="252" y="75" text-anchor="middle" font-size="10" fill="#ink" font-weight="bold">10/32 ⭐</text>
+            <text x="317" y="75" text-anchor="middle" font-size="10" fill="#ink" font-weight="bold">10/32 ⭐</text>
+            <text x="382" y="260" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">5/32</text>
+            <text x="447" y="295" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">1/32</text>
 
-            <!-- P(X=3) = 10/32 ≈ 0.3125 (MAX) -->
-            <rect x="235" y="135" width="35" height="175" fill="#E2A23B" opacity="0.9"/>
-            <text x="252" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">3</text>
-            <text x="252" y="345" text-anchor="middle" font-size="9" fill="#3A8F84" font-weight="bold">10/32 ⭐</text>
+            <!-- Axis titles -->
+            <text x="560" y="305" font-size="12" fill="#A9AFC4" font-weight="bold">Num</text>
+            <text x="25" y="160" font-size="12" fill="#A9AFC4" font-weight="bold">Probability</text>
 
-            <!-- P(X=4) = 5/32 ≈ 0.156 -->
-            <rect x="285" y="225" width="35" height="85" fill="#3A8F84" opacity="0.8"/>
-            <text x="302" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">4</text>
-            <text x="302" y="345" text-anchor="middle" font-size="9" fill="#E2A23B">5/32</text>
+            <!-- Title and subtitle -->
+            <text x="300" y="25" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">Binomial Probability: n=5, p=0.5</text>
 
-            <!-- P(X=5) = 1/32 ≈ 0.03125 -->
-            <rect x="335" y="290" width="35" height="20" fill="#3A8F84" opacity="0.8"/>
-            <text x="352" y="330" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">5</text>
-            <text x="352" y="345" text-anchor="middle" font-size="9" fill="#E2A23B">1/32</text>
-
-            <!-- Key Information Box -->
-            <rect x="10" y="370" width="480" height="70" fill="#1F2740" stroke="#E2A23B" stroke-width="2" rx="5"/>
-            <text x="20" y="390" font-size="11" fill="#E2A23B" font-weight="bold">📊 Key Insights:</text>
-            <text x="20" y="410" font-size="10" fill="#F1ECDD">• Most likely outcomes: X=2 or X=3 heads (both 31.25%)</text>
-            <text x="20" y="425" font-size="10" fill="#F1ECDD">• Symmetrical distribution: P(X=k) = P(X=5-k)</text>
-            <text x="20" y="440" font-size="10" fill="#F1ECDD">• Total probability sums to 1: (1+5+10+10+5+1)/32 = 32/32 = 1 ✓</text>
+            <!-- Footer info -->
+            <text x="300" y="365" text-anchor="middle" font-size="10" fill="#A9AFC4">Peak at X=2 and X=3 (31.25% each) • Symmetrical distribution</text>
         </svg>`
     },
     {
@@ -431,7 +418,7 @@ const chapters = [
         title: "Vectors",
         icon: "v⃗",
         marks: "~6-8 marks",
-        concept: "Vectors have magnitude and direction. Master vector algebra, dot product (for angles and projections), cross product (perpendicularity and area), and scalar triple product (volume). Essential for physics and engineering.",
+        concept: "Vectors = magnitude + direction. Real-life: **GPS navigation**: v⃗ = (North, East, Up) components. **Force**: F⃗ = (3N, 4N) has magnitude 5N at angle tan⁻¹(4/3). **Airplane**: velocity = speed in direction (heading). **Game physics**: Player position + velocity·time = next position. **Dot product**: How much force goes in direction of motion. v⃗·F⃗ = 0 ⟹ perpendicular forces do no work. **Cross product**: Torque = r⃗×F⃗ (perpendicularity creates spin). **Volume**: box volume = |(a⃗×b⃗)·c⃗|. Graphics engines use vectors constantly; physics engines too.",
         tricks: [
             "Perpendicular vectors ⟹ dot product = 0. Parallel vectors ⟹ cross product = 0",
             "|a⃗+b⃗|² = |a⃗|²+|b⃗|²+2(a⃗·b⃗) — expand this way whenever sums and magnitudes involved",
@@ -472,7 +459,7 @@ const chapters = [
         title: "Three-Dimensional Geometry",
         icon: "xyz",
         marks: "~8-10 marks",
-        concept: "Extends vectors into 3D: equations of lines and planes, angles between lines, distances from point to plane. Most problems reduce to comparing direction ratios using dot product.",
+        concept: "Real-world 3D space: navigation, architecture, aviation. Real-life: **Airplane path**: Find line through (0,0,0) in direction (1,2,3). At time t, position = (t, 2t, 3t). **Building: wall equation**: Plane x+2y−2z=9 (like blueprint coordinates). **Distance from point to wall**: How far is office (2,3,−5) from wall plane? Use distance formula. **Angle between flights**: Two aircraft on paths with directions (1,0,1) and (0,1,1). Angle = cos⁻¹(dot product / magnitudes). **Vertical separation**: If plane A at height z₁ and plane B at z₂, safe if |z₁−z₂| > min distance. Aviation, architecture, gaming—all use 3D geometry constantly.",
         tricks: [
             "Angle between lines needs only direction ratios — no actual points required",
             "Perpendicular lines: dot product of direction ratios = 0. Parallel: ratios proportional",
@@ -511,7 +498,7 @@ const chapters = [
         title: "Application of Integrals",
         icon: "∫∫",
         marks: "~6 marks",
-        concept: "Uses definite integrals to find areas between curves. Key: sketch first, identify which curve is on top, find intersection points, then integrate the difference.",
+        concept: "Real-world area problems. Real-life: **Land surveying**: Farmer's field bounded by river y=x² and fence y=2x. Area = ∫(2x−x²)dx from 0 to 2 = 4/3 acres. **Bridge deck**: Cross-section between girder curves. **Tunnel**: Area of oval tunnel entrance. **Water tank**: If depth varies as d=10−x², volume = π∫(10−x²)² dx. **Fabric**:  dress pattern between two curves = material needed. Sketch first, spot which curve is on top, find intersections (limits), integrate upper−lower. Picture = crucial first step.",
         tricks: [
             "Always sketch graph first — knowing which curve sits on top tells you what to subtract",
             "Find intersections by equating curve equations — these become your limits",
@@ -615,7 +602,7 @@ const chapters = [
         title: "Linear Programming",
         icon: "Z",
         marks: "~4-6 marks",
-        concept: "Finds optimal value of linear objective subject to linear constraints. Key insight: the optimal value always occurs at a corner of the feasible region, never in the interior.",
+        concept: "Maximize profit or minimize cost under constraints. Real-life: **Factory**: Make chairs (profit ₹20 each, 2hrs each) and tables (₹30 each, 3hrs each) with 12hrs available. Maximize Z=20x+30y subject to 2x+3y≤12. Answer: Make 0 chairs, 4 tables = ₹120 profit (at corner point). **Airline**: Balance fuel costs vs speed. **Farm**: Allocate land between wheat (profit ₹5000/acre, needs 10hrs) and rice (₹4000/acre, 8hrs) with 100 acres, 900hrs available. Maximize profit. **Shipping**: Minimize cost shipping goods through network. Corner point check: Set all inequalities to equality, solve system, test all corners. Optimal always at a corner (never interior).",
         tricks: [
             "Optimal value ALWAYS at corner of feasible region — never check interior",
             "Shade feasible region by testing (0,0) in each inequality — if satisfied, shade toward origin",
