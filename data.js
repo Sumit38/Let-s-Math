@@ -337,14 +337,18 @@ const chapters = [
         title: "Probability",
         icon: "P",
         marks: "~10 marks",
-        concept: "Probability builds on basic concepts with conditional probability, independence, Bayes' theorem, and binomial distributions. Master the 'box' pattern for Bayes' problems and 'at least one' transformations.",
+        concept: "Probability measures how likely an event is to happen. It appears everywhere in our surroundings: playing cards (probability of drawing a specific card), dice games (winning chances), coin tosses (heads or tails), lotteries, and weather predictions. Master conditional probability, independence, Bayes' theorem, and binomial distributions. Real-world example: A standard deck has 52 cards (4 suits × 13 ranks). P(drawing a spade) = 13/52 = 1/4 = 0.25 or 25%.",
         tricks: [
             "'At least one' problems: compute 1 − P(none) instead of summing cases — almost always faster",
             "Bayes' box problems: build mini table of P(box)×P(event|box) for each box before dividing",
             "Independent vs mutually exclusive: P(A∩B)=P(A)P(B) vs P(A∩B)=0 — completely different!",
-            "Binomial: mean=np, variance=npq — use when both given to find n and p"
+            "Binomial: mean=np, variance=npq — use when both given to find n and p",
+            "Playing cards: 52 total, 4 suits (13 each), 4 ranks of same type — use to identify favorable outcomes easily"
         ],
         practice: [
+            { q: "Playing Cards: From a standard 52-card deck, what's P(drawing a red card)?", a: "Red cards = Hearts + Diamonds = 13 + 13 = 26 cards. P(red) = 26/52 = 1/2 = 0.5 (50%)" },
+            { q: "Playing Cards: What's P(drawing an Ace from a 52-card deck)?", a: "Total Aces = 4 (one per suit). P(Ace) = 4/52 = 1/13 ≈ 0.077 or 7.7%" },
+            { q: "Playing Cards: P(drawing a King OR a Queen)?", a: "Kings = 4, Queens = 4, Total favorable = 8. P(King or Queen) = 8/52 = 2/13 ≈ 15.4%" },
             { q: "Two dice: Find P(sum=7 | at least one 4)", a: "Outcomes with at least one 4: 11 total. Of these, (3,4) and (4,3) sum to 7: 2 outcomes. P = 2/11" },
             { q: "Coin tossed 5 times. Find P(exactly 3 heads)", a: "C(5,3) × (0.5)⁵ = 10/32 = 5/16" }
         ],
