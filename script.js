@@ -72,7 +72,10 @@ function showChapterDetail(chapterId) {
             ${chapter.practice.map((item, index) => `
                 <div class="practice-item">
                     <div class="practice-question">Q: ${item.q}</div>
-                    <button class="hint-btn-small" onclick="openHints(${chapterId}, ${index + 1})">🔦 Get Hint</button>
+                    <div style="display: flex; gap: 10px; margin: 10px 0;">
+                        <button class="hint-btn-small" onclick="openHints(${chapterId}, ${index + 1})">🔦 Get Hint</button>
+                        <button class="hint-btn-small" style="background: #70AD47; border-color: #70AD47;" onclick="trackProblemCompletion(${chapterId})">✓ Mark Solved</button>
+                    </div>
                     <div class="practice-answer">A: ${item.a}</div>
                 </div>
             `).join('')}
@@ -144,6 +147,73 @@ window.onclick = function(event) {
         closeHints();
     }
 }
+
+// Achievement Celebration System
+let currentChapterId = null;
+
+function trackProblemCompletion(chapterId) {
+    currentChapterId = chapterId;
+    const chapter = chapters.find(c => c.id === chapterId);
+    if (!chapter) return;
+
+    // Get stored progress for this chapter
+    let progress = JSON.parse(localStorage.getItem(`chapter_${chapterId}_progress`) || '{"solved": 0}');
+    progress.solved += 1;
+    progress.total = chapter.practice.length;
+    progress.percentage = Math.round((progress.solved / progress.total) * 100);
+
+    localStorage.setItem(`chapter_${chapterId}_progress`, JSON.stringify(progress));
+
+    // Check if 50% threshold is reached
+    if (progress.percentage >= 50 && progress.solved === Math.ceil(progress.total * 0.5)) {
+        showCelebration(chapterId, chapter, progress);
+    }
+}
+
+function showCelebration(chapterId, chapter, progress) {
+    const modal = document.getElementById('celebrationModal');
+
+    // Update celebration content
+    document.getElementById('celebrationTopicName').textContent = chapter.title;
+
+    // Get topic-specific skills message
+    const skillsMessages = {
+        1: "✓ Understanding relationships between variables<br>✓ Identifying function properties<br>✓ Working with domain and range",
+        2: "✓ Thinking backwards about angles<br>✓ Working with inverse trigonometric functions<br>✓ Solving real-world angle problems",
+        3: "✓ Organizing data in matrix form<br>✓ Performing matrix operations<br>✓ Understanding applications of matrices",
+        4: "✓ Calculating determinants correctly<br>✓ Understanding matrix invertibility<br>✓ Using determinants to solve systems",
+        5: "✓ Understanding continuity and limits<br>✓ Grasping derivatives conceptually<br>✓ Connecting calculus to functions",
+        6: "✓ Applying derivatives to real problems<br>✓ Optimizing functions<br>✓ Understanding motion and rates",
+        7: "✓ Computing indefinite integrals<br>✓ Evaluating definite integrals<br>✓ Applying integration to areas",
+        8: "✓ Solving differential equations<br>✓ Modeling real-world change<br>✓ Understanding rates of change",
+        9: "✓ Working with vectors in 3D<br>✓ Computing dot and cross products<br>✓ Solving vector problems",
+        10: "✓ Understanding 3D coordinate geometry<br>✓ Working with planes and lines in space<br>✓ Solving spatial problems",
+        11: "✓ Calculating probabilities correctly<br>✓ Understanding conditional probability<br>✓ Applying probability to real situations",
+        12: "✓ Organizing and analyzing data<br>✓ Computing statistics accurately<br>✓ Making data-driven decisions",
+        13: "✓ Formulating linear programs<br>✓ Finding optimal solutions<br>✓ Applying optimization techniques",
+        14: "✓ Operating with complex numbers<br>✓ Understanding complex plane geometry<br>✓ Solving complex equations",
+        15: "✓ Solving quadratic equations efficiently<br>✓ Understanding parabola properties<br>✓ Applying quadratics to problems",
+        16: "✓ Finding patterns in sequences<br>✓ Computing series sums<br>✓ Understanding series convergence",
+        17: "✓ Expanding using binomial theorem<br>✓ Finding binomial coefficients<br>✓ Solving binomial problems"
+    };
+
+    document.getElementById('celebrationSkills').innerHTML = skillsMessages[chapterId] || "✓ Building mathematical thinking<br>✓ Solving problems strategically<br>✓ Understanding key concepts";
+
+    modal.classList.add('active');
+}
+
+function closeCelebration() {
+    const modal = document.getElementById('celebrationModal');
+    modal.classList.remove('active');
+}
+
+// Close celebration when clicking outside
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('celebrationModal');
+    if (modal && event.target === modal.querySelector('.celebration-overlay')) {
+        closeCelebration();
+    }
+});
 
 // Initialize tricks page
 function initializeTricks() {

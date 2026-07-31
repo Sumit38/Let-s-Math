@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Simple Welcome Overlay -->
+    <div id="welcomeOverlay" class="welcome-overlay">
+        <div class="welcome-message">
+            <h2 style="font-size: 2.2em; margin-bottom: 20px; background: linear-gradient(135deg, #70AD47, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Welcome to Let's Math</h2>
+            <p style="font-size: 1.1em; color: #E2A23B; line-height: 2; margin-bottom: 15px;">This is your personal, private learning space.</p>
+            <p style="font-size: 1.05em; color: #A9AFC4; line-height: 1.9; margin-bottom: 15px;">No pressure. No competition. Just you, growing at your own pace.</p>
+            <p style="font-size: 0.95em; color: #70AD47; font-style: italic;">Every struggle is the first step to mastery. Let's learn together. 💚</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -29,71 +39,116 @@
 
         <!-- HOME PAGE -->
         <div id="home" class="page active">
-            <div class="hero">
-                <div class="hero-content">
-                    <h1 class="hero-title">Let's Learn Mathematics</h1>
-                    <p class="hero-subtitle">Master math concepts with clear explanations, essential tricks, and practice questions</p>
+            <!-- Welcome Section -->
+            <div class="container">
+                <div style="text-align: center; padding: 60px 20px 50px;">
+                    <h1 class="hero-title" style="font-size: 3.5em; margin-bottom: 20px; background: linear-gradient(135deg, #70AD47, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Let's Learn Mathematics</h1>
+                    <p style="font-size: 1.15em; color: #A9AFC4; max-width: 700px; margin: 0 auto; line-height: 1.9;">
+                        This is your personal, private learning space. No pressure. No competition. Just you, growing at your own pace.
+                    </p>
+                </div>
 
-                    <div class="hero-features">
-                        <div class="feature">
-                            <div class="feature-icon">📚</div>
-                            <div class="feature-text">
-                                <h3>16 Topics</h3>
-                                <p>Complete curriculum coverage</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">⚡</div>
-                            <div class="feature-text">
-                                <h3>Key Tricks</h3>
-                                <p>Shortcuts for every topic</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">📊</div>
-                            <div class="feature-text">
-                                <h3>Visual Learning</h3>
-                                <p>Graphs and diagrams included</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">📝</div>
-                            <div class="feature-text">
-                                <h3>Practice</h3>
-                                <p>Questions with solutions</p>
-                            </div>
-                        </div>
+                <!-- Emotional Support Cards -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px;">
+                    <div style="background: linear-gradient(135deg, rgba(112, 173, 71, 0.2), rgba(112, 173, 71, 0.05)); border: 1px solid rgba(112, 173, 71, 0.3); padding: 30px; border-radius: 15px; transition: all 0.3s; hover: transform 0.2s;">
+                        <div style="font-size: 3em; margin-bottom: 15px;">🌟</div>
+                        <h3 style="color: #70AD47; margin-bottom: 12px; font-size: 1.15em; font-weight: 600;">Every Struggle is Learning</h3>
+                        <p style="color: #F1ECDD; line-height: 1.7; font-size: 0.95em;">Getting stuck means you're on the edge of understanding. That's exactly where growth happens.</p>
                     </div>
 
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary" onclick="showPage('chapters')">Start Learning →</button>
-                        <button class="btn btn-secondary" onclick="showPage('tricks')">View Tricks</button>
+                    <div style="background: linear-gradient(135deg, rgba(91, 155, 213, 0.2), rgba(91, 155, 213, 0.05)); border: 1px solid rgba(91, 155, 213, 0.3); padding: 30px; border-radius: 15px; transition: all 0.3s;">
+                        <div style="font-size: 3em; margin-bottom: 15px;">💭</div>
+                        <h3 style="color: #5B9BD5; margin-bottom: 12px; font-size: 1.15em; font-weight: 600;">Wrong Answers Teach</h3>
+                        <p style="color: #F1ECDD; line-height: 1.7; font-size: 0.95em;">Every mistake teaches you something valuable. You learn exactly what NOT to do.</p>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(255, 159, 90, 0.2), rgba(255, 159, 90, 0.05)); border: 1px solid rgba(255, 159, 90, 0.3); padding: 30px; border-radius: 15px; transition: all 0.3s;">
+                        <div style="font-size: 3em; margin-bottom: 15px;">🎯</div>
+                        <h3 style="color: #FF9F5A; margin-bottom: 12px; font-size: 1.15em; font-weight: 600;">No Time Pressure</h3>
+                        <p style="color: #F1ECDD; line-height: 1.7; font-size: 0.95em;">Real understanding can't be rushed. Take your time. Learn at your own pace.</p>
                     </div>
                 </div>
-                <div class="hero-illustration">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="100" cy="100" r="90" fill="none" stroke="#3A8F84" stroke-width="2" opacity="0.5"/>
-                        <path d="M 100 30 Q 140 70 100 110 Q 60 70 100 30" fill="none" stroke="#E2A23B" stroke-width="3"/>
-                        <circle cx="100" cy="100" r="15" fill="#3A8F84"/>
-                        <circle cx="70" cy="70" r="8" fill="#E2A23B" opacity="0.7"/>
-                        <circle cx="130" cy="70" r="8" fill="#E2A23B" opacity="0.7"/>
-                        <circle cx="100" cy="140" r="8" fill="#E2A23B" opacity="0.7"/>
-                        <text x="100" y="105" text-anchor="middle" font-size="20" fill="#F6F1E4" font-weight="bold">Σ</text>
-                    </svg>
-                </div>
-            </div>
 
-            <div class="mindset-section">
-                <h2>💡 Remember...</h2>
-                <div class="mindset-cards">
-                    <div class="mindset-card">
-                        <p>"Every mathematician was once confused by these topics. Confusion is the first step to mastery."</p>
+                <!-- Features Section -->
+                <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.1), rgba(91, 155, 213, 0.1)); border: 2px solid #3A8F84; border-radius: 20px; padding: 50px 40px; margin-bottom: 70px;">
+                    <h2 style="color: #3A8F84; margin-bottom: 40px; text-align: center; font-size: 1.9em; font-weight: 600;">What You Get Here</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3.5em; margin-bottom: 15px;">📚</div>
+                            <h4 style="color: #E2A23B; margin-bottom: 10px; font-size: 1.1em; font-weight: 600;">17 Topics</h4>
+                            <p style="color: #A9AFC4; font-size: 0.95em;">Complete curriculum with clear explanations</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3.5em; margin-bottom: 15px;">⚡</div>
+                            <h4 style="color: #E2A23B; margin-bottom: 10px; font-size: 1.1em; font-weight: 600;">Key Tricks</h4>
+                            <p style="color: #A9AFC4; font-size: 0.95em;">Shortcuts and patterns for every topic</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3.5em; margin-bottom: 15px;">📊</div>
+                            <h4 style="color: #E2A23B; margin-bottom: 10px; font-size: 1.1em; font-weight: 600;">Visual Learning</h4>
+                            <p style="color: #A9AFC4; font-size: 0.95em;">Diagrams and real-world examples</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3.5em; margin-bottom: 15px;">📝</div>
+                            <h4 style="color: #E2A23B; margin-bottom: 10px; font-size: 1.1em; font-weight: 600;">Practice Problems</h4>
+                            <p style="color: #A9AFC4; font-size: 0.95em;">100+ questions with solutions & hints</p>
+                        </div>
                     </div>
-                    <div class="mindset-card">
-                        <p>"You don't need to love math to get good at it. You need practice. The passion comes after confidence."</p>
+                </div>
+
+                <!-- Call to Action -->
+                <div style="text-align: center; margin-bottom: 70px;">
+                    <button class="btn btn-primary" onclick="showPage('chapters')" style="margin-right: 15px; font-size: 1.1em; padding: 16px 45px;">Start Learning →</button>
+                    <button class="btn btn-secondary" onclick="showPage('tricks')" style="font-size: 1.1em; padding: 16px 45px;">View Tricks</button>
+                </div>
+
+                <!-- Mindset Section with Animated Icon -->
+                <div style="display: grid; grid-template-columns: 1fr 220px; gap: 50px; align-items: start; margin-bottom: 40px;">
+                    <div>
+                        <h2 style="font-size: 2.3em; color: #E2A23B; margin-bottom: 35px; font-weight: 600;">💡 Remember...</h2>
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                            <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.2), rgba(58, 143, 132, 0.05)); border: 1px solid rgba(58, 143, 132, 0.3); border-left: 4px solid #3A8F84; padding: 25px; border-radius: 12px;">
+                                <p style="color: #F1ECDD; line-height: 1.8; font-style: italic; margin: 0; font-size: 0.98em;">
+                                    "Every mathematician was once confused. Confusion is the first step to mastery."
+                                </p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.2), rgba(58, 143, 132, 0.05)); border: 1px solid rgba(58, 143, 132, 0.3); border-left: 4px solid #3A8F84; padding: 25px; border-radius: 12px;">
+                                <p style="color: #F1ECDD; line-height: 1.8; font-style: italic; margin: 0; font-size: 0.98em;">
+                                    "You don't need to love math first. Practice builds confidence. Passion comes after."
+                                </p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.2), rgba(58, 143, 132, 0.05)); border: 1px solid rgba(58, 143, 132, 0.3); border-left: 4px solid #3A8F84; padding: 25px; border-radius: 12px;">
+                                <p style="color: #F1ECDD; line-height: 1.8; font-style: italic; margin: 0; font-size: 0.98em;">
+                                    "Learn 3-4 tricks per topic. Pattern recognition beats genius every time."
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mindset-card">
-                        <p>"Exams reward pattern recognition, not genius. Learn 3-4 tricks per chapter and most 'hard' questions become familiar."</p>
+
+                    <!-- Animated Math Icon -->
+                    <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 10px;">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 200px; height: 200px;">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#3A8F84" stroke-width="2" opacity="0.5"/>
+                            <circle cx="70" cy="70" r="12" fill="#E2A23B" opacity="0.8">
+                                <animate attributeName="cy" values="70;60;70" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="130" cy="70" r="12" fill="#E2A23B" opacity="0.8">
+                                <animate attributeName="cy" values="70;60;70" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="100" cy="150" r="12" fill="#E2A23B" opacity="0.8">
+                                <animate attributeName="cy" values="150;160;150" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="100" cy="100" r="28" fill="#3A8F84" opacity="0.9">
+                                <animate attributeName="r" values="28;32;28" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <text x="100" y="110" text-anchor="middle" font-size="32" fill="#F6F1E4" font-weight="bold">Σ</text>
+                            <line x1="100" y1="100" x2="70" y2="70" stroke="#3A8F84" stroke-width="1" opacity="0.2" />
+                            <line x1="100" y1="100" x2="130" y2="70" stroke="#3A8F84" stroke-width="1" opacity="0.2" />
+                            <line x1="100" y1="100" x2="100" y2="150" stroke="#3A8F84" stroke-width="1" opacity="0.2" />
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -202,6 +257,31 @@
         </div>
     </div>
 
+    <!-- Achievement Celebration Modal -->
+    <div id="celebrationModal" class="celebration-modal">
+        <div class="celebration-overlay" onclick="closeCelebration()"></div>
+        <div class="milestone-flag">
+            <span class="flag-emoji">🚩</span>
+            <div class="milestone-title">MILESTONE UNLOCKED!</div>
+            <div id="celebrationTopicName" class="milestone-subtitle">Topic Name</div>
+
+            <div class="skills-gained" style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #FF9F5A; text-align: left;">
+                <h3 style="color: #FF9F5A; margin-bottom: 12px; font-size: 1.1em;">🎯 Skills You've Built</h3>
+                <div id="celebrationSkills" style="color: white; line-height: 1.8; font-size: 0.95em;"></div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin: 15px 0; border: 2px dashed #FF9F5A; text-align: center;">
+                <div style="color: rgba(255,255,255,0.9); font-size: 0.9em; margin-bottom: 8px;">📈 50% Problem Completion!</div>
+                <div style="color: #FF9F5A; font-size: 1.2em; font-weight: bold;">You're building real understanding</div>
+                <div style="color: rgba(255,255,255,0.8); font-size: 0.85em; margin-top: 8px;">Keep exploring. More practice makes you stronger.</div>
+            </div>
+
+            <button class="milestone-button" onclick="closeCelebration()" style="background: #FF9F5A; color: #161B2E; border: none; padding: 14px 35px; font-size: 1em; border-radius: 25px; cursor: pointer; font-weight: bold; margin-top: 20px; transition: all 0.3s ease;">Continue Learning →</button>
+
+            <div style="color: #FF9F5A; font-weight: bold; margin-top: 20px; font-size: 1.15em;">🎉 You did that. 💚</div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; <span id="year"></span> Let's Math. Free mathematics learning platform for students worldwide.</p>
@@ -210,10 +290,22 @@
 
     <script src="data.js"></script>
     <script src="hints.js"></script>
+    <script src="progress-tracker.js"></script>
     <script src="script.js"></script>
     <script>
         // Auto-update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Welcome overlay auto-transition
+        setTimeout(() => {
+            const welcomeOverlay = document.getElementById('welcomeOverlay');
+            if (welcomeOverlay) {
+                welcomeOverlay.classList.add('fade-out');
+                setTimeout(() => {
+                    welcomeOverlay.style.display = 'none';
+                }, 800);
+            }
+        }, 4000); // Show welcome for 4 seconds
     </script>
 </body>
 </html>
