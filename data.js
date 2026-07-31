@@ -569,8 +569,8 @@ const chapters = [
             <!-- Probability labels on bars -->
             <text x="98" y="295" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">1/32</text>
             <text x="150" y="260" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">5/32</text>
-            <text x="202" y="75" text-anchor="middle" font-size="9" fill="#161B2E" font-weight="bold">10/32 ⭐</text>
-            <text x="254" y="75" text-anchor="middle" font-size="9" fill="#161B2E" font-weight="bold">10/32 ⭐</text>
+            <text x="202" y="75" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">10/32 ⭐</text>
+            <text x="254" y="75" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">10/32 ⭐</text>
             <text x="306" y="260" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">5/32</text>
             <text x="358" y="295" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">1/32</text>
 

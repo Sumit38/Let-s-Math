@@ -970,4 +970,38 @@ h1, h2, h3, h4, h5, h6 {
     .flag-emoji {
         font-size: 3em;
     }
+
+    /* Mobile optimizations for welcome and content */
+    .welcome-message {
+        padding: 20px;
+    }
+
+    .welcome-message h2 {
+        font-size: 2.5em !important;
+        margin-bottom: 15px !important;
+    }
+
+    .welcome-message p {
+        font-size: 1.1em !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Mindset section responsive */
+    .mindset-section {
+        display: block !important;
+        gap: 0 !important;
+    }
+
+    .mindset-section > div:first-child {
+        margin-bottom: 30px;
+    }
+
+    /* Emotional confidence section responsive */
+    [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    .container {
+        padding: 1.5em 15px !important;
+    }
 }
