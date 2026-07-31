@@ -121,15 +121,19 @@ function displayHint(level) {
     document.getElementById('hintsMessage').textContent = hints.hints[level - 1];
     currentHintLevel = level;
 
-    // Disable buttons for already shown hints
+    // Update button text and disable for already shown hints
     for (let i = 1; i <= level; i++) {
-        document.getElementById(`hint${i}Btn`).disabled = true;
+        const btn = document.getElementById(`hint${i}Btn`);
+        btn.disabled = true;
+        btn.textContent = `✓ Hint ${i} Viewed`;
     }
 }
 
 function resetHintButtons() {
     for (let i = 1; i <= 3; i++) {
-        document.getElementById(`hint${i}Btn`).disabled = false;
+        const btn = document.getElementById(`hint${i}Btn`);
+        btn.disabled = false;
+        btn.textContent = `Hint ${i} of 3`;
     }
 }
 
