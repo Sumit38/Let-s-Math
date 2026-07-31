@@ -5,17 +5,17 @@ const hintsDatabase = {
         1: { // Question about f(x) = (x+1)/(x−2) being one-one and finding inverse
             title: "Relations and Functions - One-one & Inverse",
             hints: [
-                "💡 Hint 1: To check if a function is one-one, assume f(a) = f(b) and see if you can prove a = b",
-                "💡 Hint 2: For f(x) = (x+1)/(x−2), if f(a) = f(b), cross-multiply and simplify carefully",
-                "💡 Hint 3: To find inverse, replace f(x) with y, swap x and y, then solve for the new y"
+                "💡 Hint 1: ONE-ONE TEST: Assume f(a) = f(b) and try to prove a = b. If successful, it's one-one! TRICK: Check if each y-value maps to only ONE x-value",
+                "💡 Hint 2: For f(x) = (x+1)/(x−2), cross-multiply: (a+1)/(a−2) = (b+1)/(b−2) ⟹ (a+1)(b−2) = (b+1)(a−2). Simplify to find a = b",
+                "💡 Hint 3: INVERSE STEPS: (1)Replace f(x) with y: y = (x+1)/(x−2), (2)Swap x↔y: x = (y+1)/(y−2), (3)Solve for y. Answer: f⁻¹(x) = (2x+1)/(x−1)"
             ]
         },
         2: { // Question about (f∘g)(x)
-            title: "Relations and Functions - Composition",
+            title: "Relations and Functions - Composition & Trick",
             hints: [
-                "💡 Hint 1: (f∘g)(x) means 'first apply g, then apply f to the result'",
-                "💡 Hint 2: Start with g(x) = x-1, then substitute this result into f",
-                "💡 Hint 3: f(g(x)) = f(x-1). Now apply f to (x-1): f(x-1) = 2(x-1) + 3"
+                "💡 Hint 1: COMPOSITION TRICK: (f∘g)(x) = 'first g, then f'. Order matters! (f∘g) ≠ (g∘f) usually. Notation: Read RIGHT to LEFT",
+                "💡 Hint 2: Given f(x)=2x+3 and g(x)=x−1: Find g(x) FIRST = x−1, then input INTO f: f(x−1) = 2(x−1) + 3",
+                "💡 Hint 3: f(g(x)) = f(x−1) = 2(x−1) + 3 = 2x − 2 + 3 = 2x + 1. MEMORY: Substitute the entire g(x) into f's formula"
             ]
         }
     },
@@ -32,22 +32,82 @@ const hintsDatabase = {
         }
     },
 
+    // Chapter 4: Determinants
+    4: {
+        1: { // Calculating 3×3 determinant
+            title: "Determinants - Expansion & Sign Pattern",
+            hints: [
+                "💡 Hint 1: For 3×3 determinant, use Sarrus Rule or Expansion by Row. Remember the SIGN PATTERN (Cofactor signs): [+][−][+]/[−][+][−]/[+][−][+]",
+                "💡 Hint 2: SIGN PATTERN (Checkerboard): Position (1,1)=+, (1,2)=−, (1,3)=+. This alternates like a checkerboard: A(i,j) has sign (−1)^(i+j)",
+                "💡 Hint 3: Example: det(A) = a₁₁(C₁₁) + a₁₂(C₁₂) + a₁₃(C₁₃) where C = Minor × Sign. Cofactor = (−1)^(i+j) × Minor(i,j)"
+            ]
+        },
+        2: { // Cofactor and Adjugate
+            title: "Determinants - Cofactors & Adjugate Matrix",
+            hints: [
+                "💡 Hint 1: Cofactor matrix uses the SIGN PATTERN (checkerboard): C(i,j) = (−1)^(i+j) × M(i,j) where M is Minor",
+                "💡 Hint 2: SIGN TRICK: If i+j is EVEN → sign is +, if ODD → sign is −. Example: Position (2,3): 2+3=5(odd) → sign is −",
+                "💡 Hint 3: Adjugate = Transpose of Cofactor Matrix. Write cofactors with proper signs, then flip rows & columns"
+            ]
+        },
+        3: { // Invertibility condition
+            title: "Determinants - Invertibility Condition",
+            hints: [
+                "💡 Hint 1: A matrix is INVERTIBLE if and only if det(A) ≠ 0. If det(A) = 0, matrix is SINGULAR (not invertible)",
+                "💡 Hint 2: A⁻¹ = (1/det(A)) × adj(A). The determinant acts as a SCALING FACTOR in the inverse formula",
+                "💡 Hint 3: KEY FACT: If det(A) = 0, rows/columns are linearly dependent. This means inverse doesn't exist mathematically"
+            ]
+        }
+    },
+
+    // Chapter 7: Integrals
+    7: {
+        1: { // Basic indefinite integral
+            title: "Integrals - Power Rule",
+            hints: [
+                "💡 Hint 1: For ∫xⁿ dx, use POWER RULE: ∫xⁿ dx = (xⁿ⁺¹)/(n+1) + C. TRICK: Add 1 to power, divide by new power",
+                "💡 Hint 2: Don't forget +C (constant of integration)! It's crucial because derivatives of constants = 0",
+                "💡 Hint 3: Check: Differentiate your answer. If d/dx[answer] = original function, you're correct!"
+            ]
+        },
+        2: { // Definite integral / Area
+            title: "Integrals - Definite Integrals & Area",
+            hints: [
+                "💡 Hint 1: Definite integral ∫ₐᵇ f(x)dx = Area under curve from a to b. TRICK: Use Fundamental Theorem: F(b) − F(a)",
+                "💡 Hint 2: Find antiderivative F(x), then substitute upper limit b and lower limit a. The C cancels out!",
+                "💡 Hint 3: ∫ₐᵇ f(x)dx = [F(x)]ₐᵇ = F(b) − F(a). REMEMBER: Upper limit FIRST, then subtract lower limit"
+            ]
+        }
+    },
+
+    // Chapter 2: Inverse Trigonometry
+    2: {
+        1: { // Finding inverse trig values
+            title: "Inverse Trigonometry - Principal Values",
+            hints: [
+                "💡 Hint 1: sin⁻¹(x) gives angles in [−π/2, π/2]. TRICK: For sin⁻¹(1/2), think 'what angle has sine = 1/2?' Answer: π/6",
+                "💡 Hint 2: cos⁻¹(x) gives angles in [0, π]. TRICK: cos⁻¹(1/2) = π/3 (60°). Remember common values: 0, π/6, π/4, π/3, π/2",
+                "💡 Hint 3: IDENTITY LINK: sin⁻¹(x) + cos⁻¹(x) = π/2. Also: tan⁻¹(x) + tan⁻¹(1/x) = π/2 (for x>0)"
+            ]
+        }
+    },
+
     // Chapter 6: Applications of Derivatives
     6: {
         1: { // Where f(x) increases
             title: "Derivatives - Increasing/Decreasing Functions",
             hints: [
-                "💡 Hint 1: A function increases where its derivative is positive (f'(x) > 0)",
-                "💡 Hint 2: First, find f'(x) by differentiating: f'(x) = 6x² − 30x + 36",
-                "💡 Hint 3: Factor f'(x) = 6(x-2)(x-3), then find where this is > 0"
+                "💡 Hint 1: SIGN OF DERIVATIVE TRICK: f'(x) > 0 ⟹ f increases. f'(x) < 0 ⟹ f decreases. f'(x) = 0 ⟹ critical point",
+                "💡 Hint 2: Differentiate: f(x) = 2x³ − 15x² + 36x ⟹ f'(x) = 6x² − 30x + 36 = 6(x² − 5x + 6)",
+                "💡 Hint 3: Factor: f'(x) = 6(x−2)(x−3). Check signs: x<2 (positive), 2<x<3 (negative), x>3 (positive). So f increases on (−∞,2) ∪ (3,∞)"
             ]
         },
         2: { // Box volume optimization
             title: "Derivatives - Optimization (Minimize Surface Area)",
             hints: [
-                "💡 Hint 1: You have constraint: Volume = 4096, and need to minimize Surface Area",
-                "💡 Hint 2: Write V = x²h = 4096, so h = 4096/x². Substitute into Surface Area formula",
-                "💡 Hint 3: S = 2x² + 4xh = 2x² + 4x(4096/x²). Simplify and differentiate dS/dx"
+                "💡 Hint 1: OPTIMIZATION STEPS: (1)Set up equations, (2)Eliminate variable using constraint, (3)Differentiate, (4)Set = 0, (5)Verify min/max",
+                "💡 Hint 2: Constraint: V = x²h = 4096 ⟹ h = 4096/x². Surface Area: S = 2x² + 4xh = 2x² + 4x(4096/x²) = 2x² + 16384/x",
+                "💡 Hint 3: dS/dx = 4x − 16384/x² = 0 ⟹ 4x³ = 16384 ⟹ x³ = 4096 ⟹ x = 16. TRICK: Verify d²S/dx² > 0 to confirm minimum"
             ]
         }
     },
@@ -57,25 +117,25 @@ const hintsDatabase = {
         1: { // Playing Cards - Red cards
             title: "Probability - Playing Cards",
             hints: [
-                "💡 Hint 1: A standard deck has 52 cards total",
-                "💡 Hint 2: Count how many red suits are there? (Hearts and Diamonds)",
-                "💡 Hint 3: Each suit has 13 cards, so red cards = 13 + 13 = 26. P = 26/52"
+                "💡 Hint 1: A standard deck has 52 cards total. Remember: 4 suits (Hearts♥, Diamonds♦, Clubs♣, Spades♠), 13 cards/suit",
+                "💡 Hint 2: Red suits = Hearts & Diamonds. Each has 13 cards. TRICK: Red=26, Black=26 (exactly half!)",
+                "💡 Hint 3: P(Red) = 26/52 = 1/2. SIMPLE TRICK: Any color has exactly 50% probability!"
             ]
         },
         2: { // Aces
             title: "Probability - Counting Favorable Outcomes",
             hints: [
-                "💡 Hint 1: How many Aces are in a deck? Think about suits",
-                "💡 Hint 2: There's 1 Ace per suit, and 4 suits in a deck",
-                "💡 Hint 3: Total Aces = 4. P(Ace) = 4/52 = 1/13"
+                "💡 Hint 1: TRICK: There are exactly 4 Aces in any deck (1 per suit: ♥A, ♦A, ♣A, ♠A)",
+                "💡 Hint 2: Total outcomes = 52. Favorable outcomes = 4 (all Aces). Apply: P = Favorable/Total",
+                "💡 Hint 3: P(Ace) = 4/52 = 1/13. MEMORY TRICK: 4 Aces out of 52 cards = 1 out of 13"
             ]
         },
         3: { // King OR Queen
-            title: "Probability - OR Events",
+            title: "Probability - OR Events (Addition Rule)",
             hints: [
-                "💡 Hint 1: 'King OR Queen' means we count both. These events don't overlap",
-                "💡 Hint 2: Count Kings: how many? Count Queens: how many?",
-                "💡 Hint 3: Kings = 4, Queens = 4, Total = 8. P = 8/52 = 2/13"
+                "💡 Hint 1: 'King OR Queen' = Count Kings + Count Queens (they DON'T overlap). Use: P(A or B) = P(A) + P(B)",
+                "💡 Hint 2: Kings = 4 (one per suit), Queens = 4 (one per suit). These are MUTUALLY EXCLUSIVE (can't be both)",
+                "💡 Hint 3: Total = 8 cards. P(K or Q) = 8/52 = 2/13. TRICK: For OR with no overlap, just ADD counts!"
             ]
         },
         4: { // Coin tossed 5 times
