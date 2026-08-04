@@ -114,6 +114,21 @@ body.light-mode [style*="color: #A9AFC4"] {
     color: #1E4A7A !important;
 }
 
+/* SVG diagram text - Make all text deep blue in light mode */
+body.light-mode svg text {
+    fill: #1E4A7A !important;
+}
+
+body.light-mode svg [fill*="#F1ECDD"],
+body.light-mode svg [fill*="#F6F1E4"],
+body.light-mode svg [fill*="#A9AFC4"],
+body.light-mode svg [fill*="#66FF00"],
+body.light-mode svg [fill*="#00FFDD"],
+body.light-mode svg [fill*="#FFD700"],
+body.light-mode svg [fill*="#E2A23B"] {
+    fill: #1E4A7A !important;
+}
+
 html, body {
     width: 100%;
     margin: 0;
