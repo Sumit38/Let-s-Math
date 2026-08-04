@@ -1,13 +1,30 @@
 // Theme Toggle
 function toggleTheme() {
     const isLightMode = document.body.classList.contains('light-mode');
+    const heroTitle = document.querySelector('.hero-title');
 
     if (isLightMode) {
         document.body.classList.remove('light-mode');
         localStorage.setItem('theme', 'dark');
+        // Restore gradient in dark mode
+        if (heroTitle) {
+            heroTitle.style.color = '';
+            heroTitle.style.webkitTextFillColor = 'transparent';
+            heroTitle.style.background = 'linear-gradient(135deg, #70AD47, #5B9BD5)';
+            heroTitle.style.webkitBackgroundClip = 'text';
+            heroTitle.style.backgroundClip = 'text';
+        }
     } else {
         document.body.classList.add('light-mode');
         localStorage.setItem('theme', 'light');
+        // Fix hero title visibility in light mode by modifying inline styles
+        if (heroTitle) {
+            heroTitle.style.color = '#1E4A7A';
+            heroTitle.style.webkitTextFillColor = '#1E4A7A';
+            heroTitle.style.background = 'none';
+            heroTitle.style.webkitBackgroundClip = 'unset';
+            heroTitle.style.backgroundClip = 'unset';
+        }
     }
     updateThemeIcon();
 }
@@ -23,6 +40,15 @@ function initializeTheme() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
+        // Apply light mode styles to hero title
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            heroTitle.style.color = '#1E4A7A';
+            heroTitle.style.webkitTextFillColor = '#1E4A7A';
+            heroTitle.style.background = 'none';
+            heroTitle.style.webkitBackgroundClip = 'unset';
+            heroTitle.style.backgroundClip = 'unset';
+        }
     }
     updateThemeIcon();
 }

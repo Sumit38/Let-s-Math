@@ -121,10 +121,10 @@ body.light-mode *:not(svg):not(svg *) {
 body.light-mode h1.hero-title {
     color: #1E4A7A !important;
     -webkit-text-fill-color: #1E4A7A !important;
-    text-fill-color: #1E4A7A !important;
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    background-clip: unset !important;
+    background: #FFFFFF !important;
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
 }
 
 /* Keep bright SVG text colors in light mode */
