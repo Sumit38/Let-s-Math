@@ -112,9 +112,16 @@ body.light-mode .answer-item {
     color: #1E4A7A !important;
 }
 
-/* Force text to dark blue in light mode - BUT NOT SVG */
+/* Force text to dark blue in light mode - BUT NOT SVG or gradient text */
 body.light-mode *:not(svg):not(svg *) {
     color: #1E4A7A !important;
+}
+
+/* Preserve gradient text effects */
+body.light-mode .hero-title,
+body.light-mode [style*="background-clip"] {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
 }
 
 /* Keep bright SVG text colors in light mode */
