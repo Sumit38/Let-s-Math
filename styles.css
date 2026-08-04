@@ -5,6 +5,7 @@
 }
 
 :root {
+    /* Dark Theme (Only) */
     --ink: #161B2E;
     --ink-soft: #1F2740;
     --ink-600: #2A3350;
@@ -17,6 +18,9 @@
     --text-muted: #A9AFC4;
     --text-dark: #20242E;
     --text-dark-muted: #5B5646;
+    --bg-primary: #161B2E;
+    --bg-secondary: #1F2740;
+    --text-primary: #F1ECDD;
 }
 
 html, body {
@@ -632,36 +636,300 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 2em 20px;
-    }
 
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    .hero-illustration {
-        min-height: 300px;
+/* Tablet Responsive (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 2em 30px;
     }
 
     .nav-container {
-        flex-direction: column;
-        gap: 1em;
+        padding: 1em 20px;
+    }
+
+    .hero {
+        padding: 2em 30px;
+    }
+
+    .chapter-card {
+        padding: 1.5em;
+    }
+
+    .trick-card {
+        padding: 1.5em;
+    }
+
+    .question-section {
+        padding: 1.5em;
+    }
+}
+
+/* Mobile Responsive (max 768px) */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 1.5em 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .hero-content p {
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+
+    .hero-illustration {
+        min-height: 250px;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        gap: 0.3em;
+        padding: 0.7em 12px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1em;
+        gap: 0.3em;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .logo-text {
+        font-size: 0.95em;
     }
 
     .nav-menu {
-        width: 100%;
-        justify-content: center;
+        display: flex;
+        gap: 0.3em;
+        font-size: 0.8em;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu li {
+        flex: 0 1 auto;
+    }
+
+    .nav-link {
+        padding: 0.4em 0.7em !important;
+        font-size: 0.8em;
     }
 
     .container {
-        padding: 2em 20px;
+        padding: 1.2em 12px;
+        max-width: 100%;
     }
 
     .mindset-cards {
         grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    /* Practice Questions Mobile */
+    .practice-item {
+        padding: 1.2em;
+        margin-bottom: 1.2em;
+        border-radius: 10px;
+    }
+
+    .practice-question {
+        font-size: 1.05em;
+        margin-bottom: 0.8em;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .practice-answer {
+        font-size: 0.95em;
+        padding-left: 1.2em;
+        line-height: 1.8;
+        color: var(--text-light);
+    }
+
+    /* Question Section Mobile */
+    .question-section {
+        padding: 1.2em;
+        margin-bottom: 1.2em;
+        border-radius: 10px;
+    }
+
+    .question-section h3 {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+    }
+
+    .question-item {
+        padding: 1.2em;
+        margin-bottom: 1em;
+        border-radius: 8px;
+    }
+
+    .question-item h4 {
+        font-size: 0.95em;
+        margin-bottom: 0.8em;
+    }
+
+    /* Trick Card Mobile */
+    .trick-card {
+        padding: 1.2em;
+        margin-bottom: 1.2em;
+        border-radius: 10px;
+    }
+
+    .trick-card h3 {
+        font-size: 1.05em;
+        margin-bottom: 0.8em;
+    }
+
+    .trick-card p,
+    .trick-card li {
+        font-size: 0.9em;
+        line-height: 1.6;
+        margin-bottom: 0.5em;
+    }
+
+    /* Button Mobile */
+    .btn {
+        padding: 0.9em 1.8em;
+        font-size: 0.95em;
+        min-height: 44px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-primary {
+        width: 100%;
+        margin-bottom: 0.8em;
+    }
+
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .hint-btn-small {
+        padding: 0.75em 1.2em;
+        font-size: 0.9em;
+        min-height: 40px;
+        flex: 1;
+        min-width: 45%;
+        margin: 0.5em 0.5em 0.5em 0;
+    }
+
+    /* Chapter Card Mobile */
+    .chapter-card {
+        padding: 1.2em;
+        margin-bottom: 1.2em;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .chapter-card:active {
+        transform: scale(0.98);
+    }
+
+    .chapter-card h3 {
+        font-size: 1.05em;
+        margin-bottom: 0.5em;
+    }
+
+    .chapter-card p {
+        font-size: 0.85em;
+    }
+
+    /* Visual Diagram Mobile */
+    .visual-diagram {
+        padding: 1.2em;
+        margin: 1.5em 0;
+        border-radius: 10px;
+    }
+
+    .visual-diagram svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Chapter Section Mobile */
+    .chapter-detail {
+        padding: 1.2em;
+    }
+
+    .chapter-detail h2 {
+        font-size: 1.4em;
+        margin-bottom: 1em;
+    }
+
+    .chapter-detail h3 {
+        font-size: 1.1em;
+        margin-bottom: 0.8em;
+    }
+
+    /* About Page Mobile */
+    .about-section {
+        padding: 1.2em;
+        margin-bottom: 1.5em;
+    }
+
+    .about-section h2 {
+        font-size: 1.3em;
+        margin-bottom: 1em;
+    }
+
+    .about-section p {
+        font-size: 0.95em;
+        line-height: 1.8;
+        margin-bottom: 1em;
+    }
+
+    /* List Items Mobile */
+    ul, ol {
+        margin-left: 1.5em;
+    }
+
+    li {
+        font-size: 0.95em;
+        margin-bottom: 0.8em;
+        line-height: 1.7;
+    }
+
+    /* Welcome Message Mobile */
+    .welcome-message {
+        padding: 1.5em;
+    }
+
+    .welcome-message h2 {
+        font-size: 2em !important;
+    }
+
+    .welcome-message p {
+        font-size: 0.9em;
+        line-height: 1.7;
+    }
+
+    /* Emotional Cards Mobile */
+    [style*="minmax(220px"] {
+        min-width: 100% !important;
+    }
+
+    /* Features Section Mobile */
+    [style*="minmax(140px"] {
+        min-width: 100% !important;
     }
 }
 
