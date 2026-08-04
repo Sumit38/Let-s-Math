@@ -1,0 +1,6 @@
+- [x] Update `ChapterDetailActivity.kt` to fix errors and warnings
+    - [x] Replace `lineSpacingMultiplier` assignments with `setLineSpacing`
+    - [x] Replace `onBackPressed()` with `onBackPressedDispatcher.onBackPressed()`
+- [x] Verify changes with `analyze_file`
+- [x] Verify changes with `gradle_build`
+- [x] Create walkthrough

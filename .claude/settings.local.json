@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m '🚨 CRITICAL FIX: Add animation-fill-mode: forwards to .page.active *)",
+      "Bash(git push *)"
+    ]
+  }
+}

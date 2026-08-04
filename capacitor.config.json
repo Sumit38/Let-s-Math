@@ -1,0 +1,13 @@
+{
+  "appId": "com.letsmath.app",
+  "appName": "Let's Math",
+  "webDir": "build",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

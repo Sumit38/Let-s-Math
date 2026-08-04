@@ -1,0 +1,38 @@
+# Gradle files
+.gradle/
+build/
+gradle/
+*.gradle
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+.DS_Store
+
+# Android Studio generated files and folders
+.idea/
+.vscode/
+.classpath
+.c9/
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+.gradle/
+build/
+.idea
+*.iml
+*.apk
+*.ap_
+*.aab
+output.json
+local.properties

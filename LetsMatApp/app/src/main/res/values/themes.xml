@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.LetsMath" parent="android:Theme.Material.Light.DarkActionBar">
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+    </style>
+
+    <color name="primary_dark">#161B2E</color>
+    <color name="background">#161B2E</color>
+    <color name="text_primary">#F1ECDD</color>
+</resources>

@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Let's Math</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --ink:#161B2E; --ink-soft:#1F2740; --ink-600:#2A3350;
+    --paper:#F6F1E4; --paper-soft:#EFE7D3;
+    --teal:#3A8F84; --amber:#E2A23B; --danger:#C25B4A;
+    --text-light:#F1ECDD; --text-muted:#A9AFC4;
+    --text-dark:#20242E; --text-dark-muted:#5B5646;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--ink);color:var(--text-light);font-family:'Inter',sans-serif;-webkit-tap-highlight-color:transparent;}
+  h1,h2,h3{font-family:'Fraunces',serif;margin:0;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:640px;margin:0 auto;padding:0 18px 50px;}
+  .nav{position:sticky;top:0;z-index:10;background:rgba(22,27,46,0.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--ink-600);}
+  .nav-inner{max-width:640px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .brand{display:flex;align-items:center;gap:8px;font-weight:600;font-size:17px;}
+  .brand-badge{width:30px;height:30px;border-radius:8px;background:var(--teal);display:flex;align-items:center;justify-content:center;color:var(--paper);font-weight:700;}
+  .tabs{display:flex;gap:4px;flex-wrap:wrap;}
+  .tab-btn{border:none;background:transparent;color:var(--text-muted);font-size:12.5px;font-weight:500;padding:7px 12px;border-radius:999px;cursor:pointer;font-family:inherit;white-space:nowrap;}
+  .tab-btn.active{background:var(--amber);color:var(--ink);}
+  .card{background:var(--paper);color:var(--text-dark);border-radius:14px;padding:20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.18);}
+  .eyebrow{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:8px;font-weight:600;}
+  .eyebrow-amber{color:var(--amber);}
+  .muted{color:var(--text-dark-muted);}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:999px;font-weight:600;font-size:14px;border:none;cursor:pointer;font-family:inherit;text-decoration:none;}
+  .btn-amber{background:var(--amber);color:var(--ink);}
+  .btn-outline{background:transparent;border:1px solid var(--ink-600);color:var(--text-light);}
+  .hero{background:var(--ink-soft);border-radius:18px;padding:30px 26px;margin:20px 0;}
+  .hero h1{font-size:27px;line-height:1.28;margin:12px 0;font-weight:700;}
+  .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px;}
+  .feature-grid .card{margin-bottom:0;}
+  .chip{font-size:11px;padding:4px 10px;border-radius:999px;font-weight:600;}
+  .chip-ready{background:var(--teal);color:var(--paper);}
+  .row{display:flex;align-items:center;justify-content:space-between;}
+  .chapter-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-top:1px solid var(--paper-soft);cursor:pointer;gap:10px;}
+  .chapter-row:first-child{border-top:none;}
+  .section-group{margin-bottom:22px;}
+  .back-btn{background:none;border:none;color:var(--text-muted);font-size:14px;display:flex;align-items:center;gap:6px;padding:10px 0 16px;cursor:pointer;font-family:inherit;}
+  .step-list{margin:0;padding:0;list-style:none;}
+  .step-list li{display:flex;gap:10px;font-size:14px;margin-bottom:8px;}
+  .step-num{color:var(--teal);font-weight:600;flex-shrink:0;}
+  .q-card{background:var(--paper);border-radius:14px;padding:18px;margin-bottom:12px;}
+  .reveal-btn{font-size:12px;font-weight:600;padding:6px 14px;border-radius:999px;border:none;cursor:pointer;font-family:inherit;background:var(--paper-soft);color:var(--text-dark-muted);}
+  .reveal-btn.open{background:var(--teal);color:var(--paper);}
+  .answer{font-size:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--paper-soft);color:var(--text-dark-muted);}
+  .pattern-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
+  .pattern-value{font-size:13px;white-space:nowrap;padding:4px 12px;border-radius:999px;background:var(--teal);color:var(--paper);}
+  .table-row{display:flex;justify-content:space-between;padding:12px 20px;border-top:1px solid var(--paper-soft);}
+  .table-row:first-child{border-top:none;}
+  svg text{font-family:'IBM Plex Mono',monospace;}
+  .icon-badge{width:32px;height:32px;border-radius:9px;background:var(--ink-600);color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;font-family:'IBM Plex Mono',monospace;flex-shrink:0;}
+  .icon-badge-lg{width:40px;height:40px;font-size:13px;border-radius:11px;}
+  .progress-wrap{background:var(--ink-600);border-radius:999px;height:8px;overflow:hidden;margin:12px 0 6px;}
+  .progress-fill{background:var(--amber);height:100%;border-radius:999px;transition:width .4s ease;}
+  .confidence-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+  .conf-learning{background:#C9BFA3;}
+  .conf-practicing{background:var(--amber);}
+  .conf-confident{background:var(--teal);}
+  details.trick-card, details.pred-card{background:var(--paper);border-radius:14px;margin-bottom:10px;padding:0;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.18);}
+  details.trick-card summary, details.pred-card summary{padding:15px 18px;cursor:pointer;font-weight:600;color:var(--text-dark);list-style:none;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  details.trick-card summary::-webkit-details-marker, details.pred-card summary::-webkit-details-marker{display:none;}
+  details[open] summary{border-bottom:1px solid var(--paper-soft);}
+  .trick-body{padding:6px 18px 16px;}
+  .trick-body ul{margin:0;padding-left:18px;}
+  .trick-body li{margin-bottom:9px;font-size:13.5px;color:var(--text-dark-muted);line-height:1.55;}
+  .pred-marks{font-size:11px;background:var(--teal);color:var(--paper);padding:3px 10px;border-radius:999px;white-space:nowrap;flex-shrink:0;}
+  .disclaimer{background:var(--ink-600);border-radius:12px;padding:14px 16px;font-size:12px;color:var(--text-muted);margin-bottom:18px;line-height:1.55;}
+  .confidence-row{display:flex;gap:6px;margin-top:14px;}
+  .conf-btn{flex:1;font-size:11px;padding:8px 4px;border-radius:8px;border:1px solid var(--paper-soft);background:transparent;color:var(--text-dark-muted);cursor:pointer;font-family:inherit;font-weight:500;}
+  .conf-btn.sel-learning{background:#C9BFA3;color:#2A2515;border-color:#C9BFA3;}
+  .conf-btn.sel-practicing{background:var(--amber);color:var(--ink);border-color:var(--amber);}
+  .conf-btn.sel-confident{background:var(--teal);color:var(--paper);border-color:var(--teal);}
+  .mindset-banner{background:linear-gradient(135deg, var(--teal), #2a5f57);border-radius:14px;padding:18px 20px;margin-bottom:16px;color:var(--paper);}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-badge">&Sigma;</div>
+      Let's Math
+    </div>
+    <div class="tabs">
+      <button class="tab-btn" data-tab="home" onclick="navigate('home')">Home</button>
+      <button class="tab-btn" data-tab="pattern" onclick="navigate('pattern')">Pattern</button>
+      <button class="tab-btn" data-tab="chapters" onclick="navigate('chapters')">Chapters</button>
+      <button class="tab-btn" data-tab="tricks" onclick="navigate('tricks')">Tricks</button>
+      <button class="tab-btn" data-tab="predicted" onclick="navigate('predicted')">2027 Predicted</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" id="app"></div>
+
+<script>
+// ==================== DATA ====================
+const chapters = [
+  {id:1, section:"Core \u2014 Section A", title:"Relations and Functions", marks:"~4 (Q2 slot) + 2 in Q1", populated:true},
+  {id:2, section:"Core \u2014 Section A", title:"Inverse Trigonometric Functions", marks:"~4 (Q3 slot) + 2 in Q1", populated:true},
+  {id:3, section:"Core \u2014 Section A", title:"Matrices", marks:"~6 (system-of-equations Q) + 2 in Q1", populated:true},
+  {id:4, section:"Core \u2014 Section A", title:"Determinants", marks:"~4 (Q4 slot) + 2 in Q1", populated:true},
+  {id:5, section:"Core \u2014 Section A", title:"Continuity and Differentiability", marks:"~8 across two 4-mark Qs", populated:true},
+  {id:6, section:"Core \u2014 Section A", title:"Applications of Derivatives", marks:"~10 (rate-of-change + maxima/minima)", populated:true},
+  {id:7, section:"Core \u2014 Section A", title:"Indefinite Integrals", marks:"~4-6", populated:true},
+  {id:8, section:"Core \u2014 Section A", title:"Definite Integrals & Applications", marks:"~6", populated:true},
+  {id:9, section:"Core \u2014 Section A", title:"Differential Equations", marks:"~4 + 2 in Q1", populated:true},
+  {id:10, section:"Core \u2014 Section A", title:"Probability", marks:"~10 (two questions, incl. Bayes')", populated:true},
+  {id:11, section:"Science \u2014 Section B", title:"Vectors", marks:"~6-8 of the 20-mark section", populated:true},
+  {id:12, section:"Science \u2014 Section B", title:"Three-Dimensional Geometry (lines & planes)", marks:"~8-10 of the 20-mark section", populated:true},
+  {id:13, section:"Science \u2014 Section B", title:"Application of Integrals (area bounded by curves)", marks:"~6 of the 20-mark section", populated:true},
+  {id:14, section:"Commerce \u2014 Section C", title:"Numerical Applications & Cost Functions", marks:"~8-10 of the 20-mark section", populated:true},
+  {id:15, section:"Commerce \u2014 Section C", title:"Linear Regression", marks:"~6-10 of the 20-mark section", populated:true},
+  {id:16, section:"Science/Commerce", title:"Linear Programming", marks:"~4-6 where offered", populated:true},
+];
+
+const chapterIcons = {1:"f\u2218g",2:"\u03B8",3:"[M]",4:"|A|",5:"lim",6:"f\u2032",7:"\u222Bdx",8:"\u222B\u1d47\u2090",9:"dy/dx",10:"P",11:"v\u20D7",12:"xyz",13:"\u222B\u222B",14:"\u20B9",15:"r",16:"Z"};
+
+const mindsetTips = [
+  "Every mathematician was once confused by exactly this topic. Confusion is the first step, not a stop sign.",
+  "You don't need to love math to get good at it \u2014 you need reps. The passion usually shows up after the confidence does.",
+  "A wrong answer isn't failure, it's data. Find the one step that broke, fix that link, move on.",
+  "Exams reward patterns, not genius. Learn the 3\u20134 tricks per chapter and most 'hard' questions start looking familiar.",
+  "The fastest way to stop fearing a topic is one ugly, imperfect first attempt at it. Perfection can wait."
+];
+
+const patternNotes = [
+  {label:"Total paper", value:"100 marks", detail:"Confirmed from the 2017\u20132020 papers you uploaded: 3 hours, Section A + one of Section B or C."},
+  {label:"Section A (compulsory)", value:"80 marks", detail:"Question 1 is 10 sub-parts \u00d7 2 marks (20 marks, rapid mixed-topic). Then single-topic questions worth 4 marks each, then a few worth 6 marks each."},
+  {label:"Section B or C (choice)", value:"20 marks", detail:"Section B = Vectors + 3D Geometry + Application of Integrals (Science stream). Section C = Numerical Applications + Regression + LPP (Commerce stream)."},
+  {label:"Recurring patterns found", value:"Confirmed", detail:"Rate-of-change 'ladder against a wall' problems, Bayes' theorem 'bag of balls/coins' problems, and 'system of 3 equations via matrices' all reappear across the years you uploaded."},
+];
+
+const trickContent = {
+  1: ["One-one check: assume f(x\u2081)=f(x\u2082); if the algebra forces x\u2081=x\u2082, it's one-one \u2014 no calculus needed.",
+      "Onto check: solve y=f(x) for x; if a valid x exists for every y in the codomain, it's onto.",
+      "To find an inverse, swap x and y in y=f(x), then solve for y again.",
+      "fog \u2260 gof in general \u2014 always compute in the order written, innermost function first."],
+  2: ["Memorise sin\u207B\u00B9x + cos\u207B\u00B9x = \u03C0/2 and tan\u207B\u00B9x + cot\u207B\u00B9x = \u03C0/2 \u2014 instant simplifiers.",
+      "tan\u207B\u00B9x + tan\u207B\u00B9y = tan\u207B\u00B9((x+y)/(1\u2212xy)) only holds cleanly when xy<1 \u2014 check before applying.",
+      "For sin(2tan\u207B\u00B9x) or cos(2tan\u207B\u00B9x): let \u03B8=tan\u207B\u00B9x, draw a right triangle, convert to sin/cos of 2\u03B8.",
+      "Always sanity-check your final answer lies inside the function's principal value range."],
+  3: ["If a system has repeating patterns like 1/x, 1/y, 1/z \u2014 substitute u=1/x etc. first to make it linear.",
+      "2\u00d72 inverse shortcut: swap the diagonal entries, negate the off-diagonal ones, divide by the determinant.",
+      "A matrix is invertible only if det(A)\u22600 \u2014 check this before hunting for A\u207B\u00B9.",
+      "(A+A\u1d40) is always symmetric, (A\u2212A\u1d40) is always skew-symmetric \u2014 instant answer for 'show symmetric' questions."],
+  4: ["Two identical rows or columns \u2192 determinant is 0. Spot this before expanding anything.",
+      "Row/column operations (R\u1d62\u2192R\u1d62+kR\u2c7c) don't change the determinant's value \u2014 use them to create zeros first.",
+      "Area-of-triangle-via-determinant can come out negative \u2014 always take the absolute value.",
+      "If the 'area' determinant for three points equals zero, the points are collinear \u2014 a fast built-in test."],
+  5: ["To check continuity at a point: compute LHL, RHL, and f(a) separately \u2014 never assume they match.",
+      "Differentiable always implies continuous, but not the reverse \u2014 corners and cusps are the giveaway.",
+      "For |x|-type or piecewise functions, always test right at the point where the definition switches.",
+      "Chain rule reminder: differentiate the outer function first, then multiply by the derivative of the inner one."],
+  6: ["Increasing where f'(x)>0, decreasing where f'(x)<0 \u2014 just factor f'(x) and solve the sign inequality.",
+      "Maxima/minima: f'(x)=0 gives critical points; f''(x)<0 \u2192 max, f''(x)>0 \u2192 min.",
+      "Related-rates problems (ladder, cone, balloon): write the connecting equation first, then differentiate w.r.t. time.",
+      "Optimisation word problems: use the constraint to reduce everything to ONE variable before differentiating."],
+  7: ["Spot a function and its derivative sitting together in the integrand \u2192 that's your substitution cue.",
+      "ILATE priority for integration by parts: Inverse, Log, Algebraic, Trig, Exponential \u2014 pick 'u' in that order.",
+      "sec\u00B2x and 1+tan\u00B2x are identical \u2014 swapping between them often unlocks a stuck integral.",
+      "Never forget '+ C' \u2014 examiners deduct marks for a missing constant of integration."],
+  8: ["King's Rule: \u222b\u2080\u1d43f(x)dx = \u222b\u2080\u1d43f(a\u2212x)dx \u2014 the single most powerful trick for scary-looking definite integrals.",
+      "Even function on [\u2212a,a]: integral = 2\u222b\u2080\u1d43. Odd function: integral = 0. Check symmetry before grinding through algebra.",
+      "Expressions like sinx/(1+sinx) often simplify beautifully after dividing by cosx or rationalizing.",
+      "No '+C' needed for definite integrals \u2014 just substitute the limits at the very end."],
+  9: ["If x and y only ever appear together as (x+y), substitute v=x+y to make the equation separable.",
+      "Variable separable method: get all y-terms with dy on one side, all x-terms with dx on the other, then integrate both sides.",
+      "Linear DE dy/dx+Py=Q: the integrating factor is always e^\u222bPdx \u2014 memorise this cold.",
+      "Order = highest derivative present. Degree = the power of that highest derivative."],
+  10: ["'At least one' problems: compute 1 \u2212 P(none) instead of adding multiple cases \u2014 almost always faster.",
+       "Bayes' 'box/bag' problems: build a mini table of P(box)\u00d7P(event|box) for every box before dividing.",
+       "Independent (P(A\u2229B)=P(A)P(B)) and mutually exclusive (P(A\u2229B)=0) are NOT the same thing \u2014 don't mix them up.",
+       "Binomial distribution: mean=np, variance=npq \u2014 two equations, two unknowns if both are given."],
+  11: ["Perpendicular vectors \u2192 dot product = 0. Parallel vectors \u2192 cross product = 0. These two checks solve most vector problems instantly.",
+       "|a\u20D7+b\u20D7|\u00B2 = |a\u20D7|\u00B2+|b\u20D7|\u00B2+2(a\u20D7\u00b7b\u20D7) \u2014 expand this way whenever sums and magnitudes are involved.",
+       "Unit vector = vector \u00f7 its own magnitude \u2014 compute the magnitude first, always.",
+       "a\u20D7\u00b7(b\u20D7\u00d7c\u20D7)=0 means the three vectors are coplanar \u2014 a quick test worth remembering."],
+  12: ["Angle between two lines only needs their direction ratios \u2014 you never need actual points on the line.",
+       "Perpendicular lines: dot product of direction ratios = 0. Parallel lines: direction ratios are proportional.",
+       "Distance from point to plane ax+by+cz+d=0: use |ax\u2081+by\u2081+cz\u2081+d|/\u221A(a\u00B2+b\u00B2+c\u00B2) directly \u2014 no derivation needed.",
+       "Equation of a plane through 3 points: set up the determinant form directly \u2014 faster than solving simultaneous equations."],
+  13: ["Always sketch a rough graph first \u2014 knowing which curve sits on top tells you what to subtract from what.",
+       "Find intersection points by equating the two curve equations \u2014 these become your integration limits.",
+       "Area = \u222b(upper curve \u2212 lower curve)dx across the interval \u2014 always check which function is bigger first.",
+       "If the region is easier to describe with horizontal strips, integrate with respect to y instead of forcing x."],
+  14: ["Break-even point: set Revenue = Cost and solve for x \u2014 no calculus required.",
+       "'Marginal' always means 'differentiate' \u2014 Marginal Cost = dC/dx, Marginal Revenue = dR/dx.",
+       "Average Cost = Total Cost \u00f7 x. To minimise it, differentiate AC and set it to zero.",
+       "Maximum profit occurs exactly where Marginal Revenue = Marginal Cost."],
+  15: ["byx = r\u00d7(\u03C3y/\u03C3x) and bxy = r\u00d7(\u03C3x/\u03C3y) \u2014 memorise which ratio pairs with which line.",
+       "The regression line of y on x always passes through (x\u0304, \u0233) \u2014 use y\u2212\u0233 = byx(x\u2212x\u0304) directly.",
+       "r\u00B2 = byx \u00d7 bxy \u2014 a fast way to recover r if both regression coefficients are given.",
+       "r always lies between \u22121 and 1 \u2014 if your computed r falls outside that, you've made an arithmetic slip."],
+  16: ["The optimal value of a linear objective ALWAYS occurs at a corner of the feasible region \u2014 never check the interior.",
+       "Shade the feasible region by testing (0,0) in each inequality \u2014 if the origin satisfies it, shade toward the origin.",
+       "List every corner point, plug each into Z, then just pick the largest/smallest \u2014 no extra cleverness needed.",
+       "Don't forget x\u22650, y\u22650 \u2014 they usually contribute two of your corner points sitting right on the axes."]
+};
+
+const predictedQuestions = [
+  { section: "Likely Question-1 style (2 marks each)", items: [
+    { q:"If f: R\u2192R, f(x)=3x\u22122 and g: R\u2192R, g(x)=x\u00B2+1, find f\u2218g(x).", marks:"2",
+      steps:["f\u2218g(x) = f(g(x)) = f(x\u00B2+1)","= 3(x\u00B2+1) \u2212 2","= 3x\u00B2 + 1"] },
+    { q:"Solve: cos(2 sin\u207B\u00B9x) = 1/2", marks:"2",
+      steps:["Let \u03B8 = sin\u207B\u00B9x, so the equation becomes cos(2\u03B8) = 1/2","Use cos(2\u03B8) = 1\u22122sin\u00B2\u03B8 = 1\u22122x\u00B2","1\u22122x\u00B2 = 1/2 \u2192 2x\u00B2 = 1/2 \u2192 x\u00B2 = 1/4","x = \u00b11/2"] }
+  ]},
+  { section: "Section A \u2014 likely 4/6 mark questions", items: [
+    { q:"Solve using the matrix method: 1/x+1/y+1/z=6, 1/x\u22121/y+1/z=2, 1/x+1/y\u22121/z=0", marks:"6",
+      steps:["Substitute u=1/x, v=1/y, w=1/z: u+v+w=6, u\u2212v+w=2, u+v\u2212w=0","Subtract eq2 from eq1: 2v=4 \u2192 v=2","From eq3: u+2\u2212w=0 \u2192 u\u2212w=\u22122. From eq1: u+2+w=6 \u2192 u+w=4","Adding these: 2u=2 \u2192 u=1, then w=3","So x=1/u=1, y=1/v=1/2, z=1/w=1/3"] },
+    { q:"Using properties of determinants, prove |1 a a\u00B2; 1 b b\u00B2; 1 c c\u00B2| = (a\u2212b)(b\u2212c)(c\u2212a)", marks:"4",
+      steps:["Apply R\u2081\u2192R\u2081\u2212R\u2082 and R\u2082\u2192R\u2082\u2212R\u2083 to create zeros in the first column","This factors out (a\u2212b) from row 1 and (b\u2212c) from row 2","Expanding the simplified determinant along column 1 leaves one 2\u00d72 determinant","That evaluates out to give the full result (a\u2212b)(b\u2212c)(c\u2212a) after tracking signs"] },
+    { q:"Find k so that f(x) = kx\u00B2 for x\u22642, and f(x)=3 for x>2, is continuous at x=2.", marks:"4",
+      steps:["For continuity: lim(x\u21922\u207B) f(x) = f(2) = lim(x\u21922\u207A) f(x)","f(2) = k(2)\u00B2 = 4k (x=2 falls in the x\u22642 branch)","The right-hand limit is 3 (constant branch)","Set 4k = 3 \u2192 k = 3/4"] },
+    { q:"An open cylindrical can (no top) must have volume 3\u03C0 m\u00B3. Find the radius that minimises the total surface area.", marks:"6",
+      steps:["Volume: V = \u03C0r\u00B2h = 3\u03C0 \u2192 h = 3/r\u00B2","Surface area (base + curved side, no top): S = \u03C0r\u00B2 + 2\u03C0rh = \u03C0r\u00B2 + 6\u03C0/r","dS/dr = 2\u03C0r \u2212 6\u03C0/r\u00B2. Set to 0: 2\u03C0r = 6\u03C0/r\u00B2 \u2192 r\u00B3 = 3","r = 3^(1/3) minimises S (confirm with the second derivative test)"] }
+  ]},
+  { section: "Section B \u2014 Vectors / 3D Geometry / Integrals", items: [
+    { q:"Find a unit vector perpendicular to both a\u20D7=(2,\u22121,2) and b\u20D7=(1,1,\u22122).", marks:"4",
+      steps:["a\u20D7\u00d7b\u20D7 = ((\u22121)(\u22122)\u2212(2)(1), (2)(1)\u2212(2)(\u22122), (2)(1)\u2212(\u22121)(1)) = (0, 6, 3)","Magnitude = \u221A(0+36+9) = \u221A45 = 3\u221A5","Unit vector = (0,6,3)/(3\u221A5) = (0, 2/\u221A5, 1/\u221A5)"] },
+    { q:"Find the equation of the plane through (1,2,3), perpendicular to the line with direction ratios (2,\u22121,2).", marks:"4",
+      steps:["A plane perpendicular to a line uses that line's direction ratios as its normal vector","Plane: 2(x\u22121) \u2212 1(y\u22122) + 2(z\u22123) = 0","Expand: 2x\u22122\u2212y+2+2z\u22126 = 0","2x \u2212 y + 2z \u2212 6 = 0"] },
+    { q:"Find the area bounded by the curves y\u00B2=4x and x\u00B2=4y.", marks:"6",
+      steps:["Find intersections: substitute y=x\u00B2/4 into y\u00B2=4x \u2192 x\u2074/16=4x \u2192 x\u2074\u221264x=0 \u2192 x=0 or x=4","At x=4, y=4. Between x=0 and 4, y=2\u221Ax (from y\u00B2=4x) lies above y=x\u00B2/4","Area = \u222b\u2080\u2074 [2\u221Ax \u2212 x\u00B2/4] dx = [(4/3)x^(3/2) \u2212 x\u00B3/12]\u2080\u2074","At x=4: (4/3)(8) \u2212 64/12 = 32/3 \u2212 16/3 = 16/3 sq units"] }
+  ]},
+  { section: "Section C \u2014 Commerce (Numerical Applications / Regression / LPP)", items: [
+    { q:"For 10 pairs of data: \u03A3x=50, \u03A3y=60, \u03A3xy=350, \u03A3x\u00B2=290. Find the regression coefficient byx and the regression line of y on x.", marks:"4",
+      steps:["x\u0304=5, \u0233=6","byx = [\u03A3xy \u2212 n\u00b7x\u0304\u00b7\u0233] / [\u03A3x\u00B2 \u2212 n\u00b7x\u0304\u00B2] = [350\u2212300]/[290\u2212250] = 50/40 = 1.25","Regression line: y \u2212 6 = 1.25(x \u2212 5)","y = 1.25x \u2212 0.25"] },
+    { q:"A dietician needs at least 24 units protein and 32 units carbs. Food X (\u20b95/unit) gives 2 protein+4 carbs; Food Y (\u20b93/unit) gives 3 protein+2 carbs. Minimise cost.", marks:"6",
+      steps:["Minimise Z=5x+3y subject to 2x+3y\u226524, 4x+2y\u226532 (i.e. 2x+y\u226516), x,y\u22650","Feasible corner points: (0,16), (6,4), (12,0)","Z at each: (0,16)\u219248, (6,4)\u219242, (12,0)\u219260","Minimum cost \u20b942, using 6 units of X and 4 units of Y"] }
+  ]}
+];
+
+const chapterContent = {
+  1: {
+    concept: "A relation becomes a function when every input maps to exactly one output. This chapter covers checking one-one (injective) and onto (surjective) behaviour, composite functions, and finding inverses.",
+    example: {
+      title: "Worked example \u2014 composite functions (matches 2019 Q1(i) exactly)",
+      body: "If f: R\u2192R, f(x) = x\u00B3 and g: R\u2192R, g(x) = 2x\u00B2+1, find f\u2218g(x) and g\u2218f(x).",
+      steps: [
+        "f\u2218g(x) means f(g(x)): substitute g(x) into f \u2192 f(2x\u00B2+1) = (2x\u00B2+1)\u00B3",
+        "g\u2218f(x) means g(f(x)): substitute f(x) into g \u2192 g(x\u00B3) = 2(x\u00B3)\u00B2+1 = 2x\u2076+1",
+        "Note they're different \u2014 composition is generally not commutative"
+      ]
+    },
+    graph: "composite",
+    practice: [
+      {q:"Show f: A\u2192A where A = R \u2212 {2}, f(x) = (x+1)/(x\u22122) is one-one, and find its inverse.", a:"One-one: f(x\u2081)=f(x\u2082) \u21d2 expand and simplify \u21d2 3x\u2082=3x\u2081 \u21d2 x\u2081=x\u2082. Inverse: y=(x+1)/(x\u22122) \u21d2 x=(2y+1)/(y\u22121). So f\u207B\u00B9(x) = (2x+1)/(x\u22121)."},
+      {q:"If f(x) = 2x+3 and g(x) = x\u2212 1, find (f\u2218g)(x).", a:"f(g(x)) = f(x\u22121) = 2(x\u22121)+3 = 2x+1."}
+    ]
+  },
+  2: {
+    concept: "Inverse trig functions undo the trig ratios, restricted to a principal value range so they're genuine functions. Mostly algebraic manipulation using identities.",
+    example: {
+      title: "Worked example (identical to 2019 Q1(ii))",
+      body: "Solve: sin(2 tan\u207B\u00B9x) = 1",
+      steps: [
+        "Let \u03B8 = tan\u207B\u00B9x, so tan\u03B8 = x, and the equation becomes sin(2\u03B8) = 1",
+        "sin(2\u03B8) = 1 \u21d2 2\u03B8 = \u03C0/2 \u21d2 \u03B8 = \u03C0/4",
+        "So tan\u03B8 = tan(\u03C0/4) = 1",
+        "Therefore x = 1"
+      ]
+    },
+    graph: "arctan",
+    practice: [
+      {q:"Solve for x: tan\u207B\u00B9((x\u22121)/(x+1)) = (1/2)tan\u207B\u00B9x  (x > 0)", a:"Rewrite the left side as tan\u207B\u00B9x \u2212 \u03C0/4, then solve tan\u207B\u00B9x \u2212 \u03C0/4 = (1/2)tan\u207B\u00B9x. The well-known result for this classic problem is x = 1/\u221A3."},
+      {q:"Evaluate: sin\u207B\u00B9(1/2) + cos\u207B\u00B9(1/2)", a:"Using sin\u207B\u00B9x + cos\u207B\u00B9x = \u03C0/2 for any valid x, the answer is simply \u03C0/2."}
+    ]
+  },
+  3: {
+    concept: "Matrices organise numbers into rows and columns so systems of equations and other multi-variable relationships can be handled as single algebraic objects. The matrix method (AX=B, X=A\u207B\u00B9B) is the highest-value skill here.",
+    example: {
+      title: "Worked example \u2014 matrix method (identical structure to 2019 Q11)",
+      body: "Solve using the matrix method: 1/x + 1/y + 1/z = 9,  2/x + 5/y + 7/z = 52,  2/x + 1/y + 1/z = 0",
+      steps: [
+        "Substitute u=1/x, v=1/y, w=1/z: u+v+w=9, 2u+5v+7w=52, 2u+v+w=0",
+        "This is now AX=B, solvable via X = A\u207B\u00B9B",
+        "Subtracting equation 1 from equation 3 eliminates v and w: u = \u22129",
+        "Substituting back and solving the resulting 2\u00d72 system gives v = 28, w = \u221210",
+        "So x = 1/u = \u22121/9,  y = 1/v = 1/28,  z = 1/w = \u22121/10"
+      ]
+    },
+    graph: "matrixbars",
+    practice: [
+      {q:"If A = [[2,4],[3,5]], show that (A + A\u1d40) is a symmetric matrix.", a:"A\u1d40 = [[2,3],[4,5]]. A+A\u1d40 = [[4,7],[7,10]]. (A+A\u1d40)\u1d40 = [[4,7],[7,10]] \u2014 identical, so symmetric."},
+      {q:"Find the inverse of A = [[2,1],[1,1]] using the adjoint method.", a:"det(A) = 2(1)\u22121(1) = 1. adj(A) = [[1,\u22121],[\u22121,2]]. A\u207B\u00B9 = [[1,\u22121],[\u22121,2]]."}
+    ]
+  },
+  4: {
+    concept: "Determinants are a single number computed from a square matrix that captures whether a system has a unique solution, or the area/volume of a figure defined by points/vectors.",
+    example: {
+      title: "Worked example \u2014 area of a triangle via determinants (identical to 2019 Q1(iii))",
+      body: "Using determinants, find k if the area of the triangle with vertices (\u22122,0), (0,4), (0,k) is 4 square units.",
+      steps: [
+        "Area formula: Area = \u00bd|x\u2081(y\u2082\u2212y\u2083) + x\u2082(y\u2083\u2212y\u2081) + x\u2083(y\u2081\u2212y\u2082)|",
+        "Substitute: Area = \u00bd|(\u22122)(4\u2212k)| = |k\u22124|",
+        "Set |k\u22124| = 4 \u2192 k\u22124 = 4 or k\u22124 = \u22124",
+        "So k = 8 or k = 0"
+      ]
+    },
+    graph: "triangle",
+    practice: [
+      {q:"Evaluate the determinant with rows [2,3] and [4,1].", a:"det = (2)(1) \u2212 (3)(4) = 2 \u2212 12 = \u221210."},
+      {q:"Without expanding, explain why a determinant with two identical rows equals zero.", a:"Swapping two identical rows leaves the matrix unchanged but flips the determinant's sign \u2014 so det = \u2212det, forcing det = 0."}
+    ]
+  },
+  5: {
+    concept: "A function is continuous at a point if its value there matches the limit approaching it from both sides. It's differentiable if it additionally has a well-defined slope there. Differentiability always implies continuity \u2014 never the reverse.",
+    example: {
+      title: "Worked example",
+      body: "Check continuity of f(x) = (x\u00B2 \u2212 4)/(x \u2212 2) for x \u2260 2, and f(2) = 5.",
+      steps: [
+        "Simplify for x \u2260 2: (x\u00B2\u22124)/(x\u22122) = x + 2",
+        "Find the limit as x \u2192 2: lim = 4",
+        "Compare to the defined value: f(2) = 5",
+        "Since limit (4) \u2260 f(2) (5), f is discontinuous at x = 2"
+      ]
+    },
+    graph: "continuity",
+    practice: [
+      {q:"Differentiate y = sin(x\u00B2) using the chain rule.", a:"dy/dx = cos(x\u00B2)\u00B72x = 2x\u00B7cos(x\u00B2)"},
+      {q:"Is f(x) = |x| differentiable at x = 0?", a:"No \u2014 left-hand derivative is \u22121, right-hand is +1. Continuous but not differentiable at 0."}
+    ]
+  },
+  6: {
+    concept: "Derivatives measure rate of change. Tangents/normals, deciding where a function rises or falls, and locating maxima/minima \u2014 plus related-rates problems.",
+    example: {
+      title: "Worked example \u2014 the ladder pattern (matches 2019 Q7 style)",
+      body: "A 13m ladder leans against a wall. The bottom is pulled away at 2 m/s. How fast is the height on the wall decreasing when the foot is 5m from the wall?",
+      steps: [
+        "Set up: x\u00B2 + y\u00B2 = 169",
+        "Differentiate w.r.t. time: 2x(dx/dt) + 2y(dy/dt) = 0",
+        "At x=5: y = 12. dx/dt = 2. Solve: 5(2) + 12(dy/dt) = 0",
+        "dy/dt = \u221210/12 = \u22125/6 m/s"
+      ]
+    },
+    graph: "cubic",
+    practice: [
+      {q:"Find the intervals where f(x) = 2x\u00B3 \u2212 15x\u00B2 + 36x + 1 is increasing.", a:"f'(x) = 6(x\u22122)(x\u22123) > 0 when x<2 or x>3. Decreasing for 2<x<3."},
+      {q:"A closed box with square base has volume 4096 cm\u00B3. Find dimensions minimising surface area.", a:"x\u00B2h=4096, S=2x\u00B2+16384/x. dS/dx=0 \u2192 x=16, h=16 \u2014 a cube of side 16 cm."}
+    ]
+  },
+  7: {
+    concept: "Indefinite integration reverses differentiation. Substitution (spotting a function and its derivative together) and standard forms are the core tools.",
+    example: {
+      title: "Worked example (identical to 2019 Q8(a))",
+      body: "Evaluate: \u222b x(1\u2212x\u00B2)/(1+x\u2074) dx",
+      steps: [
+        "Let t = x\u00B2, dt = 2x dx",
+        "Rewrite: \u00bd\u222b[1/(1+t\u00B2) \u2212 t/(1+t\u00B2)] dt",
+        "= \u00bd[tan\u207B\u00B9t \u2212 \u00bd ln(1+t\u00B2)] + C",
+        "Substitute back: \u00bd tan\u207B\u00B9(x\u00B2) \u2212 \u00bc ln(1+x\u2074) + C"
+      ]
+    },
+    graph: "indefinite",
+    practice: [
+      {q:"Evaluate: \u222b x\u00b7e^(x\u00B2) dx", a:"Let t=x\u00B2. \u00bd\u222be^t dt = \u00bde^(x\u00B2) + C."},
+      {q:"Evaluate: \u222b sec\u00B2x/(1+tan\u00B2x) dx", a:"1+tan\u00B2x = sec\u00B2x, so the integrand is 1. Integral = x + C."}
+    ]
+  },
+  8: {
+    concept: "Definite integrals give a numeric value between two limits. The property \u222b\u2080\u1d43f(x)dx = \u222b\u2080\u1d43f(a\u2212x)dx turns intimidating integrals into solvable ones.",
+    example: {
+      title: "Worked example (identical to 2019 Q13)",
+      body: "Evaluate: \u222b\u2080^\u03C0 [x tanx / (secx + tanx)] dx",
+      steps: [
+        "Simplify: tanx/(secx+tanx) = sinx/(1+sinx)",
+        "I = \u222b\u2080^\u03C0 x\u00b7sinx/(1+sinx) dx. Apply King's rule with (\u03C0\u2212x)",
+        "2I = \u03C0\u00b7J where J = \u222b\u2080^\u03C0 sinx/(1+sinx)dx = \u03C0 \u2212 2",
+        "So I = \u03C0(\u03C0\u22122)/2"
+      ]
+    },
+    graph: "definite",
+    practice: [
+      {q:"Evaluate: \u222b\u2080^1 x(1\u2212x)\u2074 dx", a:"Using the Beta shortcut m!n!/(m+n+1)! with m=1,n=4: = 24/720 = 1/30."},
+      {q:"Evaluate: \u222b\u2080^(\u03C0/2) sin\u00B2x dx", a:"Using sin\u00B2x=(1\u2212cos2x)/2: = \u03C0/4."}
+    ]
+  },
+  9: {
+    concept: "A differential equation relates a function to its derivatives. Solving one means finding the family of functions satisfying it \u2014 separate variables, or substitute when x,y appear as a combination like (x+y).",
+    example: {
+      title: "Worked example \u2014 substitution v=x+y (same technique as 2019 Q9)",
+      body: "Solve: dy/dx = (x+y+1)/(x+y\u22121)",
+      steps: [
+        "Let v = x+y, so dy/dx = dv/dx \u2212 1",
+        "Substitute: dv/dx = 2v/(v\u22121)",
+        "Separate and integrate: v/2 \u2212 \u00bd ln|v| = x + C",
+        "Substitute back v=x+y: y \u2212 x \u2212 ln|x+y| = C\u2032"
+      ]
+    },
+    graph: "diffeq",
+    practice: [
+      {q:"Solve: dy/dx = y/x", a:"Separate: dy/y=dx/x. Integrate: y = kx \u2014 a family of lines through the origin."},
+      {q:"What's the order and degree of (d\u00B2y/dx\u00B2)\u00B3 + dy/dx = x?", a:"Order 2, degree 3."}
+    ]
+  },
+  10: {
+    concept: "Builds on basic probability with conditional probability, independence, Bayes' theorem, and probability distributions including binomial.",
+    example: {
+      title: "Worked example \u2014 the 'box' Bayes' pattern (identical to 2019 Q14(a))",
+      body: "Three boxes: A has 2 gold+1 silver, B has 1 gold+2 silver, C has 3 silver. A box is picked at random and a coin drawn is silver. Find P(from Box C).",
+      steps: [
+        "P(A)=P(B)=P(C)=1/3",
+        "P(silver|A)=1/3, P(silver|B)=2/3, P(silver|C)=1",
+        "P(silver) = 1/9+2/9+3/9 = 2/3",
+        "P(C|silver) = (1/3)/(2/3) = 1/2"
+      ]
+    },
+    graph: "binomial",
+    practice: [
+      {q:"Two dice are thrown. Find P(sum = 7 | at least one die shows a 4).", a:"11 outcomes have at least one 4; 2 of these sum to 7. P = 2/11."},
+      {q:"A coin is tossed 5 times. Find P(exactly 3 heads).", a:"C(5,3)(0.5)\u2075 = 10/32 = 5/16."}
+    ]
+  },
+  11: {
+    concept: "Vectors have magnitude and direction. Covers vector algebra, dot product (angles, projections), cross product (perpendicularity, area), and scalar triple product (volume).",
+    example: {
+      title: "Worked example (identical to 2019 Q15(a))",
+      body: "If a\u20D7 and b\u20D7 are perpendicular, |a\u20D7+b\u20D7|=13 and |a\u20D7|=5, find |b\u20D7|.",
+      steps: [
+        "Since a\u20D7\u22a5b\u20D7, a\u20D7\u00b7b\u20D7 = 0",
+        "|a\u20D7+b\u20D7|\u00B2 = |a\u20D7|\u00B2+|b\u20D7|\u00B2",
+        "169 = 25 + |b\u20D7|\u00B2",
+        "|b\u20D7| = 12"
+      ]
+    },
+    graph: "vectors",
+    practice: [
+      {q:"Find the unit vector in the direction of a\u20D7 = (4,\u22123,0).", a:"|a\u20D7|=5. Unit vector = (4/5, \u22123/5, 0)."},
+      {q:"Find a\u20D7\u00d7b\u20D7 for a\u20D7=(1,0,0), b\u20D7=(0,1,0).", a:"(0,0,1) \u2014 the k\u0302 direction."}
+    ]
+  },
+  12: {
+    concept: "Extends vectors into 3D geometry: equations of lines/planes, angles, and distances. Most problems reduce to comparing direction ratios via the dot product.",
+    example: {
+      title: "Worked example (identical to 2019 Q15(c))",
+      body: "Find the angle between the lines 2x=3y=\u2212z and 6x=\u2212y=\u22124z.",
+      steps: [
+        "Direction ratios of line 1: (3,2,\u22126). Line 2: (2,\u221212,\u22123)",
+        "cos\u03B8 = |(3)(2)+(2)(\u221212)+(\u22126)(\u22123)| / (\u221A49\u00b7\u221A157)",
+        "= |6\u221224+18|/... = 0",
+        "\u03B8 = 90\u00b0 \u2014 the lines are perpendicular"
+      ]
+    },
+    graph: "vectors",
+    practice: [
+      {q:"Find the direction cosines of the line joining (1,2,3) and (4,6,3).", a:"Direction ratios (3,4,0), magnitude 5. Direction cosines: (3/5,4/5,0)."},
+      {q:"Find the distance of (2,3,\u22125) from the plane x+2y\u22122z\u22129=0.", a:"|2+6+10\u22129|/3 = 3."}
+    ]
+  },
+  13: {
+    concept: "Uses definite integrals to find area enclosed between curves \u2014 sketch first, find intersections, integrate the difference.",
+    example: {
+      title: "Worked example (identical to 2019 Q18)",
+      body: "Find the area bounded by x\u00B2 = y and x + y = 2.",
+      steps: [
+        "Intersections: x\u00B2+x\u22122=0 \u2192 x=\u22122 or x=1",
+        "Line lies above parabola between these",
+        "Area = \u222b\u208b\u2082^1 [(2\u2212x)\u2212x\u00B2] dx = 7/6 \u2212 (\u221210/3)",
+        "= 9/2 square units"
+      ]
+    },
+    graph: "areabetween",
+    practice: [
+      {q:"Find the area bounded by y=x\u00B2 and y=x.", a:"Between x=0,1: Area = \u222b(x\u2212x\u00B2)dx = 1/6."},
+      {q:"Set up the integral for the area under y=sinx from 0 to \u03C0.", a:"\u222b\u2080^\u03C0 sinx dx (evaluates to 2)."}
+    ]
+  },
+  14: {
+    concept: "Applies calculus and algebra to business problems: cost/revenue/profit, break-even analysis, and marginal cost.",
+    example: {
+      title: "Worked example \u2014 break-even (matches 2019 Q19(a) numbers)",
+      body: "Fixed cost \u20b924,000. Selling price \u20b98/unit, variable cost 25% of revenue. Find break-even point.",
+      steps: [
+        "Revenue R(x)=8x. Variable cost=2x. Cost C(x)=24000+2x",
+        "Break-even: 8x = 24000+2x",
+        "6x=24000 \u2192 x=4000 units",
+        "Revenue at break-even = \u20b932,000"
+      ]
+    },
+    graph: "breakeven",
+    practice: [
+      {q:"C(x)=x\u00B3/3\u221245x\u00B2+900x+36. Find marginal cost when x=10.", a:"MC=x\u00B2\u221290x+900. At x=10: MC=100."},
+      {q:"If AC=2x+5+18/x, find the Marginal Cost function.", a:"C=2x\u00B2+5x+18. MC=4x+5."}
+    ]
+  },
+  15: {
+    concept: "Regression finds the best-fit line describing how one variable changes with another, using means, standard deviations, and correlation coefficient r.",
+    example: {
+      title: "Worked example (identical to 2019 Q19(c))",
+      body: "Given x\u0304=18, \u0233=100, \u03C3\u2093=14, \u03C3\u1d67=20, r=0.8, find regression equation of y on x.",
+      steps: [
+        "byx = r\u00d7(\u03C3\u1d67/\u03C3\u2093) = 0.8\u00d7(20/14) = 8/7",
+        "y \u2212 100 = (8/7)(x \u2212 18)",
+        "y = (8/7)x + 556/7"
+      ]
+    },
+    graph: "regression",
+    practice: [
+      {q:"If byx=1.2 and bxy=0.8, find r.", a:"r=\u00b1\u221A(1.2\u00d70.8)\u2248\u00b10.98; positive slopes \u2192 r\u22480.98."},
+      {q:"What does r=0 tell you about the two regression lines?", a:"They're perpendicular \u2014 one horizontal, one vertical."}
+    ]
+  },
+  16: {
+    concept: "Linear Programming finds the best value of a linear objective subject to linear constraints. Check every corner point of the feasible region.",
+    example: {
+      title: "Worked example (identical structure to 2019 Q22)",
+      body: "A carpenter has 90,80,50 running feet of teak/plywood/rosewood. Product A needs 2,1,1; B needs 1,2,1. A sells \u20b948, B sells \u20b940. Maximise income.",
+      steps: [
+        "Constraints: 2x+y\u226490, x+2y\u226480, x+y\u226450, x,y\u22650",
+        "Corners: (0,0),(45,0),(40,10),(20,30),(0,40)",
+        "Z=48x+40y values: 0,2160,2320,2160,1600",
+        "Max Z=2320 at (40,10)"
+      ]
+    },
+    graph: "lpp",
+    practice: [
+      {q:"Set up: chairs earn \u20b920, tables earn \u20b930. Chair=2hrs, table=3hrs, 12hrs available.", a:"Maximise Z=20x+30y s.t. 2x+3y\u226412, x,y\u22650."},
+      {q:"Why does the optimum always occur at a corner point?", a:"A linear objective has no interior max/min \u2014 moving in the improving direction always pushes to the boundary, and ultimately a corner."}
+    ]
+  }
+};
+
+const sections = [...new Set(chapters.map(c=>c.section))];
+
+// ==================== STATE / PROGRESS (persisted locally on the device) ====================
+let state = { tab:'home', selected:null, revealed:{} };
+let waveInterval = null;
+
+function getProgress(){
+  try{ return JSON.parse(localStorage.getItem('letsmath_progress')||'{}'); }catch(e){ return {}; }
+}
+function saveProgress(p){
+  try{ localStorage.setItem('letsmath_progress', JSON.stringify(p)); }catch(e){}
+}
+function markVisited(id){
+  const p = getProgress();
+  if(!p[id]){ p[id]='learning'; saveProgress(p); }
+}
+function setConfidence(id, level){
+  const p = getProgress();
+  p[id] = level;
+  saveProgress(p);
+  render();
+}
+function confidenceCounts(){
+  const p = getProgress();
+  let learning=0, practicing=0, confident=0;
+  chapters.forEach(c=>{
+    const lvl = p[c.id];
+    if(lvl==='confident') confident++;
+    else if(lvl==='practicing') practicing++;
+    else if(lvl==='learning') learning++;
+  });
+  return {learning, practicing, confident, total: chapters.length};
+}
+
+function navigate(tab){
+  state.tab = tab; state.selected = null;
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
+  render();
+  window.scrollTo(0,0);
+}
+function openChapter(id){ markVisited(id); state.selected = id; render(); window.scrollTo(0,0); }
+function backToChapters(){ state.selected = null; render(); }
+function toggleReveal(key){ state.revealed[key] = !state.revealed[key]; render(); }
+
+// ==================== Generic sampler ====================
+function samplePath(fn, xMin, xMax, steps, W, H, pad){
+  const pts=[];
+  for(let i=0;i<=steps;i++){
+    const x = xMin + (xMax-xMin)*i/steps;
+    const y = fn(x);
+    if(isFinite(y)) pts.push([x,y]);
+  }
+  const ys = pts.map(p=>p[1]);
+  const yMin=Math.min(...ys), yMax=Math.max(...ys);
+  const sx = x => pad + (x-xMin)/(xMax-xMin)*(W-2*pad);
+  const sy = y => H-pad - (y-yMin)/((yMax-yMin)||1)*(H-2*pad);
+  const d = pts.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+  return {d, sx, sy};
+}
+
+// ==================== GRAPH GENERATORS ====================
+function svgCubic(){
+  const {d,sx,sy} = samplePath(x=>x**3-3*x**2-9*x+5, -3, 6, 60, 400, 260, 32);
+  return `<svg viewBox="0 0 400 260" style="width:100%;max-height:260px">
+    <path d="${d}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <circle cx="${sx(-1)}" cy="${sy(10)}" r="5" fill="var(--amber)"/>
+    <circle cx="${sx(3)}" cy="${sy(-22)}" r="5" fill="var(--danger)"/>
+    <text x="${sx(-1)}" y="${sy(10)-10}" font-size="11" fill="var(--text-dark-muted)" text-anchor="middle">local max</text>
+    <text x="${sx(3)}" y="${sy(-22)+18}" font-size="11" fill="var(--text-dark-muted)" text-anchor="middle">local min</text>
+  </svg>`;
+}
+function svgContinuity(){
+  const pts=[]; for(let x=0;x<=4;x+=0.2){ if(Math.abs(x-2)<0.05) continue; pts.push([x, x+2]); }
+  const W=400,H=260,pad=32,xMin=0,xMax=4,yMin=1,yMax=7;
+  const sx=x=>pad+(x-xMin)/(xMax-xMin)*(W-2*pad);
+  const sy=y=>H-pad-(y-yMin)/(yMax-yMin)*(H-2*pad);
+  const d=pts.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-height:260px">
+    <path d="${d}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <circle cx="${sx(2)}" cy="${sy(4)}" r="5" fill="var(--paper)" stroke="var(--danger)" stroke-width="2"/>
+    <circle cx="${sx(2)}" cy="${sy(5)}" r="5" fill="var(--amber)"/>
+    <text x="${sx(2)+10}" y="${sy(4)}" font-size="11" fill="var(--text-dark-muted)">limit = 4</text>
+    <text x="${sx(2)+10}" y="${sy(5)}" font-size="11" fill="var(--text-dark-muted)">f(2) = 5</text>
+  </svg>`;
+}
+function svgBinomial(){
+  const data=[[0,1/32],[1,5/32],[2,10/32],[3,10/32],[4,5/32],[5,1/32]];
+  const W=400,H=260,pad=35,barW=(W-2*pad)/data.length,maxP=Math.max(...data.map(d=>d[1]));
+  let bars='';
+  data.forEach(([k,p],i)=>{
+    const barH=(p/maxP)*(H-2*pad), x=pad+i*barW+barW*0.15, y=H-pad-barH;
+    bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${(barW*0.7).toFixed(1)}" height="${barH.toFixed(1)}" fill="var(--teal)" rx="3"/>`;
+    bars+=`<text x="${(x+barW*0.35).toFixed(1)}" y="${H-pad+16}" font-size="11" fill="var(--text-dark-muted)" text-anchor="middle">${k}</text>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-height:260px">${bars}
+    <text x="${W/2}" y="${H-6}" font-size="11" fill="var(--text-dark-muted)" text-anchor="middle">heads (k) out of 5 tosses</text>
+  </svg>`;
+}
+function svgVectors(){
+  return `<svg viewBox="0 0 400 220" style="width:100%;max-height:260px">
+    <line x1="40" y1="180" x2="380" y2="180" stroke="var(--paper-soft)"/>
+    <line x1="40" y1="180" x2="40" y2="20" stroke="var(--paper-soft)"/>
+    <defs>
+      <marker id="aT" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--teal)"/></marker>
+      <marker id="aA" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--amber)"/></marker>
+    </defs>
+    <line x1="40" y1="180" x2="260" y2="60" stroke="var(--teal)" stroke-width="3" marker-end="url(#aT)"/>
+    <line x1="40" y1="180" x2="320" y2="140" stroke="var(--amber)" stroke-width="3" marker-end="url(#aA)"/>
+    <text x="265" y="55" font-size="13" fill="var(--teal)">a\u20D7</text>
+    <text x="325" y="145" font-size="13" fill="var(--amber)">b\u20D7</text>
+    <path d="M 100 168 A 40 40 0 0 0 110 145" fill="none" stroke="var(--text-dark-muted)" stroke-width="1.5"/>
+    <text x="105" y="160" font-size="12" fill="var(--text-dark-muted)">\u03B8</text>
+    <text x="40" y="205" font-size="11" fill="var(--text-dark-muted)">cos\u03B8 = (a\u20D7\u00B7b\u20D7)/(|a\u20D7||b\u20D7|)</text>
+  </svg>`;
+}
+function svgComposite(){
+  const {d} = samplePath(x=>2*x**6+1, -1.15, 1.15, 60, 400, 260, 32);
+  return `<svg viewBox="0 0 400 260" style="width:100%;max-height:260px">
+    <path d="${d}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <text x="200" y="24" font-size="12" fill="var(--text-dark-muted)" text-anchor="middle">g\u2218f(x) = 2x\u2076+1</text>
+  </svg>`;
+}
+function svgArctan(){
+  const {d} = samplePath(x=>Math.atan(x), -10, 10, 80, 400, 260, 32);
+  return `<svg viewBox="0 0 400 260" style="width:100%;max-height:260px">
+    <path d="${d}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <line x1="32" y1="130" x2="368" y2="130" stroke="var(--paper-soft)" stroke-dasharray="4"/>
+    <text x="200" y="24" font-size="12" fill="var(--text-dark-muted)" text-anchor="middle">y = tan\u207B\u00B9(x), range (\u2212\u03C0/2, \u03C0/2)</text>
+  </svg>`;
+}
+function svgMatrixBars(){
+  const data=[["x",-1/9],["y",1/28],["z",-1/10]];
+  const W=400,H=260,pad=40,barW=(W-2*pad)/data.length;
+  const maxAbs = Math.max(...data.map(d=>Math.abs(d[1])));
+  const zero = H/2;
+  let bars='';
+  data.forEach(([label,v],i)=>{
+    const barH = (Math.abs(v)/maxAbs)*(H/2-30);
+    const x = pad+i*barW+barW*0.2;
+    const y = v>=0 ? zero-barH : zero;
+    bars+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${(barW*0.6).toFixed(1)}" height="${barH.toFixed(1)}" fill="${v>=0?'var(--teal)':'var(--danger)'}" rx="3"/>`;
+    bars+=`<text x="${(x+barW*0.3).toFixed(1)}" y="${H-14}" font-size="12" fill="var(--text-dark-muted)" text-anchor="middle">${label}=${v.toFixed(3)}</text>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-height:260px">
+    <line x1="20" y1="${zero}" x2="380" y2="${zero}" stroke="var(--paper-soft)"/>
+    ${bars}
+  </svg>`;
+}
+function svgTriangle(){
+  const pts=[[-2,0],[0,4],[0,8]];
+  const W=300,H=260,pad=36,xMin=-3,xMax=1,yMin=-1,yMax=9;
+  const sx=x=>pad+(x-xMin)/(xMax-xMin)*(W-2*pad);
+  const sy=y=>H-pad-(y-yMin)/(yMax-yMin)*(H-2*pad);
+  const poly = pts.map(p=>`${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-height:260px">
+    <polygon points="${poly}" fill="var(--teal)" fill-opacity="0.25" stroke="var(--teal)" stroke-width="2"/>
+    <circle cx="${sx(-2)}" cy="${sy(0)}" r="4" fill="var(--amber)"/>
+    <circle cx="${sx(0)}" cy="${sy(4)}" r="4" fill="var(--amber)"/>
+    <circle cx="${sx(0)}" cy="${sy(8)}" r="4" fill="var(--danger)"/>
+    <text x="${sx(-2)-8}" y="${sy(0)+16}" font-size="11" fill="var(--text-dark-muted)">(\u22122,0)</text>
+    <text x="${sx(0)+8}" y="${sy(4)}" font-size="11" fill="var(--text-dark-muted)">(0,4)</text>
+    <text x="${sx(0)+8}" y="${sy(8)}" font-size="11" fill="var(--text-dark-muted)">(0,k=8)</text>
+  </svg>`;
+}
+function svgIndefinite(){
+  const {d} = samplePath(x=> (x*(1-x*x))/(1+x**4), -2.5, 2.5, 80, 400, 260, 32);
+  return `<svg viewBox="0 0 400 260" style="width:100%;max-height:260px">
+    <path d="${d}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <text x="200" y="24" font-size="12" fill="var(--text-dark-muted)" text-anchor="middle">the integrand being integrated</text>
+  </svg>`;
+}
+function svgDefinite(){
+  const {d,sx,sy} = samplePath(x=> Math.sin(x)/(1+Math.sin(x)), 0, Math.PI, 60, 400, 260, 32);
+  const areaPath = d + ` L${sx(Math.PI).toFixed(1)},${sy(0).toFixed(1)} L${sx(0).toFixed(1)},${sy(0).toFixed(1)} Z`;
+  return `<svg viewBox="0 0 400 260" style="width:100%;max-height:260px">
+    <path d="${areaPath}" fill="var(--amber)" fill-opacity="0.2" stroke="none"/>
+    <path d="${d}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <text x="200" y="24" font-size="12" fill="var(--text-dark-muted)" text-anchor="middle">sinx/(1+sinx) on [0,\u03C0]</text>
+  </svg>`;
+}
+function svgDiffEq(){
+  const W=400,H=260,pad=32;
+  const xMin=-3,xMax=3,yMin=-1,yMax=9;
+  const sx=x=>pad+(x-xMin)/(xMax-xMin)*(W-2*pad);
+  const sy=y=>H-pad-(y-yMin)/(yMax-yMin)*(H-2*pad);
+  let paths='';
+  [-2,0,2].forEach((c,i)=>{
+    const pts=[]; for(let x=xMin;x<=xMax;x+=0.2){ pts.push([x, x*x+c]); }
+    const d = pts.map((p,j)=>`${j===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+    paths += `<path d="${d}" fill="none" stroke="${['var(--teal)','var(--amber)','var(--danger)'][i]}" stroke-width="2"/>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-height:260px">
+    ${paths}
+    <text x="${W/2}" y="24" font-size="11" fill="var(--text-dark-muted)" text-anchor="middle">illustrative: a general solution is a whole family of curves (varying C)</text>
+  </svg>`;
+}
+function svgAreaBetween(){
+  const W=400,H=260,pad=32,xMin=-2.5,xMax=1.5,yMin=0,yMax=5;
+  const sx=x=>pad+(x-xMin)/(xMax-xMin)*(W-2*pad);
+  const sy=y=>H-pad-(y-yMin)/(yMax-yMin)*(H-2*pad);
+  const parab=[]; for(let x=xMin;x<=xMax;x+=0.1){ parab.push([x,x*x]); }
+  const line=[]; for(let x=xMin;x<=xMax;x+=0.1){ line.push([x,2-x]); }
+  const dParab = parab.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(Math.min(p[1],yMax)).toFixed(1)}`).join(' ');
+  const dLine = line.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(Math.min(p[1],yMax)).toFixed(1)}`).join(' ');
+  const areaX=[]; for(let x=-2;x<=1;x+=0.1){ areaX.push(x); }
+  const top = areaX.map((x,i)=>`${i===0?'M':'L'}${sx(x).toFixed(1)},${sy(2-x).toFixed(1)}`).join(' ');
+  const bottomRev = areaX.slice().reverse().map(x=>`L${sx(x).toFixed(1)},${sy(x*x).toFixed(1)}`).join(' ');
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-height:260px">
+    <path d="${top} ${bottomRev} Z" fill="var(--amber)" fill-opacity="0.25" stroke="none"/>
+    <path d="${dParab}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <path d="${dLine}" fill="none" stroke="var(--danger)" stroke-width="2.5"/>
+    <text x="${W/2}" y="20" font-size="11" fill="var(--text-dark-muted)" text-anchor="middle">y=x\u00B2 (teal) and x+y=2 (red), area shaded</text>
+  </svg>`;
+}
+function svgBreakeven(){
+  const W=400,H=260,pad=36,xMin=0,xMax=6000,yMin=0,yMax=48000;
+  const sx=x=>pad+(x-xMin)/(xMax-xMin)*(W-2*pad);
+  const sy=y=>H-pad-(y-yMin)/(yMax-yMin)*(H-2*pad);
+  const rev=[[0,0],[6000,48000]];
+  const cost=[[0,24000],[6000,36000]];
+  const dRev = rev.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+  const dCost = cost.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-height:260px">
+    <path d="${dRev}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <path d="${dCost}" fill="none" stroke="var(--danger)" stroke-width="2.5"/>
+    <circle cx="${sx(4000)}" cy="${sy(32000)}" r="5" fill="var(--amber)"/>
+    <text x="${sx(4000)+8}" y="${sy(32000)-8}" font-size="11" fill="var(--text-dark-muted)">break-even (4000, 32000)</text>
+    <text x="${sx(5200)}" y="${sy(41600)-8}" font-size="11" fill="var(--teal)">Revenue</text>
+    <text x="${sx(5200)}" y="${sy(36000)+16}" font-size="11" fill="var(--danger)">Cost</text>
+  </svg>`;
+}
+function svgRegression(){
+  const {d} = samplePath(x=> 100 + (8/7)*(x-18), 0, 36, 20, 400, 260, 32);
+  return `<svg viewBox="0 0 400 260" style="width:100%;max-height:260px">
+    <path d="${d}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <text x="200" y="24" font-size="12" fill="var(--text-dark-muted)" text-anchor="middle">regression line: y = (8/7)x + 556/7</text>
+  </svg>`;
+}
+function svgLPP(){
+  const W=340,H=280,pad=38,xMin=0,xMax=50,yMin=0,yMax=50;
+  const sx=x=>pad+(x-xMin)/(xMax-xMin)*(W-2*pad);
+  const sy=y=>H-pad-(y-yMin)/(yMax-yMin)*(H-2*pad);
+  const region = [[0,0],[45,0],[40,10],[20,30],[0,40]];
+  const poly = region.map(p=>`${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+  const labels = region.map(p=>`<circle cx="${sx(p[0]).toFixed(1)}" cy="${sy(p[1]).toFixed(1)}" r="4" fill="var(--danger)"/>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-height:280px">
+    <line x1="${pad}" y1="${H-pad}" x2="${W-10}" y2="${H-pad}" stroke="var(--paper-soft)"/>
+    <line x1="${pad}" y1="${H-pad}" x2="${pad}" y2="10" stroke="var(--paper-soft)"/>
+    <polygon points="${poly}" fill="var(--teal)" fill-opacity="0.25" stroke="var(--teal)" stroke-width="2"/>
+    ${labels}
+    <circle cx="${sx(40)}" cy="${sy(10)}" r="6" fill="var(--amber)"/>
+    <text x="${sx(40)+8}" y="${sy(10)-8}" font-size="11" fill="var(--text-dark-muted)">optimal (40,10), Z=2320</text>
+  </svg>`;
+}
+function graphFor(type){
+  const map = {
+    cubic: svgCubic, continuity: svgContinuity, binomial: svgBinomial, vectors: svgVectors,
+    composite: svgComposite, arctan: svgArctan, matrixbars: svgMatrixBars, triangle: svgTriangle,
+    indefinite: svgIndefinite, definite: svgDefinite, diffeq: svgDiffEq, areabetween: svgAreaBetween,
+    breakeven: svgBreakeven, regression: svgRegression, lpp: svgLPP
+  };
+  return map[type] ? map[type]() : '';
+}
+
+// ==================== RENDER ====================
+function render(){
+  const el = document.getElementById('app');
+  if(waveInterval){ clearInterval(waveInterval); waveInterval=null; }
+
+  if(state.tab==='home'){ el.innerHTML = renderHome(); startWave(); return; }
+  if(state.tab==='pattern'){ el.innerHTML = renderPattern(); return; }
+  if(state.tab==='tricks'){ el.innerHTML = renderTricks(); return; }
+  if(state.tab==='predicted'){ el.innerHTML = renderPredicted(); return; }
+  if(state.tab==='chapters'){
+    el.innerHTML = state.selected ? renderChapterDetail(state.selected) : renderChaptersList();
+    return;
+  }
+}
+
+function renderHome(){
+  const c = confidenceCounts();
+  const pct = Math.round((c.confident/c.total)*100);
+  const tip = mindsetTips[Math.floor(Math.random()*mindsetTips.length)];
+  return `
+    <div class="hero">
+      <div class="eyebrow eyebrow-amber">ISC Class 12 &middot; Mathematics</div>
+      <h1>Learn every chapter the way it actually gets tested \u2014 and stop dreading it.</h1>
+      <p class="muted" style="max-width:440px;color:var(--text-muted);">Concepts, worked examples, quick-recall tricks, practice questions with answers, and live graphs \u2014 grounded in the actual ISC papers from 2014\u20132024.</p>
+      <svg viewBox="0 0 600 120" style="width:100%;height:90px;margin:16px 0;"><path id="wavePath" d="" stroke="var(--amber)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-amber" onclick="navigate('chapters')">Start a chapter &rarr;</button>
+        <button class="btn btn-outline" onclick="navigate('tricks')">Quick tricks</button>
+      </div>
+    </div>
+
+    <div class="mindset-banner">
+      <div class="eyebrow" style="color:var(--paper);opacity:0.75;">Mindset tip</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.55;">${tip}</p>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <b style="color:var(--text-dark);">Your progress</b>
+        <span class="mono" style="color:var(--teal);font-size:13px;">${c.confident}/${c.total} chapters confident</span>
+      </div>
+      <div class="progress-wrap"><div class="progress-fill" style="width:${pct}%;"></div></div>
+      <p class="muted" style="font-size:12px;margin:0;">Open any chapter and mark how you feel about it \u2014 this bar is just for you, no pressure attached.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="card"><div class="eyebrow">Pattern-aware</div><b>Real paper data</b><p class="muted" style="font-size:13px;">Weightage pulled from actual uploaded papers, not guesses.</p></div>
+      <div class="card"><div class="eyebrow">Quick recall</div><b>Tricks per topic</b><p class="muted" style="font-size:13px;">The shortcuts worth remembering walking into the exam.</p></div>
+      <div class="card"><div class="eyebrow">Graphical</div><b>See the function</b><p class="muted" style="font-size:13px;">Curves, distributions, and vectors, not just formulas.</p></div>
+    </div>
+  `;
+}
+
+function renderPattern(){
+  let notes = patternNotes.map(p=>`
+    <div class="card pattern-row">
+      <div><b>${p.label}</b><p class="muted" style="font-size:13px;margin:4px 0 0;">${p.detail}</p></div>
+      <span class="pattern-value mono">${p.value}</span>
+    </div>`).join('');
+  let rows = chapters.map((c,i)=>`
+    <div class="table-row">
+      <div><b style="color:var(--text-dark);">${c.title}</b><div class="muted" style="font-size:12px;">${c.section}</div></div>
+      <span class="mono" style="color:var(--teal);white-space:nowrap;">${c.marks}</span>
+    </div>`).join('');
+  return `
+    <h2 style="font-size:22px;margin-bottom:6px;">How the paper is structured</h2>
+    <p class="muted" style="font-size:13px;color:var(--text-muted);margin-bottom:18px;">Extracted directly from the question papers &amp; marking schemes you uploaded (2014\u20132020, 2023\u20132024).</p>
+    ${notes}
+    <h3 style="font-size:18px;margin:26px 0 12px;">Chapter-wise marks (based on the 2019/2020 papers)</h3>
+    <div class="card" style="padding:0;">${rows}</div>
+  `;
+}
+
+function renderChaptersList(){
+  const progress = getProgress();
+  let out = `<h2 style="font-size:22px;margin-bottom:16px;">Full syllabus</h2>`;
+  sections.forEach(sec=>{
+    out += `<div class="section-group"><div class="eyebrow eyebrow-amber">${sec}</div><div class="card" style="padding:0 20px;">`;
+    chapters.filter(c=>c.section===sec).forEach(c=>{
+      const lvl = progress[c.id];
+      const dotClass = lvl==='confident' ? 'conf-confident' : lvl==='practicing' ? 'conf-practicing' : lvl==='learning' ? 'conf-learning' : '';
+      out += `<div class="chapter-row" onclick="openChapter(${c.id})">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span class="icon-badge">${chapterIcons[c.id]||''}</span>
+          <span style="font-weight:500;color:var(--text-dark);">${c.title}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          ${dotClass ? `<span class="confidence-dot ${dotClass}"></span>` : `<span class="chip chip-ready">Ready</span>`}
+          <span style="color:var(--text-dark-muted);">&rsaquo;</span>
+        </div>
+      </div>`;
+    });
+    out += `</div></div>`;
+  });
+  return out;
+}
+
+function renderChapterDetail(id){
+  const chapter = chapters.find(c=>c.id===id);
+  const content = chapterContent[id];
+  const progress = getProgress();
+  const lvl = progress[id] || 'learning';
+  let html = `<button class="back-btn" onclick="backToChapters()">&larr; Back to chapters</button>`;
+
+  if(!chapter.populated || !content){
+    html += `<div class="card" style="text-align:center;padding:40px 20px;">
+      <h3 style="font-size:20px;margin:10px 0;">${chapter.title}</h3>
+      <p class="muted" style="font-size:14px;">This chapter's content is coming in the next update.</p>
+    </div>`;
+    return html;
+  }
+
+  html += `<div class="eyebrow eyebrow-amber">${chapter.section}</div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span class="icon-badge icon-badge-lg">${chapterIcons[id]||''}</span>
+      <h2 style="font-size:24px;">${chapter.title}</h2>
+    </div>
+    <div class="card"><div class="eyebrow">Concept</div><p style="line-height:1.6;">${content.concept}</p></div>
+    <div class="card"><div class="eyebrow">Graphical view</div>${graphFor(content.graph)}</div>
+    <div class="card">
+      <div class="eyebrow">${content.example.title}</div>
+      <p style="font-weight:500;margin-bottom:10px;">${content.example.body}</p>
+      <ul class="step-list">${content.example.steps.map((s,i)=>`<li><span class="step-num mono">${i+1}.</span><span class="muted">${s}</span></li>`).join('')}</ul>
+    </div>
+    <div class="eyebrow eyebrow-amber" style="margin:20px 0 10px;">Practice questions</div>`;
+
+  content.practice.forEach((q,i)=>{
+    const key = `${id}-${i}`;
+    const isOpen = state.revealed[key];
+    html += `<div class="q-card">
+      <p style="font-weight:500;margin-bottom:10px;">${q.q}</p>
+      <button class="reveal-btn ${isOpen?'open':''}" onclick="toggleReveal('${key}')">${isOpen?'&#10003; Answer shown':'&#9662; Show answer'}</button>
+      ${isOpen ? `<p class="answer">${q.a}</p>` : ''}
+    </div>`;
+  });
+
+  html += `<div class="card">
+    <div class="eyebrow">How confident do you feel on this chapter?</div>
+    <div class="confidence-row">
+      <button class="conf-btn ${lvl==='learning'?'sel-learning':''}" onclick="setConfidence(${id},'learning')">Still learning</button>
+      <button class="conf-btn ${lvl==='practicing'?'sel-practicing':''}" onclick="setConfidence(${id},'practicing')">Practicing</button>
+      <button class="conf-btn ${lvl==='confident'?'sel-confident':''}" onclick="setConfidence(${id},'confident')">Confident</button>
+    </div>
+  </div>`;
+
+  return html;
+}
+
+function renderTricks(){
+  let out = `<h2 style="font-size:22px;margin-bottom:6px;">Quick tricks, chapter by chapter</h2>
+  <p class="muted" style="font-size:13px;color:var(--text-muted);margin-bottom:18px;">Tap a chapter to reveal the shortcuts worth having memorised before you walk into the exam \u2014 this is the last-minute revision list.</p>`;
+  chapters.forEach(c=>{
+    const tricks = trickContent[c.id] || [];
+    if(tricks.length===0) return;
+    out += `<details class="trick-card">
+      <summary><span style="display:flex;align-items:center;gap:10px;"><span class="icon-badge">${chapterIcons[c.id]||''}</span>${c.title}</span><span class="mono" style="color:var(--text-dark-muted);">+</span></summary>
+      <div class="trick-body"><ul>${tricks.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+    </details>`;
+  });
+  return out;
+}
+
+function renderPredicted(){
+  let out = `<h2 style="font-size:22px;margin-bottom:6px;">2027 predicted questions</h2>
+  <div class="disclaimer">These are practice predictions generated by analysing recurring topics, question formats, and mark patterns across your uploaded 2014\u20132024 papers \u2014 they are <b>not</b> leaked or official questions, and the real 2027 paper will use different numbers and wording. Use them to rehearse the patterns, not to "spot" exact questions.</div>`;
+  predictedQuestions.forEach(group=>{
+    out += `<div class="eyebrow eyebrow-amber" style="margin:18px 0 10px;">${group.section}</div>`;
+    group.items.forEach(q=>{
+      out += `<details class="pred-card">
+        <summary><span style="font-weight:500;color:var(--text-dark);">${q.q}</span><span class="pred-marks mono">${q.marks} marks</span></summary>
+        <div class="trick-body"><ul class="step-list" style="list-style:none;padding:0;">${q.steps.map((s,j)=>`<li style="display:flex;gap:8px;margin-bottom:7px;"><span class="step-num mono">${j+1}.</span><span class="muted" style="font-size:13.5px;">${s}</span></li>`).join('')}</ul></div>
+      </details>`;
+    });
+  });
+  return out;
+}
+
+function startWave(){
+  let phase = 0;
+  const path = document.getElementById('wavePath');
+  if(!path) return;
+  waveInterval = setInterval(()=>{
+    phase += 0.12;
+    let d='';
+    for(let x=0;x<=600;x+=12){
+      const y = 60 + 36*Math.sin((x/600)*4*Math.PI + phase);
+      d += `${x===0?'M':'L'}${x},${y.toFixed(1)} `;
+    }
+    path.setAttribute('d', d);
+  }, 60);
+}
+
+// init
+document.querySelector('.tab-btn[data-tab="home"]').classList.add('active');
+render();
+</script>
+</body>
+</html>

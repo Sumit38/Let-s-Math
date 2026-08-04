@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#161B2E" />
+  <title>Let's Math - Master Math with Confidence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --ink: #161B2E;
+      --ink-soft: #1F2740;
+      --ink-600: #2A3350;
+      --paper: #F6F1E4;
+      --paper-soft: #EFE7D3;
+      --teal: #3A8F84;
+      --amber: #E2A23B;
+      --danger: #C25B4A;
+      --text-light: #F1ECDD;
+      --text-muted: #A9AFC4;
+      --text-dark: #20242E;
+      --text-dark-muted: #5B5646;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ink);
+      color: var(--text-light);
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://capacitor.ionicframework.com/capacitor.js"></script>
+  <script>
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        import('/src/index.js');
+      });
+    }
+  </script>
+</body>
+</html>
