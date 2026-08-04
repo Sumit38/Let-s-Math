@@ -42,13 +42,32 @@ body.light-mode {
     --text-primary: #1E4A7A;
 }
 
+/* Light mode - Force all text to dark blue */
+body.light-mode {
+    color: #1E4A7A !important;
+}
+
+body.light-mode p {
+    color: #1E4A7A !important;
+}
+
 body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3,
 body.light-mode h4,
 body.light-mode h5,
 body.light-mode h6 {
-    color: #4A7C9E;
+    color: #1E4A7A !important;
+}
+
+body.light-mode a {
+    color: #1E4A7A !important;
+}
+
+body.light-mode span,
+body.light-mode div,
+body.light-mode li {
+    color: #1E4A7A !important;
 }
 
 body.light-mode .btn-primary {
@@ -78,8 +97,21 @@ body.light-mode input,
 body.light-mode textarea,
 body.light-mode select {
     background: #F5F7FA;
-    color: #4A7C9E;
+    color: #1E4A7A !important;
     border-color: #D8E3EF;
+}
+
+/* Override inline styles in light mode */
+body.light-mode [style*="color: #F1ECDD"] {
+    color: #1E4A7A !important;
+}
+
+body.light-mode [style*="color: #F6F1E4"] {
+    color: #1E4A7A !important;
+}
+
+body.light-mode [style*="color: #A9AFC4"] {
+    color: #1E4A7A !important;
 }
 
 html, body {
