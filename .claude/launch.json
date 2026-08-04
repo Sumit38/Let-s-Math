@@ -4,7 +4,7 @@
     {
       "name": "Let's Math Dev Server",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8000"],
+      "runtimeArgs": ["-m", "http.server", "8000", "--directory", "LetsMath_WebApp"],
       "port": 8000
     }
   ]
