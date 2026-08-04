@@ -33,13 +33,13 @@ body.light-mode {
     --teal: #3A8F84;
     --amber: #E2A23B;
     --danger: #C25B4A;
-    --text-light: #4A7C9E;
-    --text-muted: #7A95B8;
-    --text-dark: #4A7C9E;
-    --text-dark-muted: #7A95B8;
+    --text-light: #1E4A7A;
+    --text-muted: #2E5A8C;
+    --text-dark: #1E4A7A;
+    --text-dark-muted: #2E5A8C;
     --bg-primary: #FFFFFF;
     --bg-secondary: #F5F7FA;
-    --text-primary: #4A7C9E;
+    --text-primary: #1E4A7A;
 }
 
 body.light-mode h1,
