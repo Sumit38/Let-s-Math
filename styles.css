@@ -70,6 +70,38 @@ body.light-mode li {
     color: #1E4A7A !important;
 }
 
+/* Light mode - Change all dark backgrounds to white/light */
+body.light-mode [style*="background: #1A2540"],
+body.light-mode [style*="background: #0F1420"],
+body.light-mode [style*="background: #161B2E"],
+body.light-mode [style*="background: #1F2740"],
+body.light-mode [style*="background: #2A3350"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E8ECEF !important;
+}
+
+body.light-mode .accordion-content,
+body.light-mode .question-item,
+body.light-mode .accordion-item {
+    background: #FFFFFF !important;
+}
+
+body.light-mode [style*="background: linear-gradient"] {
+    background: linear-gradient(135deg, rgba(58, 143, 132, 0.1), rgba(58, 143, 132, 0.05)) !important;
+}
+
+body.light-mode .hints-modal {
+    background: #FFFFFF !important;
+}
+
+body.light-mode .hints-content {
+    background: #F5F7FA !important;
+}
+
+body.light-mode .answer-item {
+    background: #F5F7FA !important;
+}
+
 body.light-mode .btn-primary {
     background: #70AD47;
     color: #FFFFFF;
