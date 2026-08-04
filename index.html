@@ -16,15 +16,7 @@
     </script>
 </head>
 <body>
-    <!-- Simple Welcome Overlay -->
-    <div id="welcomeOverlay" class="welcome-overlay">
-        <div class="welcome-message">
-            <h2 style="font-size: 3.5em; margin-bottom: 30px; background: linear-gradient(135deg, #70AD47, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Welcome to Let's Math</h2>
-            <p style="font-size: 1.5em; color: #E2A23B; line-height: 2; margin-bottom: 20px; font-weight: 600;">This is your personal, private learning space.</p>
-            <p style="font-size: 1.3em; color: #A9AFC4; line-height: 1.9; margin-bottom: 20px;">No pressure. No competition. Just you, growing at your own pace.</p>
-            <p style="font-size: 1.15em; color: #70AD47; font-style: italic; font-weight: 500;">Every struggle is the first step to mastery. Let's learn together. 💚</p>
-        </div>
-    </div>
+    <!-- Welcome Overlay Removed - Mission now on Home Page -->
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -40,6 +32,9 @@
                 <li><a href="#questions" class="nav-link" onclick="showPage('questions')">Questions</a></li>
                 <li><a href="#about" class="nav-link" onclick="showPage('about')">About</a></li>
             </ul>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
         </div>
     </nav>
 
@@ -51,32 +46,24 @@
             <!-- Welcome Section -->
             <div class="container">
                 <div style="text-align: center; padding: 40px 20px 30px;">
-                    <h1 class="hero-title" style="font-size: 2.5em; margin-bottom: 15px; background: linear-gradient(135deg, #70AD47, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Let's Learn Mathematics</h1>
+                    <h1 class="hero-title" style="font-size: 2.5em; margin-bottom: 20px; background: linear-gradient(135deg, #70AD47, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Let's Learn Mathematics</h1>
+
+                    <!-- Mission Statement -->
+                    <div style="background: linear-gradient(135deg, rgba(70, 173, 71, 0.15), rgba(58, 143, 132, 0.15)); border: 2px solid #70AD47; border-radius: 15px; padding: 25px 20px; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                        <h2 style="font-size: 1.5em; color: #66FF00; margin-bottom: 12px; font-weight: 700;">🎯 Our Mission</h2>
+                        <p style="font-size: 1em; color: #F1ECDD; line-height: 1.8; margin: 0; font-weight: 500;">
+                            To remove the fear of mathematics from your mind and help you <span style="color: #66FF00; font-weight: 700;">LOVE learning</span> it.
+                        </p>
+                        <p style="font-size: 0.9em; color: #A9AFC4; line-height: 1.7; margin-top: 12px; margin-bottom: 0; font-style: italic;">
+                            Math isn't about perfection. It's about understanding. And we're here to make that journey beautiful, stress-free, and joyful.
+                        </p>
+                    </div>
+
                     <p style="font-size: 0.95em; color: #A9AFC4; max-width: 700px; margin: 0 auto; line-height: 1.8;">
                         This is your personal, private learning space. No pressure. No competition. Just you, growing at your own pace.
                     </p>
                 </div>
 
-                <!-- Emotional Support Cards -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 40px;">
-                    <div style="background: linear-gradient(135deg, rgba(112, 173, 71, 0.2), rgba(112, 173, 71, 0.05)); border: 1px solid rgba(112, 173, 71, 0.3); padding: 20px; border-radius: 12px; transition: all 0.3s; hover: transform 0.2s;">
-                        <div style="font-size: 2.2em; margin-bottom: 10px;">🌟</div>
-                        <h3 style="color: #70AD47; margin-bottom: 8px; font-size: 0.95em; font-weight: 600;">Every Struggle is Learning</h3>
-                        <p style="color: #F1ECDD; line-height: 1.6; font-size: 0.85em;">Getting stuck means you're on the edge of understanding.</p>
-                    </div>
-
-                    <div style="background: linear-gradient(135deg, rgba(91, 155, 213, 0.2), rgba(91, 155, 213, 0.05)); border: 1px solid rgba(91, 155, 213, 0.3); padding: 20px; border-radius: 12px; transition: all 0.3s;">
-                        <div style="font-size: 2.2em; margin-bottom: 10px;">💭</div>
-                        <h3 style="color: #5B9BD5; margin-bottom: 8px; font-size: 0.95em; font-weight: 600;">Wrong Answers Teach</h3>
-                        <p style="color: #F1ECDD; line-height: 1.6; font-size: 0.85em;">Every mistake teaches you something valuable.</p>
-                    </div>
-
-                    <div style="background: linear-gradient(135deg, rgba(255, 159, 90, 0.2), rgba(255, 159, 90, 0.05)); border: 1px solid rgba(255, 159, 90, 0.3); padding: 20px; border-radius: 12px; transition: all 0.3s;">
-                        <div style="font-size: 2.2em; margin-bottom: 10px;">🎯</div>
-                        <h3 style="color: #FF9F5A; margin-bottom: 8px; font-size: 0.95em; font-weight: 600;">No Time Pressure</h3>
-                        <p style="color: #F1ECDD; line-height: 1.6; font-size: 0.85em;">Real understanding can't be rushed.</p>
-                    </div>
-                </div>
 
                 <!-- Features Section -->
                 <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.1), rgba(91, 155, 213, 0.1)); border: 2px solid #3A8F84; border-radius: 15px; padding: 30px 25px; margin-bottom: 40px;">
@@ -109,6 +96,26 @@
                 <div style="text-align: center; margin-bottom: 70px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
                     <button class="btn btn-primary" onclick="showPage('chapters')" style="font-size: 1.1em; padding: 16px 45px;">Start Learning →</button>
                     <button class="btn btn-secondary" onclick="showPage('tricks')" style="font-size: 1.1em; padding: 16px 45px;">View Tricks</button>
+                </div>
+
+                <!-- Real-World Applications -->
+                <div style="background: linear-gradient(135deg, rgba(112, 173, 71, 0.15), rgba(58, 143, 132, 0.1)); border: 2px solid #70AD47; border-radius: 15px; padding: 30px 25px; margin-bottom: 40px;">
+                    <h2 style="color: #70AD47; margin-bottom: 25px; font-size: 1.5em; font-weight: 700;">🌍 Math in Real Life</h2>
+                    <p style="color: #A9AFC4; margin-bottom: 20px; font-size: 0.95em;">Every topic you learn powers real-world solutions</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="background: rgba(22, 27, 46, 0.6); padding: 15px; border-radius: 10px; border-left: 3px solid #70AD47;">
+                            <p style="color: #70AD47; font-weight: 600; margin: 0 0 8px 0;">📊 Matrices</p>
+                            <p style="color: #A9AFC4; margin: 0; font-size: 0.9em;">Supply chains, inventory tracking, 3D graphics</p>
+                        </div>
+                        <div style="background: rgba(22, 27, 46, 0.6); padding: 15px; border-radius: 10px; border-left: 3px solid #70AD47;">
+                            <p style="color: #70AD47; font-weight: 600; margin: 0 0 8px 0;">📈 Probability</p>
+                            <p style="color: #A9AFC4; margin: 0; font-size: 0.9em;">Weather forecasts, medical diagnosis, games</p>
+                        </div>
+                        <div style="background: rgba(22, 27, 46, 0.6); padding: 15px; border-radius: 10px; border-left: 3px solid #70AD47;">
+                            <p style="color: #70AD47; font-weight: 600; margin: 0 0 8px 0;">🏗️ Calculus</p>
+                            <p style="color: #A9AFC4; margin: 0; font-size: 0.9em;">Architecture, engineering, physics simulations</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Mindset Section with Animated Icon -->
@@ -166,6 +173,31 @@
         <!-- CHAPTERS PAGE -->
         <div id="chapters" class="page">
             <div class="container">
+                <!-- Progress Bar Section -->
+                <div style="background: linear-gradient(90deg, rgba(91, 155, 213, 0.2), rgba(112, 173, 71, 0.1)); border: 2px solid #5B9BD5; border-radius: 10px; padding: 16px 20px; margin-bottom: 30px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 15px;">
+                        <!-- Left: Current Progress -->
+                        <div style="flex: 1; min-width: 200px;">
+                            <p style="color: #A9AFC4; margin: 0 0 6px 0; font-size: 0.85em;">Your Progress</p>
+                            <div id="chapters-progress-display" style="display: flex; align-items: center; gap: 10px;">
+                                <div style="font-size: 1.8em;">🌱</div>
+                                <div>
+                                    <p style="color: #F1ECDD; margin: 0; font-weight: 600; font-size: 0.9em;">Seedling Phase</p>
+                                    <p style="color: #A9AFC4; margin: 2px 0 0 0; font-size: 0.8em;">0% Complete</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Progress Bar -->
+                        <div style="flex: 1.5; min-width: 250px;">
+                            <div style="background: rgba(22, 27, 46, 0.8); height: 24px; border-radius: 8px; overflow: hidden; border: 1px solid #3A8F84;">
+                                <div id="chapters-progress-bar" style="background: linear-gradient(90deg, #70AD47, #66FF00); height: 100%; width: 0%; transition: width 0.3s ease; border-radius: 8px;"></div>
+                            </div>
+                            <p style="color: #A9AFC4; margin: 6px 0 0 0; font-size: 0.8em; text-align: center;"><span id="chapters-progress-percent">0</span>% | <span id="chapters-progress-chapters">0</span> of 17 chapters</p>
+                        </div>
+                    </div>
+                </div>
+
                 <h1>📚 All Topics</h1>
                 <p class="section-intro">Click on any topic to learn concepts, tricks, and see visual explanations</p>
 
@@ -236,11 +268,6 @@
             <div class="container">
                 <h1>About Let's Math</h1>
                 <div class="about-content">
-                    <div class="about-section">
-                        <h2>🎯 Our Mission</h2>
-                        <p>To make mathematics accessible, understandable, and enjoyable for every student. We believe that with the right approach, anyone can master math and remove exam anxiety forever.</p>
-                    </div>
-
                     <div class="about-section">
                         <h2>🚀 How to Use</h2>
                         <ol class="about-list">

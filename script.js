@@ -1,3 +1,32 @@
+// Theme Toggle
+function toggleTheme() {
+    const isLightMode = document.body.classList.contains('light-mode');
+
+    if (isLightMode) {
+        document.body.classList.remove('light-mode');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+    }
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    const icon = document.querySelector('.theme-icon');
+    const isDarkMode = document.body.classList.contains('light-mode');
+    icon.textContent = isDarkMode ? '☀️' : '🌙';
+}
+
+// Initialize theme from localStorage
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    updateThemeIcon();
+}
+
 // Page Navigation
 function showPage(pageId) {
     // Hide all pages
@@ -24,7 +53,134 @@ function showPage(pageId) {
 
     // Scroll to top
     window.scrollTo(0, 0);
+
+    // Update progress display if on home or chapters page
+    if (pageId === 'home') {
+        updateProgressDisplay();
+    }
+    if (pageId === 'chapters') {
+        updateChaptersProgressBar();
+    }
 }
+
+// ===== PROGRESS TRACKING SYSTEM =====
+
+// Get user's total progress percentage
+function getUserProgressPercentage() {
+    let totalSolved = 0;
+    let totalProblems = 0;
+
+    chapters.forEach(chapter => {
+        totalProblems += chapter.practice.length;
+        const progress = JSON.parse(localStorage.getItem(`chapter_${chapter.id}_progress`) || '{"solved": 0}');
+        totalSolved += progress.solved;
+    });
+
+    return totalProblems > 0 ? Math.floor((totalSolved / totalProblems) * 100) : 0;
+}
+
+// Get user's current phase based on progress
+function getUserPhase() {
+    const percentage = getUserProgressPercentage();
+
+    if (percentage >= 67) {
+        return { phase: 'Mastery', emoji: '🌳', description: 'Strong foundation', color: '#70AD47' };
+    } else if (percentage >= 34) {
+        return { phase: 'Growing', emoji: '🌿', description: 'Building confidence', color: '#5B9BD5' };
+    } else {
+        return { phase: 'Seedling', emoji: '🌱', description: 'Just starting', color: '#E2A23B' };
+    }
+}
+
+// Get completed chapters count
+function getCompletedChaptersCount() {
+    let completed = 0;
+    chapters.forEach(chapter => {
+        const progress = JSON.parse(localStorage.getItem(`chapter_${chapter.id}_progress`) || '{"solved": 0}');
+        if (progress.solved >= Math.ceil(chapter.practice.length * 0.5)) {
+            completed++;
+        }
+    });
+    return completed;
+}
+
+// Update progress display on home page
+function updateProgressDisplay() {
+    const progressContainer = document.getElementById('user-progress-display');
+    if (!progressContainer) return;
+
+    const percentage = getUserProgressPercentage();
+    const phase = getUserPhase();
+    const completedChapters = getCompletedChaptersCount();
+    const totalChapters = chapters.length;
+
+    progressContainer.innerHTML = `
+        <div style="text-align: center;">
+            <div style="font-size: 5em; margin-bottom: 15px;">${phase.emoji}</div>
+            <h3 style="color: ${phase.color}; margin: 0 0 5px 0; font-size: 1.3em; font-weight: 700;">${phase.phase} Phase</h3>
+            <p style="color: #A9AFC4; margin: 0 0 15px 0; font-size: 0.9em;">${phase.description}</p>
+
+            <div style="background: rgba(22, 27, 46, 0.6); padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+                <p style="color: #F1ECDD; margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">
+                    ${percentage}% Complete
+                </p>
+                <div style="background: rgba(58, 143, 132, 0.3); height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div style="background: linear-gradient(90deg, ${phase.color}, #66FF00); height: 100%; width: ${percentage}%; transition: width 0.3s ease;"></div>
+                </div>
+                <p style="color: #A9AFC4; margin: 10px 0 0 0; font-size: 0.85em;">
+                    ${completedChapters} of ${totalChapters} chapters started
+                </p>
+            </div>
+        </div>
+    `;
+}
+
+// Update progress bar on chapters page
+function updateChaptersProgressBar() {
+    const percentage = getUserProgressPercentage();
+    const phase = getUserPhase();
+    const completedChapters = getCompletedChaptersCount();
+
+    // Update progress display
+    const progressDisplay = document.getElementById('chapters-progress-display');
+    if (progressDisplay) {
+        progressDisplay.innerHTML = `
+            <div style="font-size: 1.8em;">${phase.emoji}</div>
+            <div>
+                <p style="color: #F1ECDD; margin: 0; font-weight: 600; font-size: 0.9em;">${phase.phase} Phase</p>
+                <p style="color: #A9AFC4; margin: 2px 0 0 0; font-size: 0.8em;">${percentage}% Complete</p>
+            </div>
+        `;
+    }
+
+    // Update progress bar
+    const progressBar = document.getElementById('chapters-progress-bar');
+    if (progressBar) {
+        progressBar.style.width = percentage + '%';
+    }
+
+    // Update progress percentage text
+    const percentText = document.getElementById('chapters-progress-percent');
+    if (percentText) {
+        percentText.textContent = percentage;
+    }
+
+    // Update chapters count
+    const chaptersText = document.getElementById('chapters-progress-chapters');
+    if (chaptersText) {
+        chaptersText.textContent = completedChapters;
+    }
+}
+
+// Initialize progress display on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme first
+    initializeTheme();
+
+    setTimeout(() => {
+        updateProgressDisplay();
+    }, 100);
+});
 
 // Initialize chapters page
 function initializeChapters() {
@@ -219,26 +375,50 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Initialize tricks page
+// Initialize tricks page with accordion
 function initializeTricks() {
     const container = document.querySelector('.tricks-container');
     if (!container || container.children.length > 0) return;
 
-    allTricks.forEach(chapter => {
-        const card = document.createElement('div');
-        card.className = 'trick-card';
-        card.innerHTML = `
-            <h3>${chapter.title}</h3>
+    allTricks.forEach((chapter, chapterIndex) => {
+        // Create accordion item for each chapter
+        const accordionItem = document.createElement('div');
+        accordionItem.className = 'accordion-item';
+
+        // Accordion header
+        const header = document.createElement('div');
+        header.className = 'accordion-header';
+        if (chapterIndex === 0) header.classList.add('expanded'); // Expand first chapter by default
+        header.innerHTML = `
+            <span class="toggle-icon">▶</span>
+            <span class="header-text">${chapter.title}</span>
+        `;
+
+        // Accordion content
+        const content = document.createElement('div');
+        content.className = 'accordion-content';
+        if (chapterIndex === 0) content.classList.add('expanded'); // Show first chapter by default
+        content.innerHTML = `
             <ul class="tricks-list">
                 ${chapter.tricks.map(trick => `<li>${trick}</li>`).join('')}
             </ul>
         `;
-        container.appendChild(card);
+
+        // Add click handler to accordion header
+        header.addEventListener('click', function() {
+            this.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+        });
+
+        accordionItem.appendChild(header);
+        accordionItem.appendChild(content);
+        container.appendChild(accordionItem);
     });
 }
 
-// Initialize questions page
+// Initialize questions page with accordion
 function initializeQuestions() {
+    console.log('initializeQuestions called - new accordion version');
     const container = document.querySelector('.questions-container');
     if (!container || container.children.length > 0) return;
 
@@ -247,12 +427,24 @@ function initializeQuestions() {
     sectionDiv.className = 'question-section';
     sectionDiv.innerHTML = `<h3>📚 Chapter Practice Questions (5 per topic)</h3>`;
 
-    chapters.forEach(chapter => {
-        const chapterHeading = document.createElement('div');
-        chapterHeading.style.marginTop = '20px';
-        chapterHeading.style.marginBottom = '10px';
-        chapterHeading.innerHTML = `<h4 style="color: #3A8F84; margin: 10px 0;">📖 ${chapter.icon} ${chapter.title}</h4>`;
-        sectionDiv.appendChild(chapterHeading);
+    chapters.forEach((chapter, chapterIndex) => {
+        // Create accordion item for each chapter
+        const accordionItem = document.createElement('div');
+        accordionItem.className = 'accordion-item';
+
+        // Accordion header
+        const header = document.createElement('div');
+        header.className = 'accordion-header';
+        if (chapterIndex === 0) header.classList.add('expanded'); // Expand first chapter by default
+        header.innerHTML = `
+            <span class="toggle-icon">▶</span>
+            <span class="header-text">📖 ${chapter.icon} ${chapter.title}</span>
+        `;
+
+        // Accordion content
+        const content = document.createElement('div');
+        content.className = 'accordion-content';
+        if (chapterIndex === 0) content.classList.add('expanded'); // Show first chapter by default
 
         // Add practice questions for this chapter
         chapter.practice.forEach((item, index) => {
@@ -280,8 +472,18 @@ function initializeQuestions() {
 
             itemDiv.appendChild(questionContent);
             itemDiv.appendChild(hintBtn);
-            sectionDiv.appendChild(itemDiv);
+            content.appendChild(itemDiv);
         });
+
+        // Add click handler to accordion header
+        header.addEventListener('click', function() {
+            this.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+        });
+
+        accordionItem.appendChild(header);
+        accordionItem.appendChild(content);
+        sectionDiv.appendChild(accordionItem);
     });
 
     container.appendChild(sectionDiv);

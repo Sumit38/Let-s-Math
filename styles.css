@@ -5,7 +5,7 @@
 }
 
 :root {
-    /* Dark Theme (Only) */
+    /* Dark Theme (Default) */
     --ink: #161B2E;
     --ink-soft: #1F2740;
     --ink-600: #2A3350;
@@ -21,6 +21,65 @@
     --bg-primary: #161B2E;
     --bg-secondary: #1F2740;
     --text-primary: #F1ECDD;
+}
+
+/* Light Theme */
+body.light-mode {
+    --ink: #FFFFFF;
+    --ink-soft: #F5F7FA;
+    --ink-600: #E8ECEF;
+    --paper: #FFFFFF;
+    --paper-soft: #F5F7FA;
+    --teal: #3A8F84;
+    --amber: #E2A23B;
+    --danger: #C25B4A;
+    --text-light: #4A7C9E;
+    --text-muted: #7A95B8;
+    --text-dark: #4A7C9E;
+    --text-dark-muted: #7A95B8;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F7FA;
+    --text-primary: #4A7C9E;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6 {
+    color: #4A7C9E;
+}
+
+body.light-mode .btn-primary {
+    background: #70AD47;
+    color: #FFFFFF;
+}
+
+body.light-mode .btn-primary:hover {
+    background: #5A9237;
+}
+
+body.light-mode .btn-secondary {
+    background: #3A8F84;
+    color: #FFFFFF;
+}
+
+body.light-mode .btn-secondary:hover {
+    background: #2A7A73;
+}
+
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #E8ECEF;
+}
+
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select {
+    background: #F5F7FA;
+    color: #4A7C9E;
+    border-color: #D8E3EF;
 }
 
 html, body {
@@ -180,6 +239,40 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link.active {
     background: var(--amber);
     color: var(--ink);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--text-muted);
+    color: var(--text-muted);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    margin-left: auto;
+}
+
+.theme-toggle:hover {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: var(--ink);
+    transform: scale(1.1);
+}
+
+.light-mode .theme-toggle {
+    border-color: var(--text-light);
+    color: var(--text-light);
+}
+
+.light-mode .theme-toggle:hover {
+    background: #70AD47;
+    border-color: #70AD47;
 }
 
 /* Main Container */
@@ -591,6 +684,77 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+/* ACCORDION STYLES */
+.accordion-item {
+    margin-bottom: 0.8em;
+    background: var(--ink-soft);
+    border-radius: 8px;
+    border-left: 3px solid var(--teal);
+    overflow: hidden;
+}
+
+.accordion-header {
+    background: var(--ink-600);
+    padding: 1.2em 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    user-select: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--teal);
+}
+
+.accordion-header:hover {
+    background: var(--ink-600);
+    border-color: #00FFDD;
+}
+
+.accordion-header.expanded {
+    border-color: #00FFDD;
+}
+
+.toggle-icon {
+    display: inline-block;
+    font-size: 1em;
+    color: var(--amber);
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+.accordion-header.expanded .toggle-icon {
+    transform: rotate(90deg);
+}
+
+.header-text {
+    flex: 1;
+    font-weight: 600;
+    color: #00FFDD;
+    font-size: 1.05em;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    background: var(--ink-soft);
+}
+
+.accordion-content.expanded {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 1.5em;
+}
+
+.accordion-content .question-item {
+    margin-bottom: 1em;
+}
+
+.accordion-content .question-item:last-child {
+    margin-bottom: 0;
+}
+
 /* ABOUT PAGE */
 .about-content {
     display: grid;
@@ -677,13 +841,55 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-content h1 {
-        font-size: 2em;
+        font-size: 2.5em !important;
         margin-bottom: 1em;
+        line-height: 1.4;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        word-spacing: 0.1em;
     }
 
     .hero-content p {
         font-size: 0.95em;
         line-height: 1.7;
+    }
+
+    h1 {
+        font-size: 2.4em !important;
+        line-height: 1.4;
+        font-weight: 800;
+        color: #66FF00 !important;
+        letter-spacing: 0.5px;
+        text-shadow: 0 0 10px rgba(102, 255, 0, 0.3);
+    }
+
+    h2 {
+        font-size: 1.8em !important;
+        line-height: 1.4;
+        margin-bottom: 1em;
+        font-weight: 700;
+        color: #00FFDD !important;
+        letter-spacing: 0.4px;
+        text-shadow: 0 0 8px rgba(0, 255, 221, 0.3);
+    }
+
+    h3 {
+        font-size: 1.4em !important;
+        line-height: 1.4;
+        margin-bottom: 0.8em;
+        font-weight: 700;
+        color: #FFD700 !important;
+        letter-spacing: 0.3px;
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+    }
+
+    h4 {
+        font-size: 1.15em !important;
+        line-height: 1.4;
+        margin-bottom: 0.6em;
+        font-weight: 700;
+        color: #FFFFFF !important;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
     }
 
     .hero-illustration {
@@ -780,6 +986,24 @@ h1, h2, h3, h4, h5, h6 {
 
     .question-item h4 {
         font-size: 0.95em;
+        margin-bottom: 0.8em;
+    }
+
+    /* Accordion Mobile */
+    .accordion-header {
+        padding: 1em 1.2em;
+        font-size: 0.95em;
+    }
+
+    .header-text {
+        font-size: 0.95em;
+    }
+
+    .accordion-content.expanded {
+        padding: 1.2em;
+    }
+
+    .accordion-content .question-item {
         margin-bottom: 0.8em;
     }
 

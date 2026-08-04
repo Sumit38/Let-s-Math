@@ -74,60 +74,60 @@ const chapters = [
             { q: "Solve: tan⁻¹x = sin⁻¹(3/5)", a: "Let sin⁻¹(3/5) = α, then sin α = 3/5, so cos α = 4/5, tan α = 3/4. Therefore x = 3/4" },
             { q: "Principal value of sin⁻¹(−√3/2)", a: "sin⁻¹ range is [−π/2, π/2]. sin⁻¹(−√3/2) = −π/3" }
         ],
-        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="20" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">y = sin⁻¹(x)</text>
+            <text x="190" y="20" text-anchor="middle" font-size="15" fill="#66FF00" font-weight="bold">y = sin⁻¹(x)</text>
 
             <!-- Grid lines -->
-            <line x1="50" y1="120" x2="350" y2="120" stroke="#A9AFC4" stroke-width="0.5" opacity="0.2"/>
-            <line x1="200" y1="50" x2="200" y2="200" stroke="#A9AFC4" stroke-width="0.5" opacity="0.2"/>
+            <line x1="50" y1="140" x2="350" y2="140" stroke="#A9AFC4" stroke-width="0.5" opacity="0.2"/>
+            <line x1="200" y1="50" x2="200" y2="220" stroke="#A9AFC4" stroke-width="0.5" opacity="0.2"/>
 
             <!-- Axes -->
-            <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
-            <line x1="200" y1="50" x2="200" y2="200" stroke="#A9AFC4" stroke-width="2"/>
+            <line x1="50" y1="220" x2="350" y2="220" stroke="#3A8F84" stroke-width="2.5"/>
+            <line x1="200" y1="50" x2="200" y2="220" stroke="#3A8F84" stroke-width="2.5"/>
 
             <!-- Axis arrows -->
-            <polygon points="350,200 345,197 345,203" fill="#A9AFC4"/>
-            <polygon points="200,50 197,55 203,55" fill="#A9AFC4"/>
+            <polygon points="350,220 345,217 345,223" fill="#3A8F84"/>
+            <polygon points="200,50 197,55 203,55" fill="#3A8F84"/>
 
-            <!-- Axis labels -->
-            <text x="360" y="205" font-size="12" fill="#A9AFC4" font-weight="bold">x</text>
-            <text x="205" y="40" font-size="12" fill="#A9AFC4" font-weight="bold">y</text>
+            <!-- Axis labels - LARGER AND BRIGHTER -->
+            <text x="368" y="227" font-size="14" fill="#00FFDD" font-weight="bold">x</text>
+            <text x="207" y="35" font-size="14" fill="#00FFDD" font-weight="bold">y</text>
 
-            <!-- X-axis tick marks and labels -->
-            <text x="90" y="220" text-anchor="middle" font-size="10" fill="#A9AFC4">-1</text>
-            <line x1="90" y1="195" x2="90" y2="205" stroke="#A9AFC4" stroke-width="1"/>
+            <!-- X-axis tick marks and labels - LARGER -->
+            <text x="90" y="242" text-anchor="middle" font-size="12" fill="#66FF00" font-weight="bold">-1</text>
+            <line x1="90" y1="215" x2="90" y2="225" stroke="#3A8F84" stroke-width="1.5"/>
 
-            <text x="200" y="220" text-anchor="middle" font-size="10" fill="#A9AFC4">0</text>
-            <line x1="200" y1="195" x2="200" y2="205" stroke="#A9AFC4" stroke-width="1"/>
+            <text x="200" y="242" text-anchor="middle" font-size="12" fill="#66FF00" font-weight="bold">0</text>
+            <line x1="200" y1="215" x2="200" y2="225" stroke="#3A8F84" stroke-width="1.5"/>
 
-            <text x="310" y="220" text-anchor="middle" font-size="10" fill="#A9AFC4">1</text>
-            <line x1="310" y1="195" x2="310" y2="205" stroke="#A9AFC4" stroke-width="1"/>
+            <text x="310" y="242" text-anchor="middle" font-size="12" fill="#66FF00" font-weight="bold">1</text>
+            <line x1="310" y1="215" x2="310" y2="225" stroke="#3A8F84" stroke-width="1.5"/>
 
-            <!-- Y-axis tick marks and labels -->
-            <text x="180" y="125" text-anchor="end" font-size="10" fill="#A9AFC4">π/2</text>
-            <line x1="195" y1="120" x2="205" y2="120" stroke="#A9AFC4" stroke-width="1"/>
+            <!-- Y-axis tick marks and labels - LARGER -->
+            <text x="175" y="145" text-anchor="end" font-size="12" fill="#FFD700" font-weight="bold">π/2</text>
+            <line x1="195" y1="140" x2="205" y2="140" stroke="#3A8F84" stroke-width="1.5"/>
 
-            <text x="180" y="210" text-anchor="end" font-size="10" fill="#A9AFC4">-π/2</text>
-            <line x1="195" y1="200" x2="205" y2="200" stroke="#A9AFC4" stroke-width="1"/>
+            <text x="175" y="230" text-anchor="end" font-size="12" fill="#FFD700" font-weight="bold">-π/2</text>
+            <line x1="195" y1="220" x2="205" y2="220" stroke="#3A8F84" stroke-width="1.5"/>
 
             <!-- The curve: sin⁻¹(x) -->
-            <path d="M 90 190 Q 110 175 130 160 Q 150 145 170 130 Q 190 115 200 105 Q 210 95 230 80 Q 250 65 270 55 Q 290 50 310 52"
-                  fill="none" stroke="#3A8F84" stroke-width="3" stroke-linecap="round"/>
+            <path d="M 90 210 Q 110 195 130 180 Q 150 165 170 150 Q 190 135 200 125 Q 210 115 230 100 Q 250 85 270 75 Q 290 70 310 72"
+                  fill="none" stroke="#3A8F84" stroke-width="3.5" stroke-linecap="round"/>
 
-            <!-- Key points on curve -->
-            <circle cx="90" cy="190" r="4" fill="#E2A23B"/>
-            <circle cx="200" cy="100" r="4" fill="#E2A23B"/>
-            <circle cx="310" cy="52" r="4" fill="#E2A23B"/>
+            <!-- Key points on curve - LARGER -->
+            <circle cx="90" cy="210" r="5" fill="#E2A23B"/>
+            <circle cx="200" cy="120" r="5" fill="#E2A23B"/>
+            <circle cx="310" cy="72" r="5" fill="#E2A23B"/>
 
-            <!-- Point labels -->
-            <text x="75" y="200" font-size="9" fill="#E2A23B" font-weight="bold">(-1, -π/2)</text>
-            <text x="200" y="35" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">(1, π/2)</text>
-            <text x="215" y="115" font-size="9" fill="#E2A23B" font-weight="bold">(0, 0)</text>
+            <!-- Point labels - LARGER AND CLEARER -->
+            <text x="70" y="205" font-size="11" fill="#E2A23B" font-weight="bold">(-1, -π/2)</text>
+            <text x="200" y="45" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">(1, π/2)</text>
+            <text x="225" y="135" font-size="11" fill="#E2A23B" font-weight="bold">(0, 0)</text>
 
             <!-- Information boxes -->
-            <rect x="10" y="230" width="360" height="28" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="20" y="245" font-size="10" fill="#F1ECDD" font-weight="bold">Domain: [-1, 1]  |  Range: [-π/2, π/2]  |  Strictly Increasing  |  Odd Function</text>
+            <rect x="10" y="250" width="360" height="28" fill="#1F2740" stroke="#00FFDD" stroke-width="2" rx="4"/>
+            <text x="20" y="265" font-size="10" fill="#F1ECDD" font-weight="bold">Domain: [-1, 1]  |  Range: [-π/2, π/2]  |  Strictly Increasing  |  Odd Function</text>
         </svg>`
     },
     {
@@ -150,52 +150,53 @@ const chapters = [
             { q: "If A = [[1,2],[0,1]] and B = [[3,4],[1,2]], find AB and BA", a: "AB = [[5,8],[1,2]], BA = [[3,8],[1,4]]. Note: AB ≠ BA (matrices don't commute)" },
             { q: "Find trace and determinant of A = [[4,2],[1,3]]", a: "Trace = 4+3 = 7. Determinant = 12−2 = 10" }
         ],
-        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg">
             <!-- Title: Real-World Example -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🍞 Bakery Pricing Problem</text>
+            <text x="190" y="18" text-anchor="middle" font-size="14" fill="#66FF00" font-weight="bold">🍞 Bakery Pricing Problem</text>
 
-            <!-- Problem Statement -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">2 Bread + 1 Cake = ₹100  |  1 Bread + 2 Cake = ₹110</text>
-            <text x="190" y="48" text-anchor="middle" font-size="10" fill="#A9AFC4">Find: Price of Bread (x) and Cake (y)</text>
+            <!-- Problem Statement - BETTER ALIGNED -->
+            <rect x="15" y="25" width="350" height="35" fill="#1F2740" stroke="#70AD47" stroke-width="1.5" rx="4"/>
+            <text x="190" y="40" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="500">2 Bread + 1 Cake = ₹100  |  1 Bread + 2 Cake = ₹110</text>
+            <text x="190" y="55" text-anchor="middle" font-size="9" fill="#A9AFC4">Find: Price of Bread (x) and Cake (y)</text>
 
             <!-- Matrix A (Coefficients) -->
-            <text x="50" y="75" font-size="11" fill="#E2A23B" font-weight="bold">Coefficients:</text>
-            <rect x="30" y="80" width="70" height="50" fill="none" stroke="#3A8F84" stroke-width="2" rx="3"/>
-            <text x="40" y="100" font-size="14" fill="#F1ECDD" font-weight="bold">2  1</text>
-            <text x="40" y="120" font-size="14" fill="#F1ECDD" font-weight="bold">1  2</text>
-            <text x="65" y="140" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix A</text>
+            <text x="65" y="80" font-size="11" fill="#E2A23B" font-weight="bold" text-anchor="middle">Coefficients:</text>
+            <rect x="30" y="85" width="70" height="50" fill="none" stroke="#3A8F84" stroke-width="2" rx="3"/>
+            <text x="40" y="105" font-size="14" fill="#F1ECDD" font-weight="bold">2  1</text>
+            <text x="40" y="125" font-size="14" fill="#F1ECDD" font-weight="bold">1  2</text>
+            <text x="65" y="145" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix A</text>
 
             <!-- Multiply sign -->
-            <text x="115" y="105" font-size="16" fill="#F1ECDD" font-weight="bold">×</text>
+            <text x="130" y="110" font-size="18" fill="#F1ECDD" font-weight="bold" text-anchor="middle">×</text>
 
             <!-- Matrix X (Unknowns) -->
-            <text x="135" y="75" font-size="11" fill="#E2A23B" font-weight="bold">Unknowns:</text>
-            <rect x="130" y="80" width="50" height="50" fill="none" stroke="#3A8F84" stroke-width="2" rx="3"/>
-            <text x="140" y="100" font-size="14" fill="#F1ECDD" font-weight="bold">x</text>
-            <text x="140" y="120" font-size="14" fill="#F1ECDD" font-weight="bold">y</text>
-            <text x="155" y="140" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix X</text>
+            <text x="170" y="80" font-size="11" fill="#E2A23B" font-weight="bold" text-anchor="middle">Unknowns:</text>
+            <rect x="145" y="85" width="50" height="50" fill="none" stroke="#3A8F84" stroke-width="2" rx="3"/>
+            <text x="155" y="105" font-size="14" fill="#F1ECDD" font-weight="bold">x</text>
+            <text x="155" y="125" font-size="14" fill="#F1ECDD" font-weight="bold">y</text>
+            <text x="170" y="145" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix X</text>
 
             <!-- Equals sign -->
-            <text x="200" y="105" font-size="16" fill="#F1ECDD" font-weight="bold">=</text>
+            <text x="215" y="110" font-size="18" fill="#F1ECDD" font-weight="bold" text-anchor="middle">=</text>
 
             <!-- Matrix B (Results) -->
-            <text x="225" y="75" font-size="11" fill="#E2A23B" font-weight="bold">Results:</text>
-            <rect x="220" y="80" width="50" height="50" fill="none" stroke="#E2A23B" stroke-width="2" rx="3"/>
-            <text x="230" y="100" font-size="14" fill="#F1ECDD" font-weight="bold">100</text>
-            <text x="230" y="120" font-size="14" fill="#F1ECDD" font-weight="bold">110</text>
-            <text x="245" y="140" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix B</text>
+            <text x="275" y="80" font-size="11" fill="#E2A23B" font-weight="bold" text-anchor="middle">Results:</text>
+            <rect x="245" y="85" width="60" height="50" fill="none" stroke="#E2A23B" stroke-width="2" rx="3"/>
+            <text x="260" y="105" font-size="14" fill="#F1ECDD" font-weight="bold">100</text>
+            <text x="260" y="125" font-size="14" fill="#F1ECDD" font-weight="bold">110</text>
+            <text x="275" y="145" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix B</text>
 
             <!-- Solution Method -->
-            <rect x="20" y="155" width="340" height="80" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="4"/>
-            <text x="190" y="175" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">📋 How to Solve</text>
+            <rect x="20" y="160" width="340" height="85" fill="#1F2740" stroke="#E2A23B" stroke-width="1.5" rx="4"/>
+            <text x="190" y="178" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">📋 How to Solve</text>
 
-            <text x="30" y="195" font-size="10" fill="#F1ECDD">Step 1: Write equations as AX = B</text>
-            <text x="30" y="210" font-size="10" fill="#F1ECDD">Step 2: Find inverse of A (if det(A) ≠ 0)</text>
-            <text x="30" y="225" font-size="10" fill="#F1ECDD">Step 3: Multiply both sides by A⁻¹: X = A⁻¹B</text>
+            <text x="30" y="198" font-size="10" fill="#F1ECDD">Step 1: Write equations as AX = B</text>
+            <text x="30" y="213" font-size="10" fill="#F1ECDD">Step 2: Find inverse of A (if det(A) ≠ 0)</text>
+            <text x="30" y="228" font-size="10" fill="#F1ECDD">Step 3: Multiply both sides by A⁻¹: X = A⁻¹B</text>
 
-            <text x="220" y="195" font-size="10" fill="#3A8F84" font-weight="bold">✓ x = 30 (Bread price)</text>
-            <text x="220" y="210" font-size="10" fill="#3A8F84" font-weight="bold">✓ y = 40 (Cake price)</text>
-            <text x="220" y="225" font-size="9" fill="#A9AFC4">(Verify: 2(30)+40=100 ✓)</text>
+            <text x="220" y="198" font-size="10" fill="#70AD47" font-weight="bold">✓ x = 30 (Bread)</text>
+            <text x="220" y="213" font-size="10" fill="#70AD47" font-weight="bold">✓ y = 40 (Cake)</text>
+            <text x="220" y="228" font-size="9" fill="#A9AFC4">(Verify: 2(30)+40=100 ✓)</text>
         </svg>`
     },
     {
