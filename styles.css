@@ -83,7 +83,11 @@ body.light-mode [style*="background: rgba(22, 27, 46"] {
 
 body.light-mode .accordion-content,
 body.light-mode .question-item,
-body.light-mode .accordion-item {
+body.light-mode .accordion-item,
+body.light-mode .practice-item,
+body.light-mode .trick-card,
+body.light-mode .visual-diagram,
+body.light-mode .accordion-header {
     background: #FFFFFF !important;
 }
 
@@ -691,7 +695,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .practice-item {
-    background: #FFFFFF;
+    background: var(--ink-600);
     padding: 1.5em;
     margin-bottom: 1.5em;
     border-radius: 8px;
@@ -710,7 +714,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .visual-diagram {
-    background: #FFFFFF;
+    background: var(--ink-600);
     border-radius: 12px;
     padding: 2em;
     margin: 2em 0;
@@ -729,8 +733,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .trick-card {
-    background: #FFFFFF;
-    border: 1px solid #E8ECEF;
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-600);
     border-radius: 12px;
     padding: 2em;
     border-left: 4px solid var(--amber);
@@ -767,7 +771,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .question-item {
-    background: #FFFFFF;
+    background: var(--ink-600);
     padding: 1.5em;
     margin-bottom: 1.5em;
     border-radius: 8px;
@@ -817,7 +821,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .accordion-header {
-    background: #FFFFFF;
+    background: var(--ink-600);
     padding: 1.2em 1.5em;
     cursor: pointer;
     display: flex;
