@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Math - Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ink: #161B2E;
+            --teal: #3A8F84;
+            --amber: #E2A23B;
+            --text-light: #F1ECDD;
+            --gentle-green: #70AD47;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--ink) 0%, #1a1f2e 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .welcome-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--ink) 0%, #1a1f2e 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Brain Icon */
+        .brain-icon {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin-bottom: 50px;
+            animation: brainPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes brainPulse {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 20px rgba(58, 143, 132, 0.4));
+            }
+            50% {
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 40px rgba(58, 143, 132, 0.8));
+            }
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 20px rgba(58, 143, 132, 0.4));
+            }
+        }
+
+        @keyframes voicePulse {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 20px rgba(226, 162, 59, 0.4));
+            }
+            50% {
+                transform: scale(1.08);
+                filter: drop-shadow(0 0 35px rgba(226, 162, 59, 0.7));
+            }
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 20px rgba(226, 162, 59, 0.4));
+            }
+        }
+
+        .brain-icon.speaking {
+            animation: voicePulse 0.8s ease-in-out infinite;
+        }
+
+        /* Animated Icon */
+        .animated-icon {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #70AD47, #5B9BD5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            animation: moveIcon 12s ease-in-out forwards;
+            box-shadow: 0 0 30px rgba(112, 173, 71, 0.6);
+        }
+
+        @keyframes moveIcon {
+            0% {
+                left: 10%;
+                top: 20%;
+                opacity: 0.3;
+            }
+            25% {
+                left: 50%;
+                top: 15%;
+                opacity: 0.8;
+            }
+            50% {
+                left: 80%;
+                top: 25%;
+                opacity: 1;
+            }
+            75% {
+                left: 60%;
+                top: 35%;
+                opacity: 0.8;
+            }
+            100% {
+                left: 50%;
+                top: 45%;
+                opacity: 0;
+            }
+        }
+
+        /* Captions */
+        .captions-container {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .caption-text {
+            font-size: 1.1em;
+            color: var(--amber);
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInCaption 0.5s ease-in forwards;
+            font-weight: 500;
+        }
+
+        @keyframes fadeInCaption {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOutCaption {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        .caption-text.fade-out {
+            animation: fadeOutCaption 0.5s ease-out forwards;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 300px;
+            height: 3px;
+            background: rgba(58, 143, 132, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--teal), var(--amber));
+            width: 0%;
+            animation: progress 10s linear forwards;
+        }
+
+        @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        /* Welcome transition */
+        .welcome-container.fade-out {
+            animation: fadeOutWelcome 1s ease-out forwards;
+        }
+
+        @keyframes fadeOutWelcome {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+        }
+
+        .pause-info {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.85em;
+            color: #70AD47;
+            opacity: 0.7;
+        }
+
+        .home-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--ink) 0%, #1a1f2e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .home-page.visible {
+            animation: fadeInHome 1.5s ease-in forwards;
+            pointer-events: auto;
+        }
+
+        @keyframes fadeInHome {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .home-content {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        .home-content h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, var(--gentle-green), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 1.1em;
+            color: #A9AFC4;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="welcome-container" id="welcomeContainer">
+        <!-- Animated Icon Moving on Screen -->
+        <div class="animated-icon">Σ</div>
+
+        <!-- Captions Only -->
+        <div class="captions-container">
+            <div class="caption-text" id="captionText"></div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <!-- Pause Info -->
+        <div class="pause-info">Press SPACE to pause</div>
+    </div>
+
+    <!-- Home Page (appears after welcome) -->
+    <div class="home-page">
+        <div class="home-content">
+            <h1>Let's Learn Mathematics</h1>
+            <p>This is your personal, private learning space. No pressure. No competition. Just you, growing at your own pace.</p>
+            <p style="margin-top: 30px; font-size: 0.9em; color: #70AD47;">Welcome to your learning journey! 💚</p>
+        </div>
+    </div>
+
+    <script>
+        const welcomeContainer = document.getElementById('welcomeContainer');
+        const brainIcon = document.getElementById('brainIcon');
+        const captionText = document.getElementById('captionText');
+        let isPaused = false;
+
+        // Welcome message with timestamps for captions
+        const welcomeMessage = "Welcome to Let's Math. This is your personal, private learning space. No pressure. No competition. Just you, growing at your own pace. Remember — every struggle is the first step to mastery. Let's learn together.";
+
+        const captions = [
+            { text: "Welcome to Let's Math", start: 0, end: 2 },
+            { text: "This is your personal, private learning space", start: 2, end: 4 },
+            { text: "No pressure. No competition.", start: 4, end: 6 },
+            { text: "Just you, growing at your own pace.", start: 6, end: 8 },
+            { text: "Every struggle is the first step to mastery.", start: 8, end: 10 },
+        ];
+
+        // Text-to-Speech using Web Speech API
+        function speakMessage() {
+            const utterance = new SpeechSynthesisUtterance(welcomeMessage);
+
+            // Configure voice
+            utterance.rate = 0.9; // Slightly slower for clarity
+            utterance.pitch = 1.0;
+            utterance.volume = 1;
+
+            // Try to find a good voice
+            const voices = window.speechSynthesis.getVoices();
+            const femaleVoice = voices.find(voice => voice.name.includes('Female') || voice.name.includes('woman'));
+            if (femaleVoice) {
+                utterance.voice = femaleVoice;
+            }
+
+            // Show captions
+            let currentCaptionIndex = 0;
+            const captionInterval = setInterval(() => {
+                if (currentCaptionIndex < captions.length) {
+                    const caption = captions[currentCaptionIndex];
+                    captionText.textContent = caption.text;
+                    currentCaptionIndex++;
+                } else {
+                    clearInterval(captionInterval);
+                }
+            }, 1800); // Change caption every 1.8 seconds
+
+            // Handle speech end
+            utterance.onend = () => {
+                if (brainIcon) brainIcon.classList.remove('speaking');
+                clearInterval(captionInterval);
+                captionText.textContent = '';
+
+                // Transition to home page after 2 seconds
+                setTimeout(() => {
+                    welcomeContainer.classList.add('fade-out');
+                    // Show home page
+                    const homePage = document.querySelector('.home-page');
+                    if (homePage) {
+                        homePage.classList.add('visible');
+                    }
+                }, 2000);
+            };
+
+            utterance.onstart = () => {
+                brainIcon.classList.add('speaking');
+            };
+
+            // Speak the message
+            window.speechSynthesis.speak(utterance);
+
+            // Fallback: Auto-transition after 12 seconds even if onend doesn't fire
+            setTimeout(() => {
+                if (window.speechSynthesis.speaking) {
+                    window.speechSynthesis.cancel();
+                }
+                captionText.textContent = '';
+                welcomeContainer.classList.add('fade-out');
+                const homePage = document.querySelector('.home-page');
+                if (homePage) {
+                    homePage.classList.add('visible');
+                }
+            }, 12000);
+        }
+
+        // Load voices and start experience
+        window.speechSynthesis.onvoiceschanged = () => {
+            speakMessage();
+        };
+
+        // Fallback if voices are already loaded
+        setTimeout(() => {
+            if (!window.speechSynthesis.speaking) {
+                speakMessage();
+            }
+        }, 500);
+
+        // Pause/Resume with SPACE key
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                isPaused = !isPaused;
+                if (isPaused) {
+                    window.speechSynthesis.pause();
+                } else {
+                    window.speechSynthesis.resume();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

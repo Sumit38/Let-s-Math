@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Math - Master Mathematics with Confidence</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEGTCCBS3H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YEGTCCBS3H');
+    </script>
+</head>
+<body>
+    <!-- Simple Welcome Overlay -->
+    <div id="welcomeOverlay" class="welcome-overlay">
+        <div class="welcome-message">
+            <h2 style="font-size: 3.5em; margin-bottom: 30px; background: linear-gradient(135deg, #70AD47, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Welcome to Let's Math</h2>
+            <p style="font-size: 1.5em; color: #E2A23B; line-height: 2; margin-bottom: 20px; font-weight: 600;">This is your personal, private learning space.</p>
+            <p style="font-size: 1.3em; color: #A9AFC4; line-height: 1.9; margin-bottom: 20px;">No pressure. No competition. Just you, growing at your own pace.</p>
+            <p style="font-size: 1.15em; color: #70AD47; font-style: italic; font-weight: 500;">Every struggle is the first step to mastery. Let's learn together. 💚</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">Σ</span>
+                <span class="logo-text">Let's Math</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" onclick="showPage('home')">Home</a></li>
+                <li><a href="#chapters" class="nav-link" onclick="showPage('chapters')">Topics</a></li>
+                <li><a href="#tricks" class="nav-link" onclick="showPage('tricks')">Tricks</a></li>
+                <li><a href="#questions" class="nav-link" onclick="showPage('questions')">Questions</a></li>
+                <li><a href="#about" class="nav-link" onclick="showPage('about')">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Pages Container -->
+    <div class="pages-container">
+
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <!-- Welcome Section -->
+            <div class="container">
+                <div style="text-align: center; padding: 40px 20px 30px;">
+                    <h1 class="hero-title" style="font-size: 2.5em; margin-bottom: 15px; background: linear-gradient(135deg, #70AD47, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Let's Learn Mathematics</h1>
+                    <p style="font-size: 0.95em; color: #A9AFC4; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+                        This is your personal, private learning space. No pressure. No competition. Just you, growing at your own pace.
+                    </p>
+                </div>
+
+                <!-- Emotional Support Cards -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 40px;">
+                    <div style="background: linear-gradient(135deg, rgba(112, 173, 71, 0.2), rgba(112, 173, 71, 0.05)); border: 1px solid rgba(112, 173, 71, 0.3); padding: 20px; border-radius: 12px; transition: all 0.3s; hover: transform 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">🌟</div>
+                        <h3 style="color: #70AD47; margin-bottom: 8px; font-size: 0.95em; font-weight: 600;">Every Struggle is Learning</h3>
+                        <p style="color: #F1ECDD; line-height: 1.6; font-size: 0.85em;">Getting stuck means you're on the edge of understanding.</p>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(91, 155, 213, 0.2), rgba(91, 155, 213, 0.05)); border: 1px solid rgba(91, 155, 213, 0.3); padding: 20px; border-radius: 12px; transition: all 0.3s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">💭</div>
+                        <h3 style="color: #5B9BD5; margin-bottom: 8px; font-size: 0.95em; font-weight: 600;">Wrong Answers Teach</h3>
+                        <p style="color: #F1ECDD; line-height: 1.6; font-size: 0.85em;">Every mistake teaches you something valuable.</p>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(255, 159, 90, 0.2), rgba(255, 159, 90, 0.05)); border: 1px solid rgba(255, 159, 90, 0.3); padding: 20px; border-radius: 12px; transition: all 0.3s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">🎯</div>
+                        <h3 style="color: #FF9F5A; margin-bottom: 8px; font-size: 0.95em; font-weight: 600;">No Time Pressure</h3>
+                        <p style="color: #F1ECDD; line-height: 1.6; font-size: 0.85em;">Real understanding can't be rushed.</p>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.1), rgba(91, 155, 213, 0.1)); border: 2px solid #3A8F84; border-radius: 15px; padding: 30px 25px; margin-bottom: 40px;">
+                    <h2 style="color: #3A8F84; margin-bottom: 25px; text-align: center; font-size: 1.4em; font-weight: 600;">What You Get Here</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.5em; margin-bottom: 8px;">📚</div>
+                            <h4 style="color: #E2A23B; margin-bottom: 5px; font-size: 0.9em; font-weight: 600;">17 Topics</h4>
+                            <p style="color: #A9AFC4; font-size: 0.8em;">Complete curriculum</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.5em; margin-bottom: 8px;">⚡</div>
+                            <h4 style="color: #E2A23B; margin-bottom: 5px; font-size: 0.9em; font-weight: 600;">Key Tricks</h4>
+                            <p style="color: #A9AFC4; font-size: 0.8em;">Smart shortcuts</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.5em; margin-bottom: 8px;">📊</div>
+                            <h4 style="color: #E2A23B; margin-bottom: 5px; font-size: 0.9em; font-weight: 600;">Visuals</h4>
+                            <p style="color: #A9AFC4; font-size: 0.8em;">Diagrams & examples</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.5em; margin-bottom: 8px;">📝</div>
+                            <h4 style="color: #E2A23B; margin-bottom: 5px; font-size: 0.9em; font-weight: 600;">Practice</h4>
+                            <p style="color: #A9AFC4; font-size: 0.8em;">100+ problems</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div style="text-align: center; margin-bottom: 70px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="showPage('chapters')" style="font-size: 1.1em; padding: 16px 45px;">Start Learning →</button>
+                    <button class="btn btn-secondary" onclick="showPage('tricks')" style="font-size: 1.1em; padding: 16px 45px;">View Tricks</button>
+                </div>
+
+                <!-- Mindset Section with Animated Icon -->
+                <div style="display: grid; grid-template-columns: 1fr 220px; gap: 50px; align-items: start; margin-bottom: 40px;">
+                    <div>
+                        <h2 style="font-size: 2.3em; color: #E2A23B; margin-bottom: 35px; font-weight: 600;">💡 Remember...</h2>
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                            <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.2), rgba(58, 143, 132, 0.05)); border: 1px solid rgba(58, 143, 132, 0.3); border-left: 4px solid #3A8F84; padding: 25px; border-radius: 12px;">
+                                <p style="color: #F1ECDD; line-height: 1.8; font-style: italic; margin: 0; font-size: 0.98em;">
+                                    "Every mathematician was once confused. Confusion is the first step to mastery."
+                                </p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.2), rgba(58, 143, 132, 0.05)); border: 1px solid rgba(58, 143, 132, 0.3); border-left: 4px solid #3A8F84; padding: 25px; border-radius: 12px;">
+                                <p style="color: #F1ECDD; line-height: 1.8; font-style: italic; margin: 0; font-size: 0.98em;">
+                                    "You don't need to love math first. Practice builds confidence. Passion comes after."
+                                </p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, rgba(58, 143, 132, 0.2), rgba(58, 143, 132, 0.05)); border: 1px solid rgba(58, 143, 132, 0.3); border-left: 4px solid #3A8F84; padding: 25px; border-radius: 12px;">
+                                <p style="color: #F1ECDD; line-height: 1.8; font-style: italic; margin: 0; font-size: 0.98em;">
+                                    "Learn 3-4 tricks per topic. Pattern recognition beats genius every time."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Animated Math Icon -->
+                    <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 10px;">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 200px; height: 200px;">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#3A8F84" stroke-width="2" opacity="0.5"/>
+                            <circle cx="70" cy="70" r="12" fill="#E2A23B" opacity="0.8">
+                                <animate attributeName="cy" values="70;60;70" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="130" cy="70" r="12" fill="#E2A23B" opacity="0.8">
+                                <animate attributeName="cy" values="70;60;70" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="100" cy="150" r="12" fill="#E2A23B" opacity="0.8">
+                                <animate attributeName="cy" values="150;160;150" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="100" cy="100" r="28" fill="#3A8F84" opacity="0.9">
+                                <animate attributeName="r" values="28;32;28" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <text x="100" y="110" text-anchor="middle" font-size="32" fill="#F6F1E4" font-weight="bold">Σ</text>
+                            <line x1="100" y1="100" x2="70" y2="70" stroke="#3A8F84" stroke-width="1" opacity="0.2" />
+                            <line x1="100" y1="100" x2="130" y2="70" stroke="#3A8F84" stroke-width="1" opacity="0.2" />
+                            <line x1="100" y1="100" x2="100" y2="150" stroke="#3A8F84" stroke-width="1" opacity="0.2" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAPTERS PAGE -->
+        <div id="chapters" class="page">
+            <div class="container">
+                <h1>📚 All Topics</h1>
+                <p class="section-intro">Click on any topic to learn concepts, tricks, and see visual explanations</p>
+
+                <div class="chapters-grid">
+                    <!-- Chapters will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAPTER DETAIL PAGE -->
+        <div id="chapter-detail" class="page">
+            <div class="container">
+                <button class="back-btn" onclick="showPage('chapters')">← Back to Topics</button>
+                <div id="chapter-content">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TRICKS PAGE -->
+        <div id="tricks" class="page">
+            <div class="container">
+                <h1>⚡ Essential Tricks & Shortcuts</h1>
+                <p class="section-intro">Quick tips to solve problems faster during exams</p>
+
+                <div class="tricks-container">
+                    <!-- Tricks will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTIONS PAGE -->
+        <div id="questions" class="page">
+            <div class="container">
+                <h1>📝 Practice Questions & Solutions</h1>
+                <p class="section-intro">Exam-style problems to build confidence through practice</p>
+
+                <!-- Emotional Confidence Growing Section -->
+                <div style="background: linear-gradient(135deg, rgba(112, 173, 71, 0.15), rgba(91, 155, 213, 0.15)); border: 2px solid rgba(112, 173, 71, 0.4); border-radius: 16px; padding: 40px; margin-bottom: 50px;">
+                    <h2 style="color: #70AD47; font-size: 1.8em; margin: 0 0 20px; font-weight: 600;">💪 Building Your Confidence</h2>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;">
+                        <div style="background: rgba(112, 173, 71, 0.2); border-left: 4px solid #70AD47; padding: 20px; border-radius: 10px;">
+                            <p style="color: #70AD47; font-weight: 600; margin: 0 0 10px; font-size: 1.1em;">🎯 Why Practice Matters</p>
+                            <p style="color: #F1ECDD; margin: 0; line-height: 1.7; font-size: 0.95em;">Every problem you solve strengthens your understanding. The questions you find difficult today are the ones that teach you the most.</p>
+                        </div>
+                        <div style="background: rgba(91, 155, 213, 0.2); border-left: 4px solid #5B9BD5; padding: 20px; border-radius: 10px;">
+                            <p style="color: #5B9BD5; font-weight: 600; margin: 0 0 10px; font-size: 1.1em;">🚀 Your Growth Path</p>
+                            <p style="color: #F1ECDD; margin: 0; line-height: 1.7; font-size: 0.95em;">Start with easier problems to build confidence. Progress to harder ones as you grow. There's no rush—real learning is a journey, not a race.</p>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(226, 162, 59, 0.15); border: 1px solid rgba(226, 162, 59, 0.4); border-radius: 10px; padding: 20px;">
+                        <p style="color: #E2A23B; margin: 0; font-size: 0.95em; line-height: 1.8; font-style: italic;">
+                            <strong>"Confidence comes from preparation, not perfection."</strong> Each problem you attempt is preparation. Each mistake teaches you. Each correct answer proves you're getting stronger. Trust the process. 💚
+                        </p>
+                    </div>
+                </div>
+
+                <div class="questions-container">
+                    <!-- Questions will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about" class="page">
+            <div class="container">
+                <h1>About Let's Math</h1>
+                <div class="about-content">
+                    <div class="about-section">
+                        <h2>🎯 Our Mission</h2>
+                        <p>To make mathematics accessible, understandable, and enjoyable for every student. We believe that with the right approach, anyone can master math and remove exam anxiety forever.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>🚀 How to Use</h2>
+                        <ol class="about-list">
+                            <li>Go to <strong>Topics</strong> and select a chapter you want to learn</li>
+                            <li>Read the <strong>concept explanation</strong> carefully</li>
+                            <li>Study the <strong>visual diagrams</strong> to understand better</li>
+                            <li>Learn the <strong>tricks & shortcuts</strong> for that topic</li>
+                            <li>Practice with <strong>worked examples</strong> and solutions</li>
+                            <li>Visit <strong>Tricks</strong> page for quick reference during revision</li>
+                            <li>Use <strong>Questions</strong> page to practice exam-style questions</li>
+                        </ol>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>💬 Words of Encouragement</h2>
+                        <p style="font-size: 1.1em; font-style: italic; color: #3A8F84;">
+                            "Mathematics is not about being born clever. It's about understanding patterns, practicing consistently, and believing in yourself. Every expert was once a beginner. Your success is not a question of IF, but WHEN you decide to commit."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Hints Modal -->
+    <div id="hintsModal" class="hints-modal">
+        <div class="hints-content">
+            <button class="hints-close" onclick="closeHints()">✕</button>
+            <h2 id="hintsTitle">💡 Get a Hint</h2>
+            <p id="hintsMessage" class="hints-message"></p>
+
+            <div class="hints-buttons">
+                <button class="hint-btn" id="hint1Btn" onclick="displayHint(1)">Hint 1 of 3</button>
+                <button class="hint-btn" id="hint2Btn" onclick="displayHint(2)">Hint 2 of 3</button>
+                <button class="hint-btn" id="hint3Btn" onclick="displayHint(3)">Hint 3 of 3</button>
+            </div>
+
+            <div class="hints-info">
+                <p>🎯 <strong>Remember:</strong> Hints are designed to guide your thinking, not solve the problem for you!</p>
+                <p>Work through the hint, apply it to your problem, and try solving it yourself. That's how you truly learn! 📚</p>
+            </div>
+
+            <button class="close-btn" onclick="closeHints()">Close</button>
+        </div>
+    </div>
+
+    <!-- Achievement Celebration Modal -->
+    <div id="celebrationModal" class="celebration-modal">
+        <div class="celebration-overlay" onclick="closeCelebration()"></div>
+        <div class="milestone-flag">
+            <span class="flag-emoji">🚩</span>
+            <div class="milestone-title">MILESTONE UNLOCKED!</div>
+            <div id="celebrationTopicName" class="milestone-subtitle">Topic Name</div>
+
+            <div class="skills-gained" style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #FF9F5A; text-align: left;">
+                <h3 style="color: #FF9F5A; margin-bottom: 12px; font-size: 1.1em;">🎯 Skills You've Built</h3>
+                <div id="celebrationSkills" style="color: white; line-height: 1.8; font-size: 0.95em;"></div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin: 15px 0; border: 2px dashed #FF9F5A; text-align: center;">
+                <div style="color: rgba(255,255,255,0.9); font-size: 0.9em; margin-bottom: 8px;">📈 50% Problem Completion!</div>
+                <div style="color: #FF9F5A; font-size: 1.2em; font-weight: bold;">You're building real understanding</div>
+                <div style="color: rgba(255,255,255,0.8); font-size: 0.85em; margin-top: 8px;">Keep exploring. More practice makes you stronger.</div>
+            </div>
+
+            <button class="milestone-button" onclick="closeCelebration()" style="background: #FF9F5A; color: #161B2E; border: none; padding: 14px 35px; font-size: 1em; border-radius: 25px; cursor: pointer; font-weight: bold; margin-top: 20px; transition: all 0.3s ease;">Continue Learning →</button>
+
+            <div style="color: #FF9F5A; font-weight: bold; margin-top: 20px; font-size: 1.15em;">🎉 You did that. 💚</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Let's Math. Free mathematics learning platform for students worldwide.</p>
+        <p>Built with ❤️ to make math accessible to everyone.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="hints.js"></script>
+    <script src="progress-tracker.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Auto-update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Welcome overlay auto-transition
+        setTimeout(() => {
+            const welcomeOverlay = document.getElementById('welcomeOverlay');
+            if (welcomeOverlay) {
+                welcomeOverlay.classList.add('fade-out');
+                setTimeout(() => {
+                    welcomeOverlay.style.display = 'none';
+                }, 800);
+            }
+        }, 4000); // Show welcome for 4 seconds
+    </script>
+</body>
+</html>
