@@ -112,21 +112,27 @@ body.light-mode .answer-item {
     color: #1E4A7A !important;
 }
 
-/* Force ALL text to dark blue in light mode - catch everything */
-body.light-mode * {
+/* Force text to dark blue in light mode - BUT NOT SVG */
+body.light-mode *:not(svg):not(svg *) {
     color: #1E4A7A !important;
 }
 
-body.light-mode [style*="color"] {
-    color: #1E4A7A !important;
+/* Keep bright SVG text colors in light mode */
+body.light-mode svg text {
+    fill: #66FF00 !important;
+}
+
+body.light-mode svg [fill*="#66FF00"],
+body.light-mode svg [fill*="#00FFDD"],
+body.light-mode svg [fill*="#FFD700"],
+body.light-mode svg [fill*="#E2A23B"] {
+    fill: inherit !important;
 }
 
 body.light-mode strong,
 body.light-mode em,
 body.light-mode small,
-body.light-mode label,
-body.light-mode button,
-body.light-mode input {
+body.light-mode label {
     color: #1E4A7A !important;
 }
 
