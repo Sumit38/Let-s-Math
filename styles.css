@@ -691,7 +691,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .practice-item {
-    background: var(--ink-600);
+    background: #FFFFFF;
     padding: 1.5em;
     margin-bottom: 1.5em;
     border-radius: 8px;
@@ -710,7 +710,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .visual-diagram {
-    background: var(--ink-600);
+    background: #FFFFFF;
     border-radius: 12px;
     padding: 2em;
     margin: 2em 0;
@@ -729,8 +729,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .trick-card {
-    background: linear-gradient(135deg, var(--ink-soft), var(--ink-600));
-    border: 1px solid var(--ink-600);
+    background: #FFFFFF;
+    border: 1px solid #E8ECEF;
     border-radius: 12px;
     padding: 2em;
     border-left: 4px solid var(--amber);
@@ -767,7 +767,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .question-item {
-    background: var(--ink-600);
+    background: #FFFFFF;
     padding: 1.5em;
     margin-bottom: 1.5em;
     border-radius: 8px;
@@ -817,7 +817,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .accordion-header {
-    background: var(--ink-600);
+    background: #FFFFFF;
     padding: 1.2em 1.5em;
     cursor: pointer;
     display: flex;
