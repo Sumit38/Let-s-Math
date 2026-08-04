@@ -146,7 +146,7 @@ function updateProgressDisplay() {
             <h3 style="color: ${phase.color}; margin: 0 0 5px 0; font-size: 1.3em; font-weight: 700;">${phase.phase} Phase</h3>
             <p style="color: #A9AFC4; margin: 0 0 15px 0; font-size: 0.9em;">${phase.description}</p>
 
-            <div style="background: rgba(22, 27, 46, 0.6); padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+            <div style="background: #FFFFFF; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
                 <p style="color: #F1ECDD; margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">
                     ${percentage}% Complete
                 </p>
