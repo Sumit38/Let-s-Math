@@ -109,6 +109,25 @@ body.light-mode .hints-content {
 
 body.light-mode .answer-item {
     background: #F5F7FA !important;
+    color: #1E4A7A !important;
+}
+
+/* Force ALL text to dark blue in light mode - catch everything */
+body.light-mode * {
+    color: #1E4A7A !important;
+}
+
+body.light-mode [style*="color"] {
+    color: #1E4A7A !important;
+}
+
+body.light-mode strong,
+body.light-mode em,
+body.light-mode small,
+body.light-mode label,
+body.light-mode button,
+body.light-mode input {
+    color: #1E4A7A !important;
 }
 
 body.light-mode .btn-primary {
