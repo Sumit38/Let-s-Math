@@ -117,11 +117,13 @@ body.light-mode *:not(svg):not(svg *) {
     color: #1E4A7A !important;
 }
 
-/* Preserve gradient text effects */
-body.light-mode .hero-title,
-body.light-mode [style*="background-clip"] {
-    color: transparent !important;
-    -webkit-text-fill-color: transparent !important;
+/* Hero title in light mode - use dark blue text instead of gradient */
+body.light-mode .hero-title {
+    color: #1E4A7A !important;
+    -webkit-text-fill-color: #1E4A7A !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
 }
 
 /* Keep bright SVG text colors in light mode */
