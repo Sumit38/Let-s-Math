@@ -91,8 +91,13 @@ body .trick-card {
     color: #F1ECDD !important;
 }
 
-/* Ensure text inside SVG diagrams remains white (already set in data.js) */
-body svg text {
+/* Override hardcoded SVG text colors in dark mode */
+body svg text[fill="#1E4A7A"] {
+    fill: #F1ECDD !important;
+}
+
+body svg text[fill="#FFFFFF"],
+body svg text[fill="white"] {
     fill: #FFFFFF !important;
 }
 
