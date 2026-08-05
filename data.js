@@ -762,7 +762,7 @@ const chapters = [
             <!-- (2,4) -->
             <circle cx="215" cy="60" r="5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
             <circle cx="215" cy="60" r="2.5" fill="#66FF00"/>
-            <text x="240" y="48" text-anchor="middle" font-size="8" fill="#1E4A7A" font-weight="bold">(2,4)</text>
+            <text x="240" y="20" text-anchor="middle" font-size="8" fill="#1E4A7A" font-weight="bold">(2,4)</text>
 
             <!-- Curve labels with clear positioning -->
             <!-- River label on the left side -->
