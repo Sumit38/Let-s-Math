@@ -91,13 +91,14 @@ body .trick-card {
     color: #F1ECDD !important;
 }
 
-/* Override hardcoded SVG text colors in dark mode */
-body svg text[fill="#1E4A7A"] {
+/* Override SVG text colors in dark mode - ensure light text on dark backgrounds */
+body:not(.light-mode) svg text {
     fill: #F1ECDD !important;
 }
 
-body svg text[fill="#FFFFFF"],
-body svg text[fill="white"] {
+body:not(.light-mode) svg text[fill="#FFFFFF"],
+body:not(.light-mode) svg text[fill="white"],
+body:not(.light-mode) svg text[fill="#66FF00"] {
     fill: #FFFFFF !important;
 }
 
