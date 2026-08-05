@@ -802,7 +802,7 @@ body:not(.light-mode) .practice-section,
 body:not(.light-mode) .visual-diagram,
 body:not(.light-mode) .tricks-list li,
 body:not(.light-mode) .practice-item {
-    background: var(--bg-primary);
+    background: #161B2E !important;
 }
 
 /* TRICKS SECTION */
