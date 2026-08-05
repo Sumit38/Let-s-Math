@@ -27,10 +27,10 @@ function toggleTheme() {
         }
     }
     updateThemeIcon();
-    // Update SVG text colors based on loaded theme with !important
+    // Update SVG text colors for dark/light mode with !important
     const svgTexts = document.querySelectorAll('svg text');
-    const isLightMode = document.body.classList.contains('light-mode');
-    if (isLightMode) {
+    const newIsLightMode = document.body.classList.contains('light-mode');
+    if (newIsLightMode) {
         svgTexts.forEach(text => {
             text.style.setProperty('fill', '#1E4A7A', 'important');
         });
