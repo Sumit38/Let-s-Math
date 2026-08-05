@@ -894,8 +894,8 @@ const chapters = [
             <text x="270" y="80" font-size="10" fill="#3A8F84" font-weight="bold">y = 5 + 8.5x</text>
 
             <!-- Information Box -->
-            <rect x="20" y="233" width="480" height="20" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="30" y="243" font-size="8.5" fill="#E2A23B" font-weight="bold">Correlation r = 0.85 (Strong!)  |  r² = 0.72  →  72% of mark variation explained by study time</text>
+            <rect x="30" y="233" width="430" height="20" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="40" y="243" font-size="8.5" fill="#E2A23B" font-weight="bold">Correlation r = 0.85 (Strong!)  |  r² = 0.72  →  72% of mark variation explained by study time</text>
         </svg>`
     },
     {
