@@ -303,9 +303,9 @@ const chapters = [
             <text x="260" y="138" text-anchor="middle" font-size="8" fill="#A9AFC4">Dangerous: abrupt turn</text>
 
             <!-- Key Concept Box -->
-            <rect x="15" y="215" width="350" height="42" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="30" y="232" font-size="10" fill="#E2A23B" font-weight="bold">Key Rule: Differentiable ⟹ Continuous</text>
-            <text x="30" y="248" font-size="9" fill="#A9AFC4">But Continuous ⇏ Differentiable (corners exist at continuous points!)</text>
+            <rect x="15" y="215" width="350" height="42" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="30" y="232" font-size="10" fill="#1E4A7A" font-weight="bold">Key Rule: Differentiable ⟹ Continuous</text>
+            <text x="30" y="248" font-size="9" fill="#1E4A7A">But Continuous ⇏ Differentiable (corners exist at continuous points!)</text>
         </svg>`
     },
     {
