@@ -91,24 +91,24 @@ body .trick-card {
     color: #F1ECDD !important;
 }
 
-/* Override SVG text colors in dark mode - all text becomes light cream */
+/* SVG text colors - JavaScript will override via inline styles */
 svg text {
-    fill: #F1ECDD !important;
+    fill: #F1ECDD;
 }
 
 svg text[fill],
 svg text[style*="fill"] {
-    fill: #F1ECDD !important;
+    fill: #F1ECDD;
 }
 
 /* Light mode - keep SVG text deep blue */
 body.light-mode svg text {
-    fill: #1E4A7A !important;
+    fill: #1E4A7A;
 }
 
 body.light-mode svg text[fill],
 body.light-mode svg text[style*="fill"] {
-    fill: #1E4A7A !important;
+    fill: #1E4A7A;
 }
 
 /* Light mode - Force all text to dark blue */
