@@ -27,15 +27,15 @@ function toggleTheme() {
         }
     }
     updateThemeIcon();
-    // Update SVG text colors based on loaded theme
+    // Update SVG text colors based on loaded theme with !important
     const svgTexts = document.querySelectorAll('svg text');
     if (savedTheme === 'light') {
         svgTexts.forEach(text => {
-            text.style.fill = '#1E4A7A';
+            text.style.setProperty('fill', '#1E4A7A', 'important');
         });
     } else {
         svgTexts.forEach(text => {
-            text.style.fill = '#F1ECDD';
+            text.style.setProperty('fill', '#F1ECDD', 'important');
         });
     }
 }
@@ -62,15 +62,15 @@ function initializeTheme() {
         }
     }
     updateThemeIcon();
-    // Update SVG text colors for dark/light mode
+    // Update SVG text colors for dark/light mode with !important
     const svgTexts = document.querySelectorAll('svg text');
     if (isLightMode) {
         svgTexts.forEach(text => {
-            text.style.fill = '#1E4A7A';
+            text.style.setProperty('fill', '#1E4A7A', 'important');
         });
     } else {
         svgTexts.forEach(text => {
-            text.style.fill = '#F1ECDD';
+            text.style.setProperty('fill', '#F1ECDD', 'important');
         });
     }
 }
