@@ -187,12 +187,12 @@ const chapters = [
             <text x="275" y="145" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix B</text>
 
             <!-- Solution Method -->
-            <rect x="20" y="160" width="340" height="85" fill="#1F2740" stroke="#E2A23B" stroke-width="1.5" rx="4"/>
+            <rect x="20" y="160" width="340" height="85" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1.5" rx="4"/>
             <text x="190" y="178" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">📋 How to Solve</text>
 
-            <text x="30" y="198" font-size="10" fill="#F1ECDD">Step 1: Write equations as AX = B</text>
-            <text x="30" y="213" font-size="10" fill="#F1ECDD">Step 2: Find inverse of A (if det(A) ≠ 0)</text>
-            <text x="30" y="228" font-size="10" fill="#F1ECDD">Step 3: Multiply both sides by A⁻¹: X = A⁻¹B</text>
+            <text x="30" y="198" font-size="10" fill="#1E4A7A">Step 1: Write equations as AX = B</text>
+            <text x="30" y="213" font-size="10" fill="#1E4A7A">Step 2: Find inverse of A (if det(A) ≠ 0)</text>
+            <text x="30" y="228" font-size="10" fill="#1E4A7A">Step 3: Multiply both sides by A⁻¹: X = A⁻¹B</text>
 
             <text x="220" y="198" font-size="10" fill="#70AD47" font-weight="bold">✓ x = 30 (Bread)</text>
             <text x="220" y="213" font-size="10" fill="#70AD47" font-weight="bold">✓ y = 40 (Cake)</text>
