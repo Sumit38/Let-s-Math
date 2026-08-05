@@ -131,6 +131,11 @@ body.light-mode h1.hero-title {
     background-clip: border-box !important;
 }
 
+/* SVG text colors - bright lime green in dark mode */
+svg text {
+    fill: #66FF00 !important;
+}
+
 /* Keep bright SVG text colors in light mode */
 body.light-mode svg text {
     fill: #66FF00 !important;
