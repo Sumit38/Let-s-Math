@@ -21,8 +21,8 @@ const chapters = [
         diagram: `<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Domain Box -->
             <rect x="24" y="48" width="112" height="130" fill="none" stroke="#3A8F84" stroke-width="3" rx="8"/>
-            <text x="80" y="28" text-anchor="middle" font-size="13" fill="#A9AFC4" font-weight="bold">Domain</text>
-            <text x="80" y="68" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">A</text>
+            <text x="80" y="28" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">Domain</text>
+            <text x="80" y="68" text-anchor="middle" font-size="16" fill="#1E4A7A" font-weight="bold">A</text>
 
             <!-- Domain Elements -->
             <circle cx="64" cy="88" r="6" fill="#E2A23B"/>
@@ -41,8 +41,8 @@ const chapters = [
 
             <!-- Codomain Box -->
             <rect x="344" y="48" width="112" height="130" fill="none" stroke="#3A8F84" stroke-width="3" rx="8"/>
-            <text x="400" y="28" text-anchor="middle" font-size="13" fill="#A9AFC4" font-weight="bold">Codomain</text>
-            <text x="400" y="68" text-anchor="middle" font-size="16" fill="#F1ECDD" font-weight="bold">B</text>
+            <text x="400" y="28" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">Codomain</text>
+            <text x="400" y="68" text-anchor="middle" font-size="16" fill="#1E4A7A" font-weight="bold">B</text>
 
             <!-- Codomain Elements -->
             <circle cx="416" cy="88" r="6" fill="#3A8F84"/>
@@ -50,9 +50,9 @@ const chapters = [
             <circle cx="416" cy="168" r="6" fill="#3A8F84"/>
 
             <!-- Description -->
-            <text x="240" y="220" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">Function: f(x) = x</text>
-            <text x="240" y="238" text-anchor="middle" font-size="9" fill="#A9AFC4">✓ Each element in A → ONE in B</text>
-            <text x="240" y="254" text-anchor="middle" font-size="9" fill="#A9AFC4">✓ One-One and Onto (Bijective)</text>
+            <text x="240" y="220" text-anchor="middle" font-size="12" fill="#1E4A7A" font-weight="bold">Function: f(x) = x</text>
+            <text x="240" y="238" text-anchor="middle" font-size="9" fill="#1E4A7A">✓ Each element in A → ONE in B</text>
+            <text x="240" y="254" text-anchor="middle" font-size="9" fill="#1E4A7A">✓ One-One and Onto (Bijective)</text>
         </svg>`
     },
     {
@@ -162,29 +162,29 @@ const chapters = [
             <!-- Matrix A (Coefficients) -->
             <text x="65" y="80" font-size="11" fill="#E2A23B" font-weight="bold" text-anchor="middle">Coefficients:</text>
             <rect x="30" y="85" width="70" height="50" fill="none" stroke="#3A8F84" stroke-width="2" rx="3"/>
-            <text x="40" y="105" font-size="14" fill="#F1ECDD" font-weight="bold">2  1</text>
-            <text x="40" y="125" font-size="14" fill="#F1ECDD" font-weight="bold">1  2</text>
-            <text x="65" y="145" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix A</text>
+            <text x="40" y="105" font-size="14" fill="#1E4A7A" font-weight="bold">2  1</text>
+            <text x="40" y="125" font-size="14" fill="#1E4A7A" font-weight="bold">1  2</text>
+            <text x="65" y="145" text-anchor="middle" font-size="9" fill="#1E4A7A">Matrix A</text>
 
             <!-- Multiply sign -->
-            <text x="130" y="110" font-size="18" fill="#F1ECDD" font-weight="bold" text-anchor="middle">×</text>
+            <text x="130" y="110" font-size="18" fill="#1E4A7A" font-weight="bold" text-anchor="middle">×</text>
 
             <!-- Matrix X (Unknowns) -->
             <text x="170" y="80" font-size="11" fill="#E2A23B" font-weight="bold" text-anchor="middle">Unknowns:</text>
             <rect x="145" y="85" width="50" height="50" fill="none" stroke="#3A8F84" stroke-width="2" rx="3"/>
-            <text x="155" y="105" font-size="14" fill="#F1ECDD" font-weight="bold">x</text>
-            <text x="155" y="125" font-size="14" fill="#F1ECDD" font-weight="bold">y</text>
-            <text x="170" y="145" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix X</text>
+            <text x="155" y="105" font-size="14" fill="#1E4A7A" font-weight="bold">x</text>
+            <text x="155" y="125" font-size="14" fill="#1E4A7A" font-weight="bold">y</text>
+            <text x="170" y="145" text-anchor="middle" font-size="9" fill="#1E4A7A">Matrix X</text>
 
             <!-- Equals sign -->
-            <text x="215" y="110" font-size="18" fill="#F1ECDD" font-weight="bold" text-anchor="middle">=</text>
+            <text x="215" y="110" font-size="18" fill="#1E4A7A" font-weight="bold" text-anchor="middle">=</text>
 
             <!-- Matrix B (Results) -->
             <text x="275" y="80" font-size="11" fill="#E2A23B" font-weight="bold" text-anchor="middle">Results:</text>
             <rect x="245" y="85" width="60" height="50" fill="none" stroke="#E2A23B" stroke-width="2" rx="3"/>
-            <text x="260" y="105" font-size="14" fill="#F1ECDD" font-weight="bold">100</text>
-            <text x="260" y="125" font-size="14" fill="#F1ECDD" font-weight="bold">110</text>
-            <text x="275" y="145" text-anchor="middle" font-size="9" fill="#A9AFC4">Matrix B</text>
+            <text x="260" y="105" font-size="14" fill="#1E4A7A" font-weight="bold">100</text>
+            <text x="260" y="125" font-size="14" fill="#1E4A7A" font-weight="bold">110</text>
+            <text x="275" y="145" text-anchor="middle" font-size="9" fill="#1E4A7A">Matrix B</text>
 
             <!-- Solution Method -->
             <rect x="20" y="160" width="340" height="85" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1.5" rx="4"/>
@@ -196,7 +196,7 @@ const chapters = [
 
             <text x="220" y="198" font-size="10" fill="#70AD47" font-weight="bold">✓ x = 30 (Bread)</text>
             <text x="220" y="213" font-size="10" fill="#70AD47" font-weight="bold">✓ y = 40 (Cake)</text>
-            <text x="220" y="228" font-size="9" fill="#A9AFC4">(Verify: 2(30)+40=100 ✓)</text>
+            <text x="220" y="228" font-size="9" fill="#1E4A7A">(Verify: 2(30)+40=100 ✓)</text>
         </svg>`
     },
     {
@@ -220,7 +220,7 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="14" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">📐 Determinant = "Magic Number"</text>
+            <text x="190" y="14" text-anchor="middle" font-size="12" fill="#1E4A7A" font-weight="bold">📐 Determinant = "Magic Number"</text>
 
             <!-- What it does -->
             <rect x="10" y="22" width="360" height="32" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
@@ -274,14 +274,14 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🛣️ Road Design: Continuity vs Differentiability</text>
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">🛣️ Road Design: Continuity vs Differentiability</text>
 
             <!-- Explanation -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Continuous = no jumps/breaks | Differentiable = no sharp corners</text>
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Continuous = no jumps/breaks | Differentiable = no sharp corners</text>
 
             <!-- Axis labels -->
-            <text x="25" y="120" font-size="10" fill="#A9AFC4">Height</text>
-            <text x="190" y="250" text-anchor="middle" font-size="10" fill="#A9AFC4">Distance →</text>
+            <text x="25" y="120" font-size="10" fill="#1E4A7A">Height</text>
+            <text x="190" y="250" text-anchor="middle" font-size="10" fill="#1E4A7A">Distance →</text>
 
             <!-- Grid -->
             <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
@@ -291,16 +291,16 @@ const chapters = [
             <text x="110" y="55" font-size="11" fill="#3A8F84" font-weight="bold">✓ Differentiable</text>
             <path d="M 60 195 Q 100 100 140 195" fill="none" stroke="#3A8F84" stroke-width="3" stroke-linecap="round"/>
             <circle cx="100" cy="140" r="3" fill="#E2A23B"/>
-            <text x="100" y="165" text-anchor="middle" font-size="9" fill="#F1ECDD">Smooth curve</text>
-            <text x="100" y="178" text-anchor="middle" font-size="8" fill="#A9AFC4">Safe road: no jerks</text>
+            <text x="100" y="165" text-anchor="middle" font-size="9" fill="#1E4A7A">Smooth curve</text>
+            <text x="100" y="178" text-anchor="middle" font-size="8" fill="#1E4A7A">Safe road: no jerks</text>
 
             <!-- Right: Continuous but not differentiable (corner) -->
             <text x="260" y="55" font-size="11" fill="#danger" font-weight="bold">⚠️ Continuous only</text>
             <line x1="220" y1="195" x2="260" y2="100" stroke="#danger" stroke-width="3"/>
             <line x1="260" y1="100" x2="300" y2="195" stroke="#danger" stroke-width="3"/>
             <circle cx="260" cy="100" r="3" fill="#E2A23B"/>
-            <text x="260" y="125" text-anchor="middle" font-size="9" fill="#F1ECDD">Sharp corner</text>
-            <text x="260" y="138" text-anchor="middle" font-size="8" fill="#A9AFC4">Dangerous: abrupt turn</text>
+            <text x="260" y="125" text-anchor="middle" font-size="9" fill="#1E4A7A">Sharp corner</text>
+            <text x="260" y="138" text-anchor="middle" font-size="8" fill="#1E4A7A">Dangerous: abrupt turn</text>
 
             <!-- Key Concept Box -->
             <rect x="15" y="215" width="350" height="42" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
@@ -329,18 +329,18 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="210" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">💰 Factory Profit Optimization</text>
+            <text x="210" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">💰 Factory Profit Optimization</text>
 
             <!-- Problem -->
-            <text x="210" y="33" text-anchor="middle" font-size="9" fill="#A9AFC4">Profit P(x) = 100x − x² | Find maximum profit</text>
+            <text x="210" y="33" text-anchor="middle" font-size="9" fill="#1E4A7A">Profit P(x) = 100x − x² | Find maximum profit</text>
 
             <!-- Y-Axis -->
             <line x1="70" y1="240" x2="70" y2="50" stroke="#A9AFC4" stroke-width="2.5"/>
-            <text x="35" y="130" font-size="10" fill="#A9AFC4" font-weight="bold">Profit (₹)</text>
+            <text x="35" y="130" font-size="10" fill="#1E4A7A" font-weight="bold">Profit (₹)</text>
 
             <!-- X-Axis -->
             <line x1="70" y1="240" x2="380" y2="240" stroke="#A9AFC4" stroke-width="2.5"/>
-            <text x="225" y="265" text-anchor="middle" font-size="10" fill="#A9AFC4" font-weight="bold">Units Produced (x)</text>
+            <text x="225" y="265" text-anchor="middle" font-size="10" fill="#1E4A7A" font-weight="bold">Units Produced (x)</text>
 
             <!-- Profit curve: parabola opening down -->
             <path d="M 80 235 Q 120 180 160 130 Q 190 85 210 60 Q 230 85 270 130 Q 310 180 360 235"
@@ -363,8 +363,8 @@ const chapters = [
             <text x="245" y="65" font-size="9" fill="#E2A23B" font-weight="bold">P(50) = ₹2500</text>
 
             <!-- Solution Box -->
-            <rect x="15" y="295" width="390" height="22" fill="#1F2740" stroke="#E2A23B" stroke-width="1.5" rx="2"/>
-            <text x="25" y="310" font-size="8" fill="#F1ECDD">Solution: Find critical point → P'(x) = 100 − 2x = 0 → x = 50 → Maximum Profit = ₹2500</text>
+            <rect x="15" y="295" width="390" height="22" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1.5" rx="2"/>
+            <text x="25" y="310" font-size="8" fill="#1E4A7A">Solution: Find critical point → P'(x) = 100 − 2x = 0 → x = 50 → Maximum Profit = ₹2500</text>
         </svg>`
     },
     {
@@ -388,29 +388,29 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🚗 Velocity → Distance (Real-World)</text>
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">🚗 Velocity → Distance (Real-World)</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Car velocity: v(t) = 2t + 3 m/s | Find: distance traveled (antiderivative)</text>
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Car velocity: v(t) = 2t + 3 m/s | Find: distance traveled (antiderivative)</text>
 
             <!-- The relationship -->
-            <rect x="15" y="45" width="350" height="50" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <rect x="15" y="45" width="350" height="50" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
             <text x="30" y="62" font-size="10" fill="#E2A23B" font-weight="bold">Why Integration?</text>
-            <text x="30" y="78" font-size="9" fill="#F1ECDD">d(distance)/dt = velocity  →  distance = ∫velocity dt</text>
-            <text x="30" y="92" font-size="9" fill="#A9AFC4">Integration UNDOES differentiation (finds antiderivative)</text>
+            <text x="30" y="78" font-size="9" fill="#1E4A7A">d(distance)/dt = velocity  →  distance = ∫velocity dt</text>
+            <text x="30" y="92" font-size="9" fill="#1E4A7A">Integration UNDOES differentiation (finds antiderivative)</text>
 
             <!-- Solution -->
-            <rect x="15" y="105" width="350" height="110" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
+            <rect x="15" y="105" width="350" height="110" fill="#FFFFFF" stroke="#3A8F84" stroke-width="1" rx="3"/>
             <text x="30" y="122" font-size="10" fill="#3A8F84" font-weight="bold">Solution:</text>
 
-            <text x="30" y="140" font-size="10" fill="#F1ECDD">Given: v(t) = 2t + 3</text>
-            <text x="30" y="158" font-size="10" fill="#F1ECDD">Distance = ∫(2t + 3) dt = t² + 3t + C</text>
-            <text x="30" y="176" font-size="10" fill="#F1ECDD">The '+C' = initial distance (constant of integration)</text>
+            <text x="30" y="140" font-size="10" fill="#1E4A7A">Given: v(t) = 2t + 3</text>
+            <text x="30" y="158" font-size="10" fill="#1E4A7A">Distance = ∫(2t + 3) dt = t² + 3t + C</text>
+            <text x="30" y="176" font-size="10" fill="#1E4A7A">The '+C' = initial distance (constant of integration)</text>
             <text x="30" y="194" font-size="10" fill="#E2A23B" font-weight="bold">If started at position 0: C=0 → distance = t² + 3t meters</text>
-            <text x="30" y="209" font-size="9" fill="#A9AFC4">Example: At t=5 seconds → distance = 25 + 15 = 40 meters</text>
+            <text x="30" y="209" font-size="9" fill="#1E4A7A">Example: At t=5 seconds → distance = 25 + 15 = 40 meters</text>
 
             <!-- Key formulas -->
-            <text x="190" y="240" text-anchor="middle" font-size="9" fill="#A9AFC4">Key: ∫sin(x)dx = −cos(x)+C | ∫cos(x)dx = sin(x)+C | ∫eˣdx = eˣ+C</text>
+            <text x="190" y="240" text-anchor="middle" font-size="9" fill="#1E4A7A">Key: ∫sin(x)dx = −cos(x)+C | ∫cos(x)dx = sin(x)+C | ∫eˣdx = eˣ+C</text>
         </svg>`
     },
     {
@@ -434,10 +434,10 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">📏 Definite Integrals = Area Under Curve</text>
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">📏 Definite Integrals = Area Under Curve</text>
 
             <!-- Explanation -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Key Difference: Definite has LIMITS (a to b) → gives ONE number (area)</text>
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Key Difference: Definite has LIMITS (a to b) → gives ONE number (area)</text>
 
             <!-- Graph showing area -->
             <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
@@ -454,11 +454,11 @@ const chapters = [
             <!-- Labels -->
             <text x="80" y="220" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">x=a</text>
             <text x="320" y="220" text-anchor="middle" font-size="11" fill="#E2A23B" font-weight="bold">x=b</text>
-            <text x="190" y="50" text-anchor="middle" font-size="11" fill="#F1ECDD" font-weight="bold">∫ₐᵇ f(x) dx</text>
+            <text x="190" y="50" text-anchor="middle" font-size="11" fill="#1E4A7A" font-weight="bold">∫ₐᵇ f(x) dx</text>
 
             <!-- Information Box -->
-            <rect x="15" y="235" width="350" height="22" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
-            <text x="25" y="250" font-size="9" fill="#F1ECDD">Example: ∫₀⁵(2t+3)dt = [t²+3t]₀⁵ = (25+15) − 0 = 40 meters traveled ✓</text>
+            <rect x="15" y="235" width="350" height="22" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="2"/>
+            <text x="25" y="250" font-size="9" fill="#1E4A7A">Example: ∫₀⁵(2t+3)dt = [t²+3t]₀⁵ = (25+15) − 0 = 40 meters traveled ✓</text>
         </svg>`
     },
     {
@@ -482,18 +482,18 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">☕ Cooling Coffee (Newton's Law)</text>
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">☕ Cooling Coffee (Newton's Law)</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Room temp: 25°C | Coffee initial: 95°C | Cooling rate: dT/dt = -k(T-25)</text>
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Room temp: 25°C | Coffee initial: 95°C | Cooling rate: dT/dt = -k(T-25)</text>
 
             <!-- Axes -->
             <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="50" y1="60" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
             <!-- Labels -->
-            <text x="20" y="120" font-size="9" fill="#A9AFC4">Temp (°C)</text>
-            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">Time →</text>
+            <text x="20" y="120" font-size="9" fill="#1E4A7A">Temp (°C)</text>
+            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#1E4A7A">Time →</text>
 
             <!-- Solution curves for different k values -->
             <path d="M 60 80 Q 120 100 180 150 Q 220 180 350 198" fill="none" stroke="#E2A23B" stroke-width="2.5"/>
@@ -510,8 +510,8 @@ const chapters = [
             <text x="180" y="180" font-size="9" fill="#teal" font-weight="bold">k=0.4</text>
 
             <!-- Key info -->
-            <rect x="15" y="235" width="350" height="22" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="2"/>
-            <text x="25" y="250" font-size="9" fill="#F1ECDD">Solution: T(t) = 25 + 70e^(-kt) | Larger k = faster cooling | Approaches room temp</text>
+            <rect x="15" y="235" width="350" height="22" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="2"/>
+            <text x="25" y="250" font-size="9" fill="#1E4A7A">Solution: T(t) = 25 + 70e^(-kt) | Larger k = faster cooling | Approaches room temp</text>
         </svg>`
     },
     {
@@ -543,9 +543,9 @@ const chapters = [
             <line x1="64" y1="40" x2="64" y2="280" stroke="#A9AFC4" stroke-width="3"/>
 
             <!-- Y-axis labels -->
-            <text x="56" y="285" text-anchor="end" font-size="11" fill="#A9AFC4">0</text>
-            <text x="56" y="215" text-anchor="end" font-size="11" fill="#A9AFC4">0.25</text>
-            <text x="56" y="145" text-anchor="end" font-size="11" fill="#A9AFC4">0.50</text>
+            <text x="56" y="285" text-anchor="end" font-size="11" fill="#1E4A7A">0</text>
+            <text x="56" y="215" text-anchor="end" font-size="11" fill="#1E4A7A">0.25</text>
+            <text x="56" y="145" text-anchor="end" font-size="11" fill="#1E4A7A">0.50</text>
 
             <!-- Grid lines (light) -->
             <line x1="64" y1="215" x2="464" y2="215" stroke="#A9AFC4" stroke-width="0.5" opacity="0.3"/>
@@ -560,12 +560,12 @@ const chapters = [
             <rect x="340" y="258" width="36" height="22" fill="#3A8F84" rx="3"/>
 
             <!-- X-axis labels (Number of Heads) -->
-            <text x="98" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">0</text>
-            <text x="150" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">1</text>
-            <text x="202" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">2</text>
-            <text x="254" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">3</text>
-            <text x="306" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">4</text>
-            <text x="358" y="305" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">5</text>
+            <text x="98" y="305" text-anchor="middle" font-size="12" fill="#1E4A7A" font-weight="bold">0</text>
+            <text x="150" y="305" text-anchor="middle" font-size="12" fill="#1E4A7A" font-weight="bold">1</text>
+            <text x="202" y="305" text-anchor="middle" font-size="12" fill="#1E4A7A" font-weight="bold">2</text>
+            <text x="254" y="305" text-anchor="middle" font-size="12" fill="#1E4A7A" font-weight="bold">3</text>
+            <text x="306" y="305" text-anchor="middle" font-size="12" fill="#1E4A7A" font-weight="bold">4</text>
+            <text x="358" y="305" text-anchor="middle" font-size="12" fill="#1E4A7A" font-weight="bold">5</text>
 
             <!-- Probability labels on bars -->
             <text x="98" y="295" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">1/32</text>
@@ -576,14 +576,14 @@ const chapters = [
             <text x="358" y="295" text-anchor="middle" font-size="8" fill="#E2A23B" font-weight="bold">1/32</text>
 
             <!-- Axis titles -->
-            <text x="450" y="305" font-size="11" fill="#A9AFC4" font-weight="bold">Num</text>
-            <text x="30" y="160" font-size="11" fill="#A9AFC4" font-weight="bold">Prob</text>
+            <text x="450" y="305" font-size="11" fill="#1E4A7A" font-weight="bold">Num</text>
+            <text x="30" y="160" font-size="11" fill="#1E4A7A" font-weight="bold">Prob</text>
 
             <!-- Title and subtitle -->
-            <text x="270" y="25" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">Binomial: n=5, p=0.5</text>
+            <text x="270" y="25" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">Binomial: n=5, p=0.5</text>
 
             <!-- Footer info -->
-            <text x="270" y="318" text-anchor="middle" font-size="9" fill="#A9AFC4">Peak at X=2,3 (31.25% each) • Symmetric</text>
+            <text x="270" y="318" text-anchor="middle" font-size="9" fill="#1E4A7A">Peak at X=2,3 (31.25% each) • Symmetric</text>
         </svg>`
     },
     {
@@ -607,37 +607,37 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🧭 GPS Navigation with Vectors</text>
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">🧭 GPS Navigation with Vectors</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Displacement vectors show movement in 2D space</text>
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Displacement vectors show movement in 2D space</text>
 
             <!-- Coordinate axes -->
             <line x1="60" y1="200" x2="340" y2="200" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="60" y1="200" x2="60" y2="60" stroke="#A9AFC4" stroke-width="2"/>
 
             <!-- Labels -->
-            <text x="350" y="205" font-size="10" fill="#A9AFC4">East</text>
-            <text x="50" y="50" font-size="10" fill="#A9AFC4">North</text>
+            <text x="350" y="205" font-size="10" fill="#1E4A7A">East</text>
+            <text x="50" y="50" font-size="10" fill="#1E4A7A">North</text>
 
             <!-- Vector A: 3 units East, 4 units North -->
             <line x1="60" y1="200" x2="150" y2="120" stroke="#3A8F84" stroke-width="3" marker-end="url(#arrowA)"/>
             <text x="130" y="145" font-size="11" fill="#3A8F84" font-weight="bold">a⃗ = (3,4)</text>
-            <text x="120" y="165" font-size="9" fill="#A9AFC4">|a⃗| = 5 km</text>
+            <text x="120" y="165" font-size="9" fill="#1E4A7A">|a⃗| = 5 km</text>
 
             <!-- Vector B: 4 units East, 2 units North -->
             <line x1="60" y1="200" x2="200" y2="150" stroke="#E2A23B" stroke-width="3" marker-end="url(#arrowB)"/>
             <text x="180" y="140" font-size="11" fill="#E2A23B" font-weight="bold">b⃗ = (4,2)</text>
-            <text x="170" y="170" font-size="9" fill="#A9AFC4">|b⃗| = √20 ≈ 4.47 km</text>
+            <text x="170" y="170" font-size="9" fill="#1E4A7A">|b⃗| = √20 ≈ 4.47 km</text>
 
             <!-- Angle between vectors -->
             <path d="M 100 180 A 40 40 0 0 0 120 160" fill="none" stroke="#text-muted" stroke-width="1" stroke-dasharray="2,2"/>
-            <text x="95" y="180" font-size="10" fill="#A9AFC4">θ</text>
+            <text x="95" y="180" font-size="10" fill="#1E4A7A">θ</text>
 
             <!-- Information Box -->
-            <rect x="15" y="215" width="350" height="42" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <rect x="15" y="215" width="350" height="42" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
             <text x="25" y="230" font-size="9" fill="#E2A23B" font-weight="bold">Dot Product: a⃗·b⃗ = 3(4) + 4(2) = 20</text>
-            <text x="25" y="245" font-size="9" fill="#A9AFC4">cos(θ) = 20/(5×√20) ≈ 0.894  →  θ ≈ 26.6° between routes</text>
+            <text x="25" y="245" font-size="9" fill="#1E4A7A">cos(θ) = 20/(5×√20) ≈ 0.894  →  θ ≈ 26.6° between routes</text>
 
             <defs>
                 <marker id="arrowA" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -670,10 +670,10 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">✈️ Airplane Safety: 3D Geometry</text>
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">✈️ Airplane Safety: 3D Geometry</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Two aircraft at different altitudes: ensure safe separation</text>
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Two aircraft at different altitudes: ensure safe separation</text>
 
             <!-- 3D axes -->
             <line x1="80" y1="160" x2="80" y2="60" stroke="#A9AFC4" stroke-width="2"/>
@@ -681,9 +681,9 @@ const chapters = [
             <line x1="80" y1="160" x2="40" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
             <!-- Axis labels -->
-            <text x="85" y="55" font-size="11" fill="#A9AFC4" font-weight="bold">Altitude (z)</text>
-            <text x="185" y="165" font-size="11" fill="#A9AFC4" font-weight="bold">East (x)</text>
-            <text x="20" y="210" font-size="11" fill="#A9AFC4" font-weight="bold">North (y)</text>
+            <text x="85" y="55" font-size="11" fill="#1E4A7A" font-weight="bold">Altitude (z)</text>
+            <text x="185" y="165" font-size="11" fill="#1E4A7A" font-weight="bold">East (x)</text>
+            <text x="20" y="210" font-size="11" fill="#1E4A7A" font-weight="bold">North (y)</text>
 
             <!-- Airplane A at higher altitude -->
             <circle cx="120" cy="100" r="6" fill="#E2A23B"/>
@@ -700,9 +700,9 @@ const chapters = [
             <text x="165" y="118" font-size="9" fill="#danger" font-weight="bold">Δz=2km (Safe!)</text>
 
             <!-- Information Box -->
-            <rect x="15" y="215" width="350" height="42" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <rect x="15" y="215" width="350" height="42" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
             <text x="25" y="232" font-size="9" fill="#E2A23B" font-weight="bold">Distance Between Aircraft:</text>
-            <text x="25" y="248" font-size="9" fill="#A9AFC4">d = √[(3-3)² + (2-2)² + (10-8)²] = √4 = 2km ✓ Safe separation maintained</text>
+            <text x="25" y="248" font-size="9" fill="#1E4A7A">d = √[(3-3)² + (2-2)² + (10-8)²] = √4 = 2km ✓ Safe separation maintained</text>
         </svg>`
     },
     {
@@ -726,20 +726,20 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 450 310" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="225" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🚜 Farm Land Between River & Fence</text>
+            <text x="225" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">🚜 Farm Land Between River & Fence</text>
 
             <!-- Problem statement -->
-            <rect x="15" y="20" width="420" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="2"/>
-            <text x="25" y="33" font-size="8" fill="#A9AFC4">Find area between river y=x² and fence y=2x | Limits: x=0 to x=2</text>
+            <rect x="15" y="20" width="420" height="28" fill="#FFFFFF" stroke="#3A8F84" stroke-width="1" rx="2"/>
+            <text x="25" y="33" font-size="8" fill="#1E4A7A">Find area between river y=x² and fence y=2x | Limits: x=0 to x=2</text>
             <text x="25" y="43" font-size="8" fill="#E2A23B">Answer: ∫₀²(2x−x²)dx = 4/3 square units</text>
 
             <!-- Y-Axis -->
             <line x1="80" y1="250" x2="80" y2="60" stroke="#A9AFC4" stroke-width="2.5"/>
-            <text x="35" y="150" font-size="10" fill="#A9AFC4" font-weight="bold">y-axis</text>
+            <text x="35" y="150" font-size="10" fill="#1E4A7A" font-weight="bold">y-axis</text>
 
             <!-- X-Axis -->
             <line x1="80" y1="250" x2="400" y2="250" stroke="#A9AFC4" stroke-width="2.5"/>
-            <text x="240" y="272" text-anchor="middle" font-size="10" fill="#A9AFC4" font-weight="bold">x-axis</text>
+            <text x="240" y="272" text-anchor="middle" font-size="10" fill="#1E4A7A" font-weight="bold">x-axis</text>
 
             <!-- River curve y=x² (teal, curved) -->
             <path d="M 85 245 Q 115 205 150 155 Q 180 105 215 60"
@@ -757,12 +757,12 @@ const chapters = [
             <!-- (0,0) -->
             <circle cx="85" cy="245" r="5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
             <circle cx="85" cy="245" r="2.5" fill="#F39C12"/>
-            <text x="60" y="265" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(0,0)</text>
+            <text x="60" y="265" text-anchor="middle" font-size="8" fill="#1E4A7A" font-weight="bold">(0,0)</text>
 
             <!-- (2,4) -->
             <circle cx="215" cy="60" r="5" fill="none" stroke="#F39C12" stroke-width="2.5"/>
             <circle cx="215" cy="60" r="2.5" fill="#F39C12"/>
-            <text x="240" y="48" text-anchor="middle" font-size="8" fill="#F1ECDD" font-weight="bold">(2,4)</text>
+            <text x="240" y="48" text-anchor="middle" font-size="8" fill="#1E4A7A" font-weight="bold">(2,4)</text>
 
             <!-- Curve labels with clear positioning -->
             <!-- River label on the left side -->
@@ -777,9 +777,9 @@ const chapters = [
             <text x="150" y="165" font-size="11" fill="#51CF66" font-weight="bold">FARM AREA</text>
 
             <!-- Solution Box -->
-            <rect x="15" y="275" width="420" height="32" fill="#1F2740" stroke="#51CF66" stroke-width="1.5" rx="2"/>
+            <rect x="15" y="275" width="420" height="32" fill="#FFFFFF" stroke="#51CF66" stroke-width="1.5" rx="2"/>
             <text x="25" y="288" font-size="8" fill="#E2A23B" font-weight="bold">✓ Solution:</text>
-            <text x="25" y="301" font-size="8" fill="#A9AFC4">Area = ∫₀²(2x−x²)dx = [x²−x³/3]₀² = 4−8/3 = 4/3 acres (farmable land)</text>
+            <text x="25" y="301" font-size="8" fill="#1E4A7A">Area = ∫₀²(2x−x²)dx = [x²−x³/3]₀² = 4−8/3 = 4/3 acres (farmable land)</text>
         </svg>`
     },
     {
@@ -803,15 +803,15 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="210" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">💼 Break-Even Analysis</text>
+            <text x="210" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">💼 Break-Even Analysis</text>
 
             <!-- Y-Axis -->
             <line x1="80" y1="220" x2="80" y2="40" stroke="#A9AFC4" stroke-width="2.5"/>
-            <text x="45" y="120" font-size="9" fill="#A9AFC4" font-weight="bold">Money (₹)</text>
+            <text x="45" y="120" font-size="9" fill="#1E4A7A" font-weight="bold">Money (₹)</text>
 
             <!-- X-Axis -->
             <line x1="80" y1="220" x2="400" y2="220" stroke="#A9AFC4" stroke-width="2.5"/>
-            <text x="240" y="238" text-anchor="middle" font-size="9" fill="#A9AFC4" font-weight="bold">Units Produced</text>
+            <text x="240" y="238" text-anchor="middle" font-size="9" fill="#1E4A7A" font-weight="bold">Units Produced</text>
 
             <!-- Cost line (teal) - starts at 500 (fixed cost) -->
             <line x1="80" y1="150" x2="340" y2="70" stroke="#3A8F84" stroke-width="3.5"/>
@@ -840,8 +840,8 @@ const chapters = [
             <text x="210" y="260" text-anchor="middle" font-size="10" fill="#F39C12" font-weight="bold">Break-even: 17 units</text>
 
             <!-- Key equations box -->
-            <rect x="15" y="275" width="390" height="22" fill="#1F2740" stroke="#F39C12" stroke-width="1.5" rx="2"/>
-            <text x="25" y="290" font-size="8" fill="#A9AFC4">Cost: ₹500 + ₹20/unit | Revenue: ₹50/unit | At 17 units: Both = ₹840</text>
+            <rect x="15" y="275" width="390" height="22" fill="#FFFFFF" stroke="#F39C12" stroke-width="1.5" rx="2"/>
+            <text x="25" y="290" font-size="8" fill="#1E4A7A">Cost: ₹500 + ₹20/unit | Revenue: ₹50/unit | At 17 units: Both = ₹840</text>
         </svg>`
     },
     {
@@ -865,18 +865,18 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">📚 Study Hours vs Exam Marks</text>
+            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">📚 Study Hours vs Exam Marks</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#A9AFC4">Can we predict exam marks from study hours? (r=0.85 strong correlation)</text>
+            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Can we predict exam marks from study hours? (r=0.85 strong correlation)</text>
 
             <!-- Axes -->
             <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
             <line x1="50" y1="50" x2="50" y2="200" stroke="#A9AFC4" stroke-width="2"/>
 
             <!-- Labels -->
-            <text x="15" y="120" font-size="9" fill="#A9AFC4">Marks</text>
-            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#A9AFC4">Study Hours</text>
+            <text x="15" y="120" font-size="9" fill="#1E4A7A">Marks</text>
+            <text x="200" y="220" text-anchor="middle" font-size="9" fill="#1E4A7A">Study Hours</text>
 
             <!-- Data points (actual student data) -->
             <circle cx="75" cy="185" r="3" fill="#E2A23B" opacity="0.7"/>
@@ -894,7 +894,7 @@ const chapters = [
             <text x="270" y="80" font-size="10" fill="#3A8F84" font-weight="bold">y = 5 + 8.5x</text>
 
             <!-- Information Box -->
-            <rect x="15" y="230" width="350" height="27" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <rect x="15" y="230" width="350" height="27" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
             <text x="25" y="245" font-size="9" fill="#E2A23B" font-weight="bold">Correlation r = 0.85 (Strong!)  |  r² = 0.72  →  72% of mark variation explained by study time</text>
         </svg>`
     },
@@ -919,26 +919,26 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
             <!-- Title Section -->
-            <text x="210" y="16" text-anchor="middle" font-size="13" fill="#F1ECDD" font-weight="bold">🪑 Furniture Factory</text>
+            <text x="210" y="16" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">🪑 Furniture Factory</text>
 
             <!-- Problem Statement -->
-            <rect x="10" y="18" width="400" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="2"/>
-            <text x="20" y="32" font-size="7" fill="#A9AFC4"><tspan x="20">Maximize Profit = 20x + 30y</tspan></text>
-            <text x="20" y="41" font-size="7" fill="#A9AFC4"><tspan x="20">Constraint: 2x + 3y ≤ 12 hours | x = chairs, y = tables</tspan></text>
+            <rect x="10" y="18" width="400" height="28" fill="#FFFFFF" stroke="#3A8F84" stroke-width="1" rx="2"/>
+            <text x="20" y="32" font-size="7" fill="#1E4A7A"><tspan x="20">Maximize Profit = 20x + 30y</tspan></text>
+            <text x="20" y="41" font-size="7" fill="#1E4A7A"><tspan x="20">Constraint: 2x + 3y ≤ 12 hours | x = chairs, y = tables</tspan></text>
 
             <!-- Main Graph Area -->
             <!-- Y-axis -->
             <line x1="70" y1="90" x2="70" y2="230" stroke="#A9AFC4" stroke-width="2.5"/>
-            <text x="45" y="150" font-size="8" fill="#A9AFC4" font-weight="bold">Tables (y)</text>
+            <text x="45" y="150" font-size="8" fill="#1E4A7A" font-weight="bold">Tables (y)</text>
 
             <!-- X-axis -->
             <line x1="70" y1="230" x2="350" y2="230" stroke="#A9AFC4" stroke-width="2.5"/>
-            <text x="200" y="250" text-anchor="middle" font-size="8" fill="#A9AFC4" font-weight="bold">Chairs (x)</text>
+            <text x="200" y="250" text-anchor="middle" font-size="8" fill="#1E4A7A" font-weight="bold">Chairs (x)</text>
 
             <!-- Axis markings for reference -->
-            <text x="65" y="235" text-anchor="end" font-size="6" fill="#A9AFC4">0</text>
-            <text x="65" y="170" text-anchor="end" font-size="6" fill="#A9AFC4">4</text>
-            <text x="280" y="245" text-anchor="middle" font-size="6" fill="#A9AFC4">6</text>
+            <text x="65" y="235" text-anchor="end" font-size="6" fill="#1E4A7A">0</text>
+            <text x="65" y="170" text-anchor="end" font-size="6" fill="#1E4A7A">4</text>
+            <text x="280" y="245" text-anchor="middle" font-size="6" fill="#1E4A7A">6</text>
 
             <!-- Constraint line: 2x + 3y = 12 -->
             <line x1="70" y1="150" x2="280" y2="90" stroke="#3A8F84" stroke-width="2.5" stroke-dasharray="3,3"/>
@@ -951,19 +951,19 @@ const chapters = [
             <!-- Corner Point 1: (0,0) -->
             <circle cx="70" cy="230" r="4" fill="none" stroke="#B0B0B0" stroke-width="2"/>
             <circle cx="70" cy="230" r="2" fill="#B0B0B0"/>
-            <text x="50" y="245" text-anchor="middle" font-size="7" fill="#F1ECDD" font-weight="bold">(0,0)</text>
-            <text x="50" y="255" text-anchor="middle" font-size="7" fill="#A9AFC4">Z=0</text>
+            <text x="50" y="245" text-anchor="middle" font-size="7" fill="#1E4A7A" font-weight="bold">(0,0)</text>
+            <text x="50" y="255" text-anchor="middle" font-size="7" fill="#1E4A7A">Z=0</text>
 
             <!-- Corner Point 2: (0,4) - OPTIMAL -->
             <circle cx="70" cy="150" r="5" fill="none" stroke="#F39C12" stroke-width="3"/>
             <circle cx="70" cy="150" r="2.5" fill="#F39C12"/>
-            <text x="25" y="145" text-anchor="middle" font-size="7" fill="#F1ECDD" font-weight="bold">(0,4)</text>
+            <text x="25" y="145" text-anchor="middle" font-size="7" fill="#1E4A7A" font-weight="bold">(0,4)</text>
             <text x="25" y="156" text-anchor="middle" font-size="8" fill="#F39C12" font-weight="bold">★ Z=120</text>
 
             <!-- Corner Point 3: (6,0) - OPTIMAL -->
             <circle cx="280" cy="90" r="5" fill="none" stroke="#F39C12" stroke-width="3"/>
             <circle cx="280" cy="90" r="2.5" fill="#F39C12"/>
-            <text x="280" y="70" text-anchor="middle" font-size="7" fill="#F1ECDD" font-weight="bold">(6,0)</text>
+            <text x="280" y="70" text-anchor="middle" font-size="7" fill="#1E4A7A" font-weight="bold">(6,0)</text>
             <text x="280" y="80" text-anchor="middle" font-size="8" fill="#F39C12" font-weight="bold">★ Z=120</text>
 
             <!-- Objective function direction arrow -->
@@ -976,9 +976,9 @@ const chapters = [
             <text x="145" y="175" font-size="7" fill="#FF6B6B" font-weight="bold">Maximize</text>
 
             <!-- Answer Box -->
-            <rect x="10" y="265" width="400" height="28" fill="#1F2740" stroke="#F39C12" stroke-width="2" rx="2"/>
+            <rect x="10" y="265" width="400" height="28" fill="#FFFFFF" stroke="#F39C12" stroke-width="2" rx="2"/>
             <text x="20" y="278" font-size="8" fill="#F39C12" font-weight="bold">✓ ANSWER: Both points (0,4) and (6,0) give maximum profit of ₹120</text>
-            <text x="20" y="289" font-size="7" fill="#A9AFC4">Make either 4 tables OR 6 chairs to maximize profit at ₹120</text>
+            <text x="20" y="289" font-size="7" fill="#1E4A7A">Make either 4 tables OR 6 chairs to maximize profit at ₹120</text>
         </svg>`
     },
     {
@@ -1004,7 +1004,7 @@ const chapters = [
         ],
         diagram: `<svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="210" y="20" text-anchor="middle" font-size="14" fill="#F1ECDD" font-weight="bold">Test Score Distribution</text>
+            <text x="210" y="20" text-anchor="middle" font-size="14" fill="#1E4A7A" font-weight="bold">Test Score Distribution</text>
             <text x="210" y="35" text-anchor="middle" font-size="11" fill="#E2A23B">Student Scores</text>
 
             <!-- Axes -->
@@ -1012,37 +1012,37 @@ const chapters = [
             <line x1="50" y1="70" x2="50" y2="230" stroke="#A9AFC4" stroke-width="2"/>
 
             <!-- Axis Labels -->
-            <text x="400" y="250" font-size="10" fill="#A9AFC4" font-weight="bold">Scores</text>
-            <text x="25" y="150" font-size="10" fill="#A9AFC4" font-weight="bold">Count</text>
+            <text x="400" y="250" font-size="10" fill="#1E4A7A" font-weight="bold">Scores</text>
+            <text x="25" y="150" font-size="10" fill="#1E4A7A" font-weight="bold">Count</text>
 
             <!-- Bars for score distribution -->
             <!-- 50-60: 2 students -->
             <rect x="63" y="205" width="34" height="25" fill="#3A8F84" opacity="0.8"/>
-            <text x="80" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">50-60</text>
+            <text x="80" y="265" text-anchor="middle" font-size="10" fill="#1E4A7A" font-weight="bold">50-60</text>
             <text x="80" y="277" text-anchor="middle" font-size="8" fill="#E2A23B">2</text>
 
             <!-- 60-70: 4 students -->
             <rect x="111" y="175" width="34" height="55" fill="#3A8F84" opacity="0.8"/>
-            <text x="128" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">60-70</text>
+            <text x="128" y="265" text-anchor="middle" font-size="10" fill="#1E4A7A" font-weight="bold">60-70</text>
             <text x="128" y="277" text-anchor="middle" font-size="8" fill="#E2A23B">4</text>
 
             <!-- 70-80: 8 students (MODE) -->
             <rect x="159" y="90" width="34" height="140" fill="#E2A23B" opacity="0.9"/>
-            <text x="176" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">70-80</text>
+            <text x="176" y="265" text-anchor="middle" font-size="10" fill="#1E4A7A" font-weight="bold">70-80</text>
             <text x="176" y="277" text-anchor="middle" font-size="8" fill="#3A8F84" font-weight="bold">8 ⭐</text>
 
             <!-- 80-90: 5 students -->
             <rect x="207" y="144" width="34" height="86" fill="#3A8F84" opacity="0.8"/>
-            <text x="224" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">80-90</text>
+            <text x="224" y="265" text-anchor="middle" font-size="10" fill="#1E4A7A" font-weight="bold">80-90</text>
             <text x="224" y="277" text-anchor="middle" font-size="8" fill="#E2A23B">5</text>
 
             <!-- 90-100: 1 student -->
             <rect x="255" y="221" width="34" height="9" fill="#3A8F84" opacity="0.8"/>
-            <text x="272" y="265" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="bold">90-100</text>
+            <text x="272" y="265" text-anchor="middle" font-size="10" fill="#1E4A7A" font-weight="bold">90-100</text>
             <text x="272" y="277" text-anchor="middle" font-size="8" fill="#E2A23B">1</text>
 
             <!-- Stats summary -->
-            <text x="210" y="55" text-anchor="middle" font-size="10" fill="#A9AFC4">Mean≈73.5 | Median=75 | Mode=70-80 ⭐</text>
+            <text x="210" y="55" text-anchor="middle" font-size="10" fill="#1E4A7A">Mean≈73.5 | Median=75 | Mode=70-80 ⭐</text>
         </svg>`
     }
 ];
