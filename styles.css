@@ -795,6 +795,16 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
 }
 
+/* Dark mode - Use page background color for content boxes */
+:not(.light-mode) .concept-section,
+:not(.light-mode) .tricks-section,
+:not(.light-mode) .practice-section,
+:not(.light-mode) .visual-diagram,
+:not(.light-mode) .tricks-list li,
+:not(.light-mode) .practice-item {
+    background: var(--bg-primary);
+}
+
 /* TRICKS SECTION */
 .tricks-container {
     display: grid;
