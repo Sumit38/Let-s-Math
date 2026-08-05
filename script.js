@@ -65,7 +65,7 @@ function initializeTheme() {
     updateThemeIcon();
     // Update SVG text colors for dark/light mode with !important
     const svgTexts = document.querySelectorAll('svg text');
-    if (isLightMode) {
+    if (savedTheme === 'light') {
         svgTexts.forEach(text => {
             text.style.setProperty('fill', '#1E4A7A', 'important');
         });
