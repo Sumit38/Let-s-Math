@@ -223,27 +223,27 @@ const chapters = [
             <text x="190" y="14" text-anchor="middle" font-size="12" fill="#F1ECDD" font-weight="bold">📐 Determinant = "Magic Number"</text>
 
             <!-- What it does -->
-            <rect x="10" y="22" width="360" height="32" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="20" y="35" font-size="8" fill="#E2A23B" font-weight="bold">✓ Tells if problem has unique solution</text>
-            <text x="20" y="48" font-size="8" fill="#E2A23B" font-weight="bold">✓ Measures area/volume of transformation</text>
+            <rect x="10" y="22" width="360" height="32" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="20" y="35" font-size="8" fill="#1E4A7A" font-weight="bold">✓ Tells if problem has unique solution</text>
+            <text x="20" y="48" font-size="8" fill="#1E4A7A" font-weight="bold">✓ Measures area/volume of transformation</text>
 
             <!-- Formula -->
-            <rect x="10" y="58" width="360" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
-            <text x="20" y="70" font-size="8" fill="#3A8F84" font-weight="bold">For Matrix | a  b | → det = (a × d) − (b × c)</text>
-            <text x="190" y="70" font-size="8" fill="#3A8F84" font-weight="bold">| c  d |</text>
-            <text x="20" y="82" font-size="7" fill="#A9AFC4">Multiply main diagonal, subtract other diagonal</text>
+            <rect x="10" y="58" width="360" height="28" fill="#FFFFFF" stroke="#3A8F84" stroke-width="1" rx="3"/>
+            <text x="20" y="70" font-size="8" fill="#1E4A7A" font-weight="bold">For Matrix | a  b | → det = (a × d) − (b × c)</text>
+            <text x="190" y="70" font-size="8" fill="#1E4A7A" font-weight="bold">| c  d |</text>
+            <text x="20" y="82" font-size="7" fill="#1E4A7A">Multiply main diagonal, subtract other diagonal</text>
 
             <!-- Example Part 1 -->
-            <rect x="10" y="90" width="360" height="42" fill="#1F2740" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="20" y="102" font-size="8" fill="#E2A23B" font-weight="bold">Example: | 2  3 |</text>
-            <text x="95" y="102" font-size="8" fill="#F1ECDD">| 4  1 |</text>
-            <text x="20" y="115" font-size="7" fill="#F1ECDD">Step 1: 2 × 1 = 2  |  Step 2: 3 × 4 = 12</text>
-            <text x="20" y="127" font-size="8" fill="#E2A23B" font-weight="bold">Result: 2 − 12 = −10  ✓ (Unique solution)</text>
+            <rect x="10" y="90" width="360" height="42" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="20" y="102" font-size="8" fill="#1E4A7A" font-weight="bold">Example: | 2  3 |</text>
+            <text x="95" y="102" font-size="8" fill="#1E4A7A">| 4  1 |</text>
+            <text x="20" y="115" font-size="7" fill="#1E4A7A">Step 1: 2 × 1 = 2  |  Step 2: 3 × 4 = 12</text>
+            <text x="20" y="127" font-size="8" fill="#1E4A7A" font-weight="bold">Result: 2 − 12 = −10  ✓ (Unique solution)</text>
 
             <!-- Key Meaning -->
-            <rect x="10" y="122" width="360" height="28" fill="#1F2740" stroke="#3A8F84" stroke-width="1" rx="3"/>
-            <text x="20" y="134" font-size="8" fill="#3A8F84" font-weight="bold">If det ≠ 0 → Solution is unique ✓</text>
-            <text x="20" y="147" font-size="8" fill="#3A8F84" font-weight="bold">If det = 0 → No unique solution ✗</text>
+            <rect x="10" y="122" width="360" height="28" fill="#FFFFFF" stroke="#3A8F84" stroke-width="1" rx="3"/>
+            <text x="20" y="134" font-size="8" fill="#1E4A7A" font-weight="bold">If det ≠ 0 → Solution is unique ✓</text>
+            <text x="20" y="147" font-size="8" fill="#1E4A7A" font-weight="bold">If det = 0 → No unique solution ✗</text>
 
             <!-- Visual Hint -->
             <text x="190" y="170" text-anchor="middle" font-size="9" fill="#E2A23B" font-weight="bold">Main Diagonal (↘) minus Other Diagonal (↙)</text>
