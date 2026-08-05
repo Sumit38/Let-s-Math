@@ -126,8 +126,8 @@ const chapters = [
             <text x="225" y="135" font-size="11" fill="#E2A23B" font-weight="bold">(0, 0)</text>
 
             <!-- Information boxes -->
-            <rect x="10" y="250" width="360" height="28" fill="#1F2740" stroke="#00FFDD" stroke-width="2" rx="4"/>
-            <text x="20" y="265" font-size="10" fill="#F1ECDD" font-weight="bold">Domain: [-1, 1]  |  Range: [-π/2, π/2]  |  Strictly Increasing  |  Odd Function</text>
+            <rect x="10" y="250" width="360" height="28" fill="#FFFFFF" stroke="#00FFDD" stroke-width="2" rx="4"/>
+            <text x="20" y="265" font-size="10" fill="#1E4A7A" font-weight="bold">Domain: [-1, 1]  |  Range: [-π/2, π/2]  |  Strictly Increasing  |  Odd Function</text>
         </svg>`
     },
     {
