@@ -155,9 +155,9 @@ const chapters = [
             <text x="190" y="18" text-anchor="middle" font-size="14" fill="#66FF00" font-weight="bold">🍞 Bakery Pricing Problem</text>
 
             <!-- Problem Statement - BETTER ALIGNED -->
-            <rect x="15" y="25" width="350" height="35" fill="#1F2740" stroke="#70AD47" stroke-width="1.5" rx="4"/>
-            <text x="190" y="40" text-anchor="middle" font-size="10" fill="#F1ECDD" font-weight="500">2 Bread + 1 Cake = ₹100  |  1 Bread + 2 Cake = ₹110</text>
-            <text x="190" y="55" text-anchor="middle" font-size="9" fill="#A9AFC4">Find: Price of Bread (x) and Cake (y)</text>
+            <rect x="15" y="25" width="350" height="35" fill="#FFFFFF" stroke="#70AD47" stroke-width="1.5" rx="4"/>
+            <text x="190" y="40" text-anchor="middle" font-size="10" fill="#1E4A7A" font-weight="500">2 Bread + 1 Cake = ₹100  |  1 Bread + 2 Cake = ₹110</text>
+            <text x="190" y="55" text-anchor="middle" font-size="9" fill="#1E4A7A">Find: Price of Bread (x) and Cake (y)</text>
 
             <!-- Matrix A (Coefficients) -->
             <text x="65" y="80" font-size="11" fill="#E2A23B" font-weight="bold" text-anchor="middle">Coefficients:</text>
