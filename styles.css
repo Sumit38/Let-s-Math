@@ -42,6 +42,60 @@ body.light-mode {
     --text-primary: #1E4A7A;
 }
 
+/* Dark mode - Ensure good text contrast on dark background */
+body {
+    color: #F1ECDD !important;
+}
+
+body p,
+body span,
+body li,
+body td,
+body th,
+body button,
+body label,
+body a {
+    color: #F1ECDD !important;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+    color: #FFFFFF !important;
+}
+
+body .btn-primary,
+body .btn-secondary {
+    color: #FFFFFF !important;
+}
+
+/* Ensure all generic elements have light text in dark mode */
+body div,
+body section,
+body article,
+body nav,
+body header,
+body footer,
+body main {
+    color: #F1ECDD !important;
+}
+
+/* Accordion and interactive elements */
+body .accordion-header,
+body .accordion-content,
+body .question-item,
+body .trick-card {
+    color: #F1ECDD !important;
+}
+
+/* Ensure text inside SVG diagrams remains white (already set in data.js) */
+body svg text {
+    fill: #FFFFFF !important;
+}
+
 /* Light mode - Force all text to dark blue */
 body.light-mode {
     color: #1E4A7A !important;
