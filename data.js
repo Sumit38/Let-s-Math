@@ -863,12 +863,12 @@ const chapters = [
             { q: "If r=0.9, what % of variance is explained?", a: "r² = (0.9)² = 0.81 = 81%. 81% of variance in y is explained by x" },
             { q: "Regression line: y = 2x+5. Predict y when x=10", a: "y = 2(10)+5 = 25" }
         ],
-        diagram: `<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+        diagram: `<svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
             <!-- Title -->
-            <text x="190" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">📚 Study Hours vs Exam Marks</text>
+            <text x="260" y="18" text-anchor="middle" font-size="13" fill="#1E4A7A" font-weight="bold">📚 Study Hours vs Exam Marks</text>
 
             <!-- Problem -->
-            <text x="190" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Can we predict exam marks from study hours? (r=0.85 strong correlation)</text>
+            <text x="260" y="35" text-anchor="middle" font-size="10" fill="#1E4A7A">Can we predict exam marks from study hours? (r=0.85 strong correlation)</text>
 
             <!-- Axes -->
             <line x1="50" y1="200" x2="350" y2="200" stroke="#A9AFC4" stroke-width="2"/>
@@ -894,8 +894,8 @@ const chapters = [
             <text x="270" y="80" font-size="10" fill="#3A8F84" font-weight="bold">y = 5 + 8.5x</text>
 
             <!-- Information Box -->
-            <rect x="15" y="230" width="480" height="27" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
-            <text x="25" y="245" font-size="9" fill="#E2A23B" font-weight="bold">Correlation r = 0.85 (Strong!)  |  r² = 0.72  →  72% of mark variation explained by study time</text>
+            <rect x="20" y="230" width="480" height="27" fill="#FFFFFF" stroke="#E2A23B" stroke-width="1" rx="3"/>
+            <text x="30" y="245" font-size="8.5" fill="#E2A23B" font-weight="bold">Correlation r = 0.85 (Strong!)  |  r² = 0.72  →  72% of mark variation explained by study time</text>
         </svg>`
     },
     {
