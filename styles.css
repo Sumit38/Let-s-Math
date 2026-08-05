@@ -758,13 +758,13 @@ h1, h2, h3, h4, h5, h6 {
 .tricks-list li {
     padding: 1em;
     margin-bottom: 1em;
-    background: var(--ink-600);
+    background: #161B2E;
     border-radius: 8px;
     border-left: 3px solid var(--amber);
 }
 
 .practice-item {
-    background: var(--ink-600);
+    background: #161B2E;
     padding: 1.5em;
     margin-bottom: 1.5em;
     border-radius: 8px;
@@ -793,11 +793,6 @@ h1, h2, h3, h4, h5, h6 {
 .visual-diagram svg {
     max-width: 100%;
     height: auto;
-}
-
-.tricks-list li,
-.practice-item {
-    background: #161B2E;
 }
 
 /* Light mode - Override to white backgrounds */
