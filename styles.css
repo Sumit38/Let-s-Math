@@ -720,7 +720,7 @@ h1, h2, h3, h4, h5, h6 {
 .concept-section,
 .tricks-section,
 .practice-section {
-    background: var(--ink-soft);
+    background: #161B2E;
     border-radius: 12px;
     padding: 2em;
     margin-bottom: 2em;
@@ -783,7 +783,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .visual-diagram {
-    background: var(--ink-600);
+    background: #161B2E;
     border-radius: 12px;
     padding: 2em;
     margin: 2em 0;
@@ -795,14 +795,19 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
 }
 
-/* Dark mode - Use page background color for content boxes */
-body:not(.light-mode) .concept-section,
-body:not(.light-mode) .tricks-section,
-body:not(.light-mode) .practice-section,
-body:not(.light-mode) .visual-diagram,
-body:not(.light-mode) .tricks-list li,
-body:not(.light-mode) .practice-item {
-    background: #161B2E !important;
+.tricks-list li,
+.practice-item {
+    background: #161B2E;
+}
+
+/* Light mode - Override to white backgrounds */
+body.light-mode .concept-section,
+body.light-mode .tricks-section,
+body.light-mode .practice-section,
+body.light-mode .visual-diagram,
+body.light-mode .tricks-list li,
+body.light-mode .practice-item {
+    background: #FFFFFF;
 }
 
 /* TRICKS SECTION */
