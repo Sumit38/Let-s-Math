@@ -36,7 +36,7 @@ function toggleTheme() {
         });
     } else {
         svgTexts.forEach(text => {
-            text.style.setProperty('fill', '#A8D5BA', 'important');
+            text.style.setProperty('fill', '#FFB366', 'important');
         });
     }
 }
@@ -71,7 +71,7 @@ function initializeTheme() {
         });
     } else {
         svgTexts.forEach(text => {
-            text.style.setProperty('fill', '#A8D5BA', 'important');
+            text.style.setProperty('fill', '#FFB366', 'important');
         });
     }
 }
