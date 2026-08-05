@@ -289,12 +289,26 @@ function showChapterDetail(chapterId) {
 
     showPage('chapter-detail');
 
-    // Apply dark backgrounds to boxes in dark mode
+    // Apply dark backgrounds and SVG text colors after content loads
     setTimeout(() => {
         const isLightMode = document.body.classList.contains('light-mode');
+
+        // Apply dark backgrounds in dark mode
         if (!isLightMode) {
             document.querySelectorAll('.concept-section, .tricks-section, .practice-section, .visual-diagram, .tricks-list li, .practice-item').forEach(el => {
                 el.style.backgroundColor = '#161B2E';
+            });
+        }
+
+        // Update SVG text colors based on theme
+        const svgTexts = document.querySelectorAll('svg text');
+        if (isLightMode) {
+            svgTexts.forEach(text => {
+                text.style.setProperty('fill', '#1E4A7A', 'important');
+            });
+        } else {
+            svgTexts.forEach(text => {
+                text.style.setProperty('fill', '#FFB366', 'important');
             });
         }
     }, 0);
