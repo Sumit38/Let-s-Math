@@ -288,6 +288,16 @@ function showChapterDetail(chapterId) {
     `;
 
     showPage('chapter-detail');
+
+    // Apply dark backgrounds to boxes in dark mode
+    setTimeout(() => {
+        const isLightMode = document.body.classList.contains('light-mode');
+        if (!isLightMode) {
+            document.querySelectorAll('.concept-section, .tricks-section, .practice-section, .visual-diagram, .tricks-list li, .practice-item').forEach(el => {
+                el.style.backgroundColor = '#161B2E';
+            });
+        }
+    }, 0);
 }
 
 // Hint System Functions
