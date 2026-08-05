@@ -151,21 +151,21 @@ body.light-mode label {
 }
 
 body.light-mode .btn-primary {
-    background: #70AD47;
-    color: #FFFFFF;
+    background: #A8D5BA;
+    color: #1E4A7A;
 }
 
 body.light-mode .btn-primary:hover {
-    background: #5A9237;
+    background: #8FC9A9;
 }
 
 body.light-mode .btn-secondary {
-    background: #3A8F84;
-    color: #FFFFFF;
+    background: #7DCCCE;
+    color: #1E4A7A;
 }
 
 body.light-mode .btn-secondary:hover {
-    background: #2A7A73;
+    background: #5EBFC1;
 }
 
 body.light-mode .navbar {
