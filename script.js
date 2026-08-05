@@ -27,6 +27,7 @@ function toggleTheme() {
         }
     }
     updateThemeIcon();
+    updateSVGTextColors();
 }
 
 function updateThemeIcon() {
@@ -51,6 +52,32 @@ function initializeTheme() {
         }
     }
     updateThemeIcon();
+    updateSVGTextColors();
+}
+
+// Update SVG text colors based on current theme
+function updateSVGTextColors() {
+    const isDarkMode = !document.body.classList.contains('light-mode');
+    const svgTexts = document.querySelectorAll('svg text');
+
+    svgTexts.forEach(text => {
+        if (isDarkMode) {
+            // Dark mode: light cream text for visibility
+            text.setAttribute('fill', '#F1ECDD');
+            text.style.fill = '#F1ECDD';
+        } else {
+            // Light mode: preserve original or use deep blue
+            const originalFill = text.getAttribute('fill');
+            if (originalFill && originalFill !== '#1E4A7A') {
+                // Keep original colors like white or green
+                text.style.fill = '';
+            } else {
+                // Use deep blue for labels
+                text.setAttribute('fill', '#1E4A7A');
+                text.style.fill = '#1E4A7A';
+            }
+        }
+    });
 }
 
 // Page Navigation
