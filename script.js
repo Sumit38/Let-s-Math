@@ -29,7 +29,8 @@ function toggleTheme() {
     updateThemeIcon();
     // Update SVG text colors based on loaded theme with !important
     const svgTexts = document.querySelectorAll('svg text');
-    if (savedTheme === 'light') {
+    const isLightMode = document.body.classList.contains('light-mode');
+    if (isLightMode) {
         svgTexts.forEach(text => {
             text.style.setProperty('fill', '#1E4A7A', 'important');
         });
