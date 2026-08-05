@@ -27,9 +27,22 @@ function toggleTheme() {
         }
     }
     updateThemeIcon();
-    // Update SVG text colors for dark/light mode with !important
-    const svgTexts = document.querySelectorAll('svg text');
+
+    // Update SVG text colors and box backgrounds for dark/light mode
     const newIsLightMode = document.body.classList.contains('light-mode');
+    const boxSelector = '.concept-section, .tricks-section, .practice-section, .visual-diagram, .tricks-list li, .practice-item';
+
+    // Update box backgrounds
+    document.querySelectorAll(boxSelector).forEach(el => {
+        if (newIsLightMode) {
+            el.style.backgroundColor = '#FFFFFF';
+        } else {
+            el.style.backgroundColor = '#161B2E';
+        }
+    });
+
+    // Update SVG text colors
+    const svgTexts = document.querySelectorAll('svg text');
     if (newIsLightMode) {
         svgTexts.forEach(text => {
             text.style.setProperty('fill', '#1E4A7A', 'important');
