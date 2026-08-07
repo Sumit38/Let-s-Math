@@ -176,20 +176,25 @@ function updateProgressDisplay() {
     const completedChapters = getCompletedChaptersCount();
     const totalChapters = chapters.length;
 
+    // Use appropriate text colors based on theme
+    const isLightMode = document.body.classList.contains('light-mode');
+    const textColor = isLightMode ? '#1E4A7A' : '#F1ECDD';
+    const descriptionColor = isLightMode ? '#2E5A8C' : '#A9AFC4';
+
     progressContainer.innerHTML = `
         <div style="text-align: center;">
             <div style="font-size: 5em; margin-bottom: 15px;">${phase.emoji}</div>
             <h3 style="color: ${phase.color}; margin: 0 0 5px 0; font-size: 1.3em; font-weight: 700;">${phase.phase} Phase</h3>
-            <p style="color: #A9AFC4; margin: 0 0 15px 0; font-size: 0.9em;">${phase.description}</p>
+            <p style="color: ${descriptionColor}; margin: 0 0 15px 0; font-size: 0.9em;">${phase.description}</p>
 
             <div style="background: #FFFFFF; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
-                <p style="color: #F1ECDD; margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">
+                <p style="color: ${textColor}; margin: 0 0 10px 0; font-size: 1.1em; font-weight: 600;">
                     ${percentage}% Complete
                 </p>
                 <div style="background: rgba(58, 143, 132, 0.3); height: 8px; border-radius: 4px; overflow: hidden;">
                     <div style="background: linear-gradient(90deg, ${phase.color}, #66FF00); height: 100%; width: ${percentage}%; transition: width 0.3s ease;"></div>
                 </div>
-                <p style="color: #A9AFC4; margin: 10px 0 0 0; font-size: 0.85em;">
+                <p style="color: ${descriptionColor}; margin: 10px 0 0 0; font-size: 0.85em;">
                     ${completedChapters} of ${totalChapters} chapters started
                 </p>
             </div>
