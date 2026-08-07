@@ -1714,4 +1714,37 @@ body.light-mode .practice-item {
     .container {
         padding: 1.5em 15px !important;
     }
+
+    /* Mobile responsive progress display */
+    #user-progress-display {
+        padding: 0 15px !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+    }
+
+    #user-progress-display div[style*="text-align: center"] {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #user-progress-display div[style*="font-size: 5em"] {
+        font-size: 3.5em !important;
+        margin-bottom: 10px !important;
+    }
+
+    #user-progress-display h3 {
+        font-size: 1.1em !important;
+    }
+
+    #user-progress-display p {
+        font-size: 0.85em !important;
+    }
+
+    #user-progress-display div[style*="background: #FFFFFF"] {
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 12px !important;
+    }
 }
