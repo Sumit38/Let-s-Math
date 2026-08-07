@@ -413,6 +413,10 @@ function trackProblemCompletion(chapterId) {
 
     localStorage.setItem(`chapter_${chapterId}_progress`, JSON.stringify(progress));
 
+    // Update progress displays
+    updateProgressDisplay();
+    updateChaptersProgressBar();
+
     // Check if 50% threshold is reached
     if (progress.percentage >= 50 && progress.solved === Math.ceil(progress.total * 0.5)) {
         showCelebration(chapterId, chapter, progress);
